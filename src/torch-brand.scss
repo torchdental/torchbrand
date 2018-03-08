@@ -1,0 +1,974 @@
+/*
+ *  Styles for Torch Branding
+ *  This file is auto-generated from torch-brand.scss
+ */
+
+
+/* --- Font Face Directives --- */
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  src: url('../assets/fonts/open-sans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 700;
+  src: url('../assets/fonts/open-sans/OpenSans-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  src: url('../assets/fonts/montserrat/Montserrat-SemiBold.ttf');
+}
+
+/* --- Variables --- */
+// Color Constants (Not for use outside this file, subject to change)
+$color--gray-300:   #333;
+$color--gray-600:   #888;
+$color--gray-800:   #ccc;
+$color--gray-900:   #f2f2f2;
+$color--white:      #fff;
+$color--orange-400: #ff4f2c;
+$color--teal-400:   #1994c9;
+$color--green-400:  #0dba52;
+
+// Semantic Colors (Please use these)
+$color--primary:          $color--orange-400;
+$color--secondary:        $color--teal-400;
+$color--tertiary:         $color--green-400;
+$color--dark:             $color--gray-300;
+$color--muted:            $color--gray-600;
+$color--muted-light:      $color--gray-800;
+$color--light:            $color--gray-900;
+$color--bright:           $color--white;
+
+$color--info:             $color--teal-400;
+$color--success:          $color--green-400;
+$color--danger:           $color--orange-400;
+
+$font-family--primary:        'Open Sans', sans-serif;
+$font-weight--primary-normal: 400;
+$font-weight--primary-bold:   600;
+
+$font-family--secondary:      'Montserrat', sans-serif;
+$font-weight--secondary-bold: 600;
+
+$font-family--icons:          'FontAwesome';
+
+$font-size--base:   18px;
+$line-height--base: 1.4;
+$line-height--lose: 1.6;
+$font-size--level: (
+  -1: $font-size--base * 0.75,
+   0: $font-size--base * 1,
+   1: $font-size--base * 1.3333,
+   2: $font-size--base * 1.7777,
+   3: $font-size--base * 2.3705,
+   4: $font-size--base * 3.1605,
+   5: $font-size--base * 4.2140
+);
+
+/* --- Icons --- */
+@mixin symbol($_icon) {
+  &:before {
+    content: $_icon;
+    display: inline-block;
+    font-family: $font-family--icons;
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.icon::before {
+  display: inline-block;
+  font-family: $font-family--icons;
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon--spin::before {
+  animation: icon--spin 2s infinite linear;
+}
+@keyframes icon--spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.icon--color-dark::before {
+  color: $color--dark;
+}
+
+.icon--color-muted::before {
+  color: $color--muted;
+}
+
+.icon--color-bright::before {
+  color: $color--bright;
+}
+
+.icon--color-primary::before {
+  color: $color--primary;
+}
+
+.icon--color-info::before {
+  color: $color--info;
+}
+
+.icon--color-success::before {
+  color: $color--success;
+}
+
+.icon--color-danger::before {
+  color: $color--danger;
+}
+
+.icon-menu::before { content: '\f0c9'; }
+.icon-close::before { content: '\f00d'; }
+.icon-notifications::before { content: '\f0f3'; }
+.icon-settings::before { content: '\f013'; }
+.icon-profile::before { content: '\f007'; }
+.icon-loading::before { content: '\f1ce'; }
+
+.icon-chevron-up::before { content: '\f077'; }
+.icon-chevron-down::before { content: '\f078'; }
+.icon-chevron-left::before { content: '\f053'; }
+.icon-chevron-right::before { content: '\f054'; }
+
+.icon-info::before { content: '\f05a'; }
+.icon-inquiry::before { content: '\f059'; }
+.icon-success::before { content: '\f058'; }
+.icon-danger::before { content: '\f06a'; }
+
+.icon-email::before { content: '\f0e0'; }
+.icon-phone::before { content: '\f095'; }
+.icon-site::before { content: '\f0ac'; }
+
+.icon-search::before { content: '\f002'; }
+.icon-cart::before { content: '\f07a'; }
+.icon-shipping::before { content: '\f0d1'; }
+.icon-delivered::before { content: '\f46c'; }
+.icon-file::before { content: '\f15b'; }
+.icon-send::before { content: '\f1d8'; }
+.icon-print::before { content: '\f02f'; }
+.icon-rating::before { content: '\f005'; }
+.icon-rating-half::before { content: '\f089'; }
+
+.icon-add::before { content: '\f055'; }
+.icon-remove::before { content: '\f056'; }
+.icon-edit::before { content: '\f14b'; }
+.icon-update::before { content: '\f021'; }
+.icon-favorite::before { content: '\f005'; }
+
+.icon-locked::before { content: '\f023'; }
+.icon-unlocked::before { content: '\f09c'; }
+
+.icon-radio::before { content: '\f111'; }
+.icon-radio-checked::before { content: '\f192'; }
+.icon-checkbox::before { content: '\f0c8'; }
+.icon-checkbox-checked::before { content: '\f14a'; }
+
+.icon-blockquote-deco::before { content: '\f10d'; }
+
+
+/* --- Typography --- */
+html {
+  color: $color--dark;
+  font-family: $font-family--primary;
+  font-size: $font-size--base;
+  line-height: $line-height--base;
+  font-weight: $font-weight--primary-normal;
+}
+
+h1,
+.styleAs-h1 {
+  margin-top: 2.5rem;
+  margin-bottom: .5rem;
+  font-family: $font-family--secondary;
+  font-size: map-get($font-size--level, 4);
+  font-weight: $font-weight--secondary-bold;
+  line-height: 1.15;
+}
+
+h2,
+.styleAs-h2 {
+  margin-top: 2.5rem;
+  margin-bottom: .5rem;
+  font-family: $font-family--secondary;
+  font-size: map-get($font-size--level, 3);
+  font-weight: $font-weight--secondary-bold;
+}
+
+h3,
+.styleAs-h3 {
+  margin-top: 1.5rem;
+  margin-bottom: .5rem;
+  font-family: $font-family--secondary;
+  font-size: map-get($font-size--level, 2);
+  font-weight: $font-weight--secondary-bold;
+}
+
+h4,
+.styleAs-h4 {
+  margin-top: 1.5rem;
+  margin-bottom: .5rem;
+  font-family: $font-family--secondary;
+  font-size: map-get($font-size--level, 1);
+  font-weight: $font-weight--secondary-bold;
+}
+
+h5,
+.styleAs-h5 {
+  margin-top: 1.5rem;
+  margin-bottom: .5rem;
+  font-family: $font-family--secondary;
+  font-size: map-get($font-size--level, 0);
+  font-weight: $font-weight--secondary-bold;
+}
+
+h6,
+.styleAs-h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: $font-family--secondary;
+  font-size: map-get($font-size--level, 0);
+  font-weight: $font-weight--secondary-bold;
+}
+
+p,
+.styleAs-p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: map-get($font-size--level, 0);
+  line-height: $line-height--lose;
+}
+
+h1 + p, .styleAs-h1 + p,
+h2 + p, .styleAs-h2 + p,
+h3 + p, .styleAs-h3 + p,
+h4 + p, .styleAs-h4 + p,
+h5 + p, .styleAs-h5 + p,
+h6 + p, .styleAs-h6 + p {
+  margin-top: 0;
+}
+
+small {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  font-size: map-get($font-size--level, -1);
+}
+
+a,
+.styleAs-a {
+  color: $color--primary;
+  text-decoration: none;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+strong {
+  font-weight: $font-weight--primary-bold;
+}
+
+em {
+  font-style: italic;
+}
+
+blockquote {
+  padding: .5rem;
+}
+
+blockquote::before {
+  @extend .icon;
+  @extend .icon-blockquote-deco;
+  position: relative;
+  float: left;
+  top: 5px;
+  left: -10px;
+  opacity: .07;
+  font-size: 3em;
+  line-height: 0;
+}
+
+cite {
+  display: block;
+  margin-top: .25rem;
+  text-align: right;
+  font-style: normal;
+  font-weight: $font-weight--primary-bold;
+}
+
+label,
+.styleAs-label {
+  display: inline-block;
+  padding: 0 4px;
+  color: $color--muted;
+  font-weight: $font-weight--primary-bold;
+  font-size: map-get($font-size--level, -1);
+  text-transform: uppercase;
+  user-select: none;
+}
+
+input, textarea, select {
+  display: block;
+  width: 100%;
+  padding: 4px 2px;
+  border: 2px solid transparent;
+  border-bottom-color: $color--muted-light;
+  border-radius: 0;
+  margin: 0;
+  background-color: $color--bright;
+
+  color: inherit;
+  font-family: inherit;
+  font-size: map-get($font-size--level, 0);
+  line-height: $line-height--base;
+  font-weight: $font-weight--primary-normal;
+
+  transition: border-color .5s;
+  touch-action: manipulation;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &:focus {
+    border-bottom-color: $color--primary;
+  }
+
+  &::placeholder {
+    color: $color--muted-light;
+  }
+}
+
+input[type="radio"],
+input[type="checkbox"]{
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  padding: 0 4px;
+  border: none;
+  background: none;
+
+  &::before {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.5em;
+    color: $color--muted;
+    transition: color .3s;
+  }
+
+  & + label {
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    margin-bottom: 0;
+    color: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    text-transform: inherit;
+    transition: border-color .5s;
+  }
+
+  &:focus + label {
+    border-bottom-color: $color--primary;
+  }
+}
+
+input[type="radio"] {
+  &::before {
+    @extend .icon;
+    @extend .icon-radio;
+  }
+
+  &:checked::before {
+    @extend .icon;
+    @extend .icon-radio-checked;
+    @extend .text-primary;
+  }
+}
+
+input[type="checkbox"] {
+  &::before {
+    @extend .icon;
+    @extend .icon-checkbox;
+  }
+
+  &:checked::before {
+    @extend .icon;
+    @extend .icon-checkbox-checked;
+    @extend .text-primary;
+  }
+}
+
+input[type="file"] {
+  display: flex;
+}
+
+button,
+.styleAs-button {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  border: 2px solid $color--light;
+  border-radius: 4px;
+  margin: 0;
+  background: $color--bright;
+  box-shadow: none;
+  outline: none;
+
+  color: $color--dark;
+  font-family: inherit;
+  font-size: map-get($font-size--level, 0);
+  line-height: 1;
+  font-weight: $font-weight--primary-normal;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+
+  transition: border-color .3s,
+              background-color .3s,
+              color .3s,
+              opacity .3s;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  -webkit-appearance: none;
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    background: $color--light;
+  }
+
+  &:disabled {
+    opacity: .5;
+    cursor: auto;
+  }
+}
+
+.styleAs-button:hover,
+.styleAs-button:focus {
+  text-decoration: none;
+}
+
+progress {
+
+}
+
+hr {
+  border: 0;
+  border-top: 2px solid $color--dark;
+  margin: 1rem 0;
+}
+
+ul, ol {
+  padding-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  li {
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+  }
+
+  ul, ol {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+th, td {
+  padding: 10px 15px;
+}
+
+tr th:first-of-type,
+tr td:first-of-type {
+  padding-left: 0;
+}
+
+tr th:last-of-type,
+tr td:last-of-type {
+  padding-right: 0;
+}
+
+thead tr:first-of-type th,
+tbody:first-child tr:first-of-type td {
+  padding-top: 0;
+}
+
+tbody:first-child tr:last-of-type td,
+tfoot tr:last-of-type td {
+  padding-bottom: 0;
+}
+
+thead th,
+thead td {
+  vertical-align: bottom;
+  font-size: map-get($font-size--level, -1);
+  color: $color--muted;
+  text-transform: uppercase;
+}
+
+tbody td {
+  vertical-align: middle;
+}
+
+tfoot td {
+  vertical-align: middle;
+}
+
+code, pre {
+  padding: 2px 6px;
+  background: $color--light;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+*::selection {
+  background-color: $color--secondary;
+  color: $color--bright;
+}
+
+
+/* --- Components --- */
+.form-message,
+.input-message {
+  font-size: map-get($font-size--level, -1);
+}
+
+.input-message {
+  min-height: 18px;
+  padding-left: 4px;
+  margin-top: .25rem;
+}
+
+.card {
+  padding: 2rem;
+  border-radius: 4px;
+  @extend .bg-bright;
+  @extend .text-dark;
+
+  & > *:first-child {
+    margin-top: 0;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.circle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.badge {
+
+}
+
+.close {
+  @extend .icon;
+  @extend .icon-close;
+}
+
+.loading {
+  @extend .icon;
+  @extend .icon--spin;
+  @extend .icon-loading;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, .7);
+}
+
+// Modals
+// This class gets placed on the body element when the modal is open
+.lock-scroll {
+  overflow: hidden;
+}
+
+.modal-backdrop {
+  @extend .overlay;
+  position: fixed;
+  z-index: 1040;
+  overflow-x: hidden;
+  overflow-y: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0 15px;
+}
+
+.modal-closer {
+  position: relative;
+  top: -3px;
+  display: block;
+  float: right;
+  width: 1.2rem;
+  height: 1.5rem;
+  margin-left: 1.5rem;
+  color: $color--muted;
+  line-height: 1;
+  cursor: pointer;
+
+  @extend .close;
+  &::before {
+    position: absolute;
+    z-index: 1055;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  &:hover {
+    color: $color--dark;
+  }
+}
+
+.modal {
+  @extend .card;
+  position: relative;
+  z-index: 1050;
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto;
+
+  & > *:first-child {
+    margin-top: 0;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Statuses
+.status-loading {
+  text-align: center;
+
+  h6 {
+    margin-top: 0;
+  }
+
+  &::before {
+    @extend .icon;
+    @extend .icon-loading;
+    @extend .icon--spin;
+    @extend .icon--color-muted;
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 2em;
+  }
+}
+
+.status-success {
+  text-align: center;
+
+  h6 {
+    margin-top: 0;
+  }
+
+  &::before {
+    @extend .icon;
+    @extend .icon-success;
+    @extend .icon--color-success;
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 2.5em;
+  }
+}
+
+.status-error {
+  text-align: center;
+
+  h6 {
+    margin-top: 0;
+  }
+
+  &::before {
+    @extend .icon;
+    @extend .icon-danger;
+    @extend .icon--color-muted;
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 2.5em;
+  }
+}
+
+.status-confirm {
+  text-align: center;
+
+  h6 {
+    margin-top: 0;
+  }
+
+  &::before {
+    @extend .icon;
+    @extend .icon-inquiry;
+    @extend .icon--color-info;
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 2.5em;
+  }
+}
+
+.status-danger {
+  text-align: center;
+
+  h6 {
+    margin-top: 0;
+  }
+
+  &::before {
+    @extend .icon;
+    @extend .icon-danger;
+    @extend .icon--color-danger;
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 2.5em;
+  }
+}
+
+.status-empty {
+  text-align: center;
+  @extend .text-muted;
+
+  h6 {
+    margin-top: 0;
+  }
+}
+
+// Button Variations
+.btn-primary {
+  background-color: $color--primary;
+  border-color: transparent;
+  color: $color--bright;
+}
+
+.btn-primary:hover:not(:disabled),
+.btn-primary:focus:not(:disabled) {
+  background-color: darken($color--primary, 15%);
+}
+
+.btn-secondary {
+  background: none;
+  border-color: lighten($color--primary, 27%);
+  color: $color--primary;
+}
+
+.btn-secondary:hover:not(:disabled),
+.btn-secondary:focus:not(:disabled) {
+  background-color: lighten($color--primary, 37%);
+  border-color: lighten($color--primary, 37%);
+  color: $color--primary;
+}
+
+//.btn-secondary {
+//  background-color: $color--light;
+//  border-color: transparent;
+//  color: $color--dark;
+//}
+//
+//.btn-secondary:hover:not(:disabled),
+//.btn-secondary:focus:not(:disabled) {
+//  background-color: darken($color--light, 10%);
+//}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: map-get($font-size--level, -1);
+}
+
+.btn-lg {
+  padding: 10px 22px;
+  font-size: map-get($font-size--level, 1);
+}
+
+.btn-tight {
+  display: inline-block;
+  width: auto;
+}
+
+
+// Nav Variations
+.nav-link {
+  color: $color--dark;
+  text-decoration: none;
+
+  &:hover,
+  &.nav-link--active {
+    color: $color--primary;
+    text-decoration: none;
+  }
+}
+
+// Typographic Variations
+.supheader {
+  margin-bottom: .25rem;
+  color: $color--muted;
+  text-transform: uppercase;
+  font-size: map-get($font-size--level, -1);
+  font-weight: $font-weight--primary-bold;
+}
+
+.subheader {
+  margin-bottom: .5rem;
+  color: $color--muted;
+  font-size: map-get($font-size--level, -1);
+  font-weight: $font-weight--primary-normal;
+}
+
+.supheader + h1,
+.supheader + h2,
+.supheader + h3,
+.supheader + h4,
+.supheader + h5,
+.supheader + h6 {
+  margin-top: 0;
+}
+
+.text-primary {
+  color: $color--primary;
+
+  a, .styleAs-a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+.text-secondary {
+  color: $color--secondary;
+
+  a, .styleAs-a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+.text-success {
+  color: $color--success;
+
+  a, .styleAs-a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+.text-danger {
+  color: $color--danger;
+
+  a, .styleAs-a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+.text-bright {
+  color: $color--bright;
+
+  a, .styleAs-a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+.text-muted {
+  color: $color--muted;
+
+  a, .styleAs-a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+.text-dark {
+  color: $color--dark;
+
+  a, .styleAs-a {
+    @extend .styleAs-a;
+  }
+}
+
+// Background Variations
+.bg-bright {
+  background-color: $color--bright;
+}
+
+.bg-light {
+  background-color: $color--light;
+}
+
+.bg-dark {
+  background-color: $color--dark;
+}
+
+.bg-primary {
+  background-color: $color--primary;
+}
+
+.bg-secondary {
+  background-color: $color--secondary;
+}
+
+.bg-tertiary {
+  background-color: $color--tertiary;
+}
+
+.bg-muted {
+  background-color: $color--muted;
+}
+
+// Tables
+tfoot.table-line-above {
+  & > tr:first-of-type td {
+    padding-top: 15px;
+    border-top: 1px solid $color--muted-light;
+  }
+
+  & + tbody > tr:last-of-type td {
+    padding-bottom: 15px;
+  }
+}
+
+tr.table-line-below {
+  & td {
+    padding-bottom: 15px;
+    border-bottom: 1px solid $color--muted-light;
+  }
+
+  & + tr td {
+    padding-top: 15px;
+  }
+}
+
+.table-right-align-col {
+  text-align: right;
+}
+
+.table-shrink-width {
+    width: 1px;
+}
+
+

@@ -1,0 +1,14 @@
+{
+  "name": "torchbrand",
+  "version": "1.0.0",
+  "description": "Library of useful styles and components for adding the Torch brand to a project",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "node-sass --include-path scss src/torch-brand.scss dist/torch-brand.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "devDependencies": {
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.17.1"
+  }
+}
