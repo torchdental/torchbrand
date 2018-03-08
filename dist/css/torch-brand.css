@@ -6,17 +6,17 @@
 @font-face {
   font-family: 'Open Sans';
   font-weight: 400;
-  src: url("../assets/fonts/open-sans/OpenSans-Regular.ttf"); }
+  src: url("../../assets/fonts/open-sans/OpenSans-Regular.ttf"); }
 
 @font-face {
   font-family: 'Open Sans';
   font-weight: 700;
-  src: url("../assets/fonts/open-sans/OpenSans-SemiBold.ttf"); }
+  src: url("../../assets/fonts/open-sans/OpenSans-SemiBold.ttf"); }
 
 @font-face {
   font-family: 'Montserrat';
   font-weight: 600;
-  src: url("../assets/fonts/montserrat/Montserrat-SemiBold.ttf"); }
+  src: url("../../assets/fonts/montserrat/Montserrat-SemiBold.ttf"); }
 
 /* --- Variables --- */
 /* --- Icons --- */
