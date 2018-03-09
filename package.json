@@ -1,14 +1,14 @@
 {
   "name": "torchbrand",
   "version": "1.0.0",
+  "repository": "git@github.com:torchdental/torchbrand.git",
   "description": "Library of useful styles and components for adding the Torch brand to a project",
   "main": "dist/css/torch-brand.css",
   "style": "dist/css/torch-brand.css",
   "scripts": {
-    "build-css": "node-sass --include-path scss src/torch-brand.scss dist/torch-brand.css",
+    "build-css": "node-sass --include-path scss src/torch-brand.scss dist/css/torch-brand.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
-  "dependencies": {},
   "devDependencies": {
     "node-sass": "^4.7.2",
     "nodemon": "^1.17.1"

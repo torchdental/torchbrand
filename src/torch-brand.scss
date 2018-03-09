@@ -3,24 +3,39 @@
  *  This file is auto-generated from torch-brand.scss
  */
 
+// Import css reset
+@import 'reset';
+
 
 /* --- Font Face Directives --- */
 @font-face {
   font-family: 'Open Sans';
   font-weight: 400;
-  src: url('../assets/fonts/open-sans/OpenSans-Regular.ttf');
+  src: url('../../assets/fonts/open-sans/OpenSans-Regular.ttf');
 }
 
 @font-face {
   font-family: 'Open Sans';
-  font-weight: 700;
-  src: url('../assets/fonts/open-sans/OpenSans-SemiBold.ttf');
+  font-weight: 600;
+  src: url('../../assets/fonts/open-sans/OpenSans-SemiBold.ttf');
 }
 
 @font-face {
   font-family: 'Montserrat';
   font-weight: 600;
-  src: url('../assets/fonts/montserrat/Montserrat-SemiBold.ttf');
+  src: url('../../assets/fonts/montserrat/Montserrat-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  font-weight: 400;
+  src: url('../../assets/fonts/font-awesome/fa-regular-400.ttf');
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  font-weight: 900;
+  src: url('../../assets/fonts/font-awesome/fa-solid-900.ttf');
 }
 
 /* --- Variables --- */
@@ -56,6 +71,8 @@ $font-family--secondary:      'Montserrat', sans-serif;
 $font-weight--secondary-bold: 600;
 
 $font-family--icons:          'FontAwesome';
+$font-weight--icons-normal:   400;
+$font-weight--icons-solid:    900;
 
 $font-size--base:   18px;
 $line-height--base: 1.4;
@@ -88,7 +105,7 @@ $font-size--level: (
   display: inline-block;
   font-family: $font-family--icons;
   font-style: normal;
-  font-weight: normal;
+  font-weight: $font-weight--icons-solid;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -527,11 +544,11 @@ thead td {
 }
 
 tbody td {
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 tfoot td {
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 code, pre {

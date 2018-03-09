@@ -2,6 +2,94 @@
  *  Styles for Torch Branding
  *  This file is auto-generated from torch-brand.scss
  */
+/* CSS Reset for Cross Browser Consistency */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+html {
+  line-height: 1;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent; }
+
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block; }
+
+body {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0; }
+
+a {
+  outline: none; }
+
+i {
+  font-style: normal; }
+
+address {
+  font-style: normal;
+  line-height: inherit; }
+
+blockquote,
+figure {
+  margin: 0; }
+
+img {
+  vertical-align: middle;
+  border-style: none; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+th {
+  text-align: inherit; }
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  outline: none; }
+
+input[type="radio"],
+input[type="checkbox"] {
+  padding: 0; }
+
+textarea {
+  overflow: auto;
+  resize: vertical; }
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  line-height: inherit;
+  color: inherit;
+  white-space: normal; }
+
+progress {
+  vertical-align: baseline; }
+
+iframe {
+  border: 0; }
+
 /* --- Font Face Directives --- */
 @font-face {
   font-family: 'Open Sans';
@@ -10,7 +98,7 @@
 
 @font-face {
   font-family: 'Open Sans';
-  font-weight: 700;
+  font-weight: 600;
   src: url("../../assets/fonts/open-sans/OpenSans-SemiBold.ttf"); }
 
 @font-face {
@@ -18,13 +106,23 @@
   font-weight: 600;
   src: url("../../assets/fonts/montserrat/Montserrat-SemiBold.ttf"); }
 
+@font-face {
+  font-family: 'FontAwesome';
+  font-weight: 400;
+  src: url("../../assets/fonts/font-awesome/fa-regular-400.ttf"); }
+
+@font-face {
+  font-family: 'FontAwesome';
+  font-weight: 900;
+  src: url("../../assets/fonts/font-awesome/fa-solid-900.ttf"); }
+
 /* --- Variables --- */
 /* --- Icons --- */
 .icon::before, blockquote::before, input[type="radio"]::before, input[type="radio"]:checked::before, input[type="checkbox"]::before, input[type="checkbox"]:checked::before, .close::before, .modal-closer::before, .loading::before, .status-loading::before, .status-success::before, .status-error::before, .status-confirm::before, .status-danger::before {
   display: inline-block;
   font-family: "FontAwesome";
   font-style: normal;
-  font-weight: normal;
+  font-weight: 900;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -447,10 +545,10 @@ thead td {
   text-transform: uppercase; }
 
 tbody td {
-  vertical-align: middle; }
+  vertical-align: top; }
 
 tfoot td {
-  vertical-align: middle; }
+  vertical-align: top; }
 
 code, pre {
   padding: 2px 6px;
