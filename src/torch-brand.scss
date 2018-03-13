@@ -491,7 +491,7 @@ progress {
 
 hr {
   border: 0;
-  border-top: 2px solid $color--dark;
+  border-top: 2px solid $color--muted;
   margin: 1rem 0;
 }
 
@@ -564,6 +564,53 @@ code, pre {
 }
 
 
+/* --- Utilities --- */
+.align-items-equally {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+
+  & > * {
+    flex: 1 1 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.align-items-flow {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  & > * {
+    flex: 0 0 auto;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.align-items-vert-center {
+  display: flex;
+  align-items: center;
+}
+
+
 /* --- Components --- */
 .form-message,
 .input-message {
@@ -580,7 +627,6 @@ code, pre {
   padding: 2rem;
   border-radius: 4px;
   @extend .bg-bright;
-  @extend .text-dark;
 
   & > *:first-child {
     margin-top: 0;
@@ -659,7 +705,8 @@ code, pre {
     line-height: 1;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $color--dark;
   }
 }
@@ -802,17 +849,6 @@ code, pre {
   color: $color--primary;
 }
 
-//.btn-secondary {
-//  background-color: $color--light;
-//  border-color: transparent;
-//  color: $color--dark;
-//}
-//
-//.btn-secondary:hover:not(:disabled),
-//.btn-secondary:focus:not(:disabled) {
-//  background-color: darken($color--light, 10%);
-//}
-
 .btn-sm {
   padding: 5px 10px;
   font-size: map-get($font-size--level, -1);
@@ -830,11 +866,55 @@ code, pre {
 
 
 // Nav Variations
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: stretch;
+  padding: 0 15px;
+}
+
+.navbar-brand {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.navbar-nav {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-nav--right {
+  margin-left: auto;
+}
+
+.nav-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  & > * {
+    padding: 15px 10px;
+  }
+}
+
 .nav-link {
   color: $color--dark;
   text-decoration: none;
 
   &:hover,
+  &:focus,
   &.nav-link--active {
     color: $color--primary;
     text-decoration: none;

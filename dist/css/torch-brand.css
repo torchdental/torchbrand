@@ -351,23 +351,15 @@ small {
 a,
 .styleAs-a,
 .text-dark a,
-.card a,
-.modal a,
-.text-dark .styleAs-a,
-.card .styleAs-a,
-.modal .styleAs-a {
+.text-dark .styleAs-a {
   color: #ff4f2c;
   text-decoration: none;
   outline: none; }
   a:hover, a:focus,
   .styleAs-a:hover,
   .text-dark a:hover,
-  .card a:hover,
-  .modal a:hover,
   .styleAs-a:focus,
-  .text-dark a:focus,
-  .card a:focus,
-  .modal a:focus {
+  .text-dark a:focus {
     text-decoration: underline; }
 
 strong {
@@ -504,7 +496,7 @@ button,
 
 hr {
   border: 0;
-  border-top: 2px solid #333;
+  border-top: 2px solid #888;
   margin: 1rem 0; }
 
 ul, ol {
@@ -559,6 +551,37 @@ code, pre {
 *::selection {
   background-color: #1994c9;
   color: #fff; }
+
+/* --- Utilities --- */
+.align-items-equally {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%; }
+  .align-items-equally > * {
+    flex: 1 1 100%;
+    padding-left: 5px;
+    padding-right: 5px; }
+    .align-items-equally > *:first-child {
+      padding-left: 0; }
+    .align-items-equally > *:last-child {
+      padding-right: 0; }
+
+.align-items-flow {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; }
+  .align-items-flow > * {
+    flex: 0 0 auto;
+    padding-left: 5px;
+    padding-right: 5px; }
+    .align-items-flow > *:first-child {
+      padding-left: 0; }
+    .align-items-flow > *:last-child {
+      padding-right: 0; }
+
+.align-items-vert-center {
+  display: flex;
+  align-items: center; }
 
 /* --- Components --- */
 .form-message,
@@ -620,7 +643,7 @@ code, pre {
     right: 0;
     font-size: 1.5rem;
     line-height: 1; }
-  .modal-closer:hover {
+  .modal-closer:hover, .modal-closer:focus {
     color: #333; }
 
 .modal {
@@ -716,10 +739,46 @@ code, pre {
   display: inline-block;
   width: auto; }
 
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: stretch;
+  padding: 0 15px; }
+
+.navbar-brand {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 10px; }
+
+.navbar-nav {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+  margin: 0; }
+
+.navbar-nav--right {
+  margin-left: auto; }
+
+.nav-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+  .nav-item > * {
+    padding: 15px 10px; }
+
 .nav-link {
   color: #333;
   text-decoration: none; }
-  .nav-link:hover, .nav-link.nav-link--active {
+  .nav-link:hover, .nav-link:focus, .nav-link.nav-link--active {
     color: #ff4f2c;
     text-decoration: none; }
 
@@ -746,41 +805,41 @@ code, pre {
 
 .text-primary, input[type="radio"]:checked::before, input[type="checkbox"]:checked::before {
   color: #ff4f2c; }
-  .text-primary a, input[type="radio"]:checked::before a, input[type="checkbox"]:checked::before a, .text-primary .styleAs-a, input[type="radio"]:checked::before .styleAs-a, input[type="checkbox"]:checked::before .styleAs-a, .text-primary .text-dark a, .text-dark .text-primary a, input[type="radio"]:checked::before .text-dark a, .text-dark input[type="radio"]:checked::before a, input[type="checkbox"]:checked::before .text-dark a, .text-dark input[type="checkbox"]:checked::before a, .text-primary .card a, .card .text-primary a, input[type="radio"]:checked::before .card a, .card input[type="radio"]:checked::before a, input[type="checkbox"]:checked::before .card a, .card input[type="checkbox"]:checked::before a, .text-primary .modal a, .modal .text-primary a, input[type="radio"]:checked::before .modal a, .modal input[type="radio"]:checked::before a, input[type="checkbox"]:checked::before .modal a, .modal input[type="checkbox"]:checked::before a {
+  .text-primary a, input[type="radio"]:checked::before a, input[type="checkbox"]:checked::before a, .text-primary .styleAs-a, input[type="radio"]:checked::before .styleAs-a, input[type="checkbox"]:checked::before .styleAs-a, .text-primary .text-dark a, .text-dark .text-primary a, input[type="radio"]:checked::before .text-dark a, .text-dark input[type="radio"]:checked::before a, input[type="checkbox"]:checked::before .text-dark a, .text-dark input[type="checkbox"]:checked::before a {
     color: inherit;
     text-decoration: underline; }
 
 .text-secondary {
   color: #1994c9; }
-  .text-secondary a, .text-secondary .styleAs-a, .text-secondary .text-dark a, .text-dark .text-secondary a, .text-secondary .card a, .card .text-secondary a, .text-secondary .modal a, .modal .text-secondary a {
+  .text-secondary a, .text-secondary .styleAs-a, .text-secondary .text-dark a, .text-dark .text-secondary a {
     color: inherit;
     text-decoration: underline; }
 
 .text-success {
   color: #0dba52; }
-  .text-success a, .text-success .styleAs-a, .text-success .text-dark a, .text-dark .text-success a, .text-success .card a, .card .text-success a, .text-success .modal a, .modal .text-success a {
+  .text-success a, .text-success .styleAs-a, .text-success .text-dark a, .text-dark .text-success a {
     color: inherit;
     text-decoration: underline; }
 
 .text-danger {
   color: #ff4f2c; }
-  .text-danger a, .text-danger .styleAs-a, .text-danger .text-dark a, .text-dark .text-danger a, .text-danger .card a, .card .text-danger a, .text-danger .modal a, .modal .text-danger a {
+  .text-danger a, .text-danger .styleAs-a, .text-danger .text-dark a, .text-dark .text-danger a {
     color: inherit;
     text-decoration: underline; }
 
 .text-bright {
   color: #fff; }
-  .text-bright a, .text-bright .styleAs-a, .text-bright .text-dark a, .text-dark .text-bright a, .text-bright .card a, .card .text-bright a, .text-bright .modal a, .modal .text-bright a {
+  .text-bright a, .text-bright .styleAs-a, .text-bright .text-dark a, .text-dark .text-bright a {
     color: inherit;
     text-decoration: underline; }
 
 .text-muted, .status-empty {
   color: #888; }
-  .text-muted a, .status-empty a, .text-muted .styleAs-a, .status-empty .styleAs-a, .text-muted .text-dark a, .text-dark .text-muted a, .status-empty .text-dark a, .text-dark .status-empty a, .text-muted .card a, .card .text-muted a, .status-empty .card a, .card .status-empty a, .text-muted .modal a, .modal .text-muted a, .status-empty .modal a, .modal .status-empty a {
+  .text-muted a, .status-empty a, .text-muted .styleAs-a, .status-empty .styleAs-a, .text-muted .text-dark a, .text-dark .text-muted a, .status-empty .text-dark a, .text-dark .status-empty a {
     color: inherit;
     text-decoration: underline; }
 
-.text-dark, .card, .modal {
+.text-dark {
   color: #333; }
 
 .bg-bright, .card, .modal {
