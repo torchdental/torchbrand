@@ -664,9 +664,11 @@ code, pre {
 
 .badge {
   display: inline-block;
+  vertical-align: middle;
   padding: .2em .7em;
   border-radius: 1em;
   background-color: $color--light;
+  font-size: .75em;
 }
 
 .close {

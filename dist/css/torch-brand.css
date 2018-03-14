@@ -625,9 +625,11 @@ code, pre {
 
 .badge {
   display: inline-block;
+  vertical-align: middle;
   padding: .2em .7em;
   border-radius: 1em;
-  background-color: #f2f2f2; }
+  background-color: #f2f2f2;
+  font-size: .75em; }
 
 .overlay, .modal-backdrop {
   background: rgba(0, 0, 0, 0.7); }
