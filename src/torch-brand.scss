@@ -663,7 +663,10 @@ code, pre {
 }
 
 .badge {
-
+  display: inline-block;
+  padding: .2em .7em;
+  border-radius: 1em;
+  background-color: $color--light;
 }
 
 .close {
@@ -735,6 +738,14 @@ code, pre {
 
   & > *:last-child {
     margin-bottom: 0;
+  }
+
+  &.modal-sm {
+    max-width: 450px;
+  }
+
+  &.modal-lg {
+    max-width: 750px;
   }
 }
 
