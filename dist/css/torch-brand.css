@@ -221,7 +221,8 @@ iframe {
   content: '\f46c'; }
 
 .icon-file::before {
-  content: '\f15b'; }
+  content: '\f15b';
+  font-weight: 400; }
 
 .icon-send::before {
   content: '\f1d8'; }
@@ -511,7 +512,21 @@ ul, ol {
     margin-bottom: 0; }
 
 th, td {
-  padding: 10px 15px; }
+  padding-left: 15px;
+  padding-right: 15px; }
+
+thead th,
+thead td {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+tbody td {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+tfoot td {
+  padding-top: 7px;
+  padding-bottom: 7px; }
 
 tr th:first-of-type,
 tr td:first-of-type {
@@ -626,23 +641,17 @@ code, pre {
   padding: 0 15px; }
 
 .modal-closer {
-  position: relative;
-  top: -3px;
+  position: absolute;
+  z-index: 1055;
+  top: 14px;
+  right: 18px;
   display: block;
-  float: right;
   width: 1.2rem;
   height: 1.5rem;
-  margin-left: 1.5rem;
   color: #888;
+  font-size: 1.5rem;
   line-height: 1;
   cursor: pointer; }
-  .modal-closer::before {
-    position: absolute;
-    z-index: 1055;
-    top: 0;
-    right: 0;
-    font-size: 1.5rem;
-    line-height: 1; }
   .modal-closer:hover, .modal-closer:focus {
     color: #333; }
 
