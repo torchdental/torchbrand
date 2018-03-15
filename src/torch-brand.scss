@@ -163,6 +163,9 @@ $font-size--level: (
 .icon-chevron-left::before { content: '\f053'; }
 .icon-chevron-right::before { content: '\f054'; }
 
+.icon-plus::before { content: '\f067'; }
+.icon-minus::before { content: '\f068'; }
+
 .icon-info::before { content: '\f05a'; }
 .icon-inquiry::before { content: '\f059'; }
 .icon-success::before { content: '\f058'; }
@@ -664,7 +667,7 @@ code, pre {
 
 .badge {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: text-bottom;
   padding: .2em .7em;
   border-radius: 1em;
   background-color: $color--light;
