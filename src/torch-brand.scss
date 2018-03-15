@@ -374,6 +374,12 @@ input, textarea, select {
   }
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 input[type="radio"],
 input[type="checkbox"]{
   display: inline-block;
@@ -521,8 +527,8 @@ th, td {
 
 thead th,
 thead td {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
 }
 
 tbody td {
