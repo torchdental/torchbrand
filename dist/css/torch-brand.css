@@ -470,6 +470,7 @@ input[type="checkbox"] {
     display: inline-block;
     vertical-align: middle;
     font-size: 1.5em;
+    line-height: 1;
     color: #888;
     transition: color .3s; }
   input[type="radio"] + label,
