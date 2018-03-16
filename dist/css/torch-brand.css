@@ -502,6 +502,9 @@ input[type="checkbox"]::before {
 input[type="checkbox"]:checked::before {
   color: #ff4f2c; }
 
+input[type="checkbox"].checkbox-success:checked::before {
+  color: #0dba52; }
+
 input[type="file"] {
   display: flex; }
 

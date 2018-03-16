@@ -480,6 +480,10 @@ input[type="checkbox"] {
     @extend .icon-checkbox-checked;
     color: $color--primary;
   }
+
+  &.checkbox-success:checked::before {
+    color: $color--success;
+  }
 }
 
 input[type="file"] {
