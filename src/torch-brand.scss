@@ -78,13 +78,13 @@ $font-size--base:   18px;
 $line-height--base: 1.4;
 $line-height--lose: 1.6;
 $font-size--level: (
-  -1: $font-size--base * 0.75,
-   0: $font-size--base * 1,
-   1: $font-size--base * 1.3333,
-   2: $font-size--base * 1.7777,
-   3: $font-size--base * 2.3705,
-   4: $font-size--base * 3.1605,
-   5: $font-size--base * 4.2140
+  -1: 1rem * 0.75,
+   0: 1rem * 1,
+   1: 1rem * 1.3333,
+   2: 1rem * 1.7777,
+   3: 1rem * 2.3705,
+   4: 1rem * 3.1605,
+   5: 1rem * 4.2140
 );
 
 /* --- Icons --- */
@@ -333,6 +333,33 @@ cite {
   font-weight: $font-weight--primary-bold;
 }
 
+progress {
+
+}
+
+hr {
+  border: 0;
+  border-top: 2px solid $color--muted;
+  margin: 1rem 0;
+}
+
+ul, ol {
+  padding-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  li {
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+  }
+
+  ul, ol {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+// Forms
 label,
 .styleAs-label {
   display: inline-block;
@@ -350,7 +377,7 @@ input, textarea, select {
   padding: 4px 2px;
   border: 2px solid transparent;
   border-bottom-color: $color--muted-light;
-  border-radius: 0;
+  border-radius: 4px;
   margin: 0;
   background-color: $color--bright;
 
@@ -371,6 +398,17 @@ input, textarea, select {
 
   &::placeholder {
     color: $color--muted-light;
+  }
+}
+
+textarea {
+  resize: none;
+  background-color: $color--light;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  &::placeholder {
+    color: $color--muted;
   }
 }
 
@@ -494,31 +532,9 @@ button,
   text-decoration: none;
 }
 
-progress {
-
-}
-
-hr {
-  border: 0;
-  border-top: 2px solid $color--muted;
-  margin: 1rem 0;
-}
-
-ul, ol {
-  padding-left: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-
-  li {
-    margin-top: .25rem;
-    margin-bottom: .25rem;
-  }
-
-  ul, ol {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
+// Tables
+$table--heavy-line: 1px solid #aaa;
+$table--light-line: 1px solid #ddd;
 
 th, td {
   padding-left: 15px;
@@ -564,7 +580,7 @@ tfoot tr:last-of-type td {
 thead th,
 thead td {
   vertical-align: bottom;
-  font-size: map-get($font-size--level, -1);
+  font-size: .9rem;
   color: $color--muted;
   text-transform: uppercase;
 }
@@ -577,6 +593,47 @@ tfoot td {
   vertical-align: top;
 }
 
+// Lines inside tbody
+tbody tr:not(:last-of-type) td {
+  border-bottom: $table--light-line;
+}
+
+// Line Below thead
+thead {
+  & tr:last-of-type th {
+    border-bottom: $table--heavy-line;
+  }
+
+  & ~ tbody > tr:first-of-type td {
+    padding-top: 15px;
+  }
+}
+
+// Line Below tfoot
+tfoot {
+  & tr:first-of-type td {
+    padding-top: 12px;
+    border-top: $table--heavy-line;
+  }
+
+  & ~ tbody > tr:last-of-type td {
+    padding-bottom: 15px;
+  }
+}
+
+// Optional Lines within tfoot
+tr.table-line-below {
+  & td {
+    padding-bottom: 12px;
+    border-bottom: $table--heavy-line;
+  }
+
+  & + tr td {
+    padding-top: 12px;
+  }
+}
+
+// Other
 code, pre {
   padding: 2px 6px;
   background: $color--light;
@@ -1067,37 +1124,6 @@ code, pre {
 
 .bg-muted {
   background-color: $color--muted;
-}
-
-// Tables
-tfoot.table-line-above {
-  & > tr:first-of-type td {
-    padding-top: 15px;
-    border-top: 1px solid $color--muted-light;
-  }
-
-  & + tbody > tr:last-of-type td {
-    padding-bottom: 15px;
-  }
-}
-
-tr.table-line-below {
-  & td {
-    padding-bottom: 15px;
-    border-bottom: 1px solid $color--muted-light;
-  }
-
-  & + tr td {
-    padding-top: 15px;
-  }
-}
-
-.table-right-align-col {
-  text-align: right;
-}
-
-.table-shrink-width {
-    width: 1px;
 }
 
 

@@ -291,7 +291,7 @@ h1,
   margin-top: 2.5rem;
   margin-bottom: .5rem;
   font-family: "Montserrat", sans-serif;
-  font-size: 56.889px;
+  font-size: 3.1605rem;
   font-weight: 600;
   line-height: 1.15; }
 
@@ -300,7 +300,7 @@ h2,
   margin-top: 2.5rem;
   margin-bottom: .5rem;
   font-family: "Montserrat", sans-serif;
-  font-size: 42.669px;
+  font-size: 2.3705rem;
   font-weight: 600; }
 
 h3,
@@ -308,7 +308,7 @@ h3,
   margin-top: 1.5rem;
   margin-bottom: .5rem;
   font-family: "Montserrat", sans-serif;
-  font-size: 31.9986px;
+  font-size: 1.7777rem;
   font-weight: 600; }
 
 h4,
@@ -316,7 +316,7 @@ h4,
   margin-top: 1.5rem;
   margin-bottom: .5rem;
   font-family: "Montserrat", sans-serif;
-  font-size: 23.9994px;
+  font-size: 1.3333rem;
   font-weight: 600; }
 
 h5,
@@ -324,7 +324,7 @@ h5,
   margin-top: 1.5rem;
   margin-bottom: .5rem;
   font-family: "Montserrat", sans-serif;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 600; }
 
 h6,
@@ -332,14 +332,14 @@ h6,
   margin-top: 0;
   margin-bottom: 0;
   font-family: "Montserrat", sans-serif;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 600; }
 
 p,
 .styleAs-p {
   margin-top: 1rem;
   margin-bottom: 1rem;
-  font-size: 18px;
+  font-size: 1rem;
   line-height: 1.6; }
 
 h1 + p, .styleAs-h1 + p,
@@ -353,7 +353,7 @@ h6 + p, .styleAs-h6 + p {
 small {
   margin-top: .5rem;
   margin-bottom: .5rem;
-  font-size: 13.5px; }
+  font-size: 0.75rem; }
 
 a,
 .styleAs-a,
@@ -394,13 +394,29 @@ cite {
   font-style: normal;
   font-weight: 600; }
 
+hr {
+  border: 0;
+  border-top: 2px solid #888;
+  margin: 1rem 0; }
+
+ul, ol {
+  padding-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
+  ul li, ol li {
+    margin-top: .25rem;
+    margin-bottom: .25rem; }
+  ul ul, ul ol, ol ul, ol ol {
+    margin-top: 0;
+    margin-bottom: 0; }
+
 label,
 .styleAs-label {
   display: inline-block;
   padding: 0 4px;
   color: #888;
   font-weight: 600;
-  font-size: 13.5px;
+  font-size: 0.75rem;
   text-transform: uppercase;
   user-select: none; }
 
@@ -410,12 +426,12 @@ input, textarea, select {
   padding: 4px 2px;
   border: 2px solid transparent;
   border-bottom-color: #ccc;
-  border-radius: 0;
+  border-radius: 4px;
   margin: 0;
   background-color: #fff;
   color: inherit;
   font-family: inherit;
-  font-size: 18px;
+  font-size: 1rem;
   line-height: 1.4;
   font-weight: 400;
   transition: border-color .5s;
@@ -426,6 +442,14 @@ input, textarea, select {
     border-bottom-color: #ff4f2c; }
   input::placeholder, textarea::placeholder, select::placeholder {
     color: #ccc; }
+
+textarea {
+  resize: none;
+  background-color: #f2f2f2;
+  padding-left: 8px;
+  padding-right: 8px; }
+  textarea::placeholder {
+    color: #888; }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -481,7 +505,7 @@ button,
   outline: none;
   color: #333;
   font-family: inherit;
-  font-size: 18px;
+  font-size: 1rem;
   line-height: 1;
   font-weight: 400;
   text-decoration: none;
@@ -505,22 +529,6 @@ button,
 .styleAs-button:hover,
 .styleAs-button:focus {
   text-decoration: none; }
-
-hr {
-  border: 0;
-  border-top: 2px solid #888;
-  margin: 1rem 0; }
-
-ul, ol {
-  padding-left: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem; }
-  ul li, ol li {
-    margin-top: .25rem;
-    margin-bottom: .25rem; }
-  ul ul, ul ol, ol ul, ol ol {
-    margin-top: 0;
-    margin-bottom: 0; }
 
 th, td {
   padding-left: 15px;
@@ -558,7 +566,7 @@ tfoot tr:last-of-type td {
 thead th,
 thead td {
   vertical-align: bottom;
-  font-size: 13.5px;
+  font-size: .9rem;
   color: #888;
   text-transform: uppercase; }
 
@@ -567,6 +575,29 @@ tbody td {
 
 tfoot td {
   vertical-align: top; }
+
+tbody tr:not(:last-of-type) td {
+  border-bottom: 1px solid #ddd; }
+
+thead tr:last-of-type th {
+  border-bottom: 1px solid #aaa; }
+
+thead ~ tbody > tr:first-of-type td {
+  padding-top: 15px; }
+
+tfoot tr:first-of-type td {
+  padding-top: 12px;
+  border-top: 1px solid #aaa; }
+
+tfoot ~ tbody > tr:last-of-type td {
+  padding-bottom: 15px; }
+
+tr.table-line-below td {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #aaa; }
+
+tr.table-line-below + tr td {
+  padding-top: 12px; }
 
 code, pre {
   padding: 2px 6px;
@@ -612,7 +643,7 @@ code, pre {
 /* --- Components --- */
 .form-message,
 .input-message {
-  font-size: 13.5px; }
+  font-size: 0.75rem; }
 
 .input-message {
   min-height: 18px;
@@ -761,11 +792,11 @@ code, pre {
 
 .btn-sm {
   padding: 5px 10px;
-  font-size: 13.5px; }
+  font-size: 0.75rem; }
 
 .btn-lg {
   padding: 10px 22px;
-  font-size: 23.9994px; }
+  font-size: 1.3333rem; }
 
 .btn-tight {
   display: inline-block;
@@ -818,13 +849,13 @@ code, pre {
   margin-bottom: .25rem;
   color: #888;
   text-transform: uppercase;
-  font-size: 13.5px;
+  font-size: 0.75rem;
   font-weight: 600; }
 
 .subheader {
   margin-bottom: .5rem;
   color: #888;
-  font-size: 13.5px;
+  font-size: 0.75rem;
   font-weight: 400; }
 
 .supheader + h1,
@@ -894,23 +925,3 @@ code, pre {
 
 .bg-muted {
   background-color: #888; }
-
-tfoot.table-line-above > tr:first-of-type td {
-  padding-top: 15px;
-  border-top: 1px solid #ccc; }
-
-tfoot.table-line-above + tbody > tr:last-of-type td {
-  padding-bottom: 15px; }
-
-tr.table-line-below td {
-  padding-bottom: 15px;
-  border-bottom: 1px solid #ccc; }
-
-tr.table-line-below + tr td {
-  padding-top: 15px; }
-
-.table-right-align-col {
-  text-align: right; }
-
-.table-shrink-width {
-  width: 1px; }
