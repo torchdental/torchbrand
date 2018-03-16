@@ -403,9 +403,8 @@ input, textarea, select {
 
 textarea {
   resize: none;
-  background-color: $color--light;
-  padding-left: 8px;
-  padding-right: 8px;
+  border-color: $color--light;
+  padding: 10px 15px;
 
   &::placeholder {
     color: $color--muted;
