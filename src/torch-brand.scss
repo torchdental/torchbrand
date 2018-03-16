@@ -194,9 +194,9 @@ $font-size--level: (
 .icon-locked::before { content: '\f023'; }
 .icon-unlocked::before { content: '\f09c'; }
 
-.icon-radio::before { content: '\f111'; }
+.icon-radio::before { content: '\f111'; font-weight: 400; }
 .icon-radio-checked::before { content: '\f192'; }
-.icon-checkbox::before { content: '\f0c8'; }
+.icon-checkbox::before { content: '\f0c8'; font-weight: 400; }
 .icon-checkbox-checked::before { content: '\f14a'; }
 
 .icon-blockquote-deco::before { content: '\f10d'; }
@@ -458,12 +458,13 @@ input[type="radio"] {
   &::before {
     @extend .icon;
     @extend .icon-radio;
+    color: $color--muted-light;
   }
 
   &:checked::before {
     @extend .icon;
     @extend .icon-radio-checked;
-    @extend .text-primary;
+    color: $color--primary;
   }
 }
 
@@ -471,12 +472,13 @@ input[type="checkbox"] {
   &::before {
     @extend .icon;
     @extend .icon-checkbox;
+    color: $color--muted-light;
   }
 
   &:checked::before {
     @extend .icon;
     @extend .icon-checkbox-checked;
-    @extend .text-primary;
+    color: $color--primary;
   }
 }
 
