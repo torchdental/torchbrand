@@ -383,7 +383,7 @@ blockquote {
 blockquote::before {
   position: relative;
   float: left;
-  top: 5px;
+  top: 3px;
   left: -10px;
   opacity: .07;
   font-size: 3em;
