@@ -418,21 +418,34 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 input[type="radio"],
-input[type="checkbox"]{
+input[type="checkbox"] {
   display: inline-block;
   vertical-align: middle;
   width: auto;
   padding: 0 4px;
   border: none;
   background: none;
+  cursor: pointer;
 
   &::before {
     display: inline-block;
     vertical-align: middle;
     font-size: 1.5em;
     line-height: 1;
-    color: $color--muted;
+    color: $color--muted-light;
     transition: color .3s;
+  }
+
+  &:focus::before {
+    color: $color--muted;
+  }
+
+  &:checked::before {
+    color: $color--primary;
+  }
+
+  &:focus:checked::before {
+    color: darken($color--primary, 15%);
   }
 
   & + label {
@@ -447,11 +460,8 @@ input[type="checkbox"]{
     font-weight: inherit;
     font-size: inherit;
     text-transform: inherit;
+    cursor: pointer;
     transition: border-color .5s;
-  }
-
-  &:focus + label {
-    border-bottom-color: $color--primary;
   }
 }
 
@@ -459,13 +469,11 @@ input[type="radio"] {
   &::before {
     @extend .icon;
     @extend .icon-radio;
-    color: $color--muted-light;
   }
 
   &:checked::before {
     @extend .icon;
     @extend .icon-radio-checked;
-    color: $color--primary;
   }
 }
 
@@ -473,13 +481,15 @@ input[type="checkbox"] {
   &::before {
     @extend .icon;
     @extend .icon-checkbox;
-    color: $color--muted-light;
   }
 
   &:checked::before {
     @extend .icon;
     @extend .icon-checkbox-checked;
-    color: $color--primary;
+  }
+
+  &.checkbox-success::before {
+    color: $color--danger;
   }
 
   &.checkbox-success:checked::before {
@@ -918,6 +928,18 @@ code, pre {
     margin-top: 0;
   }
 }
+
+// Input Variations
+.input-sm {
+  padding: 3px 6px;
+  font-size: map-get($font-size--level, -1);
+}
+
+.input-lg {
+  padding: 5px 8px;
+  font-size: map-get($font-size--level, 1);
+}
+
 
 // Button Variations
 .btn-primary {
