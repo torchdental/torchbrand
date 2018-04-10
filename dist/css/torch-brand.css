@@ -558,10 +558,12 @@ thead td {
   padding-top: 7px;
   padding-bottom: 7px; }
 
+tbody th,
 tbody td {
   padding-top: 10px;
   padding-bottom: 10px; }
 
+tfoot th,
 tfoot td {
   padding-top: 7px;
   padding-bottom: 7px; }
@@ -578,7 +580,7 @@ thead tr:first-of-type th,
 tbody:first-child tr:first-of-type td {
   padding-top: 0; }
 
-tbody:first-child tr:last-of-type td,
+tbody:last-child tr:last-of-type td,
 tfoot tr:last-of-type td {
   padding-bottom: 0; }
 
@@ -601,14 +603,14 @@ tbody tr:not(:last-of-type) td {
 thead tr:last-of-type th {
   border-bottom: 1px solid #aaa; }
 
-thead ~ tbody > tr:first-of-type td {
+tbody:not(:first-child) > tr:first-of-type td {
   padding-top: 15px; }
 
 tfoot tr:first-of-type td {
   padding-top: 12px;
   border-top: 1px solid #aaa; }
 
-tfoot ~ tbody > tr:last-of-type td {
+tbody:not(:last-child) > tr:last-of-type td {
   padding-bottom: 15px; }
 
 tr.table-line-below td {

@@ -553,7 +553,8 @@ button,
 $table--heavy-line: 1px solid #aaa;
 $table--light-line: 1px solid #ddd;
 
-th, td {
+th,
+td {
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -564,11 +565,13 @@ thead td {
   padding-bottom: 7px;
 }
 
+tbody th,
 tbody td {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
+tfoot th,
 tfoot td {
   padding-top: 7px;
   padding-bottom: 7px;
@@ -585,11 +588,15 @@ tr td:last-of-type {
 }
 
 thead tr:first-of-type th,
+thead tr:first-of-type td,
+tbody:first-child tr:first-of-type th,
 tbody:first-child tr:first-of-type td {
   padding-top: 0;
 }
 
-tbody:first-child tr:last-of-type td,
+tbody:last-child tr:last-of-type th,
+tbody:last-child tr:last-of-type td,
+tfoot tr:last-of-type th,
 tfoot tr:last-of-type td {
   padding-bottom: 0;
 }
@@ -602,49 +609,58 @@ thead td {
   text-transform: uppercase;
 }
 
+tbody th,
 tbody td {
   vertical-align: top;
 }
 
+tfoot th,
 tfoot td {
   vertical-align: top;
 }
 
 // Lines inside tbody
+tbody tr:not(:last-of-type) th,
 tbody tr:not(:last-of-type) td {
   border-bottom: $table--light-line;
 }
 
 // Line Below thead
 thead {
-  & tr:last-of-type th {
+  & tr:last-of-type th,
+  & tr:last-of-type td {
     border-bottom: $table--heavy-line;
-  }
-
-  & ~ tbody > tr:first-of-type td {
-    padding-top: 15px;
   }
 }
 
-// Line Below tfoot
+tbody:not(:first-child) > tr:first-of-type th,
+tbody:not(:first-child) > tr:first-of-type td {
+  padding-top: 15px;
+}
+
+// Line Above tfoot
 tfoot {
+  & tr:first-of-type th,
   & tr:first-of-type td {
     padding-top: 12px;
     border-top: $table--heavy-line;
   }
+}
 
-  & ~ tbody > tr:last-of-type td {
-    padding-bottom: 15px;
-  }
+tbody:not(:last-child) > tr:last-of-type th,
+tbody:not(:last-child) > tr:last-of-type td {
+  padding-bottom: 15px;
 }
 
 // Optional Lines within tfoot
 tr.table-line-below {
+  & th,
   & td {
     padding-bottom: 12px;
     border-bottom: $table--heavy-line;
   }
 
+  & + tr th,
   & + tr td {
     padding-top: 12px;
   }
