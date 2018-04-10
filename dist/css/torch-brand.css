@@ -549,7 +549,8 @@ button,
 .styleAs-button:focus {
   text-decoration: none; }
 
-th, td {
+th,
+td {
   padding-left: 15px;
   padding-right: 15px; }
 
@@ -577,10 +578,14 @@ tr td:last-of-type {
   padding-right: 0; }
 
 thead tr:first-of-type th,
+thead tr:first-of-type td,
+tbody:first-child tr:first-of-type th,
 tbody:first-child tr:first-of-type td {
   padding-top: 0; }
 
+tbody:last-child tr:last-of-type th,
 tbody:last-child tr:last-of-type td,
+tfoot tr:last-of-type th,
 tfoot tr:last-of-type td {
   padding-bottom: 0; }
 
@@ -591,32 +596,41 @@ thead td {
   color: #888;
   text-transform: uppercase; }
 
+tbody th,
 tbody td {
   vertical-align: top; }
 
+tfoot th,
 tfoot td {
   vertical-align: top; }
 
+tbody tr:not(:last-of-type) th,
 tbody tr:not(:last-of-type) td {
   border-bottom: 1px solid #ddd; }
 
-thead tr:last-of-type th {
+thead tr:last-of-type th,
+thead tr:last-of-type td {
   border-bottom: 1px solid #aaa; }
 
+tbody:not(:first-child) > tr:first-of-type th,
 tbody:not(:first-child) > tr:first-of-type td {
   padding-top: 15px; }
 
+tfoot tr:first-of-type th,
 tfoot tr:first-of-type td {
   padding-top: 12px;
   border-top: 1px solid #aaa; }
 
+tbody:not(:last-child) > tr:last-of-type th,
 tbody:not(:last-child) > tr:last-of-type td {
   padding-bottom: 15px; }
 
+tr.table-line-below th,
 tr.table-line-below td {
   padding-bottom: 12px;
   border-bottom: 1px solid #aaa; }
 
+tr.table-line-below + tr th,
 tr.table-line-below + tr td {
   padding-top: 12px; }
 
