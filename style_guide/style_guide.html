@@ -52,11 +52,14 @@
               text-align: right;
           }
 
-          .tsg-modal-open {
+          .tsg-modal-open,
+          .tsg-dd-open {
               display: block;
           }
 
-          .modal-backdrop:not(.tsg-modal-open) {
+          .modal-backdrop:not(.tsg-modal-open),
+          .dropdown-content:not(.tsg-dd-open),
+          .dropdown-backdrop:not(.tsg-dd-open) {
               display: none;
           }
 
@@ -358,6 +361,11 @@
                           <td><code>.icon-cart</code></td>
                         </tr>
                         <tr>
+                          <td><i class="icon icon-pricing"></i></td>
+                          <td>Pricing</td>
+                          <td><code>.icon-pricing</code></td>
+                        </tr>
+                        <tr>
                           <td><i class="icon icon-shipping"></i></td>
                           <td>Shipping</td>
                           <td><code>.icon-shipping</code></td>
@@ -491,7 +499,7 @@
                         </tr>
                     </table>
                 </div>
-                <h3>Modals</h3>
+                <h3>Modals & Dropdowns</h3>
                 <p>
                     Modals are used to force the user through a necessary workflow before continuing elsewhere. A good modal will have the following elements:
                 </p>
@@ -523,6 +531,23 @@
                             <td>Modal</td>
                             <td>used to force the user into a necessary workflow before continuing elsewhere</td>
                             <td><code>.modal-overlay > .modal</code></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropdown-button btn-tight" data-tsg-dropdown-toggle>Open Dropdown</button>
+                                    <div id="example-dd-1" class="dropdown-content">
+                                        <div data-tsg-dropdown-toggle>Option 1</div>
+                                        <div data-tsg-dropdown-toggle>Option 2</div>
+                                        <div data-tsg-dropdown-toggle>Option 3</div>
+                                    </div>
+                                </div>
+                                <div id="example-dd-2" class="dropdown-backdrop" data-tsg-dropdown-toggle>
+                                </div>
+                            </td>
+                            <td>Dropdown</td>
+                            <td>used to group a set of secondary options/actions together</td>
+                            <td><code>.dropdown > .dropdown-content</code></td>
                         </tr>
                     </table>
                 </div>
@@ -942,10 +967,20 @@
 
     <script>
         // Script to set up test modal
-        var elements =  document.querySelectorAll('[data-tsg-modal-toggle]');
-        for (var i = 0; i < elements.length; i++) {
-          elements[i].addEventListener('click', function () {
+        var modalElements =  document.querySelectorAll('[data-tsg-modal-toggle]');
+        for (var i = 0; i < modalElements.length; i++) {
+          modalElements[i].addEventListener('click', function () {
             document.getElementById('example-modal-1').classList.toggle('tsg-modal-open');
+            document.querySelector('body').classList.toggle('lock-scroll');
+          });
+        }
+
+        // Script to set up test dropdown
+        var dropdownElements =  document.querySelectorAll('[data-tsg-dropdown-toggle]');
+        for (var j = 0; j < dropdownElements.length; j++) {
+          dropdownElements[j].addEventListener('click', function () {
+            document.getElementById('example-dd-1').classList.toggle('tsg-dd-open');
+            document.getElementById('example-dd-2').classList.toggle('tsg-dd-open');
             document.querySelector('body').classList.toggle('lock-scroll');
           });
         }

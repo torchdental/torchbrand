@@ -151,7 +151,7 @@ $font-size--level: (
   color: $color--danger;
 }
 
-.icon-menu::before { content: '\f0c9'; }
+.icon-menu::before { content: '\f141'; }
 .icon-close::before { content: '\f00d'; }
 .icon-notifications::before { content: '\f0f3'; }
 .icon-settings::before { content: '\f013'; }
@@ -177,6 +177,7 @@ $font-size--level: (
 
 .icon-search::before { content: '\f002'; }
 .icon-cart::before { content: '\f07a'; }
+.icon-pricing::before { content: '\F4D3'; }
 .icon-shipping::before { content: '\f0d1'; }
 .icon-delivered::before { content: '\f46c'; }
 .icon-file::before { content: '\f15b'; font-weight: $font-weight--primary-normal; }
@@ -768,13 +769,14 @@ code, pre {
   background: rgba(0, 0, 0, .7);
 }
 
-// Modals
+// Modals & Dropdowns
 // This class gets placed on the body element when the modal is open
 .lock-scroll {
   overflow: hidden;
 }
 
-.modal-backdrop {
+.modal-backdrop,
+.dropdown-backdrop {
   @extend .overlay;
   position: fixed;
   z-index: 1040;
@@ -830,6 +832,32 @@ code, pre {
 
   &.modal-lg {
     max-width: 750px;
+  }
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-button {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  min-width: 150px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #fff;
+  z-index: 1050;
+
+  &.dropdown-content--right {
+    right: 0;
+  }
+
+  &.dropdown-content--left {
+    left: 0;
   }
 }
 

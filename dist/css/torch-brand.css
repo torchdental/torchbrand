@@ -158,7 +158,7 @@ iframe {
   color: #ff4f2c; }
 
 .icon-menu::before {
-  content: '\f0c9'; }
+  content: '\f141'; }
 
 .icon-close::before, .close::before, .modal-closer::before {
   content: '\f00d'; }
@@ -219,6 +219,9 @@ iframe {
 
 .icon-cart::before {
   content: '\f07a'; }
+
+.icon-pricing::before {
+  content: '\F4D3'; }
 
 .icon-shipping::before {
   content: '\f0d1'; }
@@ -689,13 +692,15 @@ code, pre {
   background-color: #f2f2f2;
   font-size: .75em; }
 
-.overlay, .modal-backdrop {
+.overlay, .modal-backdrop,
+.dropdown-backdrop {
   background: rgba(0, 0, 0, 0.7); }
 
 .lock-scroll {
   overflow: hidden; }
 
-.modal-backdrop {
+.modal-backdrop,
+.dropdown-backdrop {
   position: fixed;
   z-index: 1040;
   overflow-x: hidden;
@@ -735,6 +740,25 @@ code, pre {
     max-width: 450px; }
   .modal.modal-lg {
     max-width: 750px; }
+
+.dropdown {
+  position: relative; }
+
+.dropdown-button {
+  cursor: pointer; }
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  min-width: 150px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #fff;
+  z-index: 1050; }
+  .dropdown-content.dropdown-content--right {
+    right: 0; }
+  .dropdown-content.dropdown-content--left {
+    left: 0; }
 
 .status-loading {
   text-align: center; }
