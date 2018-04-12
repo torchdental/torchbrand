@@ -73,6 +73,11 @@
           .split-2 > div {
               flex: 0 0 48%;
           }
+
+          .padded-div {
+              padding: 5px 10px;
+              text-align: center;
+          }
       </style>
   </head>
   <body>
@@ -284,6 +289,11 @@
                           <td><i class="icon icon-notifications"></i></td>
                           <td>Notifications</td>
                           <td><code>.icon-notifications</code></td>
+                        </tr>
+                        <tr>
+                          <td><i class="icon icon-comments"></i></td>
+                          <td>Comments</td>
+                          <td><code>.icon-comments</code></td>
                         </tr>
                         <tr>
                           <td><i class="icon icon-settings"></i></td>
@@ -848,17 +858,34 @@
                             <td><code>button</code></td>
                         </tr>
                         <tr>
-                            <td><button class="btn-secondary">Edit Order</button></td>
-                            <td>Secondary Action Button</td>
-                            <td>conveys that there will be consequences from clicking this button, though not the main expected action</td>
-                            <td><code>.btn-secondary</code></td>
-                        </tr>
-                        <tr>
                             <td><button class="btn-primary">Submit Order</button></td>
                             <td>Primary Action Button</td>
                             <td>conveys that there will be consequences from clicking this button, this is the main action</td>
                             <td><code>.btn-primary</code></td>
                         </tr>
+                        <tr>
+                            <td><button class="btn-secondary">Edit Order</button></td>
+                            <td>Secondary Action Button</td>
+                            <td>conveys that there will be consequences from clicking this button, though minor and reversible</td>
+                            <td><code>.btn-secondary</code></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="padded-div">
+                                    <button class="btn-minor btn-tight"><i class="icon icon-add"></i></button>&nbsp;
+                                    <button class="btn-minor btn-tight"><i class="icon icon-remove"></i></button>
+                                </div>
+                                <div class="padded-div bg-light">
+                                    <button class="btn-minor-alt btn-tight"><i class="icon icon-add"></i></button>&nbsp;
+                                    <button class="btn-minor-alt btn-tight"><i class="icon icon-remove"></i></button>
+                                </div>
+                            </td>
+                            <td>Minor Action Button</td>
+                            <td>conveys that there will be a minor action from clicking this button, good for UI buttons</td>
+                            <td>
+                                <code>.btn-minor</code>
+                                <code>.btn-minor-alt</code>
+                            </td>
                         <tr>
                             <td><button class="btn-primary btn-sm">Submit Order</button></td>
                             <td>Small Button Variation</td>

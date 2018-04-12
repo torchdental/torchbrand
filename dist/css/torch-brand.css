@@ -166,6 +166,9 @@ iframe {
 .icon-notifications::before {
   content: '\f0f3'; }
 
+.icon-comments::before {
+  content: '\f086'; }
+
 .icon-settings::before {
   content: '\f013'; }
 
@@ -702,11 +705,13 @@ code, pre {
 
 .badge {
   display: inline-block;
-  vertical-align: text-bottom;
-  padding: .2em .7em;
+  vertical-align: middle;
+  padding: .25em .7em;
   border-radius: 1em;
+  margin-top: -4px;
   background-color: #f2f2f2;
-  font-size: .75em; }
+  font-size: .7em;
+  line-height: 1; }
 
 .overlay, .modal-backdrop,
 .dropdown-backdrop {
@@ -844,15 +849,31 @@ code, pre {
   background-color: #df2500; }
 
 .btn-secondary {
-  background: none;
-  border-color: #ffc2b6;
-  color: #ff4f2c; }
+  background: #f2f2f2;
+  border-color: transparent;
+  color: #333; }
 
 .btn-secondary:hover:not(:disabled),
 .btn-secondary:focus:not(:disabled) {
-  background-color: #ffece9;
-  border-color: #ffece9;
-  color: #ff4f2c; }
+  background-color: #e5e5e5; }
+
+.btn-minor {
+  background: #f2f2f2;
+  border-color: transparent;
+  color: #888; }
+
+.btn-minor:hover:not(:disabled),
+.btn-minor:focus:not(:disabled) {
+  background-color: #e5e5e5; }
+
+.btn-minor-alt {
+  background: #fff;
+  border-color: transparent;
+  color: #888; }
+
+.btn-minor-alt:hover:not(:disabled),
+.btn-minor-alt:focus:not(:disabled) {
+  background-color: #e5e5e5; }
 
 .btn-sm {
   padding: 5px 10px;
