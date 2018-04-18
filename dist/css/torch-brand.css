@@ -369,7 +369,8 @@ a,
 .text-dark .styleAs-a {
   color: #ff4f2c;
   text-decoration: none;
-  outline: none; }
+  outline: none;
+  cursor: pointer; }
   a:hover, a:focus,
   .styleAs-a:hover,
   .text-dark a:hover,
@@ -404,8 +405,8 @@ cite {
 
 hr {
   border: 0;
-  border-top: 2px solid #888;
-  margin: 1rem 0; }
+  border-top: 2px solid #eee;
+  margin: 1.5rem 0; }
 
 ul, ol {
   padding-left: 2rem;
@@ -706,7 +707,7 @@ code, pre {
 .badge {
   display: inline-block;
   vertical-align: middle;
-  padding: .25em .7em;
+  padding: .25em .6em;
   border-radius: 1em;
   margin-top: -4px;
   background-color: #f2f2f2;
