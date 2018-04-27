@@ -362,7 +362,8 @@ ul, ol {
   }
 }
 
-// Forms
+
+/* --- Forms --- */
 label,
 .styleAs-label {
   display: inline-block;
@@ -551,16 +552,29 @@ button,
   text-decoration: none;
 }
 
-// Tables
+
+/* --- Tables --- */
 $table--heavy-line: 1px solid #aaa;
 $table--light-line: 1px solid #ddd;
 
+// Horizontal Padding
 th,
 td {
   padding-left: 15px;
   padding-right: 15px;
 }
 
+tr th:first-of-type,
+tr td:first-of-type {
+  padding-left: 0;
+}
+
+tr th:last-of-type,
+tr td:last-of-type {
+  padding-right: 0;
+}
+
+// Vertical Padding
 thead th,
 thead td {
   padding-top: 5px;
@@ -589,14 +603,14 @@ tfoot td {
   padding-bottom: 5px;
 }
 
-tr th:first-of-type,
-tr td:first-of-type {
-  padding-left: 0;
+tfoot:not(:first-child) > tr:first-of-type th,
+tfoot:not(:first-child) > tr:first-of-type td {
+  padding-top: 9px;
 }
 
-tr th:last-of-type,
-tr td:last-of-type {
-  padding-right: 0;
+tfoot:not(:last-child) > tr:last-of-type th,
+tfoot:not(:last-child) > tr:last-of-type td {
+  padding-bottom: 9px;
 }
 
 thead:first-child tr:first-of-type th,
@@ -617,6 +631,7 @@ tfoot:last-child tr:last-of-type td {
   padding-bottom: 0;
 }
 
+// Styles
 thead th,
 thead td {
   vertical-align: bottom;
@@ -653,12 +668,11 @@ thead:not(:last-child) {
 tfoot:not(:first-child) {
   & tr:first-of-type th,
   & tr:first-of-type td {
-    padding-top: 9px;
     border-top: $table--heavy-line;
   }
 }
 
-// Other
+/* --- Other Elements / General --- */
 code, pre {
   padding: 2px 6px;
   background: $color--light;
