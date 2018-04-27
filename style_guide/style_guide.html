@@ -53,13 +53,14 @@
           }
 
           .tsg-modal-open,
-          .tsg-dd-open {
+          .tsg-dd-open,
+          .tsg-tt-open {
               display: block;
           }
 
           .modal-backdrop:not(.tsg-modal-open),
           .dropdown-content:not(.tsg-dd-open),
-          .dropdown-backdrop:not(.tsg-dd-open) {
+          .tooltip-content:not(.tsg-tt-open) {
               display: none;
           }
 
@@ -524,8 +525,8 @@
                         <tr>
                             <td>
                                 <button class="btn-primary btn-tight" data-tsg-modal-toggle>Open Modal</button>
-                                <div id="example-modal-1" class="modal-backdrop">
-                                    <div class="modal">
+                                <div id="example-modal-1" class="modal-backdrop" data-tsg-modal-toggle>
+                                    <div class="modal" tabindex="-1" data-tsg-modal-toggle>
                                         <h4>
                                             <div data-tsg-modal-toggle class="modal-closer"></div>
                                             Enter Custom Item Details
@@ -545,20 +546,33 @@
                         <tr>
                             <td>
                                 <div class="dropdown">
-                                    <button class="dropdown-button btn-tight" data-tsg-dropdown-toggle>Open Dropdown</button>
-                                    <div id="example-dd-1" class="dropdown-content">
-                                        <div data-tsg-dropdown-toggle>Option 1</div>
-                                        <div data-tsg-dropdown-toggle>Option 2</div>
-                                        <div data-tsg-dropdown-toggle>Option 3</div>
+                                    <button class="dropdown-button btn-tight btn-minor-alt" data-tsg-dropdown-button><i class="icon icon-menu"></i></button>
+                                    <div id="example-dd-1" tabindex="-1" class="dropdown-content dropdown-content--overlap" data-tsg-dropdown-content>
+                                        <div><button class="dropdown-button btn-tight btn-minor-alt"><i class="icon icon-menu"></i></button></div>
+                                        <p class="text-muted"><a data-tsg-dropdown-link>Option 1</a></p>
+                                        <p class="text-muted"><a data-tsg-dropdown-link>Option 2</a></p>
+                                        <p class="text-muted"><a data-tsg-dropdown-link>Option 3</a></p>
                                     </div>
-                                </div>
-                                <div id="example-dd-2" class="dropdown-backdrop" data-tsg-dropdown-toggle>
                                 </div>
                             </td>
                             <td>Dropdown</td>
                             <td>used to group a set of secondary options/actions together</td>
                             <td><code>.dropdown > .dropdown-content</code></td>
                         </tr>
+                        <!--<tr>-->
+                            <!--<td>-->
+                                <!--<div class="tooltip">-->
+                                    <!--<button class="tooltip-button btn-tight btn-minor-alt" data-tsg-tooltip-button><i class="icon icon-favorite"></i></button>-->
+                                    <!--<div id="example-tt-1" tabindex="-1" class="tooltip-content" style="text-align: center;" data-tsg-tooltip-content>-->
+                                        <!--<h6 class="text-muted" style="white-space: nowrap; margin-bottom: 5px;">Add to favorites?</h6>-->
+                                        <!--<button class="btn-tight btn-minor btn-sm" data-tsg-tooltip-link>Add</button>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>Tooltip</td>-->
+                            <!--<td>used to show more information or confirm and action related to an element on the page</td>-->
+                            <!--<td><code>.tooltip > .tooltip-content</code></td>-->
+                        <!--</tr>-->
                     </table>
                 </div>
                 <h3>Tables</h3>
@@ -1003,12 +1017,48 @@
         }
 
         // Script to set up test dropdown
-        var dropdownElements =  document.querySelectorAll('[data-tsg-dropdown-toggle]');
-        for (var j = 0; j < dropdownElements.length; j++) {
-          dropdownElements[j].addEventListener('click', function () {
+        var dropdownContent =  document.querySelectorAll('[data-tsg-dropdown-content]');
+        for (var j = 0; j < dropdownContent.length; j++) {
+          dropdownContent[j].addEventListener('blur', function () {
+            document.getElementById('example-dd-1').classList.remove('tsg-dd-open');
+          });
+        }
+        var dropdownButton =  document.querySelectorAll('[data-tsg-dropdown-button]');
+        for (var k = 0; k < dropdownButton.length; k++) {
+          dropdownButton[k].addEventListener('click', function () {
             document.getElementById('example-dd-1').classList.toggle('tsg-dd-open');
-            document.getElementById('example-dd-2').classList.toggle('tsg-dd-open');
-            document.querySelector('body').classList.toggle('lock-scroll');
+            if (document.getElementById('example-dd-1').classList.contains('tsg-dd-open')) {
+                document.getElementById('example-dd-1').focus();
+            }
+          });
+        }
+        var dropdownLink =  document.querySelectorAll('[data-tsg-dropdown-link]');
+        for (var l = 0; l < dropdownLink.length; l++) {
+          dropdownLink[l].addEventListener('click', function () {
+            document.getElementById('example-dd-1').classList.remove('tsg-dd-open');
+          });
+        }
+
+        // Script to set up test tooltip
+        var tooltipContent =  document.querySelectorAll('[data-tsg-tooltip-content]');
+        for (var m = 0; m < tooltipContent.length; m++) {
+          tooltipContent[m].addEventListener('blur', function () {
+            document.getElementById('example-tt-1').classList.remove('tsg-tt-open');
+          });
+        }
+        var tooltipButton =  document.querySelectorAll('[data-tsg-tooltip-button]');
+        for (var n = 0; n < tooltipButton.length; n++) {
+          tooltipButton[n].addEventListener('click', function () {
+            document.getElementById('example-tt-1').classList.toggle('tsg-tt-open');
+            if (document.getElementById('example-tt-1').classList.contains('tsg-tt-open')) {
+                document.getElementById('example-tt-1').focus();
+            }
+          });
+        }
+        var tooltipLink =  document.querySelectorAll('[data-tsg-tooltip-link]');
+        for (var o = 0; o < tooltipLink.length; o++) {
+          tooltipLink[o].addEventListener('click', function () {
+            document.getElementById('example-tt-1').classList.remove('tsg-tt-open');
           });
         }
     </script>
