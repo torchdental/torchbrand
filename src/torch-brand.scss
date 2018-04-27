@@ -589,17 +589,21 @@ tr td:last-of-type {
   padding-right: 0;
 }
 
-thead tr:first-of-type th,
-thead tr:first-of-type td,
+thead:first-child tr:first-of-type th,
+thead:first-child tr:first-of-type td,
 tbody:first-child tr:first-of-type th,
-tbody:first-child tr:first-of-type td {
+tbody:first-child tr:first-of-type td,
+tfoot:first-child tr:first-of-type th,
+tfoot:first-child tr:first-of-type td {
   padding-top: 0;
 }
 
+thead:last-child tr:last-of-type th,
+thead:last-child tr:last-of-type td,
 tbody:last-child tr:last-of-type th,
 tbody:last-child tr:last-of-type td,
-tfoot tr:last-of-type th,
-tfoot tr:last-of-type td {
+tfoot:last-child tr:last-of-type th,
+tfoot:last-child tr:last-of-type td {
   padding-bottom: 0;
 }
 
@@ -652,20 +656,6 @@ tfoot {
 tbody:not(:last-child) > tr:last-of-type th,
 tbody:not(:last-child) > tr:last-of-type td {
   padding-bottom: 12px;
-}
-
-// Optional Lines within tfoot
-tr.table-line-below {
-  & th,
-  & td {
-    padding-bottom: 9px;
-    border-bottom: $table--heavy-line;
-  }
-
-  & + tr th,
-  & + tr td {
-    padding-top: 9px;
-  }
 }
 
 // Other

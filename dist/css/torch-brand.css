@@ -581,16 +581,20 @@ tr th:last-of-type,
 tr td:last-of-type {
   padding-right: 0; }
 
-thead tr:first-of-type th,
-thead tr:first-of-type td,
+thead:first-child tr:first-of-type th,
+thead:first-child tr:first-of-type td,
 tbody:first-child tr:first-of-type th,
-tbody:first-child tr:first-of-type td {
+tbody:first-child tr:first-of-type td,
+tfoot:first-child tr:first-of-type th,
+tfoot:first-child tr:first-of-type td {
   padding-top: 0; }
 
+thead:last-child tr:last-of-type th,
+thead:last-child tr:last-of-type td,
 tbody:last-child tr:last-of-type th,
 tbody:last-child tr:last-of-type td,
-tfoot tr:last-of-type th,
-tfoot tr:last-of-type td {
+tfoot:last-child tr:last-of-type th,
+tfoot:last-child tr:last-of-type td {
   padding-bottom: 0; }
 
 thead th,
@@ -628,15 +632,6 @@ tfoot tr:first-of-type td {
 tbody:not(:last-child) > tr:last-of-type th,
 tbody:not(:last-child) > tr:last-of-type td {
   padding-bottom: 12px; }
-
-tr.table-line-below th,
-tr.table-line-below td {
-  padding-bottom: 9px;
-  border-bottom: 1px solid #aaa; }
-
-tr.table-line-below + tr th,
-tr.table-line-below + tr td {
-  padding-top: 9px; }
 
 code, pre {
   padding: 2px 6px;
