@@ -560,8 +560,8 @@ td {
 
 thead th,
 thead td {
-  padding-top: 7px;
-  padding-bottom: 7px; }
+  padding-top: 5px;
+  padding-bottom: 5px; }
 
 tbody th,
 tbody td {
@@ -570,8 +570,8 @@ tbody td {
 
 tfoot th,
 tfoot td {
-  padding-top: 7px;
-  padding-bottom: 7px; }
+  padding-top: 5px;
+  padding-bottom: 5px; }
 
 tr th:first-of-type,
 tr td:first-of-type {
@@ -618,25 +618,25 @@ thead tr:last-of-type td {
 
 tbody:not(:first-child) > tr:first-of-type th,
 tbody:not(:first-child) > tr:first-of-type td {
-  padding-top: 15px; }
+  padding-top: 12px; }
 
 tfoot tr:first-of-type th,
 tfoot tr:first-of-type td {
-  padding-top: 12px;
+  padding-top: 9px;
   border-top: 1px solid #aaa; }
 
 tbody:not(:last-child) > tr:last-of-type th,
 tbody:not(:last-child) > tr:last-of-type td {
-  padding-bottom: 15px; }
+  padding-bottom: 12px; }
 
 tr.table-line-below th,
 tr.table-line-below td {
-  padding-bottom: 12px;
+  padding-bottom: 9px;
   border-bottom: 1px solid #aaa; }
 
 tr.table-line-below + tr th,
 tr.table-line-below + tr td {
-  padding-top: 12px; }
+  padding-top: 9px; }
 
 code, pre {
   padding: 2px 6px;
