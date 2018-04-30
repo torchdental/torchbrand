@@ -901,6 +901,7 @@ code, pre {
   z-index: 1050;
 
   &.dropdown-content--right {
+    left: unset;
     right: 0;
   }
 
@@ -910,6 +911,7 @@ code, pre {
   }
 
   &.dropdown-content--overlap.dropdown-content--right {
+    left: unset;
     right: -10px;
   }
 }
