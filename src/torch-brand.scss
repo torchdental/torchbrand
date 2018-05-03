@@ -192,6 +192,7 @@ $font-size--level: (
 .icon-edit::before { content: '\f14b'; }
 .icon-update::before { content: '\f021'; }
 .icon-favorite::before { content: '\f005'; }
+.icon-gift::before { content: '\f06b'; }
 
 .icon-locked::before { content: '\f023'; }
 .icon-unlocked::before { content: '\f09c'; }
@@ -1138,6 +1139,10 @@ code, pre {
 }
 
 // Typographic Variations
+.no-break {
+  white-space: nowrap;
+}
+
 .supheader {
   margin-bottom: .25rem;
   color: $color--muted;

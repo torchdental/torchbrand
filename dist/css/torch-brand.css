@@ -263,6 +263,9 @@ iframe {
 .icon-favorite::before {
   content: '\f005'; }
 
+.icon-gift::before {
+  content: '\f06b'; }
+
 .icon-locked::before {
   content: '\f023'; }
 
@@ -959,6 +962,9 @@ code, pre {
   .nav-link:hover, .nav-link:focus, .nav-link.nav-link--active {
     color: #ff4f2c;
     text-decoration: none; }
+
+.no-break {
+  white-space: nowrap; }
 
 .supheader {
   margin-bottom: .25rem;
