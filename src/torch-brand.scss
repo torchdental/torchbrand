@@ -193,6 +193,8 @@ $font-size--level: (
 .icon-update::before { content: '\f021'; }
 .icon-favorite::before { content: '\f005'; }
 .icon-gift::before { content: '\f06b'; }
+.icon-checking::before { content: '\f53c' }
+.icon-credit-card::before { content: '\f09d'; font-weight: 400; }
 
 .icon-locked::before { content: '\f023'; }
 .icon-unlocked::before { content: '\f09c'; }

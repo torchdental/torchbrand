@@ -266,6 +266,13 @@ iframe {
 .icon-gift::before {
   content: '\f06b'; }
 
+.icon-checking::before {
+  content: '\f53c'; }
+
+.icon-credit-card::before {
+  content: '\f09d';
+  font-weight: 400; }
+
 .icon-locked::before {
   content: '\f023'; }
 
