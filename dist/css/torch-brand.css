@@ -429,6 +429,18 @@ ul, ol {
     margin-top: 0;
     margin-bottom: 0; }
 
+@media (max-width: 767px) {
+  h1,
+  .styleAs-h1 {
+    font-size: 2.3705rem;
+    line-height: 1.4; }
+  h2,
+  .styleAs-h2 {
+    font-size: 1.7777rem; }
+  h3,
+  .styleAs-h3 {
+    font-size: 1.3333rem; } }
+
 /* --- Forms --- */
 label,
 .styleAs-label {

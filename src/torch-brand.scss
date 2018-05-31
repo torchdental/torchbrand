@@ -365,6 +365,24 @@ ul, ol {
   }
 }
 
+@media (max-width: 767px) {
+  h1,
+  .styleAs-h1 {
+    font-size: map-get($font-size--level, 3);
+    line-height: $line-height--base;
+  }
+
+  h2,
+  .styleAs-h2 {
+    font-size: map-get($font-size--level, 2);
+  }
+
+  h3,
+  .styleAs-h3 {
+    font-size: map-get($font-size--level, 1);
+  }
+}
+
 
 /* --- Forms --- */
 label,
