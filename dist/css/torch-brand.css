@@ -118,7 +118,7 @@ iframe {
 
 /* --- Variables --- */
 /* --- Icons --- */
-.icon::before, blockquote::before, input[type="radio"]::before, input[type="radio"]:checked::before, input[type="checkbox"]::before, input[type="checkbox"]:checked::before, .close::before, .modal-closer::before, .loading::before, .status-loading::before, .status-success::before, .status-error::before, .status-confirm::before, .status-danger::before {
+.icon::before, blockquote::before, input[type="radio"]::before, input:checked[type="radio"]::before, input[type="checkbox"]::before, input:checked[type="checkbox"]::before, .close::before, .modal-closer::before, .loading::before, .status-loading::before, .status-success::before, .status-error::before, .status-confirm::before, .status-danger::before {
   display: inline-block;
   font-family: "FontAwesome";
   font-style: normal;
@@ -283,14 +283,14 @@ iframe {
   content: '\f111';
   font-weight: 400; }
 
-.icon-radio-checked::before, input[type="radio"]:checked::before {
+.icon-radio-checked::before, input:checked[type="radio"]::before {
   content: '\f192'; }
 
 .icon-checkbox::before, input[type="checkbox"]::before {
   content: '\f0c8';
   font-weight: 400; }
 
-.icon-checkbox-checked::before, input[type="checkbox"]:checked::before {
+.icon-checkbox-checked::before, input:checked[type="checkbox"]::before {
   content: '\f14a'; }
 
 .icon-blockquote-deco::before, blockquote::before {
@@ -439,7 +439,9 @@ ul, ol {
     font-size: 1.7777rem; }
   h3,
   .styleAs-h3 {
-    font-size: 1.3333rem; } }
+    font-size: 1.3333rem; }
+  ul, ol {
+    padding-left: 1.5rem; } }
 
 /* --- Forms --- */
 label,

@@ -381,6 +381,10 @@ ul, ol {
   .styleAs-h3 {
     font-size: map-get($font-size--level, 1);
   }
+
+  ul, ol {
+    padding-left: 1.5rem;
+  }
 }
 
 

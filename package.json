@@ -13,12 +13,12 @@
     "cp-fab": "cp ./node_modules/@fortawesome/fontawesome-free-webfonts/webfonts/fa-brands-400.ttf ./assets/fonts/font-awesome/",
     "build-fa": "npm update @fortawesome/font-awesome-webfonts && npm run cp-far && npm run cp-fas && npm run cp-fab"
   },
-  "devDependencies": {
-    "node-sass": "^4.7.2",
-    "nodemon": "^1.17.1"
-  },
-  "homepage": "./style_guide/style_guide.html",
   "dependencies": {
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9"
-  }
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.0",
+    "nodemon": "^1.17.5"
+  },
+  "homepage": "./style_guide/style_guide.html"
 }
