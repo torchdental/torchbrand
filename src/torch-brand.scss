@@ -181,7 +181,7 @@ $font-size--level: (
 .icon-pricing::before { content: '\F4D3'; }
 .icon-shipping::before { content: '\f0d1'; }
 .icon-delivered::before { content: '\f46c'; }
-.icon-file::before { content: '\f15b'; font-weight: $font-weight--primary-normal; }
+.icon-file::before { content: '\f15b'; font-weight: 400; }
 .icon-send::before { content: '\f1d8'; }
 .icon-print::before { content: '\f02f'; }
 .icon-rating::before { content: '\f005'; }
@@ -191,7 +191,9 @@ $font-size--level: (
 .icon-remove::before { content: '\f056'; }
 .icon-edit::before { content: '\f14b'; }
 .icon-update::before { content: '\f021'; }
+
 .icon-favorite::before { content: '\f005'; }
+.icon-history::before { content: '\f1da'; }
 .icon-gift::before { content: '\f06b'; }
 .icon-checking::before { content: '\f53c' }
 .icon-credit-card::before { content: '\f09d'; font-weight: 400; }
