@@ -1113,12 +1113,15 @@ code, pre {
 
 
 // Nav Variations
-.navbar {
+.navbar-ctr {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 1000;
+}
+
+.navbar {
   display: flex;
   align-items: stretch;
   padding: 0 15px;
