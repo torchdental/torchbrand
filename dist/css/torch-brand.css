@@ -538,6 +538,13 @@ input[type="checkbox"].checkbox-success:checked::before {
 input[type="file"] {
   display: flex; }
 
+select {
+  padding-right: 25px;
+  background: linear-gradient(45deg, transparent 50%, #ccc 50%), linear-gradient(135deg, #ccc 50%, transparent 50%);
+  background-position: calc(100% - 11px) calc(1em - 3px), calc(100% - 6px) calc(1em - 3px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat; }
+
 button,
 .styleAs-button {
   display: block;
