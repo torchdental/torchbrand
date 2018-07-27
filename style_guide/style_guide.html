@@ -84,7 +84,7 @@
   <body>
     <section class="bg-dark text-bright">
         <div class="container tsg-jumbo">
-            <h1><img src="../assets/images/torch_icon_circle.png" style="width: 70px; margin-right: 20px; margin-bottom: 13px;" />Torch Style Guide</h1>
+            <h1><img src="../assets/images/torch_icon_circle.png" style="width: 1.25em; margin-right: .3em; margin-bottom: .2em;" />Torch Style Guide</h1>
         </div>
     </section>
     <main class="container">
@@ -95,7 +95,7 @@
                     Included within are examples, explanations of usage, and implementation details necessary to include any of these components in a Torch product.
                 </p>
                 <h2>Usage</h2>
-                <p>To include this module in a project, ...</p>
+                <p>To add the Torch brand styles to a project, simply include the repo in the <code>project.json</code> file and add the following import: <code>import 'torch-brand';</code></p>
             </section>
             <section>
                 <h2>Assets</h2>
@@ -171,7 +171,8 @@
             <section>
                 <h2>Typography</h2>
                 <p>
-                    Intro about typography
+                    The Torch brand module includes basic styling for common block and inline level elements.
+                    Please refer to the following chart for their intended usages.
                 </p>
                 <h3>Block Elements</h3>
                 <div class="example example--no-margins">
@@ -468,11 +469,14 @@
                         </tr>
                     </table>
                 </div>
-                <p>For icons not found above, you can use the unicode values from FontAwesome's website.</p>
+                <p>
+                    For icons not found above, you can use the unicode values from FontAwesome's website.
+                    New icons should be later added to this module with an appropriate semantic name.
+                </p>
             </section>
             <section>
                 <h2>Components</h2>
-                <p>Some info on components</p>
+                <p>The following are design patterns that give the look and feel of the Torch brand.</p>
                 <h3>Backgrounds</h3>
                 <div class="example">
                     <table>
@@ -561,7 +565,7 @@
                             </td>
                             <td>Modal</td>
                             <td>used to force the user into a necessary workflow before continuing elsewhere</td>
-                            <td><code>.modal-overlay > .modal</code></td>
+                            <td><code>.modal-overlay ><br/> .modal</code></td>
                         </tr>
                         <tr>
                             <td>
@@ -577,7 +581,7 @@
                             </td>
                             <td>Dropdown</td>
                             <td>used to group a set of secondary options/actions together</td>
-                            <td><code>.dropdown > .dropdown-content</code></td>
+                            <td><code>.dropdown ><br/> .dropdown-content</code></td>
                         </tr>
                         <!--<tr>-->
                             <!--<td>-->
@@ -591,8 +595,35 @@
                             <!--</td>-->
                             <!--<td>Tooltip</td>-->
                             <!--<td>used to show more information or confirm and action related to an element on the page</td>-->
-                            <!--<td><code>.tooltip > .tooltip-content</code></td>-->
+                            <!--<td><code>.tooltip ><br/> .tooltip-content</code></td>-->
                         <!--</tr>-->
+                    </table>
+                </div>
+                <h3>Lists</h3>
+                <div class="example example--no-margins">
+                    <table>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>Unordered</li>
+                                    <li>List</li>
+                                </ul>
+                            </td>
+                            <td>Unordered List</td>
+                            <td>enumerates a list of unordered points</td>
+                            <td><code>ul > li</code></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ol>
+                                    <li>Ordered</li>
+                                    <li>List</li>
+                                </ol>
+                            </td>
+                            <td>Ordered List</td>
+                            <td>enumerates a list of ordered points</td>
+                            <td><code>ol > li</code></td>
+                        </tr>
                     </table>
                 </div>
                 <h3>Tables</h3>

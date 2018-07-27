@@ -39,7 +39,7 @@
 }
 
 /* --- Variables --- */
-// Color Constants (Not for use outside this file, subject to change)
+// Color Constants (Not for use outside this file, variable names subject to change)
 $color--gray-300:   #333;
 $color--gray-600:   #888;
 $color--gray-800:   #ccc;
@@ -74,9 +74,10 @@ $font-family--icons:          'FontAwesome';
 $font-weight--icons-normal:   400;
 $font-weight--icons-solid:    900;
 
-$font-size--base:   18px;
-$line-height--base: 1.4;
-$line-height--lose: 1.6;
+$font-size--base:        18px;
+$font-size--base-narrow: 16px;
+$line-height--base:      1.4;
+$line-height--lose:      1.6;
 $font-size--level: (
   -1: 1rem * 0.75,
    0: 1rem * 1,
@@ -363,6 +364,10 @@ ul, ol {
 }
 
 @media (max-width: 767px) {
+  html {
+    font-size: $font-size--base-narrow;
+  }
+
   h1,
   .styleAs-h1 {
     font-size: map-get($font-size--level, 3);
@@ -529,7 +534,7 @@ input[type="file"] {
 
 select {
   padding-right: 25px;
-  background:
+  background-image:
     linear-gradient(45deg, transparent 50%, $color--muted-light 50%),
     linear-gradient(135deg, $color--muted-light 50%, transparent 50%);
   background-position:
@@ -538,7 +543,9 @@ select {
   background-size:
     5px 5px,
     5px 5px;
-  background-repeat: no-repeat;
+  background-repeat:
+    no-repeat,
+    no-repeat;
 }
 
 button,
@@ -847,7 +854,7 @@ code, pre {
   font-family: $font-family--primary;
   font-weight: $font-weight--primary-normal;
   font-style: normal;
-  font-size: $font-size--base;
+  font-size: 1rem;
   line-height: $line-height--base;
   text-decoration: none;
   text-transform: none;
