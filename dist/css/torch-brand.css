@@ -217,9 +217,6 @@ iframe {
 .icon-site::before {
   content: '\f0ac'; }
 
-.icon-search::before {
-  content: '\f002'; }
-
 .icon-cart::before {
   content: '\f07a'; }
 
@@ -231,6 +228,9 @@ iframe {
 
 .icon-delivered::before {
   content: '\f46c'; }
+
+.icon-search::before {
+  content: '\f002'; }
 
 .icon-file::before {
   content: '\f15b';
@@ -276,6 +276,12 @@ iframe {
   content: '\f09d';
   font-weight: 400; }
 
+.icon-savings::before {
+  content: '\F4D3'; }
+
+.icon-speed::before {
+  content: '\f48b'; }
+
 .icon-locked::before {
   content: '\f023'; }
 
@@ -299,7 +305,7 @@ iframe {
 .icon-blockquote-deco::before, blockquote::before {
   content: '\f10d'; }
 
-/* --- Typography --- */
+/* --- Typography (Block Level) --- */
 html {
   color: #333;
   font-family: "Open Sans", sans-serif;
@@ -367,30 +373,10 @@ h6 + p, .styleAs-h6 + p {
   margin-top: 0; }
 
 small {
+  display: block;
   margin-top: .5rem;
   margin-bottom: .5rem;
   font-size: 0.75rem; }
-
-a,
-.styleAs-a,
-.text-dark a,
-.text-dark .styleAs-a {
-  color: #ff4f2c;
-  text-decoration: none;
-  outline: none;
-  cursor: pointer; }
-  a:hover, a:focus,
-  .styleAs-a:hover,
-  .text-dark a:hover,
-  .styleAs-a:focus,
-  .text-dark a:focus {
-    text-decoration: underline; }
-
-strong {
-  font-weight: 600; }
-
-em {
-  font-style: italic; }
 
 blockquote {
   padding: .5rem; }
@@ -426,6 +412,28 @@ ul, ol {
   ul ul, ul ol, ol ul, ol ol {
     margin-top: 0;
     margin-bottom: 0; }
+
+/* --- Typography (Inline Level) --- */
+a,
+.styleAs-a,
+.text-dark a,
+.text-dark .styleAs-a {
+  color: #ff4f2c;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer; }
+  a:hover, a:focus,
+  .styleAs-a:hover,
+  .text-dark a:hover,
+  .styleAs-a:focus,
+  .text-dark a:focus {
+    text-decoration: underline; }
+
+strong {
+  font-weight: 600; }
+
+em {
+  font-style: italic; }
 
 @media (max-width: 767px) {
   html {

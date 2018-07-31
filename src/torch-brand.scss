@@ -177,11 +177,12 @@ $font-size--level: (
 .icon-phone::before { content: '\f095'; }
 .icon-site::before { content: '\f0ac'; }
 
-.icon-search::before { content: '\f002'; }
 .icon-cart::before { content: '\f07a'; }
 .icon-pricing::before { content: '\F4D3'; }
 .icon-shipping::before { content: '\f0d1'; }
 .icon-delivered::before { content: '\f46c'; }
+
+.icon-search::before { content: '\f002'; }
 .icon-file::before { content: '\f15b'; font-weight: 400; }
 .icon-send::before { content: '\f1d8'; }
 .icon-print::before { content: '\f02f'; }
@@ -196,8 +197,12 @@ $font-size--level: (
 .icon-favorite::before { content: '\f005'; }
 .icon-history::before { content: '\f1da'; }
 .icon-gift::before { content: '\f06b'; }
+
 .icon-checking::before { content: '\f53c' }
 .icon-credit-card::before { content: '\f09d'; font-weight: 400; }
+
+.icon-savings::before { content: '\F4D3'; }
+.icon-speed::before { content: '\f48b'; }
 
 .icon-locked::before { content: '\f023'; }
 .icon-unlocked::before { content: '\f09c'; }
@@ -210,7 +215,7 @@ $font-size--level: (
 .icon-blockquote-deco::before { content: '\f10d'; }
 
 
-/* --- Typography --- */
+/* --- Typography (Block Level) --- */
 html {
   color: $color--dark;
   font-family: $font-family--primary;
@@ -287,30 +292,10 @@ h6 + p, .styleAs-h6 + p {
 }
 
 small {
+  display: block;
   margin-top: .5rem;
   margin-bottom: .5rem;
   font-size: map-get($font-size--level, -1);
-}
-
-a,
-.styleAs-a {
-  color: $color--primary;
-  text-decoration: none;
-  outline: none;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
-}
-
-strong {
-  font-weight: $font-weight--primary-bold;
-}
-
-em {
-  font-style: italic;
 }
 
 blockquote {
@@ -361,6 +346,29 @@ ul, ol {
     margin-top: 0;
     margin-bottom: 0;
   }
+}
+
+
+/* --- Typography (Inline Level) --- */
+a,
+.styleAs-a {
+  color: $color--primary;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+strong {
+  font-weight: $font-weight--primary-bold;
+}
+
+em {
+  font-style: italic;
 }
 
 @media (max-width: 767px) {
