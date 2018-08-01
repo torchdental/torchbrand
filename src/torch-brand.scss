@@ -48,11 +48,13 @@ $color--white:      #fff;
 $color--orange-400: #ff4f2c;
 $color--teal-400:   #1994c9;
 $color--green-400:  #0dba52;
+$color--yellow-400: #f7d410;
 
 // Semantic Colors (Please use these)
 $color--primary:          $color--orange-400;
 $color--secondary:        $color--teal-400;
 $color--tertiary:         $color--green-400;
+$color--quaternary:       $color--yellow-400;
 $color--dark:             $color--gray-300;
 $color--muted:            $color--gray-600;
 $color--muted-light:      $color--gray-800;
@@ -62,6 +64,9 @@ $color--bright:           $color--white;
 $color--info:             $color--teal-400;
 $color--success:          $color--green-400;
 $color--danger:           $color--orange-400;
+
+$color--savings:          $color--green-400;
+$color--favorite:         $color--yellow-400;
 
 $font-family--primary:        'Open Sans', sans-serif;
 $font-weight--primary-normal: 400;
@@ -152,67 +157,76 @@ $font-size--level: (
   color: $color--danger;
 }
 
-.icon-menu::before { content: '\f141'; }
-.icon-close::before { content: '\f00d'; }
-.icon-notifications::before { content: '\f0f3'; }
-.icon-comments::before { content: '\f086'; }
-.icon-settings::before { content: '\f013'; }
-.icon-profile::before { content: '\f007'; }
-.icon-loading::before { content: '\f1ce'; }
+.icon--color-savings::before {
+  color: $color--savings;
+}
 
-.icon-chevron-up::before { content: '\f077'; }
-.icon-chevron-down::before { content: '\f078'; }
-.icon-chevron-left::before { content: '\f053'; }
-.icon-chevron-right::before { content: '\f054'; }
+.icon--color-favorite::before {
+  color: $color--quaternary;
+}
 
-.icon-plus::before { content: '\f067'; }
-.icon-minus::before { content: '\f068'; }
+.icon-menu::before { content: '\f141'; font-weight: $font-weight--icons-solid; }
+.icon-close::before { content: '\f00d'; font-weight: $font-weight--icons-solid; }
+.icon-notifications::before { content: '\f0f3'; font-weight: $font-weight--icons-solid; }
+.icon-comments::before { content: '\f086'; font-weight: $font-weight--icons-solid; }
+.icon-settings::before { content: '\f013'; font-weight: $font-weight--icons-solid; }
+.icon-profile::before { content: '\f007'; font-weight: $font-weight--icons-solid; }
+.icon-loading::before { content: '\f1ce'; font-weight: $font-weight--icons-solid; }
 
-.icon-info::before { content: '\f05a'; }
-.icon-inquiry::before { content: '\f059'; }
-.icon-success::before { content: '\f058'; }
-.icon-danger::before { content: '\f06a'; }
+.icon-chevron-up::before { content: '\f077'; font-weight: $font-weight--icons-solid; }
+.icon-chevron-down::before { content: '\f078'; font-weight: $font-weight--icons-solid; }
+.icon-chevron-left::before { content: '\f053'; font-weight: $font-weight--icons-solid; }
+.icon-chevron-right::before { content: '\f054'; font-weight: $font-weight--icons-solid; }
 
-.icon-email::before { content: '\f0e0'; }
-.icon-phone::before { content: '\f095'; }
-.icon-site::before { content: '\f0ac'; }
+.icon-plus::before { content: '\f067'; font-weight: $font-weight--icons-solid; }
+.icon-minus::before { content: '\f068'; font-weight: $font-weight--icons-solid; }
 
-.icon-cart::before { content: '\f07a'; }
-.icon-pricing::before { content: '\F4D3'; }
-.icon-shipping::before { content: '\f0d1'; }
-.icon-delivered::before { content: '\f46c'; }
+.icon-info::before { content: '\f05a'; font-weight: $font-weight--icons-solid; }
+.icon-inquiry::before { content: '\f059'; font-weight: $font-weight--icons-solid; }
+.icon-success::before { content: '\f058'; font-weight: $font-weight--icons-solid; }
+.icon-danger::before { content: '\f06a'; font-weight: $font-weight--icons-solid; }
 
-.icon-search::before { content: '\f002'; }
+.icon-email::before { content: '\f0e0'; font-weight: $font-weight--icons-solid; }
+.icon-phone::before { content: '\f095'; font-weight: $font-weight--icons-solid; }
+.icon-site::before { content: '\f0ac'; font-weight: $font-weight--icons-solid; }
+
+.icon-cart::before { content: '\f07a'; font-weight: $font-weight--icons-solid; }
+.icon-pricing::before { content: '\F4D3'; font-weight: $font-weight--icons-solid; }
+.icon-shipping::before { content: '\f0d1'; font-weight: $font-weight--icons-solid; }
+.icon-delivered::before { content: '\f46c'; font-weight: $font-weight--icons-solid; }
+
+.icon-search::before { content: '\f002'; font-weight: $font-weight--icons-solid; }
 .icon-file::before { content: '\f15b'; font-weight: 400; }
-.icon-send::before { content: '\f1d8'; }
-.icon-print::before { content: '\f02f'; }
-.icon-rating::before { content: '\f005'; }
-.icon-rating-half::before { content: '\f089'; }
+.icon-send::before { content: '\f1d8'; font-weight: $font-weight--icons-solid; }
+.icon-print::before { content: '\f02f'; font-weight: $font-weight--icons-solid; }
+.icon-rating::before { content: '\f005'; font-weight: $font-weight--icons-solid; }
+.icon-rating-half::before { content: '\f089'; font-weight: $font-weight--icons-solid; }
 
-.icon-add::before { content: '\f055'; }
-.icon-remove::before { content: '\f056'; }
-.icon-edit::before { content: '\f14b'; }
-.icon-update::before { content: '\f021'; }
+.icon-add::before { content: '\f055'; font-weight: $font-weight--icons-solid; }
+.icon-remove::before { content: '\f056'; font-weight: $font-weight--icons-solid; }
+.icon-edit::before { content: '\f14b'; font-weight: $font-weight--icons-solid; }
+.icon-update::before { content: '\f021'; font-weight: $font-weight--icons-solid; }
 
-.icon-favorite::before { content: '\f005'; }
-.icon-history::before { content: '\f1da'; }
-.icon-gift::before { content: '\f06b'; }
+.icon-favorite::before { content: '\f005'; font-weight: $font-weight--icons-solid; }
+.icon-history::before { content: '\f1da'; font-weight: $font-weight--icons-solid; }
+.icon-best-seller::before { content: '\f091'; font-weight: $font-weight--icons-solid; }
+.icon-gift::before { content: '\f06b'; font-weight: $font-weight--icons-solid; }
 
-.icon-checking::before { content: '\f53c' }
-.icon-credit-card::before { content: '\f09d'; font-weight: 400; }
+.icon-checking::before { content: '\f53c'; font-weight: $font-weight--icons-solid; }
+.icon-credit-card::before { content: '\f09d'; font-weight: $font-weight--icons-normal; }
 
-.icon-savings::before { content: '\F4D3'; }
-.icon-speed::before { content: '\f48b'; }
+.icon-savings::before { content: '\F4D3'; font-weight: $font-weight--icons-solid; }
+.icon-speed::before { content: '\f48b'; font-weight: $font-weight--icons-solid; }
 
-.icon-locked::before { content: '\f023'; }
-.icon-unlocked::before { content: '\f09c'; }
+.icon-locked::before { content: '\f023'; font-weight: $font-weight--icons-solid; }
+.icon-unlocked::before { content: '\f09c'; font-weight: $font-weight--icons-solid; }
 
-.icon-radio::before { content: '\f111'; font-weight: 400; }
-.icon-radio-checked::before { content: '\f192'; }
-.icon-checkbox::before { content: '\f0c8'; font-weight: 400; }
-.icon-checkbox-checked::before { content: '\f14a'; }
+.icon-radio::before { content: '\f111'; font-weight: $font-weight--icons-normal; }
+.icon-radio-checked::before { content: '\f192'; font-weight: $font-weight--icons-solid; }
+.icon-checkbox::before { content: '\f0c8'; font-weight: $font-weight--icons-normal; }
+.icon-checkbox-checked::before { content: '\f14a'; font-weight: $font-weight--icons-solid; }
 
-.icon-blockquote-deco::before { content: '\f10d'; }
+.icon-blockquote-deco::before { content: '\f10d'; font-weight: $font-weight--icons-solid; }
 
 
 /* --- Typography (Block Level) --- */
@@ -1282,6 +1296,15 @@ code, pre {
   }
 }
 
+.text-savings {
+  color: $color--savings;
+
+  a, .styleAs-a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
 // Background Variations
 .bg-bright {
   background-color: $color--bright;
@@ -1305,6 +1328,10 @@ code, pre {
 
 .bg-tertiary {
   background-color: $color--tertiary;
+}
+
+.bg-quaternary {
+  background-color: $color--quaternary;
 }
 
 .bg-muted {

@@ -157,153 +157,207 @@ iframe {
 .icon--color-danger::before, .status-danger::before {
   color: #ff4f2c; }
 
+.icon--color-savings::before {
+  color: #0dba52; }
+
+.icon--color-favorite::before {
+  color: #f7d410; }
+
 .icon-menu::before {
-  content: '\f141'; }
+  content: '\f141';
+  font-weight: 900; }
 
 .icon-close::before, .close::before, .modal-closer::before {
-  content: '\f00d'; }
+  content: '\f00d';
+  font-weight: 900; }
 
 .icon-notifications::before {
-  content: '\f0f3'; }
+  content: '\f0f3';
+  font-weight: 900; }
 
 .icon-comments::before {
-  content: '\f086'; }
+  content: '\f086';
+  font-weight: 900; }
 
 .icon-settings::before {
-  content: '\f013'; }
+  content: '\f013';
+  font-weight: 900; }
 
 .icon-profile::before {
-  content: '\f007'; }
+  content: '\f007';
+  font-weight: 900; }
 
 .icon-loading::before, .loading::before, .status-loading::before {
-  content: '\f1ce'; }
+  content: '\f1ce';
+  font-weight: 900; }
 
 .icon-chevron-up::before {
-  content: '\f077'; }
+  content: '\f077';
+  font-weight: 900; }
 
 .icon-chevron-down::before {
-  content: '\f078'; }
+  content: '\f078';
+  font-weight: 900; }
 
 .icon-chevron-left::before {
-  content: '\f053'; }
+  content: '\f053';
+  font-weight: 900; }
 
 .icon-chevron-right::before {
-  content: '\f054'; }
+  content: '\f054';
+  font-weight: 900; }
 
 .icon-plus::before {
-  content: '\f067'; }
+  content: '\f067';
+  font-weight: 900; }
 
 .icon-minus::before {
-  content: '\f068'; }
+  content: '\f068';
+  font-weight: 900; }
 
 .icon-info::before {
-  content: '\f05a'; }
+  content: '\f05a';
+  font-weight: 900; }
 
 .icon-inquiry::before, .status-confirm::before {
-  content: '\f059'; }
+  content: '\f059';
+  font-weight: 900; }
 
 .icon-success::before, .status-success::before {
-  content: '\f058'; }
+  content: '\f058';
+  font-weight: 900; }
 
 .icon-danger::before, .status-error::before, .status-danger::before {
-  content: '\f06a'; }
+  content: '\f06a';
+  font-weight: 900; }
 
 .icon-email::before {
-  content: '\f0e0'; }
+  content: '\f0e0';
+  font-weight: 900; }
 
 .icon-phone::before {
-  content: '\f095'; }
+  content: '\f095';
+  font-weight: 900; }
 
 .icon-site::before {
-  content: '\f0ac'; }
+  content: '\f0ac';
+  font-weight: 900; }
 
 .icon-cart::before {
-  content: '\f07a'; }
+  content: '\f07a';
+  font-weight: 900; }
 
 .icon-pricing::before {
-  content: '\F4D3'; }
+  content: '\F4D3';
+  font-weight: 900; }
 
 .icon-shipping::before {
-  content: '\f0d1'; }
+  content: '\f0d1';
+  font-weight: 900; }
 
 .icon-delivered::before {
-  content: '\f46c'; }
+  content: '\f46c';
+  font-weight: 900; }
 
 .icon-search::before {
-  content: '\f002'; }
+  content: '\f002';
+  font-weight: 900; }
 
 .icon-file::before {
   content: '\f15b';
   font-weight: 400; }
 
 .icon-send::before {
-  content: '\f1d8'; }
+  content: '\f1d8';
+  font-weight: 900; }
 
 .icon-print::before {
-  content: '\f02f'; }
+  content: '\f02f';
+  font-weight: 900; }
 
 .icon-rating::before {
-  content: '\f005'; }
+  content: '\f005';
+  font-weight: 900; }
 
 .icon-rating-half::before {
-  content: '\f089'; }
+  content: '\f089';
+  font-weight: 900; }
 
 .icon-add::before {
-  content: '\f055'; }
+  content: '\f055';
+  font-weight: 900; }
 
 .icon-remove::before {
-  content: '\f056'; }
+  content: '\f056';
+  font-weight: 900; }
 
 .icon-edit::before {
-  content: '\f14b'; }
+  content: '\f14b';
+  font-weight: 900; }
 
 .icon-update::before {
-  content: '\f021'; }
+  content: '\f021';
+  font-weight: 900; }
 
 .icon-favorite::before {
-  content: '\f005'; }
+  content: '\f005';
+  font-weight: 900; }
 
 .icon-history::before {
-  content: '\f1da'; }
+  content: '\f1da';
+  font-weight: 900; }
+
+.icon-best-seller::before {
+  content: '\f091';
+  font-weight: 900; }
 
 .icon-gift::before {
-  content: '\f06b'; }
+  content: '\f06b';
+  font-weight: 900; }
 
 .icon-checking::before {
-  content: '\f53c'; }
+  content: '\f53c';
+  font-weight: 900; }
 
 .icon-credit-card::before {
   content: '\f09d';
   font-weight: 400; }
 
 .icon-savings::before {
-  content: '\F4D3'; }
+  content: '\F4D3';
+  font-weight: 900; }
 
 .icon-speed::before {
-  content: '\f48b'; }
+  content: '\f48b';
+  font-weight: 900; }
 
 .icon-locked::before {
-  content: '\f023'; }
+  content: '\f023';
+  font-weight: 900; }
 
 .icon-unlocked::before {
-  content: '\f09c'; }
+  content: '\f09c';
+  font-weight: 900; }
 
 .icon-radio::before, input[type="radio"]::before {
   content: '\f111';
   font-weight: 400; }
 
 .icon-radio-checked::before, input:checked[type="radio"]::before {
-  content: '\f192'; }
+  content: '\f192';
+  font-weight: 900; }
 
 .icon-checkbox::before, input[type="checkbox"]::before {
   content: '\f0c8';
   font-weight: 400; }
 
 .icon-checkbox-checked::before, input:checked[type="checkbox"]::before {
-  content: '\f14a'; }
+  content: '\f14a';
+  font-weight: 900; }
 
 .icon-blockquote-deco::before, blockquote::before {
-  content: '\f10d'; }
+  content: '\f10d';
+  font-weight: 900; }
 
 /* --- Typography (Block Level) --- */
 html {
@@ -1064,6 +1118,12 @@ code, pre {
 .text-dark {
   color: #333; }
 
+.text-savings {
+  color: #0dba52; }
+  .text-savings a, .text-savings .styleAs-a, .text-savings .text-dark a, .text-dark .text-savings a {
+    color: inherit;
+    text-decoration: underline; }
+
 .bg-bright, .card, .modal {
   background-color: #fff; }
 
@@ -1081,6 +1141,9 @@ code, pre {
 
 .bg-tertiary {
   background-color: #0dba52; }
+
+.bg-quaternary {
+  background-color: #f7d410; }
 
 .bg-muted {
   background-color: #888; }
