@@ -117,6 +117,14 @@ $font-size--level: (
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon--spaceLeft {
+  margin-left: .3em;
+}
+
+.icon--spaceRight {
+  margin-right: .3em;
+}
+
 .icon--spin::before {
   animation: icon--spin 2s infinite linear;
 }

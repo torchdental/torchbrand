@@ -127,6 +127,12 @@ iframe {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon--spaceLeft {
+  margin-left: .3em; }
+
+.icon--spaceRight {
+  margin-right: .3em; }
+
 .icon--spin::before, .loading::before, .status-loading::before {
   animation: icon--spin 2s infinite linear; }
 
