@@ -204,6 +204,7 @@ $font-size--level: (
 .icon-delivered::before { content: '\f46c'; font-weight: $font-weight--icons-solid; }
 
 .icon-search::before { content: '\f002'; font-weight: $font-weight--icons-solid; }
+.icon-zoom::before { content: '\f00e'; font-weight: $font-weight--icons-solid; }
 .icon-file::before { content: '\f15b'; font-weight: 400; }
 .icon-send::before { content: '\f1d8'; font-weight: $font-weight--icons-solid; }
 .icon-print::before { content: '\f02f'; font-weight: $font-weight--icons-solid; }

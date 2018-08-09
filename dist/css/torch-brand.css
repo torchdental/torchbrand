@@ -269,6 +269,10 @@ iframe {
   content: '\f002';
   font-weight: 900; }
 
+.icon-zoom::before {
+  content: '\f00e';
+  font-weight: 900; }
+
 .icon-file::before {
   content: '\f15b';
   font-weight: 400; }
