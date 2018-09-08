@@ -118,7 +118,7 @@ iframe {
 
 /* --- Variables --- */
 /* --- Icons --- */
-.icon::before, blockquote::before, input[type="radio"]::before, input:checked[type="radio"]::before, input[type="checkbox"]::before, input:checked[type="checkbox"]::before, .close::before, .modal-closer::before, .loading::before, .status-loading::before, .status-success::before, .status-error::before, .status-confirm::before, .status-danger::before {
+.icon::before, blockquote::before, input[type="radio"]::before, input:checked[type="radio"]::before, input[type="checkbox"]::before, input:checked[type="checkbox"]::before, .close::before, .modal-closer::before, .loading::before, .spinner::before, .status-success::before, .status-error::before, .status-confirm::before, .status-danger::before {
   display: inline-block;
   font-family: "FontAwesome";
   font-style: normal;
@@ -133,7 +133,7 @@ iframe {
 .icon--spaceRight {
   margin-right: .3em; }
 
-.icon--spin::before, .loading::before, .status-loading::before {
+.icon--spin::before, .loading::before, .spinner::before {
   animation: icon--spin 2s infinite linear; }
 
 @keyframes icon--spin {
@@ -145,7 +145,7 @@ iframe {
 .icon--color-dark::before {
   color: #333; }
 
-.icon--color-muted::before, .status-loading::before, .status-error::before {
+.icon--color-muted::before, .spinner::before, .status-error::before {
   color: #888; }
 
 .icon--color-bright::before {
@@ -193,7 +193,7 @@ iframe {
   content: '\f007';
   font-weight: 900; }
 
-.icon-loading::before, .loading::before, .status-loading::before {
+.icon-loading::before, .loading::before, .spinner::before {
   content: '\f1ce';
   font-weight: 900; }
 

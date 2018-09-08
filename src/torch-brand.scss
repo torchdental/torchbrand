@@ -999,13 +999,18 @@ code, pre {
   }
 
   &::before {
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 2em;
+  }
+}
+
+.spinner {
+  &::before {
     @extend .icon;
     @extend .icon-loading;
     @extend .icon--spin;
     @extend .icon--color-muted;
-    display: block;
-    margin-bottom: .5rem;
-    font-size: 2em;
   }
 }
 
