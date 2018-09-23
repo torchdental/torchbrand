@@ -108,6 +108,11 @@ iframe {
 
 @font-face {
   font-family: 'FontAwesome';
+  font-weight: 100;
+  src: url("../../assets/fonts/font-awesome/fa-brands-400.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'FontAwesome';
   font-weight: 400;
   src: url("../../assets/fonts/font-awesome/fa-regular-400.ttf") format("truetype"); }
 
@@ -368,6 +373,10 @@ iframe {
 .icon-blockquote-deco::before, blockquote::before {
   content: '\f10d';
   font-weight: 900; }
+
+.icon-order-delivered::before {
+  content: '\f16b';
+  font-weight: 100; }
 
 /* --- Typography (Block Level) --- */
 html {

@@ -28,6 +28,12 @@
 
 @font-face {
   font-family: 'FontAwesome';
+  font-weight: 100;
+  src: url('../../assets/fonts/font-awesome/fa-brands-400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'FontAwesome';
   font-weight: 400;
   src: url('../../assets/fonts/font-awesome/fa-regular-400.ttf') format('truetype');
 }
@@ -76,6 +82,7 @@ $font-family--secondary:      'Montserrat', sans-serif;
 $font-weight--secondary-bold: 600;
 
 $font-family--icons:          'FontAwesome';
+$font-weight--icons-brand:    100;
 $font-weight--icons-normal:   400;
 $font-weight--icons-solid:    900;
 
@@ -237,7 +244,7 @@ $font-size--level: (
 
 .icon-blockquote-deco::before { content: '\f10d'; font-weight: $font-weight--icons-solid; }
 
-
+.icon-order-delivered::before { content: '\f16b'; font-weight: $font-weight--icons-brand; }
 /* --- Typography (Block Level) --- */
 html {
   color: $color--dark;
@@ -1351,5 +1358,3 @@ code, pre {
 .bg-muted {
   background-color: $color--muted;
 }
-
-
