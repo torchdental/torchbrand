@@ -6,9 +6,9 @@
 // Import css reset
 @import 'reset';
 
-$font-opensans: '/assets/fonts/open-sans/' !default;
-$font-montserrat: '/assets/fonts/montserrat/' !default;
-$font-awesome: '/assets/fonts/font-awesome/' !default;
+$font-opensans: '../assets/fonts/open-sans/' !default;
+$font-montserrat: '../assets/fonts/montserrat/' !default;
+$font-awesome: '../assets/fonts/font-awesome/' !default;
 
 
 /* --- Font Face Directives --- */
