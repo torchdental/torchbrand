@@ -6,44 +6,48 @@
 // Import css reset
 @import 'reset';
 
+$font-opensans: '/assets/fonts/open-sans/' !default;
+$font-montserrat: '/assets/fonts/montserrat/' !default;
+$font-awesome: '/assets/fonts/font-awesome/' !default;
 
 
 /* --- Font Face Directives --- */
 @font-face {
   font-family: 'Open Sans';
   font-weight: 400;
-  src: url('/assets/fonts/open-sans/OpenSans-Regular.ttf') format('truetype');
+  src: url( $font-opensans + 'OpenSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Open Sans';
   font-weight: 600;
-  src: url('/assets/fonts/open-sans/OpenSans-SemiBold.ttf') format('truetype');
+  src: url( $font-opensans + 'OpenSans-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Montserrat';
   font-weight: 600;
-  src: url('/assets/fonts/montserrat/Montserrat-SemiBold.ttf') format('truetype');
+  src: url( $font-montserrat + 'Montserrat-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'FontAwesome';
   font-weight: 100;
-  src: url('/assets/fonts/font-awesome/fa-brands-400.ttf') format('truetype');
+  src: url( $font-awesome + 'fa-brands-400.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'FontAwesome';
   font-weight: 400;
-  src: url('/assets/fonts/font-awesome/fa-regular-400.ttf') format('truetype');
+  src: url( $font-awesome + 'fa-regular-400.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'FontAwesome';
   font-weight: 900;
-  src: url('/assets/fonts/font-awesome/fa-solid-900.ttf') format('truetype');
+  src: url( $font-awesome + 'fa-solid-900.ttf') format('truetype');
 }
+
 
 /* --- Variables --- */
 // Color Constants (Not for use outside this file, variable names subject to change)
