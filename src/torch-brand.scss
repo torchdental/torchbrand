@@ -6,78 +6,46 @@
 // Import css reset
 @import 'reset';
 
-$font-opensans: '/assets/fonts/open-sans/' !default;
-$font-montserrat: '/assets/fonts/montserrat/' !default;
-$font-awesome: '/assets/fonts/font-awesome/' !default;
-
 
 /* --- Font Face Directives --- */
 @font-face {
   font-family: 'Open Sans';
   font-weight: 400;
-  src: url( $font-opensans + 'OpenSans-Regular.ttf') format('truetype');
+  src: url('../../assets/fonts/open-sans/OpenSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Open Sans';
   font-weight: 600;
-  src: url( $font-opensans + 'OpenSans-SemiBold.ttf') format('truetype');
+  src: url('../../assets/fonts/open-sans/OpenSans-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Montserrat';
   font-weight: 600;
-  src: url( $font-montserrat + 'Montserrat-SemiBold.ttf') format('truetype');
+  src: url('../../assets/fonts/montserrat/Montserrat-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'FontAwesome';
   font-weight: 100;
-  src: url( $font-awesome + 'fa-brands-400.ttf') format('truetype');
+  src: url('../../assets/fonts/font-awesome/fa-brands-400.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'FontAwesome';
   font-weight: 400;
-  src: url( $font-awesome + 'fa-regular-400.ttf') format('truetype');
+  src: url('../../assets/fonts/font-awesome/fa-regular-400.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'FontAwesome';
   font-weight: 900;
-  src: url( $font-awesome + 'fa-solid-900.ttf') format('truetype');
+  src: url('../../assets/fonts/font-awesome/fa-solid-900.ttf') format('truetype');
 }
 
-
 /* --- Variables --- */
-// Color Constants (Not for use outside this file, variable names subject to change)
-$color--gray-300:   #333;
-$color--gray-600:   #888;
-$color--gray-800:   #ccc;
-$color--gray-900:   #f2f2f2;
-$color--white:      #fff;
-$color--orange-400: #ff4f2c;
-$color--teal-400:   #1994c9;
-$color--green-400:  #0dba52;
-$color--yellow-400: #f7d410;
-
-// Semantic Colors (Please use these)
-$color--primary:          $color--orange-400;
-$color--secondary:        $color--teal-400;
-$color--tertiary:         $color--green-400;
-$color--quaternary:       $color--yellow-400;
-$color--dark:             $color--gray-300;
-$color--muted:            $color--gray-600;
-$color--muted-light:      $color--gray-800;
-$color--light:            $color--gray-900;
-$color--bright:           $color--white;
-
-$color--info:             $color--teal-400;
-$color--success:          $color--green-400;
-$color--danger:           $color--orange-400;
-
-$color--savings:          $color--green-400;
-$color--favorite:         $color--yellow-400;
+@import 'colors';
 
 $font-family--primary:        'Open Sans', sans-serif;
 $font-weight--primary-normal: 400;
