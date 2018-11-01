@@ -209,6 +209,10 @@ $font-size--level: (
 
 .icon-locked::before { content: '\f023'; font-weight: $font-weight--icons-solid; }
 .icon-unlocked::before { content: '\f09c'; font-weight: $font-weight--icons-solid; }
+.icon-speed::before { content: '\f48b'; font-weight: $font-weight--icons-solid; }
+
+.icon-visible::before { content: '\f06e'; font-weight: $font-weight--icons-solid; }
+.icon-invisible::before { content: '\f070'; font-weight: $font-weight--icons-solid; }
 
 .icon-radio::before { content: '\f111'; font-weight: $font-weight--icons-normal; }
 .icon-radio-checked::before { content: '\f192'; font-weight: $font-weight--icons-solid; }

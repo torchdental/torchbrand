@@ -354,6 +354,18 @@ iframe {
   content: '\f09c';
   font-weight: 900; }
 
+.icon-speed::before {
+  content: '\f48b';
+  font-weight: 900; }
+
+.icon-visible::before {
+  content: '\f06e';
+  font-weight: 900; }
+
+.icon-invisible::before {
+  content: '\f070';
+  font-weight: 900; }
+
 .icon-radio::before, input[type="radio"]::before {
   content: '\f111';
   font-weight: 400; }
