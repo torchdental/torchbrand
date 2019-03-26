@@ -936,6 +936,10 @@ code, pre {
   &.modal-lg {
     max-width: 750px;
   }
+
+  &.modal--fit-content {
+    max-width: fit-content;
+  }
 }
 
 .dropdown {
