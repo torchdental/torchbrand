@@ -1307,6 +1307,15 @@ code, pre {
   }
 }
 
+.text-capitalize {
+  text-transform: capitalize;
+
+  a, .styleAs-a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
 // Background Variations
 .bg-bright {
   background-color: $color--bright;
