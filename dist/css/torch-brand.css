@@ -1157,6 +1157,12 @@ code, pre {
     color: inherit;
     text-decoration: underline; }
 
+.text-capitalize {
+  text-transform: capitalize; }
+  .text-capitalize a, .text-capitalize .styleAs-a, .text-capitalize .text-dark a, .text-dark .text-capitalize a {
+    color: inherit;
+    text-decoration: underline; }
+
 .bg-bright, .card, .modal {
   background-color: #fff; }
 
