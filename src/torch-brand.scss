@@ -892,6 +892,11 @@ code, pre {
   padding: 0 15px;
 }
 
+.modal-backdrop--center {
+  display: flex;
+  align-items: center;
+}
+
 .modal-closer {
   position: absolute;
   z-index: 1055;
