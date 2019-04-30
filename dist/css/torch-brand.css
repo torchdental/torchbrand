@@ -913,6 +913,8 @@ code, pre {
     max-width: 450px; }
   .modal.modal-lg {
     max-width: 750px; }
+  .modal.modal-xl {
+    max-width: 85%; }
   .modal.modal--fit-content {
     max-width: fit-content; }
 

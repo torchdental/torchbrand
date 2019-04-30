@@ -942,6 +942,10 @@ code, pre {
     max-width: 750px;
   }
 
+  &.modal-xl {
+    max-width: 85%;
+  }
+
   &.modal--fit-content {
     max-width: fit-content;
   }
