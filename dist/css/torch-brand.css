@@ -914,7 +914,9 @@ code, pre {
   .modal.modal-lg {
     max-width: 750px; }
   .modal.modal-xl {
-    max-width: 85%; }
+    max-width: 85%;
+    padding: 1rem;
+    margin: 0 auto; }
   .modal.modal--fit-content {
     max-width: fit-content; }
 
