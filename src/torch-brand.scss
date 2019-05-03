@@ -445,6 +445,10 @@ input, textarea, select {
   &::placeholder {
     color: $color--muted-light;
   }
+
+  &:disabled {
+    background-color: $color--gray-900;
+  }
 }
 
 textarea {

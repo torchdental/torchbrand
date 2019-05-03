@@ -569,6 +569,8 @@ input, textarea, select {
     border-bottom-color: #ff4f2c; }
   input::placeholder, textarea::placeholder, select::placeholder {
     color: #ccc; }
+  input:disabled, textarea:disabled, select:disabled {
+    background-color: #f2f2f2; }
 
 textarea {
   resize: none;
