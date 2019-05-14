@@ -1152,6 +1152,17 @@ code, pre {
   background-color: darken($color--light, 5%);
 }
 
+.btn-muted {
+  background: $color--muted;
+  border-color: transparent;
+  color: #000;
+}
+
+.btn-muted:hover:not(:disabled),
+.btn-muted:focus:not(:disabled) {
+  background-color: darken($color--muted, 5%);
+}
+
 .btn-sm {
   padding: 5px 10px;
   font-size: map-get($font-size--level, -1);

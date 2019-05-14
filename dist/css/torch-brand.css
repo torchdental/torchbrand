@@ -1044,6 +1044,15 @@ code, pre {
 .btn-minor-alt:focus:not(:disabled) {
   background-color: #e5e5e5; }
 
+.btn-muted {
+  background: #888;
+  border-color: transparent;
+  color: #000; }
+
+.btn-muted:hover:not(:disabled),
+.btn-muted:focus:not(:disabled) {
+  background-color: #7b7b7b; }
+
 .btn-sm {
   padding: 5px 10px;
   font-size: 0.75rem; }
