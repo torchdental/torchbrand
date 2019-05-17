@@ -855,8 +855,9 @@ code, pre {
 
   &--border {
     border: 2px solid $color--muted-light;
+    background-color: $color--muted-light;
     &--active {
-      background-color: $color--muted-light;
+      background-color: $color--light;
     }
   }
 }
