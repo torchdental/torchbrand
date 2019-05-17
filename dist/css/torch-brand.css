@@ -848,6 +848,15 @@ code, pre {
   font-size: .7em;
   line-height: 1;
   font-weight: 600; }
+  .badge--large {
+    padding: 0.5em 1.2em;
+    font-size: 0.8rem; }
+  .badge--muted-light {
+    background-color: #ccc; }
+  .badge--border {
+    border: 2px solid #ccc; }
+    .badge--border--active {
+      background-color: #ccc; }
 
 .overlay, .modal-backdrop,
 .dropdown-backdrop {
