@@ -338,6 +338,10 @@ iframe {
   content: '\f09d';
   font-weight: 400; }
 
+.icon-dollar::before {
+  content: '\f115';
+  font-weight: 900; }
+
 .icon-savings::before {
   content: '\F4D3';
   font-weight: 900; }
