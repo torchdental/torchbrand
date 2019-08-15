@@ -863,6 +863,18 @@ code, pre {
   }
 }
 
+.square-badge {
+  padding: 0px 0.6rem;
+  background-color: #fff;
+  border: 2px solid $color--muted-light;
+  border-radius: 4px;
+  font-weight: bold;
+
+  &--active {
+    background-color: $color--muted-light;
+  }
+}
+
 
 .close {
   @extend .icon;

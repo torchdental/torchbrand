@@ -863,6 +863,15 @@ code, pre {
     .badge--border--active {
       background-color: #f2f2f2; }
 
+.square-badge {
+  padding: 0px 0.6rem;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-weight: bold; }
+  .square-badge--active {
+    background-color: #ccc; }
+
 .overlay, .modal-backdrop,
 .dropdown-backdrop {
   background: rgba(0, 0, 0, 0.7); }
