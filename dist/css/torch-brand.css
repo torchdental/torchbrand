@@ -925,11 +925,11 @@ code, pre {
     margin-top: 0; }
   .modal > *:last-child {
     margin-bottom: 0; }
-  .modal.modal-sm {
+  .modal.modal--sm {
     max-width: 450px; }
-  .modal.modal-lg {
+  .modal.modal--lg {
     max-width: 750px; }
-  .modal.modal-xl {
+  .modal.modal--xl {
     width: fit-content;
     max-width: 85%;
     padding: 1rem;

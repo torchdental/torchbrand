@@ -957,15 +957,15 @@ code, pre {
     margin-bottom: 0;
   }
 
-  &.modal-sm {
+  &.modal--sm {
     max-width: 450px;
   }
 
-  &.modal-lg {
+  &.modal--lg {
     max-width: 750px;
   }
 
-  &.modal-xl {
+  &.modal--xl {
     width: fit-content;
     max-width: 85%;
     padding: 1rem;
