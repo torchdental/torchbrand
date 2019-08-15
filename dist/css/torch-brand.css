@@ -864,6 +864,7 @@ code, pre {
       background-color: #f2f2f2; }
 
 .square-badge {
+  cursor: pointer;
   padding: 0px 0.6rem;
   background-color: #fff;
   border: 2px solid #ccc;
