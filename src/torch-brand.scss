@@ -874,6 +874,16 @@ code, pre {
   &--active {
     background-color: $color--muted-light;
   }
+
+  &--disabled {
+    background: linear-gradient(to top left,
+      rgba(204,204,204,0) 0%,
+      rgba(204,204,204,0) calc(50% - 2px),
+      rgba(204,204,204,1) 50%,
+      rgba(204,204,204,0) calc(50% + 2px),
+      rgba(204,204,204,0) 100%);
+    color: $color--muted-light;
+  }
 }
 
 
