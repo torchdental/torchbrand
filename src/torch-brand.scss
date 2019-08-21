@@ -876,14 +876,8 @@ code, pre {
   }
 
   &--disabled {
-    background: linear-gradient(to top left,
-      rgba(204,204,204,0) 0%,
-      rgba(204,204,204,0) calc(50% - 2px),
-      rgba(204,204,204,1) 50%,
-      rgba(204,204,204,0) calc(50% + 2px),
-      rgba(204,204,204,0) 100%);
+    border: 2px dotted $color--muted-light;
     color: $color--muted-light;
-    cursor: default;
   }
 }
 

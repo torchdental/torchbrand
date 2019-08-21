@@ -873,9 +873,8 @@ code, pre {
   .square-badge--active {
     background-color: #ccc; }
   .square-badge--disabled {
-    background: linear-gradient(to top left, rgba(204, 204, 204, 0) 0%, rgba(204, 204, 204, 0) calc(50% - 2px), #cccccc 50%, rgba(204, 204, 204, 0) calc(50% + 2px), rgba(204, 204, 204, 0) 100%);
-    color: #ccc;
-    cursor: default; }
+    border: 2px dotted #ccc;
+    color: #ccc; }
 
 .overlay, .modal-backdrop,
 .dropdown-backdrop {
