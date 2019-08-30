@@ -384,6 +384,10 @@ em {
     font-size: $font-size--base-narrow;
   }
 
+  button {
+    font-size: map-get($font-size--level, -1);
+  }
+
   h1,
   .styleAs-h1 {
     font-size: map-get($font-size--level, 3);
@@ -572,7 +576,7 @@ button,
 .styleAs-button {
   display: block;
   width: 100%;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   border: 2px solid $color--light;
   border-radius: 4px;
   margin: 0;
