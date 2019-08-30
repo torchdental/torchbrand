@@ -524,24 +524,6 @@ strong {
 em {
   font-style: italic; }
 
-@media (max-width: 767px) {
-  html {
-    font-size: 16px; }
-  button {
-    font-size: 0.75rem; }
-  h1,
-  .styleAs-h1 {
-    font-size: 2.3705rem;
-    line-height: 1.4; }
-  h2,
-  .styleAs-h2 {
-    font-size: 1.7777rem; }
-  h3,
-  .styleAs-h3 {
-    font-size: 1.3333rem; }
-  ul, ol {
-    padding-left: 1.5rem; } }
-
 /* --- Forms --- */
 label,
 .styleAs-label {
@@ -1238,3 +1220,21 @@ code, pre {
 
 .torch-credit {
   color: #ff4f2c; }
+
+@media (max-width: 767px) {
+  html {
+    font-size: 16px; }
+  button {
+    font-size: 0.75rem; }
+  h1,
+  .styleAs-h1 {
+    font-size: 2.3705rem;
+    line-height: 1.4; }
+  h2,
+  .styleAs-h2 {
+    font-size: 1.7777rem; }
+  h3,
+  .styleAs-h3 {
+    font-size: 1.3333rem; }
+  ul, ol {
+    padding-left: 1.5rem; } }
