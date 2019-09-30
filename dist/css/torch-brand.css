@@ -394,6 +394,10 @@ iframe {
   content: '\f16b';
   font-weight: 100; }
 
+.icon-hourglass::before {
+  content: '\f254';
+  font-weight: 900; }
+
 /* --- Typography (Block Level) --- */
 html {
   color: #333;
