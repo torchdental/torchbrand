@@ -223,7 +223,8 @@ $font-size--level: (
 .icon-blockquote-deco::before { content: '\f10d'; font-weight: $font-weight--icons-solid; }
 
 .icon-order-delivered::before { content: '\f16b'; font-weight: $font-weight--icons-brand; }
-.icon-hourglass::before { content: '\f254'; font-weight: $font-weight--icons-solid}
+.icon-hourglass::before { content: '\f254'; font-weight: $font-weight--icons-solid; }
+.icon-box::before { content: '\f466'; font-weight: $font-weight--icons-solid; }
 
 /* --- Typography (Block Level) --- */
 html {

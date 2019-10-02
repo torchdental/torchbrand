@@ -398,6 +398,10 @@ iframe {
   content: '\f254';
   font-weight: 900; }
 
+.icon-box::before {
+  content: '\f466';
+  font-weight: 900; }
+
 /* --- Typography (Block Level) --- */
 html {
   color: #333;
