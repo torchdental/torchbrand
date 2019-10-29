@@ -226,6 +226,7 @@ $font-size--level: (
 .icon-hourglass::before { content: '\f254'; font-weight: $font-weight--icons-solid; }
 .icon-box::before { content: '\f466'; font-weight: $font-weight--icons-solid; }
 .icon-warning::before { content: '\f071'; font-weight: $font-weight--icons-solid; }
+.icon-star::before { content: '\f005'; font-weight: $font-weight--icons-solid; }
 
 /* --- Typography (Block Level) --- */
 html {
