@@ -1135,6 +1135,17 @@ code, pre {
   background-color: darken($color--primary, 15%);
 }
 
+.btn-blue {
+  background-color: $color--secondary;
+  border-color: transparent;
+  color: $color--bright;
+}
+
+.btn-blue:hover:not(:disabled),
+.btn-blue:focus:not(:disabled) {
+  background-color: darken($color--secondary, 15%);
+}
+
 .btn-secondary {
   background: $color--light;
   border-color: transparent;

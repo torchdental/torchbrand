@@ -1044,6 +1044,15 @@ code, pre {
 .btn-primary:focus:not(:disabled) {
   background-color: #df2500; }
 
+.btn-blue {
+  background-color: #1994c9;
+  border-color: transparent;
+  color: #fff; }
+
+.btn-blue:hover:not(:disabled),
+.btn-blue:focus:not(:disabled) {
+  background-color: #116285; }
+
 .btn-secondary {
   background: #f2f2f2;
   border-color: transparent;
