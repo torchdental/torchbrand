@@ -227,6 +227,7 @@ $font-size--level: (
 .icon-box::before { content: '\f466'; font-weight: $font-weight--icons-solid; }
 .icon-warning::before { content: '\f071'; font-weight: $font-weight--icons-solid; }
 .icon-star::before { content: '\f005'; font-weight: $font-weight--icons-solid; }
+.icon-store-alt::before { content: '\f54f'; font-weight: $font-weight--icons-solid}
 
 /* --- Typography (Block Level) --- */
 html {
