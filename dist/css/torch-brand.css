@@ -418,6 +418,10 @@ iframe {
   content: '\f03a';
   font-weight: 900; }
 
+.icon-calendar::before {
+  content: '\f073';
+  font-weight: 900; }
+
 /* --- Typography (Block Level) --- */
 html {
   color: #333;
