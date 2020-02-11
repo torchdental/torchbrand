@@ -318,6 +318,10 @@ iframe {
   content: '\f005';
   font-weight: 900; }
 
+.icon-preferred::before {
+  content: '\f7e4';
+  font-weight: 900; }
+
 .icon-history::before {
   content: '\f1da';
   font-weight: 900; }
