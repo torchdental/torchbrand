@@ -18,7 +18,7 @@
     "start": "npm-run-all --parallel watch-css watch-html run-server"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.3.1",
+    "@fortawesome/fontawesome-free": "^5.6.3",
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9"
   },
   "devDependencies": {
