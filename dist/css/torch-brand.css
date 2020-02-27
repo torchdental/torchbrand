@@ -426,6 +426,10 @@ iframe {
   content: '\f012';
   font-weight: 900; }
 
+.icon-filter::before {
+  content: '\f0b0';
+  font-weight: 900; }
+
 /* --- Typography (Block Level) --- */
 html {
   color: #333;

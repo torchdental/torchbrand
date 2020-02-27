@@ -231,6 +231,7 @@ $font-size--level: (
 .icon-list::before { content: '\f03a'; font-weight: $font-weight--icons-solid}
 .icon-calendar::before { content: '\f073'; font-weight: $font-weight--icons-solid}
 .icon-signal::before { content: '\f012'; font-weight: $font-weight--icons-solid}
+.icon-filter::before { content: '\f0b0'; font-weight: $font-weight--icons-solid}
 
 /* --- Typography (Block Level) --- */
 html {
