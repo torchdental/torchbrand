@@ -232,6 +232,8 @@ $font-size--level: (
 .icon-calendar::before { content: '\f073'; font-weight: $font-weight--icons-solid}
 .icon-signal::before { content: '\f012'; font-weight: $font-weight--icons-solid}
 .icon-filter::before { content: '\f0b0'; font-weight: $font-weight--icons-solid}
+.icon-cart-plus::before { content: '\f217'; font-weight: $font-weight--icons-solid}
+.icon-plus-circle::before { content: '\f055'; font-weight: $font-weight--icons-solid}
 
 /* --- Typography (Block Level) --- */
 html {

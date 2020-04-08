@@ -430,6 +430,16 @@ iframe {
   content: '\f0b0';
   font-weight: 900; }
 
+.icon-cart-plus::before {
+  content: '\f217';
+  font-weight: 900; }
+
+.icon-plus-circle::before {
+  content: '\f055';
+  font-weight: 900; }
+
+
+
 /* --- Typography (Block Level) --- */
 html {
   color: #333;
