@@ -438,7 +438,9 @@ iframe {
   content: '\f055';
   font-weight: 900; }
 
-
+.icon-angle-left::before {
+  content: '\f104';
+  font-weight: 900; }
 
 /* --- Typography (Block Level) --- */
 html {
