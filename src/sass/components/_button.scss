@@ -1,0 +1,93 @@
+
+
+// Button Variations
+.btn-primary {
+  background-color: $color--primary;
+  border-color: transparent;
+  color: $color--bright;
+}
+
+.btn-primary:hover:not(:disabled),
+.btn-primary:focus:not(:disabled) {
+  background-color: darken($color--primary, 15%);
+}
+
+.btn-blue {
+  background-color: $color--secondary;
+  border-color: transparent;
+  color: $color--bright;
+}
+
+.btn-blue:hover:not(:disabled),
+.btn-blue:focus:not(:disabled) {
+  background-color: darken($color--secondary, 15%);
+}
+
+.btn-secondary {
+  background: $color--light;
+  border-color: transparent;
+  color: $color--dark;
+}
+
+.btn-secondary:hover:not(:disabled),
+.btn-secondary:focus:not(:disabled) {
+  background-color: darken($color--light, 5%);
+}
+
+.btn-minor {
+  background: $color--light;
+  border-color: transparent;
+  color: $color--muted;
+}
+
+.btn-minor:hover:not(:disabled),
+.btn-minor:focus:not(:disabled) {
+  background-color: darken($color--light, 5%);
+}
+
+.btn-minor-alt {
+  background: $color--bright;
+  border-color: transparent;
+  color: $color--muted;
+}
+
+.btn-minor-alt:hover:not(:disabled),
+.btn-minor-alt:focus:not(:disabled) {
+  background-color: darken($color--light, 5%);
+}
+
+.btn-muted {
+  background: $color--muted;
+  border-color: transparent;
+  color: #000;
+}
+
+.btn-muted:hover:not(:disabled),
+.btn-muted:focus:not(:disabled) {
+  background-color: darken($color--muted, 5%);
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: map-get($font-size--level, -1);
+}
+
+.btn-lg {
+  padding: 10px 22px;
+  font-size: map-get($font-size--level, 1);
+}
+
+.btn-tight {
+  display: inline-block;
+  width: auto;
+}
+
+// TODO: I believe this is only used for the LoadMoreButton component - should probably be renamed to be more specific.
+.spinner {
+  &::before {
+    @extend .icon;
+    @extend .icon-loading;
+    @extend .icon--spin;
+    @extend .icon--color-muted;
+  }
+}

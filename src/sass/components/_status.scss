@@ -1,0 +1,93 @@
+// Statuses
+.status-loading {
+  text-align: center;
+
+  h6 {
+    margin-top: 0;
+  }
+
+  &::before {
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 2em;
+  }
+}
+
+
+.status-success {
+  text-align: center;
+
+  h6 {
+    margin-top: 0;
+  }
+
+  &::before {
+    @extend .icon;
+    @extend .icon-success;
+    @extend .icon--color-success;
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 2.5em;
+  }
+}
+
+.status-error {
+  text-align: center;
+
+  h6 {
+    margin-top: 0;
+  }
+
+  &::before {
+    @extend .icon;
+    @extend .icon-danger;
+    @extend .icon--color-muted;
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 2.5em;
+  }
+}
+
+.status-confirm {
+  text-align: center;
+
+  h6 {
+    margin-top: 0;
+  }
+
+  &::before {
+    @extend .icon;
+    @extend .icon-inquiry;
+    @extend .icon--color-info;
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 2.5em;
+  }
+}
+
+.status-danger {
+  text-align: center;
+
+  h6 {
+    margin-top: 0;
+  }
+
+  &::before {
+    @extend .icon;
+    @extend .icon-danger;
+    @extend .icon--color-danger;
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 2.5em;
+  }
+}
+
+.status-empty {
+  text-align: center;
+  @extend .text-muted;
+
+  h6 {
+    margin-top: 0;
+  }
+}
+

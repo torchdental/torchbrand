@@ -1,0 +1,55 @@
+
+// Nav Variations
+.navbar-ctr {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: stretch;
+  padding: 0 15px;
+}
+
+.navbar-brand {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.navbar-nav {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-nav--right {
+  margin-left: auto;
+}
+
+.nav-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: stretch;
+  padding: 15px 10px;
+  margin: 0;
+  list-style: none;
+}
+
+.nav-link {
+  color: $color--dark;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &.nav-link--active {
+    color: $color--primary;
+    text-decoration: none;
+  }
+}

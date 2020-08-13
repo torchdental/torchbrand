@@ -1,0 +1,47 @@
+
+.badge {
+  display: inline-block;
+  vertical-align: middle;
+  padding: .25em .6em;
+  border-radius: 1em;
+  margin-top: -4px;
+  background-color: $color--light;
+  font-size: .7em;
+  line-height: 1;
+  font-weight: $font-weight--primary-bold;
+
+  &--large {
+    padding: 0.5em 1.2em;
+    font-size: 0.8rem;
+  }
+
+  &--muted-light {
+    background-color: $color--muted-light
+  }
+
+  &--border {
+    border: 2px solid $color--muted-light;
+    background-color: $color--muted-light;
+    &--active {
+      background-color: $color--light;
+    }
+  }
+}
+
+.square-badge {
+  cursor: pointer;
+  padding: 0px 0.6rem;
+  background-color: #fff;
+  border: 2px solid $color--muted-light;
+  border-radius: 4px;
+  font-weight: bold;
+
+  &--active {
+    background-color: $color--muted-light;
+  }
+
+  &--disabled {
+    border: 2px dotted $color--muted-light;
+    color: $color--muted-light;
+  }
+}

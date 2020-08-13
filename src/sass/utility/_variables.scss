@@ -26,3 +26,43 @@ $color--danger:           $color--orange-400;
 
 $color--savings:          $color--green-400;
 $color--favorite:         $color--yellow-400;
+
+
+
+/* --- Variables --- */
+
+$font-family--primary:        'Open Sans', sans-serif;
+$font-weight--primary-normal: 400;
+$font-weight--primary-bold:   600;
+
+$font-family--secondary:      'Montserrat', sans-serif;
+$font-weight--secondary-bold: 600;
+
+$font-family--icons:          'FontAwesome';
+$font-weight--icons-brand:    100;
+$font-weight--icons-normal:   400;
+$font-weight--icons-solid:    900;
+
+$font-size--base:        18px;
+$font-size--base-narrow: 16px;
+$line-height--base:      1.4;
+$line-height--lose:      1.6;
+$font-size--level: (
+  -1: 1rem * 0.75,
+   0: 1rem * 1,
+   1: 1rem * 1.3333,
+   2: 1rem * 1.7777,
+   3: 1rem * 2.3705,
+   4: 1rem * 3.1605,
+   5: 1rem * 4.2140
+);
+
+
+// Breakpoints (*Note: prefer to use Breakpoint component to make responsive decisions instead)
+$XS: 0px;
+$SM: 576px;
+$MD: 768px;
+$LG: 992px;
+$XL: 1200px;
+
+

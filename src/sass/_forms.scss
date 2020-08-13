@@ -1,0 +1,232 @@
+/* --- Forms --- */
+label,
+.styleAs-label {
+  display: inline-block;
+  padding: 0 4px;
+  color: $color--muted;
+  font-weight: $font-weight--primary-bold;
+  font-size: map-get($font-size--level, -1);
+  text-transform: uppercase;
+  user-select: none;
+}
+
+input, textarea, select {
+  display: block;
+  width: 100%;
+  padding: 4px 2px;
+  border: 2px solid transparent;
+  border-bottom-color: $color--muted-light;
+  border-radius: 4px;
+  margin: 0;
+  background-color: $color--bright;
+
+  color: inherit;
+  font-family: inherit;
+  font-size: map-get($font-size--level, 0);
+  line-height: $line-height--base;
+  font-weight: $font-weight--primary-normal;
+
+  transition: border-color .5s;
+  touch-action: manipulation;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &:focus {
+    border-bottom-color: $color--primary;
+  }
+
+  &::placeholder {
+    color: $color--muted-light;
+  }
+
+  &:disabled {
+    background-color: $color--gray-900;
+  }
+}
+
+textarea {
+  resize: none;
+  border-color: $color--light;
+  padding: 10px 15px;
+
+  &::placeholder {
+    color: $color--muted;
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  padding: 0 4px;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  &::before {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.5em;
+    line-height: 1;
+    color: $color--muted-light;
+    transition: color .3s;
+  }
+
+  &:focus::before {
+    color: $color--muted;
+  }
+
+  &:checked::before {
+    color: $color--primary;
+  }
+
+  &:focus:checked::before {
+    color: darken($color--primary, 15%);
+  }
+
+  & + label {
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    margin-bottom: 0;
+    color: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    text-transform: inherit;
+    cursor: pointer;
+    transition: border-color .5s;
+  }
+}
+
+input[type="radio"] {
+  &::before {
+    @extend .icon;
+    @extend .icon-radio;
+  }
+
+  &:checked::before {
+    @extend .icon;
+    @extend .icon-radio-checked;
+  }
+}
+
+input[type="checkbox"] {
+  &::before {
+    @extend .icon;
+    @extend .icon-checkbox;
+  }
+
+  &:checked::before {
+    @extend .icon;
+    @extend .icon-checkbox-checked;
+  }
+
+  &.checkbox-success::before {
+    color: $color--danger;
+  }
+
+  &.checkbox-success:checked::before {
+    color: $color--success;
+  }
+}
+
+input[type="file"] {
+  display: flex;
+}
+
+select {
+  padding-right: 25px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, $color--muted-light 50%),
+    linear-gradient(135deg, $color--muted-light 50%, transparent 50%);
+  background-position:
+    calc(100% - 11px) calc(1em - 3px),
+    calc(100% - 6px) calc(1em - 3px);
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat:
+    no-repeat,
+    no-repeat;
+}
+
+button,
+.styleAs-button {
+  display: block;
+  width: 100%;
+  padding: 0.625rem 1.25rem;
+  border: 2px solid $color--light;
+  border-radius: 4px;
+  margin: 0;
+  background: $color--bright;
+  box-shadow: none;
+  outline: none;
+
+  color: $color--dark;
+  font-family: inherit;
+  font-size: map-get($font-size--level, 0);
+  line-height: 1;
+  font-weight: $font-weight--primary-normal;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+
+  transition: border-color .3s,
+              background-color .3s,
+              color .3s,
+              opacity .3s;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  -webkit-appearance: none;
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    background: $color--light;
+  }
+
+  &:disabled {
+    opacity: .5;
+    cursor: auto;
+  }
+}
+
+.styleAs-button:hover,
+.styleAs-button:focus {
+  text-decoration: none;
+}
+
+.form-message,
+.input-message {
+  font-size: map-get($font-size--level, -1);
+}
+
+.input-message {
+  min-height: 18px;
+  padding-left: 4px;
+  margin-top: .25rem;
+}
+
+
+// Input Variations
+.input-sm {
+  padding: 3px 6px;
+  font-size: map-get($font-size--level, -1);
+}
+
+.input-lg {
+  padding: 5px 8px;
+  font-size: map-get($font-size--level, 1);
+}
+

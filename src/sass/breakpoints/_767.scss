@@ -1,0 +1,29 @@
+@media (max-width: 767px) {
+  html {
+    font-size: $font-size--base-narrow;
+  }
+
+  button {
+    font-size: map-get($font-size--level, -1);
+  }
+
+  h1,
+  .styleAs-h1 {
+    font-size: map-get($font-size--level, 3);
+    line-height: $line-height--base;
+  }
+
+  h2,
+  .styleAs-h2 {
+    font-size: map-get($font-size--level, 2);
+  }
+
+  h3,
+  .styleAs-h3 {
+    font-size: map-get($font-size--level, 1);
+  }
+
+  ul, ol {
+    padding-left: 1.5rem;
+  }
+}

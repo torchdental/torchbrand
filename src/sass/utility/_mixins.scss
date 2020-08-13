@@ -1,0 +1,30 @@
+/* --- Icons --- */
+@mixin symbol($_icon) {
+  &:before {
+    content: $_icon;
+    display: inline-block;
+    font-family: $font-family--icons;
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@mixin set-breakpoint($min-width) {
+  @media (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin set-range($min-width, $max-width) {
+  @media only screen and (min-width: $min-width) and (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin inputBorder() {
+  border: 2px solid transparent;
+  border-bottom-color: #ccc;
+}

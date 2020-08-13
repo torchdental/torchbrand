@@ -1,0 +1,107 @@
+
+// Modals & Dropdowns
+// This class gets placed on the body element when the modal is open
+.close {
+  @extend .icon;
+  @extend .icon-close;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, .7);
+}
+
+.lock-scroll {
+  overflow: hidden;
+}
+
+// Reset inherited styles
+.modal,
+.dropdown-content {
+  color: $color--dark;
+  font-family: $font-family--primary;
+  font-weight: $font-weight--primary-normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: $line-height--base;
+  text-decoration: none;
+  text-transform: none;
+  text-align: left;
+  white-space: normal;
+  cursor: auto;
+}
+
+.modal-backdrop,
+.dropdown-backdrop {
+  @extend .overlay;
+  position: fixed;
+  z-index: 1040;
+  overflow-x: hidden;
+  overflow-y: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0 15px;
+}
+
+.modal-backdrop--center {
+  display: flex;
+  align-items: center;
+}
+
+.modal-closer {
+  position: absolute;
+  z-index: 1055;
+  top: 1rem;
+  right: 1rem;
+  display: block;
+  width: 1.2rem;
+  height: 1.5rem;
+  color: $color--muted;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+
+  @extend .close;
+
+  &:hover,
+  &:focus {
+    color: $color--dark;
+  }
+}
+
+.modal {
+  @extend .card;
+  position: relative;
+  z-index: 1050;
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto;
+
+  & > *:first-child {
+    margin-top: 0;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
+  &.modal--sm {
+    max-width: 450px;
+  }
+
+  &.modal--lg {
+    max-width: 750px;
+  }
+
+  &.modal--xl {
+    width: fit-content;
+    max-width: 85%;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+
+  &.modal--fit-content {
+    max-width: fit-content;
+  }
+}

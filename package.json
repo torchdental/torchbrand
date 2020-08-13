@@ -6,7 +6,7 @@
   "main": "dist/css/torch-brand.css",
   "style": "dist/css/torch-brand.css",
   "scripts": {
-    "build-css": "node-sass --include-path scss src/torch-brand.scss dist/css/torch-brand.css",
+    "build-css": "node-sass --include-path scss src/sass/torch-brand.scss dist/css/torch-brand.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "cp-far": "cp ./node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf ./assets/fonts/font-awesome/",
     "cp-fas": "cp ./node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf ./assets/fonts/font-awesome/",
