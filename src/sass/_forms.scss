@@ -3,7 +3,7 @@ label,
 .styleAs-label {
   display: inline-block;
   padding: 0 4px;
-  color: $color--muted;
+  color: $color--body-text--secondary;
   font-weight: $font-weight--primary-bold;
   font-size: map-get($font-size--level, -1);
   text-transform: uppercase;
@@ -50,7 +50,7 @@ textarea {
   padding: 10px 15px;
 
   &::placeholder {
-    color: $color--muted;
+    color: $color--body-text--secondary;
   }
 }
 
@@ -80,7 +80,7 @@ input[type="checkbox"] {
   }
 
   &:focus::before {
-    color: $color--muted;
+    color: $color--body-text--secondary;
   }
 
   &:checked::before {
@@ -158,53 +158,6 @@ select {
   background-repeat:
     no-repeat,
     no-repeat;
-}
-
-button,
-.styleAs-button {
-  display: block;
-  width: 100%;
-  padding: 0.625rem 1.25rem;
-  border: 2px solid $color--light;
-  border-radius: 4px;
-  margin: 0;
-  background: $color--bright;
-  box-shadow: none;
-  outline: none;
-
-  color: $color--dark;
-  font-family: inherit;
-  font-size: map-get($font-size--level, 0);
-  line-height: 1;
-  font-weight: $font-weight--primary-normal;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-  white-space: nowrap;
-
-  transition: border-color .3s,
-              background-color .3s,
-              color .3s,
-              opacity .3s;
-  cursor: pointer;
-  user-select: none;
-  touch-action: manipulation;
-  -webkit-appearance: none;
-
-  &:hover:not(:disabled),
-  &:focus:not(:disabled) {
-    background: $color--light;
-  }
-
-  &:disabled {
-    opacity: .5;
-    cursor: auto;
-  }
-}
-
-.styleAs-button:hover,
-.styleAs-button:focus {
-  text-decoration: none;
 }
 
 .form-message,

@@ -28,3 +28,10 @@
   border: 2px solid transparent;
   border-bottom-color: #ccc;
 }
+
+@mixin boxShadow() {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba($color--gray-90, 0.25);
+  -moz-box-shadow: 0px 0px 5px 0px rgba($color--gray-90, 0.25);
+  box-shadow: 0px 0px 5px 0px rgba($color--gray-90, 0.25);
+  
+}

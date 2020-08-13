@@ -3,20 +3,66 @@ $color--gray-300:   #333;
 $color--gray-600:   #888;
 $color--gray-800:   #ccc;
 $color--gray-900:   #f2f2f2;
-$color--white:      #fff;
 $color--orange-400: #ff4f2c;
 $color--teal-400:   #1994c9;
 $color--green-400:  #0dba52;
 $color--yellow-400: #f7d410;
 
+
+
+
+$color--blue-20: #E9F3F6;
+$color--blue-30: #00AEF6;
+$color--blue-40: #008FBE; // highlight
+$color--blue-50: #0078A0; // text, bg
+$color--blue-60: #006F94; // active
+$color--blue-90: #002B4A;
+
+$color--green-20: #E7F7F3;
+$color--green-30: #29BD9A; // text
+$color--green-40: #2BA88A;
+$color--green-50: #1D8F74; // text
+$color--green-60: #1A846B;
+
+$color--berry-20: #F9EBEB;
+$color--berry-50: #CD5858;
+
+$color--yellow-20: #F8F1DA;
+$color--orange-50: #C77729;
+
+$color--purple-20: #F0EEF8;
+$color--purple-50: #6D5BB9;
+
+$color--white: #fff;
+$color--gray-20: #F7F7F7;
+$color--gray-30: #D8D8D8;
+$color--gray-50: #A4A4A4;
+$color--gray-60: #6C6C6C; //text
+$color--gray-90: #1D1D1D; //body text
+
+
+
+
+
 // Semantic Colors (Please use these)
-$color--primary:          $color--orange-400;
-$color--secondary:        $color--teal-400;
-$color--tertiary:         $color--green-400;
-$color--quaternary:       $color--yellow-400;
-$color--dark:             $color--gray-300;
-$color--muted:            $color--gray-600;
-$color--muted-light:      $color--gray-800;
+$color--primary:          $color--blue-50;   //The app uses these for text colors, so make sure they're set to text colors
+$color--secondary:        $color--green-50;  //The app uses these for text colors, so make sure they're set to text colors
+$color--tertiary:         $color--berry-50;
+$color--quaternary:       $color--orange-50;
+
+$color--body-text:        $color--gray-90;
+$color--body-text--secondary:  $color--gray-60;   //Should be for text only
+
+$color--dark:             $color--gray-90;   //For shadows only
+$color--hr:               $color--gray-60;
+$color--border:           $color--hr;
+
+$background-color--light: $color--gray-30;
+$background-color--extra-light: $color--gray-20;
+$background-color--medium: $color--gray-50;
+
+//TODO review semanticness of these
+$color--muted-light:      $color--gray-800; //currently used for input styling, badges
 $color--light:            $color--gray-900;
 $color--bright:           $color--white;
 
@@ -28,6 +74,24 @@ $color--savings:          $color--green-400;
 $color--favorite:         $color--yellow-400;
 
 
+/* --- Spacing --- */
+$s8:  8px;
+$s10: 10px;
+$s12: 12px;
+$s14: 14px;
+$s16: 16px;
+$s20: 20px;
+$s24: 24px;
+$s32: 32px;
+$s40: 40px;
+
+$base-font-size: $s16;
+$P5L: $s8;
+$oneL: $s16;
+$oneP5L: $s24;
+$twoL: $s32;
+
+
 
 /* --- Variables --- */
 
@@ -35,17 +99,15 @@ $font-family--primary:        'Open Sans', sans-serif;
 $font-weight--primary-normal: 400;
 $font-weight--primary-bold:   600;
 
-$font-family--secondary:      'Montserrat', sans-serif;
-$font-weight--secondary-bold: 600;
 
 $font-family--icons:          'FontAwesome';
 $font-weight--icons-brand:    100;
 $font-weight--icons-normal:   400;
 $font-weight--icons-solid:    900;
 
-$font-size--base:        18px;
+$font-size--base:        $s16;
 $font-size--base-narrow: 16px;
-$line-height--base:      1.4;
+$line-height--base:      20px;
 $line-height--lose:      1.6;
 $font-size--level: (
   -1: 1rem * 0.75,

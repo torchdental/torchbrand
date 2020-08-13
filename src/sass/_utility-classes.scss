@@ -55,10 +55,6 @@
   background-color: $color--light;
 }
 
-.bg-dark {
-  background-color: $color--dark;
-}
-
 .bg-primary {
   background-color: $color--primary;
 }
@@ -76,9 +72,31 @@
 }
 
 .bg-muted {
-  background-color: $color--muted;
+  background-color: $color--body-text--secondary;
 }
 
 .torch-credit{
   color: $color--primary;
+}
+
+// Material design box shadows - taken from
+// https://codepen.io/sdthornton/pen/wBZdXq
+.shadow-z1 {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.shadow-z2 {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.shadow-z3 {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.shadow-z4 {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.shadow-z5 {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }

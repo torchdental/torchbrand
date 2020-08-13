@@ -30,11 +30,11 @@
 }
 
 .icon--color-dark::before {
-  color: $color--dark;
+  color: $color--body-text;
 }
 
 .icon--color-muted::before {
-  color: $color--muted;
+  color: $color--body-text--secondary;
 }
 
 .icon--color-bright::before {

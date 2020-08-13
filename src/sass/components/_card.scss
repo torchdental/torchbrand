@@ -1,8 +1,21 @@
-.card {
-  padding: 2rem;
-  border-radius: 4px;
-  @extend .bg-bright;
+.card-grid, .catalog-grid {
+  padding: 0;
+  grid-gap: $s20 $s10;
+  gap: $s20 $s10;
+  display: grid;
+  vertical-align: top;
+//  grid-auto-flow: column;
+//  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));;
+//  width: auto;
+  width: 100%;
+}
 
+.card {
+  @extend .shadow-z1;
+  background: $color--white;
+  padding: $s14;
+  
   & > *:first-child {
     margin-top: 0;
   }
