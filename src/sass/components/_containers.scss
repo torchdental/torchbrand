@@ -1,0 +1,24 @@
+.container {
+  //TODO: not sure what a general container should do
+  
+  //maybe?
+  margin: $s32 0 $s24;
+  padding: $s14;
+  background-color: $color--white;
+
+  &--shadow {
+    box-shadow: 0 2px 4px 0 $color--gray-30
+  }
+  
+  &--round {
+    border: 1px solid $color--gray-60;
+    border-radius: 4px;
+  }
+  
+  &--glow {
+    box-shadow: 0 0 4px 0 #D8D8D8
+  }
+  
+}
+
+

@@ -1,24 +1,27 @@
 
 // Nav Variations
-.navbar-ctr {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1000;
-}
+
+$nav-item-font-size: 22px;
 
 .navbar {
+  flex: 0 0 auto;
   display: flex;
   align-items: stretch;
-  padding: 0 15px;
+  height: $nav-item-font-size + 2 * $s40;
+  padding: 0 $s20;
+  color: $color--white;
+  background: $color--blue-90;
 }
 
 .navbar-brand {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
-  padding: 0 10px;
+  padding: 0;
+  margin: 0 $s32 0 0;
+  img {
+    height: $nav-item-font-size;
+  }
 }
 
 .navbar-nav {
@@ -33,23 +36,59 @@
   margin-left: auto;
 }
 
-.nav-item {
+.navbar-item, .nav-item {
   flex: 0 0 auto;
   display: flex;
-  align-items: stretch;
-  padding: 15px 10px;
+  align-items: center;
   margin: 0;
   list-style: none;
+  font-size: $nav-item-font-size;
+  line-height: 1em;
 }
 
-.nav-link {
-  color: $color--body-text;
+.navbar-link, .nav-link {
+  box-sizing: content-box;
+  color: $color--white;
   text-decoration: none;
-
+  padding: $s40 $s16 $s40 - $s8;
+  border-bottom: $s8 solid transparent;
+  display: block;
   &:hover,
   &:focus,
-  &.nav-link--active {
-    color: $color--primary;
+  &--active {
+    border-color: $color--blue-30;
     text-decoration: none;
   }
+  .nav-badge {
+    padding: 0 5px;
+    display: inline;
+    font-size: $nav-item-font-size - 8px;
+    color: $color--blue-90;
+    line-height: 1em;
+    position: relative;
+    top: -1px;
+    height: $nav-item-font-size;
+  }
+}
+
+// TODO see how icon nav works on mobile
+
+.nav-iconItem {
+  text-align: center;
+}
+
+.nav-iconItemTitle {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.nav-iconItemIcon {
+  position: relative;
+  font-size: 1.5rem;
+}
+
+.nav-iconBadge {
+  position: absolute;
+  font-size: 0.8rem;
 }

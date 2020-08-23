@@ -24,3 +24,11 @@
 
 @import 'breakpoints/all';
 
+.app-root {
+  display: flex;
+  flex-direction: column;
+}
+
+main, .app-body {
+  padding: $s16 $s20;
+}

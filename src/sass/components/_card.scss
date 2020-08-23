@@ -4,11 +4,19 @@
   gap: $s20 $s10;
   display: grid;
   vertical-align: top;
-//  grid-auto-flow: column;
-//  grid-template-rows: auto;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));;
-//  width: auto;
   width: 100%;
+}
+
+
+.scrollContainer-scrollArea--directionX {
+  .card-grid, .catalog-grid {
+    display: inline-grid;
+    grid-auto-flow: column;
+    grid-template-rows: auto;
+    grid-auto-columns: 220px;
+    width: auto;
+  }
 }
 
 .card {
