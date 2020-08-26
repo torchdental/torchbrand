@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="20px" viewBox="0 0 19 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>bi-star-fill</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/star/deactive" fill-rule="nonzero">
+            <g id="bi-star-fill">
+                <g id="Icon-Group" fill="#D8D8D8">
+                    <path d="M4.28925,19.30375 C3.830875,19.55125 3.31075,19.1175 3.403375,18.56375 L4.389,12.65125 L0.2054375,8.45625 C-0.18525,8.06375 0.0178125,7.34625 0.5415,7.26875 L6.357875,6.39875 L8.951375,0.99 C9.1853125,0.5025 9.81825,0.5025 10.0521875,0.99 L12.6456875,6.39875 L18.4620625,7.26875 C18.98575,7.34625 19.1888125,8.06375 18.798125,8.45625 L14.6145625,12.65125 L15.6001875,18.56375 C15.6928125,19.1175 15.1726875,19.55125 14.7143125,19.30375 L9.5,16.48375 L4.2880625,19.30375 L4.28925,19.30375 Z" id="Icon-Path"></path>
+                </g>
+                <rect id="ViewBox" x="0" y="4" width="19" height="20"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

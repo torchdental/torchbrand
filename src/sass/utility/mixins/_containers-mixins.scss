@@ -1,0 +1,13 @@
+@mixin container-shadow {
+  box-shadow: 0 2px 4px 0 $color--gray-30
+}
+
+@mixin container-border {
+  border: 1px solid $color--gray-60;
+  border-radius: 4px;  
+  box-shadow: none;
+}
+
+@mixin container-glow {
+  box-shadow: 0 0 4px 0 #D8D8D8;
+}

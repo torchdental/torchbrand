@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon Copy</title>
+    <defs>
+        <path d="M1.79576471,0.313411765 L0.314352941,1.79388235 C-0.108235294,2.21647059 -0.101647059,2.88564706 0.314352941,3.30164706 L28.6964706,31.6875294 C29.1152941,32.1054118 29.7882353,32.1035294 30.2042353,31.6865882 L31.6847059,30.2061176 C32.1082353,29.7835294 32.1016471,29.1143529 31.6856471,28.6983529 L3.30352941,0.312470588 C3.09458824,0.103529412 2.82258824,0 2.55058824,0 C2.27764706,0 2.00376471,0.104470588 1.79576471,0.313411765 L1.79576471,0.313411765 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon-Copy" transform="translate(-1.000000, -1.000000)">
+            <g id="Group-22">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-21"></g>
+            </g>
+            <line x1="1.91247059" y1="1.92658824" x2="29.9981176" y2="29.8503529" id="Stroke-23" stroke="#6C6C6C" stroke-width="1.5" stroke-linecap="round"></line>
+            <line x1="29.9983059" y1="1.92658824" x2="1.91265882" y2="29.8503529" id="Stroke-25" stroke="#6C6C6C" stroke-width="1.5" stroke-linecap="round"></line>
+        </g>
+    </g>
+</svg>

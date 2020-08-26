@@ -32,3 +32,20 @@
 main, .app-body {
   padding: $s16 $s20;
 }
+
+/* --- Other Elements / General --- */
+code, pre {
+  padding: $s8;
+  background: $color--light;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+*::selection {
+  background-color: $color--secondary;
+  color: $color--bright;
+}
+
+*[tabindex="-1"] {
+  outline: none;
+}

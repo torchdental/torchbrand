@@ -60,11 +60,11 @@ h6,
 //  margin-top: 0;
 //  margin-bottom: 0;
   font-size: 18px; 
-  font-weight: 400;
   line-height: 24px;
-  &--bold {
-    font-weight: 600;
-  }
+  font-weight: 600;
+  &--light {
+    font-weight: 400;
+  }  
 }
 
 
@@ -105,7 +105,7 @@ strong {
   line-height: 14px;
 }
 
-.details2 {
+.details3 {
   font-size: 11px;
   line-height: 12px;
 }
@@ -116,6 +116,16 @@ p,
 .styleAs-p {
   margin-top: $oneL;
   margin-bottom: $oneL;
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.text--strikethrough {
+  text-decoration: line-through;
 }
 
 h1 + p, .styleAs-h1 + p,
@@ -153,7 +163,7 @@ ul, ol {
 /* --- Typography (Inline Level) --- */
 a,
 .styleAs-a {
-  color: $color--primary;
+  color: inherit;
   text-decoration: none;
   outline: none;
   cursor: pointer;
@@ -178,7 +188,7 @@ em {
 
 
 
-.text-primary {
+.text--primary, .text-primary {
   color: $color--primary;
 
   a, .styleAs-a {
@@ -187,7 +197,7 @@ em {
   }
 }
 
-.text-secondary {
+.text--secondary, .text-secondary {
   color: $color--secondary;
 
   a, .styleAs-a {
@@ -196,7 +206,7 @@ em {
   }
 }
 
-.text-success {
+.text--success, .text-success {
   color: $color--success;
 
   a, .styleAs-a {
@@ -205,7 +215,7 @@ em {
   }
 }
 
-.text-danger {
+.text--danger, .text-danger {
   color: $color--danger;
 
   a, .styleAs-a {
@@ -214,7 +224,7 @@ em {
   }
 }
 
-.text-bright {
+.text--bright, .text-bright {
   color: $color--bright;
 
   a, .styleAs-a {
@@ -223,7 +233,7 @@ em {
   }
 }
 
-.text-muted {
+.text--muted, .text-muted {
   color: $color--body-text--secondary;
 
   a, .styleAs-a {
@@ -231,6 +241,8 @@ em {
     text-decoration: underline;
   }
 }
+
+
 
 .text-savings {
   color: $color--savings;

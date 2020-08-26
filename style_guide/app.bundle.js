@@ -601,6 +601,8 @@ var _makeBem2 = _interopRequireDefault(_makeBem);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -610,42 +612,110 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var containerBlock = (0, _makeBem2.default)('container');
 
 var links = [{
-  name: 'Nav', //Also include mobile nav
-  path: 'nav'
-}, {
   name: 'Colors',
   path: 'colors'
 }, {
   name: 'Typography',
   path: 'typography'
 }, {
-  name: 'Spacing',
+  name: 'Spacing & Layout',
   path: 'spacing'
-}, {
-  name: 'Page Layout', // include margins, containers/lines/bars
-  path: 'pagelayout'
 }, {
   name: 'Icons',
   path: 'icons'
-},
-// TODO style "Components as right-aligned auth menu"
-{
-  name: 'Components',
-  path: 'components'
 }];
 
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
 
-  function App() {
+  function App(props) {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+    _this.state = {
+      expandedItems: []
+    };
+    _this.isExpanded = _this.isExpanded.bind(_this);
+    _this.toggleExpanded = _this.toggleExpanded.bind(_this);
+    return _this;
   }
 
   _createClass(App, [{
+    key: 'isExpanded',
+    value: function isExpanded(item) {
+      return this.state.expandedItems.includes(item);
+    }
+  }, {
+    key: 'toggleExpanded',
+    value: function toggleExpanded(item) {
+      var idx = this.state.expandedItems.indexOf(item);
+      console.log(item, idx);
+      if (idx > -1) {
+        var items = this.state.expandedItems;
+        items.splice(idx, 1);
+        this.setState({
+          expandedItems: items
+        });
+      } else {
+        this.setState({
+          expandedItems: [].concat(_toConsumableArray(this.state.expandedItems), [item])
+        });
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
+
+      var colorMap = {
+        '$color--blue-20': ["#E9F3F6"],
+        '$color--blue-30': ["#00AEF6"],
+        '$color--blue-40': ["#008FBE", "highlight"], // highlight
+        '$color--blue-50': ["#0078A0", "text, background"], // text, bg
+        '$color--blue-60': ["#006F94", "active color"], // active
+        '$color--blue-90': ["#002B4A"],
+        '$color--green-20': ["#E7F7F3"],
+        '$color--green-30': ["#29BD9A", "text"], // text
+        '$color--green-40': ["#2BA88A"],
+        '$color--green-50': ["#1D8F74", "text"], // text
+        '$color--green-60': ["#1A846B"],
+        '$color--berry-20': ["#F9EBEB"],
+        '$color--berry-50': ["#CD5858"],
+        '$color--yellow-20': ["#F8F1DA"],
+        '$color--orange-50': ["#C77729"],
+        '$color--purple-20': ["#F0EEF8"],
+        '$color--purple-50': ["#6D5BB9"],
+        '$color--white': ["#fff"],
+        '$color--gray-20': ["#F7F7F7"],
+        '$color--gray-30': ["#D8D8D8"],
+        '$color--gray-50': ["#A4A4A4"],
+        '$color--gray-60': ["#6C6C6C", "text"],
+        '$color--gray-90': ["#1D1D1D", "body text"]
+      };
+
+      var colorGroups = [];
+      var lastColor = null;
+      Object.keys(colorMap).forEach(function (varName) {
+        var hex = colorMap[varName][0];
+        var notes = colorMap[varName][1];
+        var colorName = varName.replace('$color--', '');
+        colorName = colorName.charAt(0).toUpperCase() + colorName.slice(1);
+        var colorGroup = colorName.replace(/-\d+$/, '');
+        if (colorGroup != lastColor) {
+          colorGroups.push([]);
+          lastColor = colorGroup;
+        }
+        colorGroups[colorGroups.length - 1].push({
+          varName: varName,
+          hex: hex,
+          colorName: colorName,
+          colorGroup: colorGroup,
+          notes: notes
+        });
+      });
+
+      console.log(colorGroups);
+
       return _react2.default.createElement(
         'div',
         { className: 'app-root bg-light d-flex' },
@@ -655,28 +725,751 @@ var App = function (_React$Component) {
           { className: 'app-body' },
           _react2.default.createElement(
             'section',
-            { className: containerBlock(null, 'shadow'), id: 'nav' },
-            'Info about Navs'
+            { className: containerBlock(null, { expandable: true, expanded: this.isExpanded('nav') }), id: 'nav' },
+            _react2.default.createElement(
+              'div',
+              { className: containerBlock('header'), onClick: this.toggleExpanded.bind(this, 'nav') },
+              _react2.default.createElement(
+                'h3',
+                null,
+                'Navs'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: containerBlock('body') },
+              _react2.default.createElement(
+                'p',
+                null,
+                'Info about navs'
+              )
+            )
           ),
           _react2.default.createElement(
             'section',
-            { className: containerBlock(null, 'round'), id: 'colors' },
-            'Info about Colors'
+            { className: containerBlock(null, { expandable: true, expanded: this.isExpanded('colors') }), id: 'colors' },
+            _react2.default.createElement(
+              'div',
+              { className: containerBlock('header'), onClick: this.toggleExpanded.bind(this, 'colors') },
+              _react2.default.createElement(
+                'h3',
+                null,
+                'Colors'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: containerBlock('body') },
+              _react2.default.createElement(
+                'div',
+                { style: { display: 'flex', flexWrap: 'wrap' } },
+                colorGroups.map(function (group) {
+                  return _react2.default.createElement(
+                    'div',
+                    { style: { display: 'flex', flexDirection: 'column', margin: "1em" } },
+                    _react2.default.createElement(
+                      'h4',
+                      null,
+                      group[0].colorGroup
+                    ),
+                    group.map(function (color) {
+                      var varName = color.varName,
+                          hex = color.hex,
+                          colorName = color.colorName,
+                          notes = color.notes;
+
+                      var style = {
+                        display: "inline-block",
+                        width: "40px", height: "40px", backgroundColor: hex
+                      };
+                      return _react2.default.createElement(
+                        'div',
+                        { key: varName, style: { marginBottom: "1em", display: 'flex', alignItems: 'flex-start' } },
+                        _react2.default.createElement('span', { style: style }),
+                        _react2.default.createElement(
+                          'span',
+                          null,
+                          '\xA0',
+                          colorName,
+                          ' / ',
+                          hex,
+                          _react2.default.createElement('br', null),
+                          '\xA0',
+                          varName
+                        ),
+                        notes ? _react2.default.createElement(
+                          'strong',
+                          null,
+                          '\xA0',
+                          notes
+                        ) : ''
+                      );
+                    })
+                  );
+                  var hex = colorMap[varName];
+
+                  var colorName = varName.replace('$color--', '').replace('-', ' ');
+                  colorName = colorName.charAt(0).toUpperCase() + colorName.slice(1);
+                })
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'section-label' },
+            _react2.default.createElement(
+              'h3',
+              { id: 'typography' },
+              'Typography'
+            )
+          ),
+          _react2.default.createElement(
+            'table',
+            null,
+            _react2.default.createElement(
+              'thead',
+              null,
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'th',
+                  null,
+                  'Dark Gray'
+                ),
+                _react2.default.createElement(
+                  'th',
+                  null,
+                  'Gray'
+                ),
+                _react2.default.createElement(
+                  'th',
+                  null,
+                  'Primary'
+                ),
+                _react2.default.createElement(
+                  'th',
+                  null,
+                  'Green'
+                ),
+                _react2.default.createElement(
+                  'th',
+                  null,
+                  'Raspberry'
+                ),
+                _react2.default.createElement(
+                  'th',
+                  null,
+                  'Bright Green'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'tbody',
+              null,
+              [1, 2, 3, 4, 5].map(function (n) {
+                return _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'details2' },
+                      'h',
+                      n,
+                      ', .styleAs-h',
+                      n
+                    ),
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'styleAs-h' + n },
+                      'Headline',
+                      n
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'details2' },
+                      'h1.text--muted, .styleAs-h1.text--muted'
+                    ),
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'styleAs-h' + n + ' text--muted' },
+                      'Headline',
+                      n
+                    )
+                  ),
+                  _react2.default.createElement('td', null),
+                  _react2.default.createElement('td', null),
+                  _react2.default.createElement('td', null),
+                  _react2.default.createElement('td', null)
+                );
+              }),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'h6, .styleAs-h6, .subheader'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'subheader' },
+                    'Subheader'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'h6.subheader--light, .styleAs-h6--light, .subheader--light'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'subheader subhedaer--light' },
+                    'Subheader'
+                  )
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'h6.text--muted, .styleAs-h6.text--muted, .subheader.text--muted'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'subheader text--muted' },
+                    'Subheader'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'h6.text--muted.subheader--light, .styleAs-h6--light.text--muted, .subheader--light.text--muted'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'subheader subheader--light text--muted' },
+                    'Subheader'
+                  )
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'h6.text--primary, .styleAs-h6.text--primary, .subheader.text--primary'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'subheader text--primary' },
+                    'Subheader'
+                  )
+                ),
+                _react2.default.createElement('td', null),
+                _react2.default.createElement('td', null),
+                _react2.default.createElement('td', null)
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'p, .styleAs-p'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'styleAs-p' },
+                    'Body'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'p strong, .styleAs-p strong'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'styleAs-p' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Body'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'p.text--strikethrough, .styleAs-p.text--strikethrough'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'styleAs-p text--strikethrough' },
+                    'Body'
+                  )
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'p.text--muted, .styleAs-p.text--muted'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'subheader text--muted' },
+                    'Body'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'p.text--muted strong, .styleAs-p.text--muted srong'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'subheader text--muted' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Body'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'p.text--primary, .styleAs-p.text--primary'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'subheader text--primary' },
+                    'Body'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'p.text--primary strong, .styleAs-p.text--primary strong'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'subheader text--primary' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Body'
+                    )
+                  )
+                ),
+                _react2.default.createElement('td', null),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'p.text--danger, .styleAs-p.text--pridangermary'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'subheader text--danger' },
+                    'Body'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'p.text--danger strong, .styleAs-p.text--pridangermary strong'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'subheader text--danger' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Body'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'p.text--bright, .styleAs-p.text--bright'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'subheader text--bright' },
+                    'Body'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'p.text--bright strong, .styleAs-p.text--bright strong'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'subheader text--bright' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Body'
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'small, .details1, .supheader'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'details1' },
+                    'Details 1'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'small strong, .details1 strong, .supheader strong'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'details1' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Details 1'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'small.text--muted, .details1.text--muted, .supheader.text--muted'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'details1 text--muted' },
+                    'Details 1'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'small.text--muted strong, .details1.text--muted strong, .supheader.text--muted strong'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'details1 text--muted' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Details 1'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'small.text--primary, .details1.text--primary, .supheader.text--primary'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'details1 text--primary' },
+                    'Details 1'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'small.text--primary strong, .details1.text--primary strong, .supheader.text--primary strong'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'details1 text--primary' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Details 1'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'small.text--secondary, .details1.text--secondary, .supheader.text--secondary'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'details1 text--secondary' },
+                    'Details 1'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    'small.text--secondary strong, .details1.text--secondary strong, .supheader.text--secondary strong'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'details1 text--secondary' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Details 1'
+                    )
+                  )
+                ),
+                _react2.default.createElement('td', null),
+                _react2.default.createElement('td', null)
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    '.details2'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'details2' },
+                    'Details 2'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    '.details2 strong'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'details2' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Details 2'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    '.details2.text--muted'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'details2 text--muted' },
+                    'Details 2'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    '.details2.text--muted strong'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'details2 text--muted' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Details 2'
+                    )
+                  )
+                ),
+                _react2.default.createElement('td', null),
+                _react2.default.createElement('td', null),
+                _react2.default.createElement('td', null),
+                _react2.default.createElement('td', null)
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    '.details3'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'details3' },
+                    'Details 3'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    '.details3 strong'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'details3' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Details 3'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    '.details3.text--muted'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'details3 text--muted' },
+                    'Details 3'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'details2' },
+                    '.details3.text--muted strong'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'details3 text--muted' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Details 3'
+                    )
+                  )
+                ),
+                _react2.default.createElement('td', null),
+                _react2.default.createElement('td', null),
+                _react2.default.createElement('td', null),
+                _react2.default.createElement('td', null)
+              )
+            )
           ),
           _react2.default.createElement(
             'section',
-            { className: containerBlock(null, 'glow'), id: 'typography' },
-            'Info about Typography'
+            { className: containerBlock(null, { expandable: true, expanded: this.isExpanded('spacing') }), id: 'spacing' },
+            _react2.default.createElement(
+              'div',
+              { className: containerBlock('header'), onClick: this.toggleExpanded.bind(this, 'spacing') },
+              _react2.default.createElement(
+                'h3',
+                null,
+                'Spacing'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: containerBlock('body') },
+              _react2.default.createElement(
+                'p',
+                null,
+                'Most components and containers should have spacing built-in. If you need to construct a component use the spacing variables to ensure consistency:'
+              ),
+              _react2.default.createElement(
+                'ul',
+                null,
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  '$s8:  8px;'
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  '$s10: 10px;'
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  '$s12: 12px;'
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  '$s14: 14px;'
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  '$s16: 16px;'
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  '$s20: 20px;'
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  '$s24: 24px;'
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  '$s32: 32px;'
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  '$s40: 40px;'
+                )
+              )
+            )
           ),
           _react2.default.createElement(
             'section',
-            { className: containerBlock(null, 'shadow'), id: 'spacing' },
-            'Info about Spacing'
-          ),
-          _react2.default.createElement(
-            'section',
-            { className: containerBlock(null, 'shadow'), id: 'pagelayout' },
-            'Info about Page Layout'
+            { className: containerBlock(null, { expandable: true, expanded: this.isExpanded('pagelayout') }), id: 'pagelayout' },
+            _react2.default.createElement(
+              'div',
+              { className: containerBlock('header'), onClick: this.toggleExpanded.bind(this, 'pagelayout') },
+              _react2.default.createElement(
+                'h3',
+                null,
+                'Page Layout'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: containerBlock('body') },
+              _react2.default.createElement('p', null)
+            )
           )
         )
       );
@@ -29338,6 +30131,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var cn = (0, _makeBem2.default)('navbar');
+var menuCn = (0, _makeBem2.default)('menu');
 
 var Nav = function (_React$Component) {
   _inherits(Nav, _React$Component);
@@ -29363,6 +30157,107 @@ var Nav = function (_React$Component) {
           'ul',
           { className: cn('nav') },
           this.links
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: cn('menu', { expanded: true }) },
+          _react2.default.createElement(
+            'div',
+            { className: menuCn() },
+            _react2.default.createElement(
+              'div',
+              { className: menuCn('label') },
+              'Components'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: menuCn('body') },
+              _react2.default.createElement(
+                'div',
+                { className: menuCn('section') },
+                _react2.default.createElement(
+                  'div',
+                  { className: menuCn('item', 'header') },
+                  _react2.default.createElement('i', { className: 'custom-icon custom-icon--acount' }),
+                  _react2.default.createElement(
+                    'strong',
+                    null,
+                    'Account Settings'
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    { className: 'text--primary' },
+                    '75% complete'
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: menuCn('item', 'group') },
+                  _react2.default.createElement(
+                    'a',
+                    { href: '#' },
+                    'Practice information'
+                  ),
+                  _react2.default.createElement(
+                    'a',
+                    { className: 'text--muted', href: '#' },
+                    'Login and password'
+                  ),
+                  _react2.default.createElement(
+                    'a',
+                    { className: 'text--muted', href: '#' },
+                    'Contacts and addresses'
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: menuCn('item') },
+                  _react2.default.createElement(
+                    'a',
+                    { href: '#' },
+                    'Payment methods'
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: menuCn('item') },
+                  _react2.default.createElement(
+                    'a',
+                    { href: '#' },
+                    'Supplier Accounts'
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: menuCn('item') },
+                  _react2.default.createElement(
+                    'a',
+                    { href: '#' },
+                    'License'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: menuCn('section') },
+                _react2.default.createElement(
+                  'div',
+                  { className: menuCn('item') },
+                  _react2.default.createElement('i', { className: 'custom-icon custom-icon--messages' }),
+                  _react2.default.createElement(
+                    'a',
+                    { href: '#' },
+                    'Messages'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'badge' },
+                    '2'
+                  )
+                )
+              )
+            )
+          )
         )
       );
     }

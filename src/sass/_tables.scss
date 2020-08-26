@@ -1,88 +1,25 @@
-/* --- Tables --- */
-$table--heavy-line: 1px solid #aaa;
-$table--light-line: 1px solid #ddd;
-
-// Horizontal Padding
-th,
+th {
+  padding: $s10 $s12;
+  background-color: $color--blue-20;
+  color: $color--primary;
+  text-transform: uppercase;
+  font-size: $s14;
+  &:first-of-type {
+    border-radius: $s8 0 0 0;
+  }
+  &:last-of-type {
+    border-radius: 0 $s8 0 0;
+  }
+}
 td {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-tr th:first-of-type,
-tr td:first-of-type {
-  padding-left: 0;
-}
-
-tr th:last-of-type,
-tr td:last-of-type {
-  padding-right: 0;
-}
-
-// Vertical Padding
-thead th,
-thead td {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-tbody th,
-tbody td {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-tbody:not(:first-child) > tr:first-of-type th,
-tbody:not(:first-child) > tr:first-of-type td {
-  padding-top: 12px;
-}
-
-tbody:not(:last-child) > tr:last-of-type th,
-tbody:not(:last-child) > tr:last-of-type td {
-  padding-bottom: 12px;
-}
-
-tfoot th,
-tfoot td {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-tfoot:not(:first-child) > tr:first-of-type th,
-tfoot:not(:first-child) > tr:first-of-type td {
-  padding-top: 9px;
-}
-
-tfoot:not(:last-child) > tr:last-of-type th,
-tfoot:not(:last-child) > tr:last-of-type td {
-  padding-bottom: 9px;
-}
-
-thead:first-child tr:first-of-type th,
-thead:first-child tr:first-of-type td,
-tbody:first-child tr:first-of-type th,
-tbody:first-child tr:first-of-type td,
-tfoot:first-child tr:first-of-type th,
-tfoot:first-child tr:first-of-type td {
-  padding-top: 0;
-}
-
-thead:last-child tr:last-of-type th,
-thead:last-child tr:last-of-type td,
-tbody:last-child tr:last-of-type th,
-tbody:last-child tr:last-of-type td,
-tfoot:last-child tr:last-of-type th,
-tfoot:last-child tr:last-of-type td {
-  padding-bottom: 0;
+  padding: $s16 $s12;
+  background: $color--white;
 }
 
 // Styles
 thead th,
 thead td {
   vertical-align: bottom;
-  font-size: .9rem;
-  color: $color--body-text--secondary;
-  text-transform: uppercase;
 }
 
 tbody th,
@@ -98,38 +35,14 @@ tfoot td {
 // Lines inside tbody
 tbody tr:not(:last-of-type) th,
 tbody tr:not(:last-of-type) td {
-  border-bottom: $table--light-line;
-}
-
-// Line Below thead
-thead:not(:last-child) {
-  & tr:last-of-type th,
-  & tr:last-of-type td {
-    border-bottom: $table--heavy-line;
-  }
+  border-bottom: $border-table;
 }
 
 // Line Above tfoot
-tfoot:not(:first-child) {
-  & tr:first-of-type th,
-  & tr:first-of-type td {
-    border-top: $table--heavy-line;
-  }
-}
+//tfoot:not(:first-child) {
+//  & tr:first-of-type th,
+//  & tr:first-of-type td {
+//    border-top: $table--heavy-line;
+//  }
+//}
 
-/* --- Other Elements / General --- */
-code, pre {
-  padding: 2px 6px;
-  background: $color--light;
-  border-radius: 4px;
-  white-space: nowrap;
-}
-
-*::selection {
-  background-color: $color--secondary;
-  color: $color--bright;
-}
-
-*[tabindex="-1"] {
-  outline: none;
-}

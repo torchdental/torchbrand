@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="21px" viewBox="0 0 22 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/messages/blue/reg</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.000000 0 0 0 0 0.470588 0 0 0 0 0.627451 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Components" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="07-Navigation" transform="translate(-147.000000, -3207.000000)">
+            <g id="Group-4" transform="translate(87.000000, 2836.000000)">
+                <g id="Group-22-Copy" transform="translate(61.000000, 372.000000)" filter="url(#filter-1)">
+                    <g>
+                        <g id="Group-21-Copy" transform="translate(0.000000, 3.200000)" stroke="#1D1D1D" stroke-width="1.5">
+                            <path d="M5.06666667,11.7240545 L0.38974359,11.7240545 C0.174605128,11.7240545 0,11.4079725 0,11.1901058 L0,0.131910933 C0,-0.0859557337 0.174605128,0.0317468304 0.38974359,0.0317468304 L15.9794872,0.0317468304 C16.1946256,0.0317468304 16.3692308,-0.0859557337 16.3692308,0.131910933 L16.3692308,11.1901058 C16.3692308,11.4079725 16.1946256,11.7240545 15.9794872,11.7240545 L10.5230769,11.7240545" id="Stroke-360"></path>
+                            <line x1="7.79487179" y1="15.1340381" x2="10.3769231" y2="11.9747766" id="Stroke-362"></line>
+                            <line x1="7.79487179" y1="15.1340381" x2="5.21282051" y2="11.9747766" id="Stroke-364"></line>
+                        </g>
+                        <path d="M3.2,1.52646484 L3.2,0.131910933 C3.2,-0.0859557337 3.37460513,0.0317468304 3.58974359,0.0317468304 L19.1794872,0.0317468304 C19.3946256,0.0317468304 19.5692308,-0.0859557337 19.5692308,0.131910933 L19.5692308,11.1901058 C19.5692308,11.4079725 19.3946256,11.7240545 19.1794872,11.7240545 L18.1287109,11.7240545" id="Stroke-360" stroke="#1D1D1D" stroke-width="1.5"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

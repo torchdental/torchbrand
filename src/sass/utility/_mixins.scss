@@ -1,3 +1,5 @@
+@import 'mixins/containers-mixins';
+
 /* --- Icons --- */
 @mixin symbol($_icon) {
   &:before {
@@ -12,6 +14,8 @@
   }
 }
 
+
+/* TODO - the below are older mixins and should probably be refactored away */
 @mixin set-breakpoint($min-width) {
   @media (min-width: $min-width) {
     @content;

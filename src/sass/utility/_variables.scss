@@ -41,14 +41,15 @@ $color--gray-60: #6C6C6C; //text
 $color--gray-90: #1D1D1D; //body text
 
 
-
-
-
 // Semantic Colors (Please use these)
-$color--primary:          $color--blue-50;   //The app uses these for text colors, so make sure they're set to text colors
-$color--secondary:        $color--green-50;  //The app uses these for text colors, so make sure they're set to text colors
+$color--primary:          $color--blue-50;   //The app uses --primary and --secondary for text colors, so make sure they're set to text colors
+$color--secondary:        $color--green-50;  //The app uses  --primary and --secondary for text colors, so make sure they're set to text colors
 $color--tertiary:         $color--berry-50;
 $color--quaternary:       $color--orange-50;
+
+$color--bright:           $color--green-30;
+$color--danger:           $color--berry-50;
+
 
 $color--body-text:        $color--gray-90;
 $color--body-text--secondary:  $color--gray-60;   //Should be for text only
@@ -57,18 +58,21 @@ $color--dark:             $color--gray-90;   //For shadows only
 $color--hr:               $color--gray-60;
 $color--border:           $color--hr;
 
+$border-dark: 1px solid $color--gray-90;
+$border-light: 1px solid $color--border;
+$border-table: 1px solid $color--gray-30;
+
+
 $background-color--light: $color--gray-30;
 $background-color--extra-light: $color--gray-20;
 $background-color--medium: $color--gray-50;
 
-//TODO review semanticness of these
+//TODO review semanticness of these - might need to be deprecated
 $color--muted-light:      $color--gray-800; //currently used for input styling, badges
 $color--light:            $color--gray-900;
-$color--bright:           $color--white;
 
 $color--info:             $color--teal-400;
 $color--success:          $color--green-400;
-$color--danger:           $color--orange-400;
 
 $color--savings:          $color--green-400;
 $color--favorite:         $color--yellow-400;
@@ -94,7 +98,7 @@ $twoL: $s32;
 
 
 /* --- Variables --- */
-
+//TODO review this section - might need to be deprecated
 $font-family--primary:        'Open Sans', sans-serif;
 $font-weight--primary-normal: 400;
 $font-weight--primary-bold:   600;

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon</title>
+    <defs>
+        <path d="M1.34682353,0.235058824 L0.235764706,1.34541176 C-0.0811764706,1.66235294 -0.0762352941,2.16423529 0.235764706,2.47623529 L21.5223529,23.7656471 C21.8364706,24.0790588 22.3411765,24.0776471 22.6531765,23.7649412 L23.7635294,22.6545882 C24.0811765,22.3376471 24.0762353,21.8357647 23.7642353,21.5237647 L2.47764706,0.234352941 C2.32094118,0.0776470588 2.11694118,0 1.91294118,0 C1.70823529,0 1.50282353,0.0783529412 1.34682353,0.235058824 L1.34682353,0.235058824 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon">
+            <g id="Group-22">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-21"></g>
+            </g>
+            <line x1="1.43435294" y1="1.44494118" x2="22.4985882" y2="22.3877647" id="Stroke-23" stroke="#6C6C6C" stroke-width="1.5" stroke-linecap="round"></line>
+            <line x1="22.4987294" y1="1.44494118" x2="1.43449412" y2="22.3877647" id="Stroke-25" stroke="#6C6C6C" stroke-width="1.5" stroke-linecap="round"></line>
+        </g>
+    </g>
+</svg>

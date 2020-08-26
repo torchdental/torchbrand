@@ -33,3 +33,23 @@
     right: -10px;
   }
 }
+
+.menu {
+  position: relative;
+  &-body {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    border: $border-light;
+    background: $color--white;
+  }
+  &-item {
+    padding: $s14 52px;
+    &--group {
+      background: $color--blue-20;
+      padding: $s16 52px;
+      margin: 2px 0;
+    }
+  }
+  
+}
