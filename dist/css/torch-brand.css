@@ -446,6 +446,10 @@ iframe {
   content: '\f00c';
   font-weight: 900; }
 
+.icon-wrench::before {
+  content: '\f0ad';
+  font-weight: 900; }
+
 /* --- Typography (Block Level) --- */
 html {
   color: #333;
