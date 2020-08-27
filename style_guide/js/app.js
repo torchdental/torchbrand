@@ -87,11 +87,17 @@ class App extends React.Component {
   </div>
   <ul class="navbar-nav">
     <li class="navbar-item">
-      <a href="#colors" class="navbar-link">Colors</a>
+      <a href="url" class="navbar-link">Item</a>
+    </li>
+    <li class="navbar-item">
+      <div class="menu menu--hoverable"> <!-- with subnav //-->
+          <a href="url" class="navbar-link menu-label">Item</a>
+          <!--standard menu body //-->
+      </div>
     </li>
   </ul>
   <div class="navbar-menu">
-    <div class="menu"><!--standard menu item //--></div>
+    <div class="menu"><!--standard menu label / body //--></div>
   </div>
 </nav>`}
             </pre>

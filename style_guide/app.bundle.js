@@ -734,7 +734,7 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'pre',
           null,
-          '<nav class="navbar">\n  <div class="navbar-brand">\n    <img class="navbar-torchLogo" src="/assets/images/torch_logo.svg">\n  </div>\n  <ul class="navbar-nav">\n    <li class="navbar-item">\n      <a href="#colors" class="navbar-link">Colors</a>\n    </li>\n  </ul>\n  <div class="navbar-menu">\n    <div class="menu"><!--standard menu item //--></div>\n  </div>\n</nav>'
+          '<nav class="navbar">\n  <div class="navbar-brand">\n    <img class="navbar-torchLogo" src="/assets/images/torch_logo.svg">\n  </div>\n  <ul class="navbar-nav">\n    <li class="navbar-item">\n      <a href="url" class="navbar-link">Item</a>\n    </li>\n    <li class="navbar-item">\n      <div class="menu menu--hoverable"> <!-- with subnav //-->\n          <a href="url" class="navbar-link menu-label">Item</a>\n          <!--standard menu body //-->\n      </div>\n    </li>\n  </ul>\n  <div class="navbar-menu">\n    <div class="menu"><!--standard menu label / body //--></div>\n  </div>\n</nav>'
         ),
         _react2.default.createElement(
           'h4',
