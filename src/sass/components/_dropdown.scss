@@ -36,19 +36,63 @@
 
 .menu {
   position: relative;
+  &-label {
+    cursor: pointer;
+  }
   &-body {
+    min-width: 100%;
     position: absolute;
     right: 0;
     top: 100%;
     border: $border-light;
     background: $color--white;
+    display: none;
+  }
+  &-section {
+    border-top: $border-light; 
   }
   &-item {
-    padding: $s14 52px;
-    &--group {
+    display: block;
+    @extend .styleAs-a;
+    padding: $s12;
+    padding-top: ($s32 - ($line-height--base - $font-size--base))/2;
+    padding-bottom: ($s32 - ($line-height--base - $font-size--base))/2;
+    
+    
+    &:hover, &:active {
       background: $color--blue-20;
-      padding: $s16 52px;
-      margin: 2px 0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    &:first-child {
+      padding-top: $s24 - ($line-height--base - $font-size--base);
+    }
+    &:last-child {
+      padding-bottom: $s24 - ($line-height--base - $font-size--base);
+    }
+    
+    &--header, &--header:hover, &--header:active {
+      background: none;
+      cursor: default;
+    }
+  }
+  &--withIcons {
+    .menu-item {
+      padding-left: 52px;
+    }
+  }
+  
+  &--hoverable {
+    .menu-body {
+      border-top: none;
+      top: calc(100% - 1px);      
+    }
+  }
+  
+  &--expanded, &--hoverable:hover {
+    .menu-body {
+      display: block;
     }
   }
   

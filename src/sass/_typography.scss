@@ -1,5 +1,5 @@
 /* --- Typography (Block Level) --- */
-html {
+html, body {
   color: $color--body-text;
   font-family: $font-family--primary;
   font-size: $font-size--base;
@@ -73,17 +73,10 @@ h6,
   margin-bottom: $P5L;
 }
 
-strong {
-  font-weight: 700;
-}
-
 .supheader, .details1, small {
   font-size: $s14;
   line-height: 16px;
   font-weight: 400;
-  &--bold {
-    font-weight: 700
-  }
 }
 .supheader {
   margin-bottom: $P5L;
@@ -114,8 +107,8 @@ strong {
 
 p,
 .styleAs-p {
-  margin-top: $oneL;
-  margin-bottom: $oneL;
+  margin-top: ($s24 - ($line-height--base - $font-size--base))/2; //24 paragraph height minus diff between line and font size, split between top and bottom
+  margin-bottom: ($s24 - ($line-height--base - $font-size--base))/2;
   &:first-child {
     margin-top: 0;
   }
@@ -123,6 +116,12 @@ p,
     margin-bottom: 0;
   }
 }
+
+strong, .styleAs-strong {
+  font-weight: 700;
+}
+
+
 
 .text--strikethrough {
   text-decoration: line-through;

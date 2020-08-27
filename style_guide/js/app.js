@@ -20,21 +20,22 @@ const links = [
   },  
   {
     name: 'Spacing & Layout',
-    path: 'spacing'    
+    path: 'spacing',
+    items: [
+      {
+        name: 'Page Layout',
+        path: 'layout'
+      },
+      {
+        name: 'Containers',
+        path: 'containers'
+      }
+    ]
   },
   {
     name: 'Icons', 
-    path: 'icons'    
+    path: 'icons'
   },  
-  // TODO style "Components as right-aligned auth menu"
-  // Nav
-  // {
-  //   name: 'Components',
-  //   path: 'components'
-  // },
-  // Buttons, Links, Badges, Icons, Forms, menus (filter, sort), 
-  // Cards & card-grid, tables, notifications
-  // modals, tooltips
 ]
 
 
@@ -42,34 +43,64 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      expandedItems: [],
+      expandedItems: {},
     }
     this.isExpanded = this.isExpanded.bind(this);
     this.toggleExpanded = this.toggleExpanded.bind(this);
+    this.makeSection = this.makeSection.bind(this);
   }
   
   isExpanded(item) {
-    return this.state.expandedItems.includes(item);
+    return this.state.expandedItems[item] !== false;
   }
   
   toggleExpanded(item) {
-    const idx = this.state.expandedItems.indexOf(item);
-    console.log(item, idx)
-    if (idx > -1) {
-      const items = this.state.expandedItems
-      items.splice(idx, 1);
-      this.setState({
-        expandedItems: items
-      })
+    const expandedItems = this.state.expandedItems;
+    if (expandedItems[item] == false) {
+      expandedItems[item] = true
     } else {
-      this.setState({
-        expandedItems: [...this.state.expandedItems, item]
-      })      
+      expandedItems[item] = false
     }
+    this.setState({ expandedItems });
   }
   
-  render() {
-    
+  makeSection(id, title, content) {
+    return <section className={containerBlock(null, {expandable: true, expanded: this.isExpanded(id)})}>
+      <a className="anchor" id={id}></a>
+      <div className={containerBlock('header')} onClick={this.toggleExpanded.bind(this, id)}>
+        <h3>{title}</h3>
+      </div>
+      <div className={containerBlock('body')}>
+        {content}
+      </div>
+    </section>
+  }
+  
+  get navSection() {
+    return this.makeSection('nav', "Navs", <React.Fragment><p>There are two separate navs in the design system. The top nav has all primary links visible above the tablet breakpoint, and only the logo/menu visible below that breakpoint.</p><p>The bottom nav includes all the primary links with icons and is visible below the table breakpoint.</p>
+            <h4>Top Nav</h4>
+            <p>The top nav structure should be identital to the existing nav element structure and should be structure as: </p>
+            <pre>
+{`<nav class="navbar">
+  <div class="navbar-brand">
+    <img class="navbar-torchLogo" src="/assets/images/torch_logo.svg">
+  </div>
+  <ul class="navbar-nav">
+    <li class="navbar-item">
+      <a href="#colors" class="navbar-link">Colors</a>
+    </li>
+  </ul>
+  <div class="navbar-menu">
+    <div class="menu"><!--standard menu item //--></div>
+  </div>
+</nav>`}
+            </pre>
+            <h4>Bottom Nav</h4>
+            <p>TBD</p>
+          </React.Fragment>)
+  }
+  
+  get colorsSection() {
     const colorMap = {
       '$color--blue-20': ["#E9F3F6"],
       '$color--blue-30': ["#00AEF6"],
@@ -116,21 +147,7 @@ class App extends React.Component {
         notes
       })
     });
-    
-    console.log(colorGroups)
-    
-    return <div className="app-root bg-light d-flex">
-      <Nav links={links}/>
-      <main className="app-body">
-        <section className={containerBlock(null, {expandable: true, expanded: this.isExpanded('nav')})} id="nav">
-          <div className={containerBlock('header')} onClick={this.toggleExpanded.bind(this, 'nav')}>
-            <h3>Navs</h3>
-          </div>
-          <div className={containerBlock('body')}>
-            <p>Info about navs</p>
-          </div>
-        </section>
-        <section className={containerBlock(null, {expandable: true, expanded: this.isExpanded('colors')})} id="colors">
+    return         <section className={containerBlock(null, {expandable: true, expanded: this.isExpanded('colors')})} id="colors">
           <div className={containerBlock('header')} onClick={this.toggleExpanded.bind(this, 'colors')}>
             <h3>Colors</h3>
           </div>
@@ -165,180 +182,178 @@ class App extends React.Component {
             </div>
           </div>
         </section>
-        <div className='section-label'>
-          <h3 id="typography">Typography</h3>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>
-                Dark Gray
-              </th>
-              <th>
-                Gray
-              </th>
-              <th>
-                Primary
-              </th>
-              <th>
-                Green
-              </th>
-              <th>
-                Raspberry
-              </th>
-              <th>
-                Bright Green
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {[1,2,3,4, 5].map((n) => {
-              return  <tr>
-                  <td>
-                    <div className="details2">h{n}, .styleAs-h{n}</div>
-                    <span className={`styleAs-h${n}`}>Headline{n}</span>
-                  </td>
-                  <td>
-                    <div className="details2">h1.text--muted, .styleAs-h1.text--muted</div>
-                    <span className={`styleAs-h${n} text--muted`}>Headline{n}</span>
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-              
+  }
+
+  get typographySection() {
+    return this.makeSection('typography', "Typography", <React.Fragment>
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    Dark Gray
+                  </th>
+                  <th>
+                    Gray
+                  </th>
+                  <th>
+                    Primary
+                  </th>
+                  <th>
+                    Green
+                  </th>
+                  <th>
+                    Raspberry
+                  </th>
+                  <th>
+                    Bright Green
+                  </th>
                 </tr>
-            })}
-            <tr>
-              <td>
-                <div className="details2">h6, .styleAs-h6, .subheader</div>
-                <span className={`subheader`}>Subheader</span>
-                <div className="details2">h6.subheader--light, .styleAs-h6--light, .subheader--light</div>
-                <span className={`subheader subhedaer--light`}>Subheader</span>
-              </td>
-              <td>
-                <div className="details2">h6.text--muted, .styleAs-h6.text--muted, .subheader.text--muted</div>
-                <span className={`subheader text--muted`}>Subheader</span>
-                <div className="details2">h6.text--muted.subheader--light, .styleAs-h6--light.text--muted, .subheader--light.text--muted</div>
-                <span className={`subheader subheader--light text--muted`}>Subheader</span>
-              </td>
-              <td>
-                <div className="details2">h6.text--primary, .styleAs-h6.text--primary, .subheader.text--primary</div>
-                <span className={`subheader text--primary`}>Subheader</span>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>
-                <div className="details2">p, .styleAs-p</div>
-                <span className={`styleAs-p`}>Body</span>
-                <div className="details2">p strong, .styleAs-p strong</div>
-                <span className={`styleAs-p`}><strong>Body</strong></span>
-                <div className="details2">p.text--strikethrough, .styleAs-p.text--strikethrough</div>
-                <span className={`styleAs-p text--strikethrough`}>Body</span>
-              </td>
-              <td>
-                <div className="details2">p.text--muted, .styleAs-p.text--muted</div>
-                <span className={`subheader text--muted`}>Body</span>
-                <div className="details2">p.text--muted strong, .styleAs-p.text--muted srong</div>
-                <span className={`subheader text--muted`}><strong>Body</strong></span>
-              </td>
-              <td>
-                <div className="details2">p.text--primary, .styleAs-p.text--primary</div>
-                <span className={`subheader text--primary`}>Body</span>
-                <div className="details2">p.text--primary strong, .styleAs-p.text--primary strong</div>
-                <span className={`subheader text--primary`}><strong>Body</strong></span>
-              </td>
-              <td></td>
-              <td>
-                <div className="details2">p.text--danger, .styleAs-p.text--pridangermary</div>
-                <span className={`subheader text--danger`}>Body</span>
-                <div className="details2">p.text--danger strong, .styleAs-p.text--pridangermary strong</div>
-                <span className={`subheader text--danger`}><strong>Body</strong></span>
-              </td>
-              <td>
-                <div className="details2">p.text--bright, .styleAs-p.text--bright</div>
-                <span className={`subheader text--bright`}>Body</span>
-                <div className="details2">p.text--bright strong, .styleAs-p.text--bright strong</div>
-                <span className={`subheader text--bright`}><strong>Body</strong></span>
-              </td>
+              </thead>
+              <tbody>
+                {[1,2,3,4, 5].map((n) => {
+                  return  <tr>
+                      <td>
+                        <div className="details2">h{n}, .styleAs-h{n}</div>
+                        <span className={`styleAs-h${n}`}>Headline{n}</span>
+                      </td>
+                      <td>
+                        <div className="details2">h1.text--muted, .styleAs-h1.text--muted</div>
+                        <span className={`styleAs-h${n} text--muted`}>Headline{n}</span>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+              
+                    </tr>
+                })}
+                <tr>
+                  <td>
+                    <div className="details2">h6, .styleAs-h6, .subheader</div>
+                    <span className={`subheader`}>Subheader</span>
+                    <div className="details2">h6.subheader--light, .styleAs-h6--light, .subheader--light</div>
+                    <span className={`subheader subhedaer--light`}>Subheader</span>
+                  </td>
+                  <td>
+                    <div className="details2">h6.text--muted, .styleAs-h6.text--muted, .subheader.text--muted</div>
+                    <span className={`subheader text--muted`}>Subheader</span>
+                    <div className="details2">h6.text--muted.subheader--light, .styleAs-h6--light.text--muted, .subheader--light.text--muted</div>
+                    <span className={`subheader subheader--light text--muted`}>Subheader</span>
+                  </td>
+                  <td>
+                    <div className="details2">h6.text--primary, .styleAs-h6.text--primary, .subheader.text--primary</div>
+                    <span className={`subheader text--primary`}>Subheader</span>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div className="details2">p, .styleAs-p</div>
+                    <span className={`styleAs-p`}>Body</span>
+                    <div className="details2">p strong, .styleAs-p strong</div>
+                    <span className={`styleAs-p`}><strong>Body</strong></span>
+                    <div className="details2">p.text--strikethrough, .styleAs-p.text--strikethrough</div>
+                    <span className={`styleAs-p text--strikethrough`}>Body</span>
+                  </td>
+                  <td>
+                    <div className="details2">p.text--muted, .styleAs-p.text--muted</div>
+                    <span className={`subheader text--muted`}>Body</span>
+                    <div className="details2">p.text--muted strong, .styleAs-p.text--muted srong</div>
+                    <span className={`subheader text--muted`}><strong>Body</strong></span>
+                  </td>
+                  <td>
+                    <div className="details2">p.text--primary, .styleAs-p.text--primary</div>
+                    <span className={`subheader text--primary`}>Body</span>
+                    <div className="details2">p.text--primary strong, .styleAs-p.text--primary strong</div>
+                    <span className={`subheader text--primary`}><strong>Body</strong></span>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div className="details2">p.text--danger, .styleAs-p.text--pridangermary</div>
+                    <span className={`subheader text--danger`}>Body</span>
+                    <div className="details2">p.text--danger strong, .styleAs-p.text--pridangermary strong</div>
+                    <span className={`subheader text--danger`}><strong>Body</strong></span>
+                  </td>
+                  <td>
+                    <div className="details2">p.text--bright, .styleAs-p.text--bright</div>
+                    <span className={`subheader text--bright`}>Body</span>
+                    <div className="details2">p.text--bright strong, .styleAs-p.text--bright strong</div>
+                    <span className={`subheader text--bright`}><strong>Body</strong></span>
+                  </td>
             
-            </tr>
-            <tr>
-              <td>
-                <div className="details2">small, .details1, .supheader</div>
-                <span className={`details1`}>Details 1</span>
-                <div className="details2">small strong, .details1 strong, .supheader strong</div>
-                <span className={`details1`}><strong>Details 1</strong></span>
-              </td>
-              <td>
-                <div className="details2">small.text--muted, .details1.text--muted, .supheader.text--muted</div>
-                <span className={`details1 text--muted`}>Details 1</span>
-                <div className="details2">small.text--muted strong, .details1.text--muted strong, .supheader.text--muted strong</div>
-                <span className={`details1 text--muted`}><strong>Details 1</strong></span>
-              </td>
-              <td>
-                <div className="details2">small.text--primary, .details1.text--primary, .supheader.text--primary</div>
-                <span className={`details1 text--primary`}>Details 1</span>
-                <div className="details2">small.text--primary strong, .details1.text--primary strong, .supheader.text--primary strong</div>
-                <span className={`details1 text--primary`}><strong>Details 1</strong></span>
-              </td>
-              <td>
-                <div className="details2">small.text--secondary, .details1.text--secondary, .supheader.text--secondary</div>
-                <span className={`details1 text--secondary`}>Details 1</span>
-                <div className="details2">small.text--secondary strong, .details1.text--secondary strong, .supheader.text--secondary strong</div>
-                <span className={`details1 text--secondary`}><strong>Details 1</strong></span>
-              </td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>
-                <div className="details2">.details2</div>
-                <span className={`details2`}>Details 2</span>
-                <div className="details2">.details2 strong</div>
-                <span className={`details2`}><strong>Details 2</strong></span>
-              </td>
-              <td>
-                <div className="details2">.details2.text--muted</div>
-                <span className={`details2 text--muted`}>Details 2</span>
-                <div className="details2">.details2.text--muted strong</div>
-                <span className={`details2 text--muted`}><strong>Details 2</strong></span>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>
-                <div className="details2">.details3</div>
-                <span className={`details3`}>Details 3</span>
-                <div className="details2">.details3 strong</div>
-                <span className={`details3`}><strong>Details 3</strong></span>
-              </td>
-              <td>
-                <div className="details2">.details3.text--muted</div>
-                <span className={`details3 text--muted`}>Details 3</span>
-                <div className="details2">.details3.text--muted strong</div>
-                <span className={`details3 text--muted`}><strong>Details 3</strong></span>            
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-            
-        <section className={containerBlock(null, {expandable: true, expanded: this.isExpanded('spacing')})} id="spacing">
-          <div className={containerBlock('header')} onClick={this.toggleExpanded.bind(this, 'spacing')}>
-            <h3>Spacing</h3>
-          </div>
-          <div className={containerBlock('body')}>
-            <p>Most components and containers should have spacing built-in. If you need to construct a component use the spacing variables to ensure consistency:</p>
+                </tr>
+                <tr>
+                  <td>
+                    <div className="details2">small, .details1, .supheader</div>
+                    <span className={`details1`}>Details 1</span>
+                    <div className="details2">small strong, .details1 strong, .supheader strong</div>
+                    <span className={`details1`}><strong>Details 1</strong></span>
+                  </td>
+                  <td>
+                    <div className="details2">small.text--muted, .details1.text--muted, .supheader.text--muted</div>
+                    <span className={`details1 text--muted`}>Details 1</span>
+                    <div className="details2">small.text--muted strong, .details1.text--muted strong, .supheader.text--muted strong</div>
+                    <span className={`details1 text--muted`}><strong>Details 1</strong></span>
+                  </td>
+                  <td>
+                    <div className="details2">small.text--primary, .details1.text--primary, .supheader.text--primary</div>
+                    <span className={`details1 text--primary`}>Details 1</span>
+                    <div className="details2">small.text--primary strong, .details1.text--primary strong, .supheader.text--primary strong</div>
+                    <span className={`details1 text--primary`}><strong>Details 1</strong></span>
+                  </td>
+                  <td>
+                    <div className="details2">small.text--secondary, .details1.text--secondary, .supheader.text--secondary</div>
+                    <span className={`details1 text--secondary`}>Details 1</span>
+                    <div className="details2">small.text--secondary strong, .details1.text--secondary strong, .supheader.text--secondary strong</div>
+                    <span className={`details1 text--secondary`}><strong>Details 1</strong></span>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div className="details2">.details2</div>
+                    <span className={`details2`}>Details 2</span>
+                    <div className="details2">.details2 strong</div>
+                    <span className={`details2`}><strong>Details 2</strong></span>
+                  </td>
+                  <td>
+                    <div className="details2">.details2.text--muted</div>
+                    <span className={`details2 text--muted`}>Details 2</span>
+                    <div className="details2">.details2.text--muted strong</div>
+                    <span className={`details2 text--muted`}><strong>Details 2</strong></span>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div className="details2">.details3</div>
+                    <span className={`details3`}>Details 3</span>
+                    <div className="details2">.details3 strong</div>
+                    <span className={`details3`}><strong>Details 3</strong></span>
+                  </td>
+                  <td>
+                    <div className="details2">.details3.text--muted</div>
+                    <span className={`details3 text--muted`}>Details 3</span>
+                    <div className="details2">.details3.text--muted strong</div>
+                    <span className={`details3 text--muted`}><strong>Details 3</strong></span>            
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table></React.Fragment>)
+  }
+  
+  get spacingSection() {
+    return this.makeSection("spacing", "Spacing", <React.Fragment><p>Most components and containers should have spacing built-in. If you need to construct a component use the spacing variables to ensure consistency:</p>
             <ul>
               <li>$s8:  8px;</li>
               <li>$s10: 10px;</li>
@@ -349,17 +364,28 @@ class App extends React.Component {
               <li>$s24: 24px;</li>
               <li>$s32: 32px;</li>
               <li>$s40: 40px;</li>
-            </ul>            
-          </div>
-        </section>
-        <section className={containerBlock(null, {expandable: true, expanded: this.isExpanded('pagelayout')})} id="pagelayout">
-          <div className={containerBlock('header')} onClick={this.toggleExpanded.bind(this, 'pagelayout')}>
-            <h3>Page Layout</h3>
-          </div>
-          <div className={containerBlock('body')}>
-            <p></p>         
-          </div>
-        </section>
+            </ul></React.Fragment>)
+  }
+  
+  get pageLayoutSection() {
+    return this.makeSection("layout", "Page Layout", null)
+  }
+
+  get containersSection() {
+    return this.makeSection("containers", "Containers", null)
+  }
+  
+  render() {
+    return <div className="app-root bg-light d-flex">
+      <Nav links={links}/>
+      <main className="app-body">
+        {this.colorsSection}
+        {this.typographySection}
+        {this.spacingSection}
+        {this.pageLayoutSection}
+        {this.containersSection}
+        {this.navSection}
+        
       </main>
     </div>
   }

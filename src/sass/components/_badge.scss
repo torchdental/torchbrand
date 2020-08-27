@@ -2,14 +2,21 @@
 .badge {
   display: inline-block;
   vertical-align: middle;
-  padding: .25em .6em;
-  border-radius: 1em;
-  margin-top: -4px;
-  background-color: $color--light;
-  font-size: .7em;
+  padding: 0;
+  @extend .details1; //s14
+  @extend .styleAs-strong; //bold  
+  min-width: $s20;
+  height: $s20;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $s20;
+  vertical-align: text-bottom;
+  background-color: $color--blue-30;
+  color: $color--white;
   line-height: 1;
-  font-weight: $font-weight--primary-bold;
-
+  
   &--large {
     padding: 0.5em 1.2em;
     font-size: 0.8rem;

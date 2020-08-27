@@ -4,7 +4,10 @@ button,
   display: block;
   width: 100%;
   
-  padding: $s12 0;
+  // default to "large" buttons
+  font-size: $s20;
+  padding: $s14 0;
+  
   &--sized, &.btn-tight {
     padding-left: $s16;
     padding-right: $s16;
@@ -81,6 +84,11 @@ button,
     font-size: $s14;
     padding-top: $s8;
     padding-bottom: $s8;
+  }
+  &--medium, &.btn-md {
+    padding-top: $s12;
+    padding-bottom: $s12;
+    font-size: $s16;    
   }
   &--large, &.btn-lg {
     font-size: $s20;
