@@ -57,10 +57,13 @@ $color--body-text--secondary:  $color--gray-60;   //Should be for text only
 $color--dark:             $color--gray-90;   //For shadows only
 $color--hr:               $color--gray-60;
 $color--border:           $color--hr;
+$color--form-border:      $color--gray-50;
+$color--form-muted-text:  $color--gray-50;
+$color--form-highlight:   $color--green-30;
 
-$border-dark: 1px solid $color--gray-90;
-$border-light: 1px solid $color--border;
-$border-table: 1px solid $color--gray-30;
+$border--dark: 1px solid $color--gray-90;
+$border--light: 1px solid $color--border;
+$border--table: $border--light;
 
 
 $background-color--light: $color--gray-30;
@@ -68,7 +71,6 @@ $background-color--extra-light: $color--gray-20;
 $background-color--medium: $color--gray-50;
 
 //TODO review semanticness of these - might need to be deprecated
-$color--muted-light:      $color--gray-800; //currently used for input styling, badges
 $color--light:            $color--gray-900;
 
 $color--info:             $color--teal-400;

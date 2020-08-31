@@ -16,13 +16,13 @@
 
 @import 'tables';
 
-@import 'utility-classes';
 
 
 @import 'components/all';
-
-
 @import 'breakpoints/all';
+
+@import 'utility-classes';
+
 
 .app-root {
   display: flex;
@@ -49,10 +49,15 @@ pre {
 }
 
 code {
-  padding: $s8;
+  padding: $s8 / 2;
   background: $color--light;
-  border-radius: 4px;
-  white-space: nowrap;
+  @include border-radius;
+  line-height: 1em;
+  white-space: pre-line;
+}
+
+* {
+  position: relative;
 }
 
 *::selection {

@@ -1,0 +1,38 @@
+
+.flag {
+  @extend .details3; //s10
+  @extend .styleAs-strong; //bold  
+  height: $s16;
+  padding: $s8/2 $s8; //TODO nonstandard OK?
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  cursor: default;
+  
+  &--preferred {
+    color: $color--secondary;
+    background: $color--green-20;
+  }
+  &--purchasedBefore {
+    color: $color--primary;
+    background: $color--blue-20;
+  }
+
+  &--bestSeller {
+    color: $color--purple-50;
+    background: $color--purple-20;
+  }
+
+  &--promo {
+    color: $color--orange-50;
+    background: $color--yellow-20;
+  }
+
+  position: relative;
+  &:hover {
+    .tooltip {
+      display: block
+    }
+  }
+}

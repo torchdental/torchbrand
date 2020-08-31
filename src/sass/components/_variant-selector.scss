@@ -1,0 +1,19 @@
+.variantSelector-value, .variantBtn {
+  @include btn;
+  @include btn--sized;
+  @include btn--small;
+  margin-right: $s10;
+  margin-bottom: $s10;
+  font-size: $s16;
+           // (32 - font-size) / 2
+  padding: ($s32 - $s16)/2  $s10;
+  &--selected, &.square-badge--active {
+    @include btn--outline--primary;
+  }
+  @include btn--outline;
+
+  &--unavailable {
+    @include btn--disabled;
+    border: none;
+  }
+}

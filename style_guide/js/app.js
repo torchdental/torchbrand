@@ -380,7 +380,413 @@ class App extends React.Component {
   get containersSection() {
     return this.makeSection("containers", "Containers", null)
   }
+
+  get buttonsSection() {
+    const btnBem = makeBem("btn")
+    return this.makeSection("buttons", "Buttons & Links", <React.Fragment>
+      <p>New button elements should all have the class <code>.btn</code>. For backwards 
+      compatility, all button elements and items with <code>.styleAs-button</code> will also generally work</p>
+      <h4>Filled Buttons (default)</h4>
+      <p>Note that these all have hover and active states. By default they take the full width of the container.</p>
+      <br />
+      <br />
+      <p>Standard Button classnames <code>{btnBem()}</code></p>
+      <div className={btnBem()}>Standard Button</div>
+      <br />
+      <br />
+      <p>Standard Primary Button classnames <code>{btnBem(null, 'primary')}</code></p>
+      <div className={btnBem(null, 'primary')}>Primary Standard Button</div>
+      <br />
+      <br />
+      <p>Standard Secondary Button classnames <code>{btnBem(null, 'secondary')}</code></p>
+      <div className={btnBem(null, 'secondary')}>Secondary Standard Button</div>
+      <br />
+      <br />
+      <p>Disabled Button regardless of classnames. Real buttons marked as disabled</p>
+      <button className={btnBem(null, 'secondary')} disabled>Disabled Button</button>
+      <p>or classname className={btnBem(null, 'disabled')}</p>
+      <div className={btnBem(null, ['primary', 'disabled'])}>Disabled Primary Button</div>
+      <br />
+      <br />
+
+      <h4>Medium Emphasis Buttons - oulined. These should have class <code>btn</code> with the <code>--outline</code> modifier 
+      in addition to any other modifiers needed.</h4>
+      <br />
+      <br />
+      <p>Standard Button classnames <code>{btnBem(null, 'outline')}</code></p>
+      <div className={btnBem(null, 'outline')}>Outline Button</div>
+      <br />
+      <br />
+      <p>Standard Primary Button classnames <code>{btnBem(null, ['outline', 'primary'])}</code></p>
+      <div className={btnBem(null, ['outline', 'primary'])}>Primary Outline Button</div>
+      <br />
+      <br />
+      <p>Standard Secondary Button classnames <code>{btnBem(null, ['outline', 'secondary'])}</code></p>
+      <div className={btnBem(null, ['outline', 'secondary'])}>Secondary Outline Button</div>
+      <br />
+      <br />
+      <p>Disabled Button regardless of classnames. Real buttons marked as disabled</p>
+      <button className={btnBem(null, ['outline', 'secondary'])} disabled>Disabled Outline Button</button>
+      <p>or classname className={btnBem(null, ['outline', 'disabled'])}</p>
+      <div className={btnBem(null, ['primary', 'disabled', 'outline'])}>Disabled Primary Outline Button</div>
+
+      <h4>Button Sizing</h4>
+      <p>All buttons can have size modifiers applied to them. Note that any combination of color/style is permitted, not just those shown</p>
+      <div className="cardGrid">
+        <div className="card">
+          <h5>Standard buttons</h5>
+          <p><code>{btnBem(null, 'large')}</code></p>
+          <div className={btnBem(null, 'large')}>Large (default)</div>
+          <br />
+          <p><code>{btnBem(null, ['primary', 'medium'])}</code></p>
+          <div className={btnBem(null, ['primary', 'medium'])}>Medium Button</div>
+          <br />
+          <p><code>{btnBem(null, ['secondary', 'small'])}</code></p>
+          <div className={btnBem(null, ['secondary', 'small'])}>Small Button</div>
+          <br />
+          <p><code>{btnBem(null, ['secondary', 'xSmall'])}</code></p>
+          <button className={btnBem(null, ['secondary', 'xSmall'])} disabled>xSmall Button</button>
+        </div>
+        <div className="card">
+          <h5>Standard buttons</h5>
+          <p><code>{btnBem(null, ['large', 'disabled', 'outline'])}</code></p>
+          <div className={btnBem(null, ['large', 'disabled', 'outline'])}>Large (default)</div>
+          <br />
+          <p><code>{btnBem(null, ['secondary', 'outline', 'medium'])}</code></p>
+          <div className={btnBem(null, ['secondary', 'outline', 'medium'])}>Medium Button</div>
+          <br />
+          <p><code>{btnBem(null, ['outline', 'small'])}</code></p>
+          <div className={btnBem(null, ['outline', 'small'])}>Small Button</div>
+          <br />
+          <p><code>{btnBem(null, ['primary', 'outline', 'xSmall'])}</code></p>
+          <button className={btnBem(null, ['primary', 'outline', 'xSmall'])}>xSmall Button</button>
+        </div>
+        <div className="card">
+          <h5>Sized buttons <code>--sized</code> or <code>btn-tight</code></h5>
+          <p><code>{btnBem(null, ['large', 'secondary', 'sized'])}</code></p>
+          <div className={btnBem(null, ['large', 'secondary', 'sized'])}>Large (default)</div>
+          <br />
+          <p><code>{btnBem(null, ['primary', 'sized', 'outline', 'medium'])}</code></p>
+          <div className={btnBem(null, ['primary', 'sized', 'outline', 'medium'])}>Medium Button</div>
+          <br />
+          <p><code>{btnBem(null, ['outline', 'small', 'sized'])}</code></p>
+          <div className={btnBem(null, ['outline', 'small', 'sized'])}>Small Button</div>
+          <br />
+          <p>button:disabled <code>{btnBem(null, ['sized', 'xSmall'])}</code></p>
+          <button className={btnBem(null, ['primary', 'sized', 'xSmall'])} disabled>xSmall Button</button>
+
+        </div>
+      </div>
+      <br/><br/>
+      <h4>Links</h4>
+      <p>In general, all links are the primary color, except ones inside menus which are the standard body text black color.
+        Specific links can be overridden with other colors as below.
+      </p>
+      <p><a className='text--default'>text--default e.g. for menus</a></p>
+      <p><a className='text--primary'>text--primary for paragraphy text</a></p>
+      <p><a className='text--secondary'>text--secondary</a></p>
+      <p><a className='text--muted'>text--muted - disabled links.</a></p>
+      <p><a className='text--danger'>text--danger - error and verification messages.</a></p>
+
+
+    </React.Fragment>)
+  }
   
+  get variantsSection() {
+    return this.makeSection("variants", "Variant Selector", <React.Fragment>
+      <h4>Variant Selector Buttons</h4>
+      <p>The base class for these are .variantBtn or .variantSelect-value. Selected buttons have the --selected modifier, and unavailable ones have --unavailable</p>
+      <div className="variantBtn">option</div>
+      <div className="variantBtn variantBtn--selected">selected option</div>
+      <div className="variantBtn variantBtn--unavailable">unavailable option</div>
+    </React.Fragment>)
+  }
+
+  get quantitySection() {
+    const qBem = makeBem("quantitySelector");
+    return this.makeSection("quantity", "Quantity Selector", <React.Fragment>
+      <h4>With single button</h4>
+      <div className={qBem()}>
+        <div className={qBem('minus', {disabled: true})}>&ndash;</div>
+        <div className={qBem('count')}>1</div>
+        <div className={qBem('plus')}>+</div>
+        <div className={qBem('add')}>Add</div>
+      </div>
+
+      <h4>With Icon </h4>
+      <div className={qBem()}>
+        <div className={qBem('label')}>TODO: icon</div>
+        <div className={qBem('minus', { disabled: true })}>&ndash;</div>
+        <div className={qBem('count')}>1</div>
+        <div className={qBem('plus')}>+</div>        
+      </div>
+
+      <h4>With Two Buttons</h4>
+      <div className={qBem()}>
+        <div className={qBem('label')}>QTY:</div>
+        <div className={qBem('minus', { disabled: true })}>&ndash;</div>
+        <div className={qBem('count')}>1</div>
+        <div className={qBem('plus')}>+</div>
+        <div className={qBem('buttons')}>
+          <div className={qBem('cancel')}>Cancel</div>
+          <div className={qBem('add')}>Add</div>
+        </div>
+        
+      </div>
+
+    </React.Fragment>)
+  }
+
+  get notificationsSection() {
+    const nBem = makeBem('notification');
+    return this.makeSection("notifications", "Notifications", <React.Fragment>
+      <div className="cardGrid">
+        <div className="card">
+          <p>Standard notifications are centered</p>
+          <p><span className={nBem()}>Info Notification</span></p>
+          <p><span className={nBem(null, 'success')}>Success Notification</span></p>
+          <p><span className={nBem(null, 'warning')}>Warning Notification<br />Multi-line</span></p>
+          <p><span className={nBem(null, 'error')}>Error Notification</span></p>
+        </div>
+        <div className="card">
+          <p>Optional --left notifications</p>
+          <p><span className={nBem(null, ['left'])}>Info Notification</span></p>
+          <p><span className={nBem(null, ['left', 'success'])}>Success Notification</span></p>
+          <p><span className={nBem(null, ['left', 'warning'])}>Warning Notification<br />Multi-line</span></p>
+          <p><span className={nBem(null, ['left', 'error'])}>Error Notification</span></p>
+        </div>
+        <div className="card">
+          <p>TODO with icons</p>
+          <p><span className={nBem(null, ['left'])}>Info Notification</span></p>
+          <p><span className={nBem(null, ['left', 'success'])}>Success Notification</span></p>
+          <p><span className={nBem(null, ['left', 'warning'])}>Warning Notification<br />Multi-line</span></p>
+          <p><span className={nBem(null, ['left', 'error'])}>Error Notification</span></p>
+        </div>
+      </div>
+      <h4>Product Status Notifications</h4>
+      <p>Two variations for iten status .itemStatus are intended over darker backgrounds</p>
+      <div className="cardGrid">
+        <div className="card bg-muted">
+          <br />
+          <div className="itemStatus itemStatus--unavailable">unavailable</div>
+          <br />  
+        </div>
+        <div className="card bg-muted">
+          <br />
+          <div className="itemStatus itemStatus--inList">In List</div>
+          <br />
+        </div>
+      </div>
+    </React.Fragment>)
+  }
+
+  get badgesSection() {
+    const fBem = makeBem('flag');
+    const ttBem = makeBem('tooltip');
+    return this.makeSection("badges", "Badges & Flags", <React.Fragment>
+      <h4>Badges</h4>
+      <p>Badges are generally used as numerical icons</p>
+      <p>Five <span className='badge'>5</span></p>
+      <p>Thirty four <span className='badge'>34</span></p>
+      <p>Six hundred ninety seven <span className='badge'>697</span></p>
+      <h5>Muted Badges</h5>
+      <p>Thirty four <span className='badge badge--muted-light'>34</span></p>
+      <h4>Flags</h4>
+      <p>There are 4 types of Flags, each my have a tooltip</p>
+      <div className={fBem(null, 'preferred')}>
+        Preferred
+        <div className={ttBem(null)}>
+          <div className={ttBem('body')}>
+            This item is offered by a supplier that offers fast shipping and fair prices.
+          </div>
+        </div>
+      </div>
+      &nbsp;
+      <div className={fBem(null, 'purchasedBefore')}>
+        Purchased Before
+        <div className={ttBem(null)}>
+          <div className={ttBem('body')}>
+            <strong>Purchase 19 days ago</strong>
+            <br />
+            Vendor: <strong>DC Dental</strong>
+          </div>
+        </div>
+      </div>
+      &nbsp;
+      <div className={fBem(null, 'bestSeller')}>
+        Best Seller
+        <div className={ttBem(null)}>
+          <div className={ttBem('body')}>
+            This item is offered by a supplier that offers fast shipping and fair prices.
+          </div>
+        </div>
+      </div>
+      &nbsp;
+      <div className={fBem(null, 'promo')}>
+        Promo
+        <div className={ttBem(null, 'right')}>
+          <div className={ttBem('body')}>
+            This item is offered by a supplier that offers fast shipping and fair prices.
+          </div>
+        </div>
+      </div>
+    </React.Fragment>);
+  }
+
+  get tooltipsSection() {
+    const ttBem = makeBem('tooltip');
+    return this.makeSection("tooltips", "Tooltips", <React.Fragment>
+      <p>Tooltips with static --visible modifier here for display. See <a href="#badges">badges section</a> above for in-line example</p>
+      <div style={{position: 'relative'}}>
+        Tooltip container
+        <div className={ttBem(null, 'visible')}>
+          <div className={ttBem('body')}>
+            <strong>Purchase 19 days ago</strong>
+            <br />
+          Vendor: <strong>DC Dental</strong>
+          </div>
+        </div>
+      </div>
+      
+      <br/>
+      <br />
+      <br />
+      <br />
+      {/* adding extra lines to compensate for absolutely positioned tooltip */}
+    </React.Fragment>);
+  }
+
+  
+
+
+  get formsSection() {
+    const menuBem = makeBem('menu');
+    return this.makeSection("forms", "Forms", <React.Fragment>
+      <form>
+        <div>
+          <input type="text" id="search" name="search" placeholder="Search" className="search"/>
+        </div>
+        <br /><br /><br />
+        <div>
+          <label htmlFor="sampleId">Sample Field</label>
+          <input type="text" id="sampleId" name="sample" placeholder="hint"/>          
+        </div>
+        <br />
+        <div>
+          <label htmlFor="sampleTextArea">Text Area</label>
+          <textarea id="sampleTextArea" placeholder="Write text"></textarea>
+        </div>
+        <br/>
+        <div>
+          <div className={menuBem(null, { select: true, expanded: this.isExpanded("exampleSelect")})}>
+            <div className={menuBem('label')} onClick={this.toggleExpanded.bind(this, "exampleSelect")}>
+              Selected Value
+            </div>
+            <div className={menuBem('body')}>
+              <div className={menuBem('item')}>Option 1</div>
+              <div className={menuBem('item')}>Option 2</div>
+            </div>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+
+        </div>
+        <div>
+          <input type="radio" value="1" id="radio_1" name="radio"></input><label htmlFor="radio_1">Radio 1</label>
+          <br/>
+          <input type="radio" value="2" id="radio_2" name="radio"></input><label htmlFor="radio_2">Radio 2</label>
+        </div>
+        <div>
+          <input type="checkbox" value="1" id="checkbox" name="checkbox"></input><label htmlFor="checkbox">Checkbox</label>          
+        </div>
+      </form>
+    </React.Fragment>)
+  }
+
+  get messagesSection() {
+    const mBem = makeBem('comment');
+    return this.makeSection("messages", "Messages", <React.Fragment>
+      <div className={mBem()}>
+        <div className={mBem('controls')}>
+          <div className={mBem('controlTextArea')}>
+            <textarea name="new_message" placeholder="What can we help you with?"></textarea>
+          </div>
+          <div className={mBem('addButton')}>send</div>
+        </div>
+      </div>
+    </React.Fragment>)
+  }
+
+  get menuSection() {
+    const menuBem = makeBem('menu');
+    return this.makeSection("menus", "Menus, Filter & Sort", <React.Fragment>
+      <h4>Menus</h4>
+      <p>Standard menu with sections.</p>
+      <div className={menuBem(null, 'expanded')}>
+        <div className={menuBem('label')}>
+          Menu Label
+        </div>
+        <div className={menuBem('body')}>
+          <div className={menuBem('section')}>
+            <div className={menuBem('item', 'header')}>
+              .menu-item--header <br/>
+              <strong>bold element</strong>
+            </div>
+            <div className={menuBem('item')}>
+              .menu-item
+            </div>
+            <div className={menuBem('item')}>
+              .menu-item<br/>
+              <p className="text--muted">.text--muted</p>
+            </div>
+          </div>
+          <div className={menuBem('section')}>
+            <div className={menuBem('item')}>
+              .menu-item
+            </div>
+          </div>
+        </div>        
+      </div>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+      <h4>Filters</h4>
+      <p>Standard menu with sections.</p>
+      <div className={menuBem(null, { select: true, expanded: this.isExpanded("exampleFilter") })}>
+        <div className={menuBem('label')} onClick={this.toggleExpanded.bind(this, "exampleFilter")}>
+          Selected Value
+        </div>
+        <div className={menuBem('body')}>
+          <div className={menuBem('item')}>.menu-item</div>
+          <div className={menuBem('item')}>.menu-item</div>
+        </div>
+      </div>
+      <br /><br /><br /><br /><br /><br /><br /><br />
+
+
+
+      <h4>Sort</h4>
+      <p>Sort menus are the same as filters but use a standard label text before the selected value.</p>
+      <div className={menuBem(null, { select: true, expanded: this.isExpanded("exampleSort") })}>
+        <div className={menuBem('label')} onClick={this.toggleExpanded.bind(this, "exampleSort")}>
+          <span className={menuBem('labelPrefix')}>Sort By</span> Selected Value
+        </div>
+        <div className={menuBem('body')}>
+          <div className={menuBem('item')}>.menu-item</div>
+          <div className={menuBem('item')}>.menu-item</div>
+        </div>
+      </div>
+      <br /><br /><br /><br /><br />
+
+
+    </React.Fragment>)
+  }
+
   render() {
     return <div className="app-root bg-light d-flex">
       <Nav links={links}/>
@@ -391,7 +797,23 @@ class App extends React.Component {
         {this.pageLayoutSection}
         {this.containersSection}
         {this.navSection}
+        {this.buttonsSection}
+        {this.notificationsSection}
+        {this.badgesSection}
+        {this.tooltipsSection}
+        {this.formsSection}
+        {this.messagesSection}
+        {this.menuSection}
         
+{/*   ["Menus, Filter & Sort", "menus"],
+      ["Cards"],
+      ["Card Grid (?)"],
+      */}
+        {this.variantsSection}
+        {this.quantitySection}
+{/* 
+          ["Tables"],
+      ["Modals"]      */}
       </main>
     </div>
   }

@@ -23,13 +23,11 @@ export default class Nav extends React.Component {
               {link.name}
             </a>
             <div className={menuCn('body')}>
-              <div className={menuCn('section')}>
                 {link.items.map((item)=>{
                   return <a className={menuCn('item')} href={`#${item.path}`}>
                     {item.name}
                   </a>
                 })}
-              </div>
             </div>
           </div>
         </li>
@@ -44,14 +42,18 @@ export default class Nav extends React.Component {
   
   get components() {
     const items = [
+      ["Navs", "nav"],      
       ["Buttons & Links", "buttons"],
       ["Notifications"],
-      ["Badges"],
+      ["Badges & Flags", "badges"],
       ["Tooltips"],
       ["Forms"],
+      ["Messages"],
       ["Menus, Filter & Sort", "menus"],
       ["Cards"],
       ["Card Grid (?)"],
+      ["Variant Selector", 'variants'],
+      ["Quantity Selector", 'quantity'],
       ["Tables"],
       ["Modals"]      
     ]

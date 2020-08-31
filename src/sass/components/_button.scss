@@ -1,145 +1,15 @@
 button,
 .btn,
 .styleAs-button {
-  display: block;
-  width: 100%;
-  
-  // default to "large" buttons
-  font-size: $s20;
-  padding: $s14 0;
-  
-  &--sized, &.btn-tight {
-    padding-left: $s16;
-    padding-right: $s16;
-    width: auto;
-  }
-  border-radius: 4px;
-  margin: 0;
-  
-  box-shadow: none;
-  outline: none;
-
-  color: $color--body-text;
-  line-height: 1em;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-  white-space: nowrap;
-
-  transition: background-color .3s,
-              opacity .3s;
-  cursor: pointer;
-  user-select: none;
-  touch-action: manipulation;
-  -webkit-appearance: none;
-
-  background: $color--gray-20;
-  &:hover:not(:disabled), 
-  &:focus:not(:disabled) {
-    background: $color--gray-30;
-    text-decoration: none;
-  }
-  &:active:not(:disabled) {
-    background: $color--gray-50;
-    text-decoration: none;    
-  }
-
-  &--primary, &.btn-primary {
-    color: $color--white;
-    background: $color--blue-50;
-    &:hover:not(:disabled), 
-    &:focus:not(:disabled) {
-      background: $color--blue-40;
-    }
-    &:active:not(:disabled) {
-      background: $color--blue-60;
-    }
-  }
-  
-  &--secondary, &.btn-secondary {
-    color: $color--white;
-    background: $color--green-50;
-    &:hover:not(:disabled), 
-    &:focus:not(:disabled) {
-      background: $color--green-40;
-    }
-    &:active:not(:disabled) {
-      background: $color--green-60;
-    }
-  }
-  
-  &:disabled {
-    color: $color--white;
-    cursor: auto;
-    background: $color--gray-30;
-    text-decoration: none;    
-  }
-  
-  &--xSmall, &.btn-xs {
-    font-size: $s10;
-    padding-top: $s10;
-    padding-bottom: $s10;
-  }
-  &--small, &.btn-sm {
-    font-size: $s14;
-    padding-top: $s8;
-    padding-bottom: $s8;
-  }
-  &--medium, &.btn-md {
-    padding-top: $s12;
-    padding-bottom: $s12;
-    font-size: $s16;    
-  }
-  &--large, &.btn-lg {
-    font-size: $s20;
-    padding-top: $s14;
-    padding-bottom: $s14;
-  }
+  @include btn
 }
 
-// Outlined - Medium emphasis
-// Should always also be a .btn, button, or .styledAs-button
-.btn-minor, .btn-outline {
-  border: 1px solid $color--gray-50;
-  background: $color--white;
-  
-  &:hover:not(:disabled), 
-  &:focus:not(:disabled) {
-    background: $color--gray-20;
-    text-decoration: none;
-  }
-  &:active:not(:disabled) {
-    background: $color--gray-30;
-    text-decoration: none;    
-  }  
-  &--primary, &.btn-minor-primary {
-    color: $color--blue-50;
-    border-color: $color--blue-50;
-    &:hover:not(:disabled), 
-    &:focus:not(:disabled) {
-      background: rgba($color--blue-20, 0.5);
-    }
-    &:active:not(:disabled) {
-      background: $color--blue-20;
-    }
-  }
-  
-  &--secondary, &.btn-minor-secondary {
-    color: $color--green-50;
-    border-color: $color--green-50;
-    &:hover:not(:disabled), 
-    &:focus:not(:disabled) {
-      background: rgba($color--green-20, 0.5);
-    }
-    &:active:not(:disabled) {
-      background: $color--green-20;
-    }
-  }
-  &:disabled {
-    color: $color--body-text--secondary;
-    background: $color--white;
-  }
+// Outlined - Medium emphasis. These should all also have the standard .btn classname as well.
+.btn-minor, .btn-outline, .btn--outline {
+  @include btn--outline;
 }
+
+
 
 
 .btn-blue {
@@ -175,10 +45,6 @@ button,
   background-color: darken($color--body-text--secondary, 5%);
 }
 
-
-.btn-tight {
-  display: inline-block;
-}
 
 // TODO: I believe this is only used for the LoadMoreButton component - should probably be renamed to be more specific.
 .spinner {

@@ -1,0 +1,43 @@
+.tooltip {
+  &:before {
+    position: absolute;
+    display: block;
+    content: "";
+    transform: rotate(45deg);
+    width: $s8;
+    height: $s8;
+    border-left: $border--light;
+    border-top: $border--light;
+    top: -5px;
+    left: $s24;
+    background: $color--white;    
+  }
+
+  @extend .details1;
+  line-height: $line-height--base;
+  @include border-radius;
+  position: absolute;
+  top: calc(100% + #{$s8});
+  min-width: $s40 * 6;
+  left: 0;
+  background: $color--white;
+  padding: $s10 $s8;
+  border: $border--light;
+  display: none;
+  &--visible {
+    display: block;
+  }
+
+  &--right {
+    right: 0;
+    left: auto;
+    &:before {
+      left: auto;
+      right: $s24;
+    }
+  }
+
+  &-body {
+
+  }
+}

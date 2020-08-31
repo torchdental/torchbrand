@@ -162,7 +162,7 @@ ul, ol {
 /* --- Typography (Inline Level) --- */
 a,
 .styleAs-a {
-  color: inherit;
+  color: $color--primary;
   text-decoration: none;
   outline: none;
   cursor: pointer;
@@ -186,9 +186,17 @@ em {
 }
 
 
+.text--default, .text-default {
+  color: $color--body-text !important;
+
+  a, .styleAs-a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
 
 .text--primary, .text-primary {
-  color: $color--primary;
+  color: $color--primary  !important;
 
   a, .styleAs-a {
     color: inherit;
@@ -197,7 +205,7 @@ em {
 }
 
 .text--secondary, .text-secondary {
-  color: $color--secondary;
+  color: $color--secondary !important; 
 
   a, .styleAs-a {
     color: inherit;
@@ -206,7 +214,7 @@ em {
 }
 
 .text--success, .text-success {
-  color: $color--success;
+  color: $color--success  !important;
 
   a, .styleAs-a {
     color: inherit;
@@ -215,7 +223,7 @@ em {
 }
 
 .text--danger, .text-danger {
-  color: $color--danger;
+  color: $color--danger  !important;
 
   a, .styleAs-a {
     color: inherit;
@@ -224,7 +232,7 @@ em {
 }
 
 .text--bright, .text-bright {
-  color: $color--bright;
+  color: $color--bright  !important;
 
   a, .styleAs-a {
     color: inherit;
@@ -233,7 +241,7 @@ em {
 }
 
 .text--muted, .text-muted {
-  color: $color--body-text--secondary;
+  color: $color--body-text--secondary  !important;
 
   a, .styleAs-a {
     color: inherit;

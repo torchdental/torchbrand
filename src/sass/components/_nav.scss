@@ -1,5 +1,6 @@
 .navbar {
   position: fixed;
+  z-index: 100;
   right: 0; left: 0; top: 0;
   flex: 0 0 auto;
   display: flex;
@@ -27,6 +28,11 @@
   align-items: stretch;
   padding: 0;
   margin: 0;
+  .menu {
+    &-body {
+      width: 176px;    
+    }
+  }
 }
 
 .navbar-menu {
@@ -38,6 +44,8 @@
       font-size: $s20;
     }
     &-body {
+      right: 0;
+      left: auto;
       width: 270px;
       max-height: calc(100vh - #{$navbar-height});
       overflow-y: scroll;
@@ -52,7 +60,6 @@
   align-items: center;
   margin: 0;
   list-style: none;
-  font-size: $nav-item-font-size;
   line-height: 1em;
 }
 
@@ -63,6 +70,7 @@
   padding: $s40 $s20 $s40 - $s8;
   border-bottom: $s8 solid transparent;
   display: block;
+  font-size: $nav-item-font-size;
   &:hover,
   &:focus,
   &--active {

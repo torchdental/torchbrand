@@ -1,0 +1,48 @@
+.notification {
+  @include btn;
+  @include btn--medium;
+  @include btn--sized;
+  @include container-glow;
+  line-height: $line-height--base;
+  text-transform: none;
+  width: auto;
+  color: $color--primary;
+  background-color: $color--blue-20;
+  font-weight: bold;
+  text-align: center;
+
+  &--left {
+    text-align: left;
+  }
+  &--success {
+    color: $color--secondary;
+    background-color: $color--green-20;
+  
+  }
+  &--warning {
+    color: $color--body-text;
+    background-color: $color--yellow-20;
+    font-weight: normal;
+  }
+  &--error {
+    color: $color--danger;
+    background-color: $color--berry-20;
+  }
+}
+
+.itemStatus {
+  @include btn;
+  @include btn--small;
+  text-transform: none;
+  background: white; 
+  font-weight: bold;
+  line-height: $line-height--base;
+  
+  &--unavailable {
+
+  }
+
+  &--inList {
+    color: $color--secondary;    
+  }
+}

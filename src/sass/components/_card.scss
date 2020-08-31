@@ -1,16 +1,16 @@
-.card-grid, .catalog-grid {
+.cardGrid, .card-grid, .catalog-grid {
   padding: 0;
   grid-gap: $s20 $s10;
   gap: $s20 $s10;
   display: grid;
   vertical-align: top;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));;
   width: 100%;
 }
 
 
 .scrollContainer-scrollArea--directionX {
-  .card-grid, .catalog-grid {
+  .cardGrid, .card-grid, .catalog-grid {
     display: inline-grid;
     grid-auto-flow: column;
     grid-template-rows: auto;

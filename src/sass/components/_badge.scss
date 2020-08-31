@@ -1,54 +1,20 @@
 
 .badge {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0;
+  padding: 0 6px;
+  cursor: default;
   @extend .details1; //s14
   @extend .styleAs-strong; //bold  
   min-width: $s20;
   height: $s20;
-  text-align: center;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: $s20;
-  vertical-align: text-bottom;
   background-color: $color--blue-30;
   color: $color--white;
   line-height: 1;
   
-  &--large {
-    padding: 0.5em 1.2em;
-    font-size: 0.8rem;
-  }
-
   &--muted-light {
-    background-color: $color--muted-light
-  }
-
-  &--border {
-    border: 2px solid $color--muted-light;
-    background-color: $color--muted-light;
-    &--active {
-      background-color: $color--light;
-    }
-  }
-}
-
-.square-badge {
-  cursor: pointer;
-  padding: 0px 0.6rem;
-  background-color: #fff;
-  border: 2px solid $color--muted-light;
-  border-radius: 4px;
-  font-weight: bold;
-
-  &--active {
-    background-color: $color--muted-light;
-  }
-
-  &--disabled {
-    border: 2px dotted $color--muted-light;
-    color: $color--muted-light;
+    background-color: $background-color--medium;
   }
 }

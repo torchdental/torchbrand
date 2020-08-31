@@ -1,0 +1,28 @@
+.comment {
+  &-controls {
+    display: flex;
+    width: 100%;
+  }
+  &-controlTextArea {
+    flex-grow: 1;
+    textarea {
+      height: $s40 + $s8; 
+      @include btn--large; //For the padding
+      font-size: $font-size--base; 
+      line-height: $line-height--base;
+      border-top: $border--light;
+      border-left: $border--light;
+      border-right: $border--light;
+      background: $color--white;
+      border-bottom: 2px solid $color--form-highlight;
+    }
+  }
+  &-addButton {
+    @include btn;
+    @include btn--large;
+    @include btn--sized;
+    color: $color--white;
+    background: $color--form-highlight;
+    margin-left: $s16; 
+  }
+}

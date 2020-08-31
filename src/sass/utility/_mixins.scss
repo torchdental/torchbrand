@@ -1,4 +1,9 @@
+@mixin border-radius {
+  border-radius: 4px;
+}
+
 @import 'mixins/containers-mixins';
+@import 'mixins/button-mixins';
 
 /* --- Icons --- */
 @mixin symbol($_icon) {

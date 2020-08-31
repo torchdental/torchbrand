@@ -701,7 +701,16 @@ var App = function (_React$Component) {
           this.spacingSection,
           this.pageLayoutSection,
           this.containersSection,
-          this.navSection
+          this.navSection,
+          this.buttonsSection,
+          this.notificationsSection,
+          this.badgesSection,
+          this.tooltipsSection,
+          this.formsSection,
+          this.messagesSection,
+          this.menuSection,
+          this.variantsSection,
+          this.quantitySection
         )
       );
     }
@@ -1505,6 +1514,1326 @@ var App = function (_React$Component) {
     key: 'containersSection',
     get: function get() {
       return this.makeSection("containers", "Containers", null);
+    }
+  }, {
+    key: 'buttonsSection',
+    get: function get() {
+      var btnBem = (0, _makeBem2.default)("btn");
+      return this.makeSection("buttons", "Buttons & Links", _react2.default.createElement(
+        _react2.default.Fragment,
+        null,
+        _react2.default.createElement(
+          'p',
+          null,
+          'New button elements should all have the class ',
+          _react2.default.createElement(
+            'code',
+            null,
+            '.btn'
+          ),
+          '. For backwards compatility, all button elements and items with ',
+          _react2.default.createElement(
+            'code',
+            null,
+            '.styleAs-button'
+          ),
+          ' will also generally work'
+        ),
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Filled Buttons (default)'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Note that these all have hover and active states. By default they take the full width of the container.'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Standard Button classnames ',
+          _react2.default.createElement(
+            'code',
+            null,
+            btnBem()
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: btnBem() },
+          'Standard Button'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Standard Primary Button classnames ',
+          _react2.default.createElement(
+            'code',
+            null,
+            btnBem(null, 'primary')
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: btnBem(null, 'primary') },
+          'Primary Standard Button'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Standard Secondary Button classnames ',
+          _react2.default.createElement(
+            'code',
+            null,
+            btnBem(null, 'secondary')
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: btnBem(null, 'secondary') },
+          'Secondary Standard Button'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Disabled Button regardless of classnames. Real buttons marked as disabled'
+        ),
+        _react2.default.createElement(
+          'button',
+          { className: btnBem(null, 'secondary'), disabled: true },
+          'Disabled Button'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'or classname className=',
+          btnBem(null, 'disabled')
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: btnBem(null, ['primary', 'disabled']) },
+          'Disabled Primary Button'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Medium Emphasis Buttons - oulined. These should have class ',
+          _react2.default.createElement(
+            'code',
+            null,
+            'btn'
+          ),
+          ' with the ',
+          _react2.default.createElement(
+            'code',
+            null,
+            '--outline'
+          ),
+          ' modifier in addition to any other modifiers needed.'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Standard Button classnames ',
+          _react2.default.createElement(
+            'code',
+            null,
+            btnBem(null, 'outline')
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: btnBem(null, 'outline') },
+          'Outline Button'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Standard Primary Button classnames ',
+          _react2.default.createElement(
+            'code',
+            null,
+            btnBem(null, ['outline', 'primary'])
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: btnBem(null, ['outline', 'primary']) },
+          'Primary Outline Button'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Standard Secondary Button classnames ',
+          _react2.default.createElement(
+            'code',
+            null,
+            btnBem(null, ['outline', 'secondary'])
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: btnBem(null, ['outline', 'secondary']) },
+          'Secondary Outline Button'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Disabled Button regardless of classnames. Real buttons marked as disabled'
+        ),
+        _react2.default.createElement(
+          'button',
+          { className: btnBem(null, ['outline', 'secondary']), disabled: true },
+          'Disabled Outline Button'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'or classname className=',
+          btnBem(null, ['outline', 'disabled'])
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: btnBem(null, ['primary', 'disabled', 'outline']) },
+          'Disabled Primary Outline Button'
+        ),
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Button Sizing'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'All buttons can have size modifiers applied to them. Note that any combination of color/style is permitted, not just those shown'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'cardGrid' },
+          _react2.default.createElement(
+            'div',
+            { className: 'card' },
+            _react2.default.createElement(
+              'h5',
+              null,
+              'Standard buttons'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'code',
+                null,
+                btnBem(null, 'large')
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: btnBem(null, 'large') },
+              'Large (default)'
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'code',
+                null,
+                btnBem(null, ['primary', 'medium'])
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: btnBem(null, ['primary', 'medium']) },
+              'Medium Button'
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'code',
+                null,
+                btnBem(null, ['secondary', 'small'])
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: btnBem(null, ['secondary', 'small']) },
+              'Small Button'
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'code',
+                null,
+                btnBem(null, ['secondary', 'xSmall'])
+              )
+            ),
+            _react2.default.createElement(
+              'button',
+              { className: btnBem(null, ['secondary', 'xSmall']), disabled: true },
+              'xSmall Button'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'card' },
+            _react2.default.createElement(
+              'h5',
+              null,
+              'Standard buttons'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'code',
+                null,
+                btnBem(null, ['large', 'disabled', 'outline'])
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: btnBem(null, ['large', 'disabled', 'outline']) },
+              'Large (default)'
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'code',
+                null,
+                btnBem(null, ['secondary', 'outline', 'medium'])
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: btnBem(null, ['secondary', 'outline', 'medium']) },
+              'Medium Button'
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'code',
+                null,
+                btnBem(null, ['outline', 'small'])
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: btnBem(null, ['outline', 'small']) },
+              'Small Button'
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'code',
+                null,
+                btnBem(null, ['primary', 'outline', 'xSmall'])
+              )
+            ),
+            _react2.default.createElement(
+              'button',
+              { className: btnBem(null, ['primary', 'outline', 'xSmall']) },
+              'xSmall Button'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'card' },
+            _react2.default.createElement(
+              'h5',
+              null,
+              'Sized buttons ',
+              _react2.default.createElement(
+                'code',
+                null,
+                '--sized'
+              ),
+              ' or ',
+              _react2.default.createElement(
+                'code',
+                null,
+                'btn-tight'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'code',
+                null,
+                btnBem(null, ['large', 'secondary', 'sized'])
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: btnBem(null, ['large', 'secondary', 'sized']) },
+              'Large (default)'
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'code',
+                null,
+                btnBem(null, ['primary', 'sized', 'outline', 'medium'])
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: btnBem(null, ['primary', 'sized', 'outline', 'medium']) },
+              'Medium Button'
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'code',
+                null,
+                btnBem(null, ['outline', 'small', 'sized'])
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: btnBem(null, ['outline', 'small', 'sized']) },
+              'Small Button'
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(
+              'p',
+              null,
+              'button:disabled ',
+              _react2.default.createElement(
+                'code',
+                null,
+                btnBem(null, ['sized', 'xSmall'])
+              )
+            ),
+            _react2.default.createElement(
+              'button',
+              { className: btnBem(null, ['primary', 'sized', 'xSmall']), disabled: true },
+              'xSmall Button'
+            )
+          )
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Links'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'In general, all links are the primary color, except ones inside menus which are the standard body text black color. Specific links can be overridden with other colors as below.'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement(
+            'a',
+            { className: 'text--default' },
+            'text--default e.g. for menus'
+          )
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement(
+            'a',
+            { className: 'text--primary' },
+            'text--primary for paragraphy text'
+          )
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement(
+            'a',
+            { className: 'text--secondary' },
+            'text--secondary'
+          )
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement(
+            'a',
+            { className: 'text--muted' },
+            'text--muted - disabled links.'
+          )
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement(
+            'a',
+            { className: 'text--danger' },
+            'text--danger - error and verification messages.'
+          )
+        )
+      ));
+    }
+  }, {
+    key: 'variantsSection',
+    get: function get() {
+      return this.makeSection("variants", "Variant Selector", _react2.default.createElement(
+        _react2.default.Fragment,
+        null,
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Variant Selector Buttons'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'The base class for these are .variantBtn or .variantSelect-value. Selected buttons have the --selected modifier, and unavailable ones have --unavailable'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'variantBtn' },
+          'option'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'variantBtn variantBtn--selected' },
+          'selected option'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'variantBtn variantBtn--unavailable' },
+          'unavailable option'
+        )
+      ));
+    }
+  }, {
+    key: 'quantitySection',
+    get: function get() {
+      var qBem = (0, _makeBem2.default)("quantitySelector");
+      return this.makeSection("quantity", "Quantity Selector", _react2.default.createElement(
+        _react2.default.Fragment,
+        null,
+        _react2.default.createElement(
+          'h4',
+          null,
+          'With single button'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: qBem() },
+          _react2.default.createElement(
+            'div',
+            { className: qBem('minus', { disabled: true }) },
+            '\u2013'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: qBem('count') },
+            '1'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: qBem('plus') },
+            '+'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: qBem('add') },
+            'Add'
+          )
+        ),
+        _react2.default.createElement(
+          'h4',
+          null,
+          'With Icon '
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: qBem() },
+          _react2.default.createElement(
+            'div',
+            { className: qBem('label') },
+            'TODO: icon'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: qBem('minus', { disabled: true }) },
+            '\u2013'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: qBem('count') },
+            '1'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: qBem('plus') },
+            '+'
+          )
+        ),
+        _react2.default.createElement(
+          'h4',
+          null,
+          'With Two Buttons'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: qBem() },
+          _react2.default.createElement(
+            'div',
+            { className: qBem('label') },
+            'QTY:'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: qBem('minus', { disabled: true }) },
+            '\u2013'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: qBem('count') },
+            '1'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: qBem('plus') },
+            '+'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: qBem('buttons') },
+            _react2.default.createElement(
+              'div',
+              { className: qBem('cancel') },
+              'Cancel'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: qBem('add') },
+              'Add'
+            )
+          )
+        )
+      ));
+    }
+  }, {
+    key: 'notificationsSection',
+    get: function get() {
+      var nBem = (0, _makeBem2.default)('notification');
+      return this.makeSection("notifications", "Notifications", _react2.default.createElement(
+        _react2.default.Fragment,
+        null,
+        _react2.default.createElement(
+          'div',
+          { className: 'cardGrid' },
+          _react2.default.createElement(
+            'div',
+            { className: 'card' },
+            _react2.default.createElement(
+              'p',
+              null,
+              'Standard notifications are centered'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'span',
+                { className: nBem() },
+                'Info Notification'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'span',
+                { className: nBem(null, 'success') },
+                'Success Notification'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'span',
+                { className: nBem(null, 'warning') },
+                'Warning Notification',
+                _react2.default.createElement('br', null),
+                'Multi-line'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'span',
+                { className: nBem(null, 'error') },
+                'Error Notification'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'card' },
+            _react2.default.createElement(
+              'p',
+              null,
+              'Optional --left notifications'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'span',
+                { className: nBem(null, ['left']) },
+                'Info Notification'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'span',
+                { className: nBem(null, ['left', 'success']) },
+                'Success Notification'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'span',
+                { className: nBem(null, ['left', 'warning']) },
+                'Warning Notification',
+                _react2.default.createElement('br', null),
+                'Multi-line'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'span',
+                { className: nBem(null, ['left', 'error']) },
+                'Error Notification'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'card' },
+            _react2.default.createElement(
+              'p',
+              null,
+              'TODO with icons'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'span',
+                { className: nBem(null, ['left']) },
+                'Info Notification'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'span',
+                { className: nBem(null, ['left', 'success']) },
+                'Success Notification'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'span',
+                { className: nBem(null, ['left', 'warning']) },
+                'Warning Notification',
+                _react2.default.createElement('br', null),
+                'Multi-line'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'span',
+                { className: nBem(null, ['left', 'error']) },
+                'Error Notification'
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Product Status Notifications'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Two variations for iten status .itemStatus are intended over darker backgrounds'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'cardGrid' },
+          _react2.default.createElement(
+            'div',
+            { className: 'card bg-muted' },
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(
+              'div',
+              { className: 'itemStatus itemStatus--unavailable' },
+              'unavailable'
+            ),
+            _react2.default.createElement('br', null)
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'card bg-muted' },
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(
+              'div',
+              { className: 'itemStatus itemStatus--inList' },
+              'In List'
+            ),
+            _react2.default.createElement('br', null)
+          )
+        )
+      ));
+    }
+  }, {
+    key: 'badgesSection',
+    get: function get() {
+      var fBem = (0, _makeBem2.default)('flag');
+      var ttBem = (0, _makeBem2.default)('tooltip');
+      return this.makeSection("badges", "Badges & Flags", _react2.default.createElement(
+        _react2.default.Fragment,
+        null,
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Badges'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Badges are generally used as numerical icons'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Five ',
+          _react2.default.createElement(
+            'span',
+            { className: 'badge' },
+            '5'
+          )
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Thirty four ',
+          _react2.default.createElement(
+            'span',
+            { className: 'badge' },
+            '34'
+          )
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Six hundred ninety seven ',
+          _react2.default.createElement(
+            'span',
+            { className: 'badge' },
+            '697'
+          )
+        ),
+        _react2.default.createElement(
+          'h5',
+          null,
+          'Muted Badges'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Thirty four ',
+          _react2.default.createElement(
+            'span',
+            { className: 'badge badge--muted-light' },
+            '34'
+          )
+        ),
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Flags'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'There are 4 types of Flags, each my have a tooltip'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: fBem(null, 'preferred') },
+          'Preferred',
+          _react2.default.createElement(
+            'div',
+            { className: ttBem(null) },
+            _react2.default.createElement(
+              'div',
+              { className: ttBem('body') },
+              'This item is offered by a supplier that offers fast shipping and fair prices.'
+            )
+          )
+        ),
+        '\xA0',
+        _react2.default.createElement(
+          'div',
+          { className: fBem(null, 'purchasedBefore') },
+          'Purchased Before',
+          _react2.default.createElement(
+            'div',
+            { className: ttBem(null) },
+            _react2.default.createElement(
+              'div',
+              { className: ttBem('body') },
+              _react2.default.createElement(
+                'strong',
+                null,
+                'Purchase 19 days ago'
+              ),
+              _react2.default.createElement('br', null),
+              'Vendor: ',
+              _react2.default.createElement(
+                'strong',
+                null,
+                'DC Dental'
+              )
+            )
+          )
+        ),
+        '\xA0',
+        _react2.default.createElement(
+          'div',
+          { className: fBem(null, 'bestSeller') },
+          'Best Seller',
+          _react2.default.createElement(
+            'div',
+            { className: ttBem(null) },
+            _react2.default.createElement(
+              'div',
+              { className: ttBem('body') },
+              'This item is offered by a supplier that offers fast shipping and fair prices.'
+            )
+          )
+        ),
+        '\xA0',
+        _react2.default.createElement(
+          'div',
+          { className: fBem(null, 'promo') },
+          'Promo',
+          _react2.default.createElement(
+            'div',
+            { className: ttBem(null, 'right') },
+            _react2.default.createElement(
+              'div',
+              { className: ttBem('body') },
+              'This item is offered by a supplier that offers fast shipping and fair prices.'
+            )
+          )
+        )
+      ));
+    }
+  }, {
+    key: 'tooltipsSection',
+    get: function get() {
+      var ttBem = (0, _makeBem2.default)('tooltip');
+      return this.makeSection("tooltips", "Tooltips", _react2.default.createElement(
+        _react2.default.Fragment,
+        null,
+        _react2.default.createElement(
+          'p',
+          null,
+          'Tooltips with static --visible modifier here for display. See ',
+          _react2.default.createElement(
+            'a',
+            { href: '#badges' },
+            'badges section'
+          ),
+          ' above for in-line example'
+        ),
+        _react2.default.createElement(
+          'div',
+          { style: { position: 'relative' } },
+          'Tooltip container',
+          _react2.default.createElement(
+            'div',
+            { className: ttBem(null, 'visible') },
+            _react2.default.createElement(
+              'div',
+              { className: ttBem('body') },
+              _react2.default.createElement(
+                'strong',
+                null,
+                'Purchase 19 days ago'
+              ),
+              _react2.default.createElement('br', null),
+              'Vendor: ',
+              _react2.default.createElement(
+                'strong',
+                null,
+                'DC Dental'
+              )
+            )
+          )
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null)
+      ));
+    }
+  }, {
+    key: 'formsSection',
+    get: function get() {
+      var menuBem = (0, _makeBem2.default)('menu');
+      return this.makeSection("forms", "Forms", _react2.default.createElement(
+        _react2.default.Fragment,
+        null,
+        _react2.default.createElement(
+          'form',
+          null,
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement('input', { type: 'text', id: 'search', name: 'search', placeholder: 'Search', className: 'search' })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'label',
+              { htmlFor: 'sampleId' },
+              'Sample Field'
+            ),
+            _react2.default.createElement('input', { type: 'text', id: 'sampleId', name: 'sample', placeholder: 'hint' })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'label',
+              { htmlFor: 'sampleTextArea' },
+              'Text Area'
+            ),
+            _react2.default.createElement('textarea', { id: 'sampleTextArea', placeholder: 'Write text' })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'div',
+              { className: menuBem(null, { select: true, expanded: this.isExpanded("exampleSelect") }) },
+              _react2.default.createElement(
+                'div',
+                { className: menuBem('label'), onClick: this.toggleExpanded.bind(this, "exampleSelect") },
+                'Selected Value'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: menuBem('body') },
+                _react2.default.createElement(
+                  'div',
+                  { className: menuBem('item') },
+                  'Option 1'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: menuBem('item') },
+                  'Option 2'
+                )
+              )
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null)
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement('input', { type: 'radio', value: '1', id: 'radio_1', name: 'radio' }),
+            _react2.default.createElement(
+              'label',
+              { htmlFor: 'radio_1' },
+              'Radio 1'
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('input', { type: 'radio', value: '2', id: 'radio_2', name: 'radio' }),
+            _react2.default.createElement(
+              'label',
+              { htmlFor: 'radio_2' },
+              'Radio 2'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement('input', { type: 'checkbox', value: '1', id: 'checkbox', name: 'checkbox' }),
+            _react2.default.createElement(
+              'label',
+              { htmlFor: 'checkbox' },
+              'Checkbox'
+            )
+          )
+        )
+      ));
+    }
+  }, {
+    key: 'messagesSection',
+    get: function get() {
+      var mBem = (0, _makeBem2.default)('comment');
+      return this.makeSection("messages", "Messages", _react2.default.createElement(
+        _react2.default.Fragment,
+        null,
+        _react2.default.createElement(
+          'div',
+          { className: mBem() },
+          _react2.default.createElement(
+            'div',
+            { className: mBem('controls') },
+            _react2.default.createElement(
+              'div',
+              { className: mBem('controlTextArea') },
+              _react2.default.createElement('textarea', { name: 'new_message', placeholder: 'What can we help you with?' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: mBem('addButton') },
+              'send'
+            )
+          )
+        )
+      ));
+    }
+  }, {
+    key: 'menuSection',
+    get: function get() {
+      var menuBem = (0, _makeBem2.default)('menu');
+      return this.makeSection("menus", "Menus, Filter & Sort", _react2.default.createElement(
+        _react2.default.Fragment,
+        null,
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Menus'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Standard menu with sections.'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: menuBem(null, 'expanded') },
+          _react2.default.createElement(
+            'div',
+            { className: menuBem('label') },
+            'Menu Label'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: menuBem('body') },
+            _react2.default.createElement(
+              'div',
+              { className: menuBem('section') },
+              _react2.default.createElement(
+                'div',
+                { className: menuBem('item', 'header') },
+                '.menu-item--header ',
+                _react2.default.createElement('br', null),
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  'bold element'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: menuBem('item') },
+                '.menu-item'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: menuBem('item') },
+                '.menu-item',
+                _react2.default.createElement('br', null),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'text--muted' },
+                  '.text--muted'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: menuBem('section') },
+              _react2.default.createElement(
+                'div',
+                { className: menuBem('item') },
+                '.menu-item'
+              )
+            )
+          )
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Filters'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Standard menu with sections.'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: menuBem(null, { select: true, expanded: this.isExpanded("exampleFilter") }) },
+          _react2.default.createElement(
+            'div',
+            { className: menuBem('label'), onClick: this.toggleExpanded.bind(this, "exampleFilter") },
+            'Selected Value'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: menuBem('body') },
+            _react2.default.createElement(
+              'div',
+              { className: menuBem('item') },
+              '.menu-item'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: menuBem('item') },
+              '.menu-item'
+            )
+          )
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Sort'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Sort menus are the same as filters but use a standard label text before the selected value.'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: menuBem(null, { select: true, expanded: this.isExpanded("exampleSort") }) },
+          _react2.default.createElement(
+            'div',
+            { className: menuBem('label'), onClick: this.toggleExpanded.bind(this, "exampleSort") },
+            _react2.default.createElement(
+              'span',
+              { className: menuBem('labelPrefix') },
+              'Sort By'
+            ),
+            ' Selected Value'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: menuBem('body') },
+            _react2.default.createElement(
+              'div',
+              { className: menuBem('item') },
+              '.menu-item'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: menuBem('item') },
+              '.menu-item'
+            )
+          )
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null)
+      ));
     }
   }]);
 
@@ -30318,17 +31647,13 @@ var Nav = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: menuCn('body') },
-                _react2.default.createElement(
-                  'div',
-                  { className: menuCn('section') },
-                  link.items.map(function (item) {
-                    return _react2.default.createElement(
-                      'a',
-                      { className: menuCn('item'), href: '#' + item.path },
-                      item.name
-                    );
-                  })
-                )
+                link.items.map(function (item) {
+                  return _react2.default.createElement(
+                    'a',
+                    { className: menuCn('item'), href: '#' + item.path },
+                    item.name
+                  );
+                })
               )
             )
           );
@@ -30348,7 +31673,7 @@ var Nav = function (_React$Component) {
   }, {
     key: 'components',
     get: function get() {
-      var items = [["Buttons & Links", "buttons"], ["Notifications"], ["Badges"], ["Tooltips"], ["Forms"], ["Menus, Filter & Sort", "menus"], ["Cards"], ["Card Grid (?)"], ["Tables"], ["Modals"]];
+      var items = [["Navs", "nav"], ["Buttons & Links", "buttons"], ["Notifications"], ["Badges & Flags", "badges"], ["Tooltips"], ["Forms"], ["Messages"], ["Menus, Filter & Sort", "menus"], ["Cards"], ["Card Grid (?)"], ["Variant Selector", 'variants'], ["Quantity Selector", 'quantity'], ["Tables"], ["Modals"]];
       return items.map(function (item) {
         var itemId = item[1] || item[0].toLowerCase();
         return _react2.default.createElement(

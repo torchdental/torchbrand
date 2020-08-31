@@ -1,11 +1,11 @@
 /* --- Forms --- */
 label,
 .styleAs-label {
-  display: inline-block;
+  display: block;
   padding: 0 4px;
+  @extend .details1;
+  font-weight: 600;
   color: $color--body-text--secondary;
-  font-weight: $font-weight--primary-bold;
-  font-size: map-get($font-size--level, -1);
   text-transform: uppercase;
   user-select: none;
 }
@@ -13,18 +13,12 @@ label,
 input, textarea, select {
   display: block;
   width: 100%;
-  padding: 4px 2px;
-  border: 2px solid transparent;
-  border-bottom-color: $color--muted-light;
-  border-radius: 4px;
+  padding: $s8/2 $s8;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-bottom-color: $color--form-border;
   margin: 0;
-  background-color: $color--bright;
-
-  color: inherit;
-  font-family: inherit;
-  font-size: map-get($font-size--level, 0);
-  line-height: $line-height--base;
-  font-weight: $font-weight--primary-normal;
+  background-color: $color--white;
 
   transition: border-color .5s;
   touch-action: manipulation;
@@ -32,26 +26,30 @@ input, textarea, select {
   -moz-appearance: none;
 
   &:focus {
-    border-bottom-color: $color--primary;
+    border-bottom-color: $color--form-highlight;
   }
 
   &::placeholder {
-    color: $color--muted-light;
+    color: $color--form-muted-text;
   }
 
   &:disabled {
-    background-color: $color--gray-900;
+    background-color: $color--gray-30;
+  }
+}
+
+input {
+  &.catalog-filter, &.search {
+    @include border-radius;
+    border: $border--light;
+    padding: $s12 $s16;
   }
 }
 
 textarea {
   resize: none;
-  border-color: $color--light;
-  padding: 10px 15px;
-
-  &::placeholder {
-    color: $color--body-text--secondary;
-  }
+  background: $background-color--extra-light;
+  padding: $s10 $s8;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -75,7 +73,7 @@ input[type="checkbox"] {
     vertical-align: middle;
     font-size: 1.5em;
     line-height: 1;
-    color: $color--muted-light;
+    color: $color--body-text--secondary;
     transition: color .3s;
   }
 
@@ -147,8 +145,8 @@ input[type="file"] {
 select {
   padding-right: 25px;
   background-image:
-    linear-gradient(45deg, transparent 50%, $color--muted-light 50%),
-    linear-gradient(135deg, $color--muted-light 50%, transparent 50%);
+    linear-gradient(45deg, transparent 50%, $color--form-border 50%),
+    linear-gradient(135deg, $color--form-border 50%, transparent 50%);
   background-position:
     calc(100% - 11px) calc(1em - 3px),
     calc(100% - 6px) calc(1em - 3px);
@@ -182,4 +180,3 @@ select {
   padding: 5px 8px;
   font-size: map-get($font-size--level, 1);
 }
-

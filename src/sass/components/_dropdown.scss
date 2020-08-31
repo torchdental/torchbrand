@@ -36,20 +36,36 @@
 
 .menu {
   position: relative;
+
+
   &-label {
     cursor: pointer;
   }
   &-body {
+    a, .styleAs-a {
+      color: $color--body-text
+    }
     min-width: 100%;
+    left: 0;
     position: absolute;
-    right: 0;
+    z-index: 10;
     top: 100%;
-    border: $border-light;
+    border: $border--light;
     background: $color--white;
     display: none;
   }
+  // Sections aren't always used - when they are, layout internal items 
+  // to have less spacing between first/last item and next section
   &-section {
-    border-top: $border-light; 
+    border-top: $border--light; 
+    .menu-item {
+      &:first-child {
+        padding-top: $s24 - ($line-height--base - $font-size--base);
+      }
+      &:last-child {
+        padding-bottom: $s24 - ($line-height--base - $font-size--base);
+      }          
+    }
   }
   &-item {
     display: block;
@@ -62,18 +78,14 @@
     &:hover, &:active {
       background: $color--blue-20;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
     }
     
-    &:first-child {
-      padding-top: $s24 - ($line-height--base - $font-size--base);
-    }
-    &:last-child {
-      padding-bottom: $s24 - ($line-height--base - $font-size--base);
-    }
+
     
     &--header, &--header:hover, &--header:active {
       background: none;
+      font-weight: normal;
       cursor: default;
     }
   }
@@ -93,6 +105,40 @@
   &--expanded, &--hoverable:hover {
     .menu-body {
       display: block;
+    }
+  }
+
+  &--select {
+    display: inline-block;
+    .menu-label {
+      @include btn;
+      @include btn--medium;
+      @include btn--outline;
+      text-transform: none;
+      display: inline-block;
+      width: auto;
+      line-height: $line-height--base;
+      padding: $s8/4 $s8;
+      font-weight: 600;  
+      .menu-labelPrefix {
+        font-weight: normal;
+      }    
+    }
+    .menu-body {
+      top: calc(100% + #{$s8});
+      width: auto;
+      @include border-radius;
+    }
+    &.menu--expanded {
+      
+    }
+
+    .menu-item {
+      padding: ($s32 - $line-height--base)/2  $s8;
+      border-bottom: $border--light; 
+      &:last-child {
+        border-bottom: none;
+      }
     }
   }
   
