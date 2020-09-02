@@ -1,34 +1,168 @@
+$card-min-width: 240px;
+$card-max-width: 520px;
+$card-count: 5;
+
 .cardGrid, .card-grid, .catalog-grid {
   padding: 0;
   grid-gap: $s20 $s10;
   gap: $s20 $s10;
   display: grid;
   vertical-align: top;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));;
+  grid-template-columns: repeat(auto-fill, minmax($card-min-width, 1fr));
   width: 100%;
 }
 
 
+.scrollContainer {
+  &-arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: -$s10;
+    transform: translateY(-50%);
+    &--left {
+      &::before {
+        @extend .icon-carousel-chevron-left;
+      }
+    }
+    &--right {
+      left: auto;
+      right: -$s10;
+      &::before {
+        @extend .icon-carousel-chevron-right;
+      }
+    }
+  }
+}
+
 .scrollContainer-scrollArea--directionX {
+  overflow: hidden;
+  overflow-x: scroll;
+  width: 100%;
+
   .cardGrid, .card-grid, .catalog-grid {
     display: inline-grid;
     grid-auto-flow: column;
     grid-template-rows: auto;
-    grid-auto-columns: 220px;
-    width: auto;
+    grid-auto-columns: $card-min-width;
+    grid-template-columns: unset;
+    width: 100%;    
   }
 }
 
+$card-img-height: 140px;
+$card-top-padding: 7px;
+$card-padding: $card-top-padding $s14 $s14;
+$card-header-height: 50px - $card-top-padding;
+$card-height: 400px;
+$card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height - $card-header-height;
 .card {
-  @extend .shadow-z1;
+  @include container-glow;
   background: $color--white;
-  padding: $s14;
-  
-  & > *:first-child {
-    margin-top: 0;
+  padding: $card-padding;
+  &-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    &:before {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      content: "";
+      display: block;
+      background-color: $background-color--light;
+      opacity: 0.4;
+    }
+    &--white {
+      &:before {
+        background-color: $color--white;
+        opacity: 0.9;
+      }
+    }
+    .card-overlayContent {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      padding: $s20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      > * {
+        margin-bottom: $s10;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
-  & > *:last-child {
-    margin-bottom: 0;
+}
+.catalogProduct, .catalogProduct-ctr {
+  height: $card-height;
+  .icon-cart-plus, .icon-favorite {
+    cursor: pointer;
+  }
+  &-header {
+    height: $card-header-height;
+    display: flex;
+    align-items: center;
+  }
+  &-flags {
+    margin: 0 $s8;
+    flex-grow: 1
+  }
+  &-image, &-imageCtr {
+    height: 140px;
+    width: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  &-body {
+    height: $card-body-height
+  }
+
+  &-viewDetails {
+    // TODO generally replace @extend with @import and create mixins
+    @extend .details2;
+    @extend .text--muted;
+    margin-top: 3px;
+  }
+
+  .product{
+    &-title {
+      margin-top: 12px; //Custom spacing for product cards
+      font-weight: bold;
+      max-height: $line-height--base * 4;// 3 lines
+      overflow: hidden;
+      text-overflow: ellipsis;
+      // TODO: https://css-tricks.com/line-clampin/
+    }
+    &-manufacturer {
+       margin-top: 4px;
+       @extend .details1;
+       font-weight: normal;
+    }
+    &-prices {
+      margin-top: 9px; //Custom spacing for product cards
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    &-price {
+      margin: 0 $s16 0 0;
+      &--torch {
+        @extend .subheader;
+        @extend .styleAs-strong;
+        @extend .text--primary;          
+      }
+      &--retail {
+        @extend .text--strikethrough;        
+      }
+    }
+    &-availability {
+      @extend .details1;
+      color: $color--bright;
+    }
   }
 }

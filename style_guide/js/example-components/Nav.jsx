@@ -51,7 +51,6 @@ export default class Nav extends React.Component {
       ["Messages"],
       ["Menus, Filter & Sort", "menus"],
       ["Cards"],
-      ["Card Grid (?)"],
       ["Variant Selector", 'variants'],
       ["Quantity Selector", 'quantity'],
       ["Tables"],

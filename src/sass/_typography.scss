@@ -7,6 +7,20 @@ html, body {
   font-weight: $font-weight--primary-normal;
 }
 
+@mixin pageHeader($mTop, $mBottom) {
+  &.pageHeader {
+    text-align: center;
+    margin-top: $mTop;
+    margin-bottom: $mBottom;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 h1,
 .styleAs-h1 {
 //  margin-top: 2.5rem;
@@ -15,6 +29,7 @@ h1,
   font-size: $s40; 
   font-weight: 600;
   line-height: 64px;
+  @include pageHeader($s32, $s32);
 }
 
 h2,
@@ -24,7 +39,7 @@ h2,
   font-size: $s32; 
   font-weight: 600;
   line-height: 56px;
-
+  @include pageHeader($s24, $s32);
 }
 
 h3,
@@ -34,6 +49,7 @@ h3,
   font-size: $s24; 
   font-weight: 600;
   line-height: 40px;
+  @include pageHeader($s20, $s24);
 }
 
 h4,
@@ -43,6 +59,7 @@ h4,
   font-size: $s20; 
   font-weight: 600;
   line-height: 32px;
+  @include pageHeader($s16, $s20);
 }
 
 h5,
@@ -52,6 +69,7 @@ h5,
   font-size: $s20; 
   font-weight: 400;
   line-height: 32px;
+  @include pageHeader($s14, $s16);
 }
 
 h6,
@@ -64,7 +82,8 @@ h6,
   font-weight: 600;
   &--light {
     font-weight: 400;
-  }  
+  }
+  @include pageHeader($s12, $s14);  
 }
 
 
@@ -119,6 +138,13 @@ p,
 
 strong, .styleAs-strong {
   font-weight: 700;
+}
+
+.text--bold {
+  font-weight: 700;
+}
+.text--semiBold {
+  font-weight: 600;
 }
 
 

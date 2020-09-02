@@ -1,8 +1,14 @@
 .section-label, .container {
-  margin: $s24 0 $s32;
+  margin: $s24 0;
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
   /// All h1-3 get cetnered, h4 & below can be left aligne
   h1, .styleAs-h1, h2, .styleAs-h3, h3, .styleAs-h3 {
-    text-align: center;
+    //text-align: center;
   }  
 }
 
@@ -42,6 +48,15 @@
       margin: 0;
       padding: $s14;
       cursor: pointer;
+      &::before {
+        // don't start with up/down because then transforms need to be re-produced
+        @extend .icon-chevron-right;
+        position: absolute;
+        top: 50%;
+        right: $s32;
+        transform: translateY(-50%) rotate(90deg);
+      }
+      
     }
     .container-body {
       display: none;
@@ -49,6 +64,11 @@
     
     }
     &.container--expanded {
+      .container-header {
+        &::before {
+          transform: translateY(-50%) rotate(-90deg) ;
+        }
+      }
       .container-body {
         display: block;
       }

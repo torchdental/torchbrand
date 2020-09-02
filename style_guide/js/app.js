@@ -8,6 +8,9 @@ import Nav from './example-components/Nav.jsx';
 import makeBem from '../../src/makeBem';
 
 const containerBlock = makeBem('container')
+const qBem = makeBem("quantitySelector");
+const layoutBem = makeBem("layout");
+const tableToggleBem = makeBem("tableToggle");
 
 const links = [
   {
@@ -68,7 +71,7 @@ class App extends React.Component {
     return <section className={containerBlock(null, {expandable: true, expanded: this.isExpanded(id)})}>
       <a className="anchor" id={id}></a>
       <div className={containerBlock('header')} onClick={this.toggleExpanded.bind(this, id)}>
-        <h3>{title}</h3>
+        <h3>{title}</h3>        
       </div>
       <div className={containerBlock('body')}>
         {content}
@@ -238,7 +241,7 @@ class App extends React.Component {
                     <div className="details2">h6, .styleAs-h6, .subheader</div>
                     <span className={`subheader`}>Subheader</span>
                     <div className="details2">h6.subheader--light, .styleAs-h6--light, .subheader--light</div>
-                    <span className={`subheader subhedaer--light`}>Subheader</span>
+                    <span className={`subheader subheader--light`}>Subheader</span>
                   </td>
                   <td>
                     <div className="details2">h6.text--muted, .styleAs-h6.text--muted, .subheader.text--muted</div>
@@ -374,11 +377,100 @@ class App extends React.Component {
   }
   
   get pageLayoutSection() {
-    return this.makeSection("layout", "Page Layout", null)
+    const main = this.makeSection("layout", "Page Layout", <React.Fragment>
+      <p>There are only 4 layout options (not including gard grids which are a separate layout within these options):</p>
+      <ol>
+        <li>Full width page - most shop pages and all device layouts</li>
+        <li>Left Gutter - for showing filters</li>
+        <li>Right Gutter - Cart, Checkout, Payments, Account</li>
+        <li>Left Gutter w/Divided main section(s) (nested)</li>
+      </ol>
+      <p>Gutters are static widths and main content expands to fill the space.</p>
+    </React.Fragment>)
+
+
+    return <React.Fragment>
+      {main}
+      <h3 className="pageHeader">Left Gutter</h3>
+      <div className={layoutBem(null, 'gutterLeft')}>
+        <div className={layoutBem('gutter')}>
+          <section className="container">
+            <p>Gutter Content</p>
+          </section>
+        </div>
+        <div className={layoutBem('main')}>
+          <section className="container">
+            <p>Main Container Content</p>
+          </section>
+          <section className="container">
+            <p>Main Container Content</p>
+          </section>
+        </div>
+      </div>
+      <h3 className="pageHeader">Right Gutter</h3>
+      <div className={layoutBem(null, 'gutterRight')}>
+        <div className={layoutBem('gutter')}>
+          <section className="container">
+            <p>Gutter Content</p>
+          </section>
+          <section className="container">
+            <p>Gutter Content</p>
+          </section>
+        </div>
+        <div className={layoutBem('main')}>
+          <section className="container">
+            <p>Main Container Content</p>
+          </section>
+          <section className="container">
+            <p>Main Container Content</p>
+          </section>
+          <section className="container">
+            <p>Main Container Content</p>
+          </section>
+        </div>
+      </div>
+      <h3 className="pageHeader">Nested Layout</h3>
+      <div className={layoutBem(null, 'gutterLeft')}>
+        <div className={layoutBem('gutter')}>
+          <section className="container">
+            <p>Gutter Content</p>
+          </section>
+          <section className="container">
+            <p>Gutter Content</p>
+          </section>
+        </div>
+        <div className={layoutBem('main')}>
+          <section className="container">
+            <p>Main Container Content</p>
+          </section>
+          <div className={layoutBem(null, 'gutterRight')}>
+            <div className={layoutBem('main')}>
+              <section className="container">
+                <p>Main Container Main Content</p>
+              </section>
+            </div>
+            <div className={layoutBem('gutter')}>
+              <section className="container">
+                <p>Main Container Gutter </p>
+              </section>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
   }
 
   get containersSection() {
-    return this.makeSection("containers", "Containers", null)
+    return this.makeSection("containers", "Containers", <React.Fragment>
+      <p>
+        Containers are similar to material design paper. They generally have a white background and glow shadow. 
+        They are used to group sections on a page and may or may not have an expand/collapse header section.
+      </p>
+      <p>
+        This style guide is primarily composed of container--expandible with a container-header and container-body children.
+      </p>
+    </React.Fragment>)
   }
 
   get buttonsSection() {
@@ -503,7 +595,6 @@ class App extends React.Component {
   }
 
   get quantitySection() {
-    const qBem = makeBem("quantitySelector");
     return this.makeSection("quantity", "Quantity Selector", <React.Fragment>
       <h4>With single button</h4>
       <div className={qBem()}>
@@ -729,9 +820,6 @@ class App extends React.Component {
       <h4>Menus</h4>
       <p>Standard menu with sections.</p>
       <div className={menuBem(null, 'expanded')}>
-        <div className={menuBem('label')}>
-          Menu Label
-        </div>
         <div className={menuBem('body')}>
           <div className={menuBem('section')}>
             <div className={menuBem('item', 'header')}>
@@ -787,6 +875,422 @@ class App extends React.Component {
     </React.Fragment>)
   }
 
+  get cardsSection() {
+    const cardBem = makeBem('card');
+    const catBem = makeBem('card', 'catalogProduct');
+    const fBem = makeBem('flag');
+    const ttBem = makeBem('tooltip');
+    const productBem = makeBem("product");
+    const iBem = makeBem("icon");
+    
+    const id = "cards";
+    return <section>
+      <a className="anchor" id={id}></a>
+      <h3 className="pageHeader">Cards</h3>
+      <h4 className="pageHeader">Basic cards (for any use) - even layouts across wrap and no-wrap sets</h4>
+      <div className="cardGrid">
+        <div className={cardBem()}>
+          <h5>Card header</h5>
+          <p>Card content 1 of 2</p>
+        </div>
+        <div className={cardBem()}>
+          <h5>Card header</h5>
+          <p>Card content 2 of 2</p>
+        </div>
+      </div>
+      <h6 className="pageHeader">Cards that likely wrap</h6>
+      <div className="cardGrid">
+        { [1,2,3,4,5,6].map((i) => {
+          return <div className={cardBem()}>
+            <h5>Card header</h5>
+            <p>Card content {i} of 6</p>
+          </div>
+        })}        
+      </div>  
+      <h4 className="pageHeader">Catalog cards</h4>    
+      <div className="cardGrid">
+        {[1,2,3,4,5].map((i) => {
+          const favorited = i % 2 == 0;
+          const imgSrc = i % 2 == 0 ? '/assets/styleguide/product-portrait.png' : '/assets/styleguide/product-landscape.jpg';
+          const title = i % 2 == 0 ? "Protein Mouthwash Concentrate Fresh Mint 1 oz 3 / Bx" : "Protein Mouthwash Concentrate Fresh Mint 1 oz 3/Bx Protein Mouthwash Concentrate Fresh Mint 1 oz 3/Bx";
+          return <div className={catBem()}>
+            <div className={catBem('header')}>
+              <div className={catBem('favorite')}>
+                <i className={iBem('favorite', {favorited})}></i>
+              </div>
+              <div className={catBem('flags')}>
+                <div className={fBem(null, 'preferred')}>
+                  Preferred
+                  <div className={ttBem(null)}>
+                    <div className={ttBem('body')}>
+                      This item is offered by a supplier that offers fast shipping and fair prices.
+                    </div>
+                  </div>
+                </div>
+                <div className={fBem(null, 'purchasedBefore')}>
+                  Purchased Before
+                  <div className={ttBem(null)}>
+                    <div className={ttBem('body')}>
+                      <strong>Purchase 19 days ago</strong>
+                      <br />
+                      Vendor: <strong>DC Dental</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={catBem('addToList')}>
+                <i className={iBem('cart-plus', { disabled: favorited })}></i>
+              </div>
+            </div>
+            <div className={catBem('image')}>
+              <img className={productBem('image')} src={imgSrc}/>
+            </div>
+            <div className={catBem('body')}>
+              <div className={catBem('viewDetails')}>View details</div>
+              <div className={productBem('title')}>{title}</div>
+              <div className={productBem('manufacturer')}>Cetylite Industries, Inc. - 0307</div> 
+              <div className="details2 text--muted">More options</div>
+              <div className={productBem('prices')}>
+                <div className={productBem('price', 'torch')}>$16 Torch</div>
+                <div className={productBem('price', 'retail')}>$22 Retail</div>
+              </div>
+              <div className={productBem('availability')}>
+                Eligible for 1-Day Shipping
+              </div>
+            </div>
+          </div>
+        })}
+      </div>
+      <h4 className="pageHeader">Horizontal Scroll catalog cards</h4>
+      <div className="scrollContainer">
+        <div className="scrollContainer-scrollArea--directionX">
+          <div className="cardGrid">
+            {[1, 2, 3, 4, 5, 6, 7, 8 ,9].map((i) => {
+              const favorited = i % 2 == 0;
+              const imgSrc = i % 2 == 0 ? '/assets/styleguide/product-portrait.png' : '/assets/styleguide/product-landscape.jpg';
+              const title = i % 2 == 0 ? "Protein Mouthwash Concentrate Fresh Mint 1 oz 3 / Bx" : "Protein Mouthwash Concentrate Fresh Mint 1 oz 3/Bx Protein Mouthwash Concentrate Fresh Mint 1 oz 3/Bx";
+              return <div className={catBem()}>
+                <div className={catBem('header')}>
+                  <div className={catBem('favorite')}>
+                    <i className={iBem('favorite', { favorited })}></i>
+                  </div>
+                  <div className={catBem('flags')}>
+                    <div className={fBem(null, 'purchasedBefore')}>
+                      Purchased Before
+                      <div className={ttBem(null)}>
+                        <div className={ttBem('body')}>
+                          <strong>Purchase 19 days ago</strong>
+                          <br />
+                          Vendor: <strong>DC Dental</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={catBem('addToList')}>
+                    <i className={iBem('cart-plus', { disabled: favorited })}></i>
+                  </div>
+                </div>
+                <div className={catBem('image')}>
+                  <img className={productBem('image')} src={imgSrc} />
+                </div>
+                <div className={catBem('body')}>
+                  <div className={catBem('viewDetails')}>View details</div>
+                  <div className={productBem('title')}>{title}</div>
+                  <div className={productBem('manufacturer')}>Cetylite Industries, Inc. - 0307</div>
+                  <div className="details2 text--muted">More options</div>
+                  <div className={productBem('prices')}>
+                    <div className={productBem('price', 'torch')}>$16 Torch</div>
+                    <div className={productBem('price', 'retail')}>$22 Retail</div>
+                  </div>
+                  <div className={productBem('availability')}>
+                    Eligible for 1-Day Shipping
+                  </div>
+                </div>
+              </div>
+            })}
+          </div>
+        </div>
+        <div className="scrollContainer-arrow scrollContainer-arrow--left"></div>
+        <div className="scrollContainer-arrow scrollContainer-arrow--right"></div>
+      </div>
+      <h4 className="pageHeader">Card Overlays</h4>
+      <div className="cardGrid">
+        {[1, 2, 3, 4, 5].map((i) => {
+          const favorited = i % 2 == 0;
+          const imgSrc = i % 2 == 0 ? '/assets/styleguide/product-portrait.png' : '/assets/styleguide/product-landscape.jpg';
+          const title = i % 2 == 0 ? "Protein Mouthwash Concentrate Fresh Mint 1 oz 3 / Bx" : "Protein Mouthwash Concentrate Fresh Mint 1 oz 3/Bx Protein Mouthwash Concentrate Fresh Mint 1 oz 3/Bx";
+          return <div className={catBem()}>
+            <div className={catBem('header')}>
+              <div className={catBem('favorite')}>
+                <i className={iBem('favorite', { favorited })}></i>
+              </div>
+              <div className={catBem('flags')}>
+                <div className={fBem(null, 'preferred')}>
+                  Preferred
+                  <div className={ttBem(null)}>
+                    <div className={ttBem('body')}>
+                      This item is offered by a supplier that offers fast shipping and fair prices.
+                    </div>
+                  </div>
+                </div>
+                <div className={fBem(null, 'purchasedBefore')}>
+                  Purchased Before
+                  <div className={ttBem(null)}>
+                    <div className={ttBem('body')}>
+                      <strong>Purchase 19 days ago</strong>
+                      <br />
+                      Vendor: <strong>DC Dental</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={catBem('addToList')}>
+                <i className={iBem('cart-plus', { disabled: favorited })}></i>
+              </div>
+            </div>
+            <div className={catBem('image')}>
+              <img className={productBem('image')} src={imgSrc} />
+            </div>
+            <div className={catBem('body')}>
+              <div className={catBem('viewDetails')}>View details</div>
+              <div className={productBem('title')}>{title}</div>
+              <div className={productBem('manufacturer')}>Cetylite Industries, Inc. - 0307</div>
+              <div className="details2 text--muted">More options</div>
+              <div className={productBem('prices')}>
+                <div className={productBem('price', 'torch')}>$16 Torch</div>
+                <div className={productBem('price', 'retail')}>$22 Retail</div>
+              </div>
+              <div className={productBem('availability')}>
+                Eligible for 1-Day Shipping
+              </div>
+            </div>
+            <div className={cardBem("overlay", {white: favorited})}>
+              <div className={cardBem("overlayContent")}>
+                {i == 1 ? <div className="itemStatus itemStatus--inList">In List</div> : null }
+                {i == 2 ? <React.Fragment>
+                  <h6>Add to List:</h6>
+                  <div className={qBem(null, 'ctr')}>
+                  <div className={qBem('label')}>QTY:</div>
+                  <div className={qBem('minus', { disabled: true })}>&ndash;</div>
+                  <div className={qBem('count')}>1</div>
+                  <div className={qBem('plus')}>+</div>
+                  <div className={qBem('buttons')}>
+                    <div className={qBem('cancel')}>Cancel</div>
+                    <div className={qBem('add')}>Add</div>
+                  </div>
+                </div></React.Fragment> : null}
+                {i == 3 ? <React.Fragment><div className="itemStatus itemStatus--unavailable">
+                  Temporarily<br/>Unavailable
+                </div><div className="btn btn--secondary btn--medium">
+                  Substitute Available
+                </div></React.Fragment> : null}
+                {i == 4 ? <React.Fragment>
+                  <i className={iBem('favorite', 'favorited')}></i>
+                  <h6>Add to Favorite?</h6>
+                  <div className={qBem(null, 'ctr')}>
+                    <div className={qBem('label')}>
+                      Preset<br/>
+                      QTY:
+                    </div>
+                    <div className={qBem('minus', { disabled: true })}>&ndash;</div>
+                    <div className={qBem('count')}>1</div>
+                    <div className={qBem('plus')}>+</div>
+                    <div className={qBem('buttons')}>
+                      <div className={qBem('cancel')}>Cancel</div>
+                      <div className={qBem('add')}>Add</div>
+                    </div>
+                  </div></React.Fragment> : null}
+                {i == 5 ? <div className="btn btn--outline btn--secondary btn--small">Add Vendor</div> : null}
+
+              </div>
+            </div>
+          </div>
+        })}
+      </div>
+    </section>
+  }
+
+  get tablesSection() {
+    const main = this.makeSection("tables", "Tables", <React.Fragment>
+      <h4>Headered Tables</h4>
+      <p>These are typical tables with labeled columns. The headers may or may not be interactive. 
+        They may be within a container or exist as their own container.</p>
+      <p>The typography section above is an example of a non-interactive headered table within a container.</p>
+      <h6>Table with interactive header, inside a container</h6>
+      <p>Table header may also include interactive elements for sorting, filtering and selecting</p>
+      <table>
+        <thead className="with-controls">
+          <tr>
+            <th>Torch Order #</th>
+            <th>Vendor</th>
+            <th>Invoice Date</th>
+            <th>Amount</th>
+            <th>Pay <input type="checkbox" /></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              1120
+            </td>
+            <td>
+              Atlanta Dental
+            </td>
+            <td>
+              01/01/2020
+            </td>
+            <td>
+              $244.55
+            </td>
+            <td>
+              <input type="checkbox" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              1120
+            </td>
+            <td>
+              Atlanta Dental
+            </td>
+            <td>
+              01/01/2020
+            </td>
+            <td>
+              $244.55
+            </td>
+            <td>
+              <input type="checkbox" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              1120
+            </td>
+            <td>
+              Atlanta Dental
+            </td>
+            <td>
+              01/01/2020
+            </td>
+            <td>
+              $244.55
+            </td>
+            <td>
+              <input type="checkbox" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Table Toggles</h4>
+      <p>Some headered tables may have sets of radios (buttons on mobile) above for additional filtering.</p>
+      <ul className={tableToggleBem()}>
+        <li className={tableToggleBem('item')}>
+          <div>
+            <span className={tableToggleBem('label')}>
+              Unpaid
+              <span className={tableToggleBem('count')}>(20)</span>
+            </span>
+            <span className={tableToggleBem('details')}>
+              $1,283.33
+            </span>
+          </div>
+        </li>
+        <li className={tableToggleBem('item')}>
+          <div>
+            <span className={tableToggleBem('label')}>
+              Unpaid
+              <span className={tableToggleBem('count')}>(20)</span>
+            </span>
+            <span className={tableToggleBem('details')}>
+              $1,283.33
+            </span>
+          </div>
+        </li>
+        <li className={tableToggleBem('item', 'selected')}>
+          <div>
+            <span className={tableToggleBem('label')}>
+              Unpaid
+              <span className={tableToggleBem('count')}>(20)</span>
+            </span>
+            <span className={tableToggleBem('details')}>
+              $1,283.33
+            </span>
+          </div>
+        </li>
+      </ul>         
+    </React.Fragment>)
+    return <React.Fragment>
+      {main}
+      <div className={layoutBem(null, 'gutterLeft')}>
+        <div className={layoutBem('gutter')}>
+          <div className="container">
+            <h4 className="pageHeader">
+              Order Summary<br/>
+              $980.00
+            </h4>
+            <div className="summaryTable">
+              <table>
+                <tbody>
+                  <tr className="summaryTable-rollup summaryTable-rollup--expanded">
+                    <td>
+                      DC Dental <span className="summaryTable-count">(2 Items)</span>
+                    </td>
+                    <td>
+                      $cost                    
+                    </td>
+                  </tr>
+                  <tr className="summaryTable-subItem">
+                    <td>Item</td>
+                    <td>$cost</td>
+                  </tr>
+                  <tr className="summaryTable-subItem">
+                    <td>Item</td>
+                    <td>$cost</td>
+                  </tr>
+                  <tr className="summaryTable-rollup">
+                    <td>
+                      Atlanta Dental <span className="summaryTable-count">(3 Items)</span>
+                    </td>
+                    <td>
+                      $cost
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Torch Service Charge
+                    </td>
+                    <td>
+                      $cost
+                    </td>
+                  </tr>
+                </tbody>                
+              </table>
+              <div className="summaryTable-footer">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>Subtotal</td>
+                      <td>$subtotal</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={layoutBem('main')}>
+          <div className="container">
+            <h4>Summary Tables</h4>
+            <p>These tables are always 2 columns and are used for things like orders and cards</p>   
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
+    
+
+  }
+
   render() {
     return <div className="app-root bg-light d-flex">
       <Nav links={links}/>
@@ -804,13 +1308,10 @@ class App extends React.Component {
         {this.formsSection}
         {this.messagesSection}
         {this.menuSection}
-        
-{/*   ["Menus, Filter & Sort", "menus"],
-      ["Cards"],
-      ["Card Grid (?)"],
-      */}
+        {this.cardsSection}
         {this.variantsSection}
         {this.quantitySection}
+        {this.tablesSection}
 {/* 
           ["Tables"],
       ["Modals"]      */}

@@ -3,11 +3,20 @@
   @include btn--medium;
   @include btn--sized;
   @include container-glow;
+  cursor: default;
   line-height: $line-height--base;
   text-transform: none;
   width: auto;
   color: $color--primary;
   background-color: $color--blue-20;
+  &:hover, &:active {
+    color: $color--primary;
+    background-color: $color--blue-20;
+    &:not(:disabled) {
+      color: $color--primary;
+      background-color: $color--blue-20;  
+    }
+  }
   font-weight: bold;
   text-align: center;
 
@@ -17,32 +26,71 @@
   &--success {
     color: $color--secondary;
     background-color: $color--green-20;
-  
+    &:hover, &:active {
+      color: $color--secondary;
+      background-color: $color--green-20;
+      &:not(:disabled) {
+        color: $color--secondary;
+        background-color: $color--green-20;
+      }
+    }
   }
+  
   &--warning {
     color: $color--body-text;
     background-color: $color--yellow-20;
     font-weight: normal;
+    &:hover, &:active {
+      color: $color--body-text;
+      background-color: $color--yellow-20;
+      &:not(:disabled) {
+        color: $color--body-text;
+        background-color: $color--yellow-20;    
+      }
+    }
   }
   &--error {
     color: $color--danger;
     background-color: $color--berry-20;
+    &:hover, &:active {
+      color: $color--danger;
+      background-color: $color--berry-20;
+      &:not(:disabled) {
+        color: $color--danger;
+        background-color: $color--berry-20;    
+      }
+    }
   }
 }
 
 .itemStatus {
   @include btn;
-  @include btn--small;
+  cursor: default;
   text-transform: none;
-  background: white; 
+  background: $color--white;
+  &:hover, &:active {
+    background: $color--white;  
+    &:not(:disabled) {
+      background: $color--white;        
+    }
+  }
+  
   font-weight: bold;
   line-height: $line-height--base;
   
   &--unavailable {
-
+    @include btn--medium;
+    color: $color--body-text--secondary;    
+    &:hover, &:active {
+      color: $color--body-text--secondary;    
+    }  
   }
 
   &--inList {
-    color: $color--secondary;    
+    @include btn--small;
+    color: $color--secondary;  
+    &:hover, &:active {
+      color: $color--secondary;  
+    }  
   }
 }

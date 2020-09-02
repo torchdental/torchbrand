@@ -17,6 +17,7 @@
   line-height: $line-height--base;
   @include border-radius;
   position: absolute;
+  z-index: 10;
   top: calc(100% + #{$s8});
   min-width: $s40 * 6;
   left: 0;

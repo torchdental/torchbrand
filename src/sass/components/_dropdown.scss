@@ -40,6 +40,16 @@
 
   &-label {
     cursor: pointer;
+    padding-right: 40px;
+    &::before {
+      // don't start with up/down because then transforms need to be re-produced
+      @extend .icon-chevron-right;
+      @extend .icon-chevron-right--small;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%) rotate(90deg) ;
+    }
   }
   &-body {
     a, .styleAs-a {
@@ -58,6 +68,9 @@
   // to have less spacing between first/last item and next section
   &-section {
     border-top: $border--light; 
+    &:first-child {
+      border-top: none;
+    }
     .menu-item {
       &:first-child {
         padding-top: $s24 - ($line-height--base - $font-size--base);
@@ -97,15 +110,21 @@
   
   &--hoverable {
     .menu-body {
-      border-top: none;
       top: calc(100% - 1px);      
     }
   }
   
   &--expanded, &--hoverable:hover {
+    .menu-label {
+      &::before {
+        transform: translateY(-50%) rotate(-90deg) ;
+      }
+    }
+    
     .menu-body {
       display: block;
     }
+    
   }
 
   &--select {
@@ -118,11 +137,14 @@
       display: inline-block;
       width: auto;
       line-height: $line-height--base;
-      padding: $s8/4 $s8;
+      padding: $s8/4 $s40 $s8/4 $s8;
       font-weight: 600;  
       .menu-labelPrefix {
         font-weight: normal;
-      }    
+      } 
+      &::before {
+        right: $s10;
+      }   
     }
     .menu-body {
       top: calc(100% + #{$s8});

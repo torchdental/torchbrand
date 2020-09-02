@@ -1,0 +1,25 @@
+$gutterWidth: 290px;
+.layout {
+  &--gutterLeft, &--gutterRight {
+    display: grid;
+    grid-template-columns: $gutterWidth auto;
+    gap: $s32;
+    .layout-gutter {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .layout-main {
+      grid-row: 1;
+      grid-column: 2
+    }
+  }
+  &--gutterRight {
+    grid-template-columns: auto $gutterWidth;
+    .layout-gutter {
+      grid-column: 2
+    }
+    .layout-main {
+      grid-column: 1
+    }
+  }
+}

@@ -29,6 +29,11 @@
   padding: 0;
   margin: 0;
   .menu {
+    &-label {
+      &::before {
+        display: none;
+      }
+    }
     &-body {
       width: 176px;    
     }
@@ -39,9 +44,15 @@
   margin-left: auto;
   .menu {
     &-label {
+      margin-right: $s24;
       color: $color--white;
-      padding: $s40 $s24 $s40 + 1;
+      padding-top: $s40;
+      padding-bottom: $s40 + 1;
       font-size: $s20;
+      &::before {
+        // don't start with up/down because then transforms need to be re-produced
+        @extend .icon-chevron-right--white;
+      }
     }
     &-body {
       right: 0;
@@ -71,6 +82,7 @@
   border-bottom: $s8 solid transparent;
   display: block;
   font-size: $nav-item-font-size;
+  line-height: 1;
   &:hover,
   &:focus,
   &--active {

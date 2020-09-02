@@ -1,12 +1,8 @@
 /* --- Icons --- */
-.icon::before {
-  display: inline-block;
-  font-family: $font-family--icons;
-  font-style: normal;
-  font-weight: $font-weight--icons-solid;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.icon {
+  &::before {
+    @include iconPseudo;  
+  }  
 }
 
 .icon--spaceLeft {
@@ -29,10 +25,6 @@
   }
 }
 
-.icon--color-dark::before {
-  color: $color--body-text;
-}
-
 .icon--color-muted::before {
   color: $color--body-text--secondary;
 }
@@ -45,10 +37,6 @@
   color: $color--primary;
 }
 
-.icon--color-info::before {
-  color: $color--info;
-}
-
 .icon--color-success::before {
   color: $color--success;
 }
@@ -57,13 +45,6 @@
   color: $color--danger;
 }
 
-.icon--color-savings::before {
-  color: $color--savings;
-}
-
-.icon--color-favorite::before {
-  color: $color--quaternary;
-}
 
 .icon-menu::before { content: '\f141'; font-weight: $font-weight--icons-solid; }
 .icon-close::before { content: '\f00d'; font-weight: $font-weight--icons-solid; }
@@ -73,10 +54,7 @@
 .icon-profile::before { content: '\f007'; font-weight: $font-weight--icons-solid; }
 .icon-loading::before { content: '\f1ce'; font-weight: $font-weight--icons-solid; }
 
-.icon-chevron-up::before { content: '\f077'; font-weight: $font-weight--icons-solid; }
-.icon-chevron-down::before { content: '\f078'; font-weight: $font-weight--icons-solid; }
-.icon-chevron-left::before { content: '\f053'; font-weight: $font-weight--icons-solid; }
-.icon-chevron-right::before { content: '\f054'; font-weight: $font-weight--icons-solid; }
+
 
 .icon-plus::before { content: '\f067'; font-weight: $font-weight--icons-solid; }
 .icon-minus::before { content: '\f068'; font-weight: $font-weight--icons-solid; }
@@ -108,7 +86,6 @@
 .icon-edit::before { content: '\f044'; font-weight: $font-weight--icons-solid; }
 .icon-update::before { content: '\f021'; font-weight: $font-weight--icons-solid; }
 
-.icon-favorite::before { content: '\f005'; font-weight: $font-weight--icons-solid; }
 .icon-history::before { content: '\f1da'; font-weight: $font-weight--icons-solid; }
 .icon-best-seller::before { content: '\f091'; font-weight: $font-weight--icons-solid; }
 .icon-gift::before { content: '\f06b'; font-weight: $font-weight--icons-solid; }
@@ -127,10 +104,16 @@
 .icon-visible::before { content: '\f06e'; font-weight: $font-weight--icons-solid; }
 .icon-invisible::before { content: '\f070'; font-weight: $font-weight--icons-solid; }
 
-.icon-radio::before { content: '\f111'; font-weight: $font-weight--icons-normal; }
-.icon-radio-checked::before { content: '\f192'; font-weight: $font-weight--icons-solid; }
-.icon-checkbox::before { content: '\f0c8'; font-weight: $font-weight--icons-normal; }
-.icon-checkbox-checked::before { content: '\f14a'; font-weight: $font-weight--icons-solid; }
+.icon-radio::before { content: '\f111'; font-weight: $font-weight--icons-normal; color: $color--primary; font-size: $s24; }
+.icon-radio-checked::before { content: '\f192'; font-weight: $font-weight--icons-normal; color: $color--primary;  font-size: $s24;}
+.icon-checkbox::before { content: '\f0c8'; font-weight: $font-weight--icons-normal;  color: $color--primary;  font-size: $s24;}
+.icon-checkbox-checked::before { content: '\f14a'; font-weight: $font-weight--icons-solid;  color: $color--primary;   font-size: $s24;}
+
+.icon-radio, .icon-radio-checked, .icon-checkbox, .icon-checkbox-checked {
+  &--large {
+    font-size: $s32;
+  }
+}
 
 .icon-blockquote-deco::before { content: '\f10d'; font-weight: $font-weight--icons-solid; }
 
@@ -148,3 +131,85 @@
 .icon-plus-circle::before { content: '\f055'; font-weight: $font-weight--icons-solid}
 .icon-angle-left::before { content: '\f104'; font-weight: $font-weight--icons-solid}
 .icon-check::before { content: '\f00c'; font-weight: $font-weight--icons-solid}
+
+
+.icon-cart-plus {
+  &::before {
+    @include iconPseudo--image;
+    width: 30px;
+    height: 29px;
+    background-image: url('/assets/images/icons/icon:cart:add:active.svg');
+  }
+  &:hover, &:active {
+    &::before {
+      background-image: url('/assets/images/icons/icon:cart:add:hover.svg');
+    }  
+  }
+  &--disabled, &--disabled:hover, &--disabled:active {
+    &::before {
+      background-image: url('/assets/images/icons/icon:cart:add:deactive.svg');
+    }    
+  }
+}
+
+.icon-favorite {
+  &::before {
+    @include iconPseudo--image;
+    width: 19px;
+    height: 20px;
+    background-image: url('/assets/images/icons/icon:star:inactive.svg');
+  }
+  &:hover, &--favorited {
+    &::before {
+      background-image: url('/assets/images/icons/icon:star:blue.svg');
+    }
+  }
+}
+
+// .icon-chevron-up::before { content: '\f077'; font-weight: $font-weight--icons-solid; }
+// .icon-chevron-down::before { content: '\f078'; font-weight: $font-weight--icons-solid; }
+
+
+.icon-carousel-chevron-right {
+  @include icon-carousel-chevron;
+}
+.icon-carousel-chevron-left {
+  @include icon-carousel-chevron;
+  &::before {
+    transform: rotate(180deg);
+  }
+}
+
+.icon-chevron-right {
+  &::before { 
+    @include iconPseudo--image;
+    width: 27px;
+    height: 27px;
+    background-image: url('/assets/images/icons/icon-chevron-enabled-med.svg');
+    
+  }
+  &:hover::before {
+    background-image: url('/assets/images/icons/icon-chevron-active-med.svg');
+  } 
+  &--white {
+    &::before {
+      background-image: url('/assets/images/icons/icon-chevron-white-enabled-med.svg');
+    }
+    &:hover::before {
+      background-image: url('/assets/images/icons/icon-chevron-white-active-med.svg');
+    }
+  }
+  &--small {
+    &::before {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+.icon-chevron-left {
+  &::before {
+    @extend .icon-chevron-right;
+    transform: rotate(180deg);
+  }
+}
+

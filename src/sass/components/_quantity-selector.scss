@@ -2,6 +2,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
+  &--ctr {
+    justify-content: center;
+  }
   flex-wrap: wrap;  
   &-minus, &-plus {
     @include btn;
@@ -51,6 +54,14 @@
       margin-left: 0;
       margin-right: $s12;
       width: 80px; // static multiple of 8
+      &:last-child {
+        margin-right: 0;
+      }
     }    
+  }
+  &--ctr {
+    .quantitySelector-buttons {
+      justify-content: center;
+    }
   }
 }

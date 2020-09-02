@@ -1,9 +1,67 @@
+table.container {
+  @include container-glow;
+}
+
+.summaryTable {
+  border-top: $border--table;
+  padding: $s12 0;
+  // Footer is broken out separatelly to allow for border spacing (and not force column wrapping on main table)
+  &-footer {
+    margin-top: $s12;
+    padding-top: $s12;
+    border-top: $border--table;
+  }
+  table tbody tr, table tfoot tr {
+    td {
+      border: none;
+      padding: $s8/4 0;
+      &:last-child {
+        text-align: right;
+      }
+    }
+    &.summaryTable-subItem {
+      td:first-child {
+        padding-left: $s16;
+      }
+    }
+    &.summaryTable-rollup {
+      font-weight: bold;
+      td {
+        padding-top: $s16/2;
+        padding-bottom: $s16/2;
+      }
+      td:first-child {
+        padding-left: $s16;
+        &::before {
+          @extend .icon-chevron-right;
+          position: absolute;
+          top: $s12;
+          left: 0;
+          width: $s12;
+          height: $s12;
+        }
+      }
+      .summaryTable-count {
+        font-weight: normal;
+      }
+      &--expanded {
+        td:first-child {
+          &::before {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+    
+  }
+}
+
 th {
+  background-color: $background-color--extra-light;
   padding: $s10 $s12;
-  background-color: $color--blue-20;
-  color: $color--primary;
   text-transform: uppercase;
   font-size: $s14;  
+  font-weight: normal;
 }
 td {
   padding: $s16 $s12;
@@ -11,9 +69,16 @@ td {
 }
 
 // Styles
-thead th,
-thead td {
-  vertical-align: bottom;
+thead  {
+  th, td {
+    vertical-align: bottom;
+  }
+  &.with-controls {
+    th, td {
+      background-color: $color--blue-20;  
+      color: $color--primary;
+    }
+  }
 }
 
 tbody th,
@@ -40,3 +105,47 @@ tbody tr:not(:last-of-type) td {
 //  }
 //}
 
+.tableToggle {
+  list-style: none;
+  display: flex;
+  margin: 0; padding: 0;
+  width: 100%;
+  @include container-glow;
+
+  &-item {
+    flex-grow: 1;
+    margin: 0;
+    padding:  $s8 $s20;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      @extend .icon;
+      @extend .icon-radio;
+      display: inline-block;
+      margin-right: $s20;
+    }
+    &--selected {
+       &::before {
+        @extend .icon-radio-checked;
+       }
+    }
+    border-right: $border--table;
+    &:last-child {
+      border: none;
+    }
+
+  }
+  &-label {
+    @extend .details1;
+    font-weight: 600;
+    display: block;
+  }
+  &-count {
+    margin-left: $s8 /2 ;
+    font-weight: normal
+  }
+  &-details {
+    @extend .details2;
+  }
+}

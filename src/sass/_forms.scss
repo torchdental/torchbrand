@@ -71,22 +71,8 @@ input[type="checkbox"] {
   &::before {
     display: inline-block;
     vertical-align: middle;
-    font-size: 1.5em;
     line-height: 1;
-    color: $color--body-text--secondary;
     transition: color .3s;
-  }
-
-  &:focus::before {
-    color: $color--body-text--secondary;
-  }
-
-  &:checked::before {
-    color: $color--primary;
-  }
-
-  &:focus:checked::before {
-    color: darken($color--primary, 15%);
   }
 
   & + label {
