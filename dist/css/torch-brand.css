@@ -1160,7 +1160,7 @@ tbody tr:not(:last-of-type) td {
           margin-bottom: 0; }
 
 .catalogProduct, .catalogProduct-ctr {
-  height: 400px; }
+  height: 386px; }
   .catalogProduct .icon-cart-plus, .catalogProduct .icon-favorite, .catalogProduct-ctr .icon-cart-plus, .catalogProduct-ctr .icon-favorite {
     cursor: pointer; }
   .catalogProduct-header, .catalogProduct-ctr-header {
@@ -1178,13 +1178,13 @@ tbody tr:not(:last-of-type) td {
       width: 100%;
       object-fit: contain; }
   .catalogProduct-body, .catalogProduct-ctr-body {
-    height: 196px; }
+    height: 182px; }
   .catalogProduct-viewDetails, .catalogProduct-ctr-viewDetails {
     margin-top: 3px; }
   .catalogProduct .product-title, .catalogProduct-ctr .product-title {
     margin-top: 12px;
     font-weight: bold;
-    max-height: 80px;
+    max-height: 60px;
     overflow: hidden;
     text-overflow: ellipsis; }
   .catalogProduct .product-manufacturer, .catalogProduct-ctr .product-manufacturer {

@@ -54,7 +54,7 @@ $card-img-height: 140px;
 $card-top-padding: 7px;
 $card-padding: $card-top-padding $s14 $s14;
 $card-header-height: 50px - $card-top-padding;
-$card-height: 400px;
+$card-height: 386px;
 $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height - $card-header-height;
 .card {
   @include container-glow;
@@ -133,7 +133,7 @@ $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height 
     &-title {
       margin-top: 12px; //Custom spacing for product cards
       font-weight: bold;
-      max-height: $line-height--base * 4;// 3 lines
+      max-height: $line-height--base * 3;// 3 lines
       overflow: hidden;
       text-overflow: ellipsis;
       // TODO: https://css-tricks.com/line-clampin/
