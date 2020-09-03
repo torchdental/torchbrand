@@ -613,24 +613,59 @@ var layoutBem = (0, _makeBem2.default)("layout");
 var tableToggleBem = (0, _makeBem2.default)("tableToggle");
 
 var links = [{
-  name: 'Colors',
-  path: 'colors'
+  name: "Components",
+  items: [{
+    name: "Navs",
+    path: "nav"
+  }, {
+    name: "Menus, Filter & Sort",
+    path: "menus"
+  }, {
+    name: "Cards",
+    path: "cards"
+  }, {
+    name: "Variant Selector",
+    path: 'variants'
+  }, {
+    name: "Quantity Selector",
+    path: 'quantity'
+  }, {
+    name: "Tables",
+    path: "tables"
+  }, {
+    name: "Modals",
+    path: "modals"
+  }, {
+    name: "Forms",
+    path: "forms"
+  }, {
+    name: "Messages",
+    path: "messages"
+  }]
+}, {
+  name: "Elements",
+  items: [{
+    name: "Buttons & Links",
+    path: "buttons"
+  }, {
+    name: "Notifications",
+    path: "notifications"
+  }, {
+    name: "Badges & Flags",
+    path: "badges"
+  }, {
+    name: "Tooltips",
+    path: "tooltips"
+  }, {
+    name: 'Icons',
+    path: 'icons'
+  }]
 }, {
   name: 'Typography',
   path: 'typography'
 }, {
-  name: 'Spacing & Layout',
-  path: 'spacing',
-  items: [{
-    name: 'Page Layout',
-    path: 'layout'
-  }, {
-    name: 'Containers',
-    path: 'containers'
-  }]
-}, {
-  name: 'Icons',
-  path: 'icons'
+  name: 'Colors',
+  path: 'colors'
 }];
 
 var App = function (_React$Component) {
@@ -699,23 +734,25 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'main',
           { className: 'app-body' },
-          this.colorsSection,
-          this.typographySection,
-          this.spacingSection,
-          this.pageLayoutSection,
-          this.containersSection,
           this.navSection,
-          this.buttonsSection,
-          this.notificationsSection,
-          this.badgesSection,
-          this.tooltipsSection,
-          this.formsSection,
-          this.messagesSection,
           this.menuSection,
           this.cardsSection,
           this.variantsSection,
           this.quantitySection,
-          this.tablesSection
+          this.tablesSection,
+          this.modalsSection,
+          this.formsSection,
+          this.messagesSection,
+          this.buttonsSection,
+          this.notificationsSection,
+          this.badgesSection,
+          this.tooltipsSection,
+          this.iconsSection,
+          this.typographySection,
+          this.colorsSection,
+          this.containersSection,
+          this.pageLayoutSection,
+          this.spacingSection
         )
       );
     }
@@ -767,7 +804,7 @@ var App = function (_React$Component) {
     get: function get() {
       var colorMap = {
         '$color--blue-20': ["#E9F3F6"],
-        '$color--blue-30': ["#00AEF6"],
+        '$color--blue-30': ["#00AEF6", "active"],
         '$color--blue-40': ["#008FBE", "highlight"], // highlight
         '$color--blue-50': ["#0078A0", "text, background"], // text, bg
         '$color--blue-60': ["#006F94", "active color"], // active
@@ -813,7 +850,8 @@ var App = function (_React$Component) {
       });
       return _react2.default.createElement(
         'section',
-        { className: containerBlock(null, { expandable: true, expanded: this.isExpanded('colors') }), id: 'colors' },
+        { className: containerBlock(null, { expandable: true, expanded: this.isExpanded('colors') }) },
+        _react2.default.createElement('a', { className: 'anchor', id: 'colors' }),
         _react2.default.createElement(
           'div',
           { className: containerBlock('header'), onClick: this.toggleExpanded.bind(this, 'colors') },
@@ -1752,7 +1790,12 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'This style guide is primarily composed of container--expandible with a container-header and container-body children.'
+          'For example, this style guide is primarily composed of container--expandible with a container-header and container-body children.'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Withing a container or container-body, container-section blocks to control vertical spacing.'
         )
       ));
     }
@@ -1790,82 +1833,88 @@ var App = function (_React$Component) {
           null,
           'Note that these all have hover and active states. By default they take the full width of the container.'
         ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('br', null),
         _react2.default.createElement(
-          'p',
-          null,
-          'Standard Button classnames ',
+          'div',
+          { className: containerBlock('section') },
           _react2.default.createElement(
-            'code',
+            'p',
             null,
-            btnBem()
+            'Standard Button classnames ',
+            _react2.default.createElement(
+              'code',
+              null,
+              btnBem()
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: btnBem() },
+            'Standard Button'
           )
         ),
         _react2.default.createElement(
           'div',
-          { className: btnBem() },
-          'Standard Button'
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Standard Primary Button classnames ',
+          { className: containerBlock('section') },
           _react2.default.createElement(
-            'code',
+            'p',
             null,
-            btnBem(null, 'primary')
+            'Standard Primary Button classnames ',
+            _react2.default.createElement(
+              'code',
+              null,
+              btnBem(null, 'primary')
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: btnBem(null, 'primary') },
+            'Primary Standard Button'
           )
         ),
         _react2.default.createElement(
           'div',
-          { className: btnBem(null, 'primary') },
-          'Primary Standard Button'
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Standard Secondary Button classnames ',
+          { className: containerBlock('section') },
           _react2.default.createElement(
-            'code',
+            'p',
             null,
-            btnBem(null, 'secondary')
+            'Standard Secondary Button classnames ',
+            _react2.default.createElement(
+              'code',
+              null,
+              btnBem(null, 'secondary')
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: btnBem(null, 'secondary') },
+            'Secondary Standard Button'
           )
         ),
         _react2.default.createElement(
           'div',
-          { className: btnBem(null, 'secondary') },
-          'Secondary Standard Button'
+          { className: containerBlock('section') },
+          _react2.default.createElement(
+            'p',
+            null,
+            'Disabled Button regardless of classnames. Real buttons marked as disabled'
+          ),
+          _react2.default.createElement(
+            'button',
+            { className: btnBem(null, 'secondary'), disabled: true },
+            'Disabled Button'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'or classname className=',
+            btnBem(null, 'disabled')
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: btnBem(null, ['primary', 'disabled']) },
+            'Disabled Primary Button'
+          )
         ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Disabled Button regardless of classnames. Real buttons marked as disabled'
-        ),
-        _react2.default.createElement(
-          'button',
-          { className: btnBem(null, 'secondary'), disabled: true },
-          'Disabled Button'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'or classname className=',
-          btnBem(null, 'disabled')
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: btnBem(null, ['primary', 'disabled']) },
-          'Disabled Primary Button'
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('br', null),
         _react2.default.createElement(
           'h4',
           null,
@@ -1883,365 +1932,379 @@ var App = function (_React$Component) {
           ),
           ' modifier in addition to any other modifiers needed.'
         ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('br', null),
         _react2.default.createElement(
-          'p',
-          null,
-          'Standard Button classnames ',
+          'div',
+          { className: containerBlock('section') },
           _react2.default.createElement(
-            'code',
+            'p',
             null,
-            btnBem(null, 'outline')
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: btnBem(null, 'outline') },
-          'Outline Button'
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Standard Primary Button classnames ',
-          _react2.default.createElement(
-            'code',
-            null,
-            btnBem(null, ['outline', 'primary'])
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: btnBem(null, ['outline', 'primary']) },
-          'Primary Outline Button'
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Standard Secondary Button classnames ',
-          _react2.default.createElement(
-            'code',
-            null,
-            btnBem(null, ['outline', 'secondary'])
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: btnBem(null, ['outline', 'secondary']) },
-          'Secondary Outline Button'
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Disabled Button regardless of classnames. Real buttons marked as disabled'
-        ),
-        _react2.default.createElement(
-          'button',
-          { className: btnBem(null, ['outline', 'secondary']), disabled: true },
-          'Disabled Outline Button'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'or classname className=',
-          btnBem(null, ['outline', 'disabled'])
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: btnBem(null, ['primary', 'disabled', 'outline']) },
-          'Disabled Primary Outline Button'
-        ),
-        _react2.default.createElement(
-          'h4',
-          null,
-          'Button Sizing'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'All buttons can have size modifiers applied to them. Note that any combination of color/style is permitted, not just those shown'
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'cardGrid' },
-          _react2.default.createElement(
-            'div',
-            { className: 'card' },
+            'Standard Button classnames ',
             _react2.default.createElement(
-              'h5',
+              'code',
               null,
-              'Standard buttons'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              _react2.default.createElement(
-                'code',
-                null,
-                btnBem(null, 'large')
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: btnBem(null, 'large') },
-              'Large (default)'
-            ),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement(
-              'p',
-              null,
-              _react2.default.createElement(
-                'code',
-                null,
-                btnBem(null, ['primary', 'medium'])
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: btnBem(null, ['primary', 'medium']) },
-              'Medium Button'
-            ),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement(
-              'p',
-              null,
-              _react2.default.createElement(
-                'code',
-                null,
-                btnBem(null, ['secondary', 'small'])
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: btnBem(null, ['secondary', 'small']) },
-              'Small Button'
-            ),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement(
-              'p',
-              null,
-              _react2.default.createElement(
-                'code',
-                null,
-                btnBem(null, ['secondary', 'xSmall'])
-              )
-            ),
-            _react2.default.createElement(
-              'button',
-              { className: btnBem(null, ['secondary', 'xSmall']), disabled: true },
-              'xSmall Button'
+              btnBem(null, 'outline')
             )
           ),
           _react2.default.createElement(
             'div',
-            { className: 'card' },
+            { className: btnBem(null, 'outline') },
+            'Outline Button'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: containerBlock('section') },
+          _react2.default.createElement(
+            'p',
+            null,
+            'Standard Primary Button classnames ',
             _react2.default.createElement(
-              'h5',
+              'code',
               null,
-              'Standard buttons'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              _react2.default.createElement(
-                'code',
-                null,
-                btnBem(null, ['large', 'disabled', 'outline'])
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: btnBem(null, ['large', 'disabled', 'outline']) },
-              'Large (default)'
-            ),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement(
-              'p',
-              null,
-              _react2.default.createElement(
-                'code',
-                null,
-                btnBem(null, ['secondary', 'outline', 'medium'])
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: btnBem(null, ['secondary', 'outline', 'medium']) },
-              'Medium Button'
-            ),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement(
-              'p',
-              null,
-              _react2.default.createElement(
-                'code',
-                null,
-                btnBem(null, ['outline', 'small'])
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: btnBem(null, ['outline', 'small']) },
-              'Small Button'
-            ),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement(
-              'p',
-              null,
-              _react2.default.createElement(
-                'code',
-                null,
-                btnBem(null, ['primary', 'outline', 'xSmall'])
-              )
-            ),
-            _react2.default.createElement(
-              'button',
-              { className: btnBem(null, ['primary', 'outline', 'xSmall']) },
-              'xSmall Button'
+              btnBem(null, ['outline', 'primary'])
             )
           ),
           _react2.default.createElement(
             'div',
-            { className: 'card' },
+            { className: btnBem(null, ['outline', 'primary']) },
+            'Primary Outline Button'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: containerBlock('section') },
+          _react2.default.createElement(
+            'p',
+            null,
+            'Standard Secondary Button classnames ',
             _react2.default.createElement(
-              'h5',
+              'code',
               null,
-              'Sized buttons ',
+              btnBem(null, ['outline', 'secondary'])
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: btnBem(null, ['outline', 'secondary']) },
+            'Secondary Outline Button'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: containerBlock('section') },
+          _react2.default.createElement(
+            'p',
+            null,
+            'Disabled Button regardless of classnames. Real buttons marked as disabled'
+          ),
+          _react2.default.createElement(
+            'button',
+            { className: btnBem(null, ['outline', 'secondary']), disabled: true },
+            'Disabled Outline Button'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'or classname className=',
+            btnBem(null, ['outline', 'disabled'])
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: btnBem(null, ['primary', 'disabled', 'outline']) },
+            'Disabled Primary Outline Button'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: containerBlock('section') },
+          _react2.default.createElement(
+            'h4',
+            null,
+            'Button Sizing'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'All buttons can have size modifiers applied to them. Note that any combination of color/style is permitted, not just those shown'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'cardGrid' },
+            _react2.default.createElement(
+              'div',
+              { className: 'card' },
               _react2.default.createElement(
-                'code',
+                'h5',
                 null,
-                '--sized'
+                'Standard buttons'
               ),
-              ' or ',
               _react2.default.createElement(
-                'code',
+                'p',
                 null,
-                'btn-tight'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  btnBem(null, 'large')
+                )
+              ),
               _react2.default.createElement(
-                'code',
+                'div',
+                { className: btnBem(null, 'large') },
+                'Large (default)'
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'p',
                 null,
-                btnBem(null, ['large', 'secondary', 'sized'])
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  btnBem(null, ['primary', 'medium'])
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: btnBem(null, ['primary', 'medium']) },
+                'Medium Button'
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  btnBem(null, ['secondary', 'small'])
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: btnBem(null, ['secondary', 'small']) },
+                'Small Button'
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  btnBem(null, ['secondary', 'xSmall'])
+                )
+              ),
+              _react2.default.createElement(
+                'button',
+                { className: btnBem(null, ['secondary', 'xSmall']), disabled: true },
+                'xSmall Button'
               )
             ),
             _react2.default.createElement(
               'div',
-              { className: btnBem(null, ['large', 'secondary', 'sized']) },
-              'Large (default)'
-            ),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement(
-              'p',
-              null,
+              { className: 'card' },
               _react2.default.createElement(
-                'code',
+                'h5',
                 null,
-                btnBem(null, ['primary', 'sized', 'outline', 'medium'])
+                'Standard buttons'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  btnBem(null, ['large', 'disabled', 'outline'])
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: btnBem(null, ['large', 'disabled', 'outline']) },
+                'Large (default)'
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  btnBem(null, ['secondary', 'outline', 'medium'])
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: btnBem(null, ['secondary', 'outline', 'medium']) },
+                'Medium Button'
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  btnBem(null, ['outline', 'small'])
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: btnBem(null, ['outline', 'small']) },
+                'Small Button'
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  btnBem(null, ['primary', 'outline', 'xSmall'])
+                )
+              ),
+              _react2.default.createElement(
+                'button',
+                { className: btnBem(null, ['primary', 'outline', 'xSmall']) },
+                'xSmall Button'
               )
             ),
             _react2.default.createElement(
               'div',
-              { className: btnBem(null, ['primary', 'sized', 'outline', 'medium']) },
-              'Medium Button'
-            ),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement(
-              'p',
-              null,
+              { className: 'card' },
               _react2.default.createElement(
-                'code',
+                'h5',
                 null,
-                btnBem(null, ['outline', 'small', 'sized'])
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: btnBem(null, ['outline', 'small', 'sized']) },
-              'Small Button'
-            ),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement(
-              'p',
-              null,
-              'button:disabled ',
+                'Sized buttons ',
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  '--sized'
+                ),
+                ' or ',
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  'btn-tight'
+                )
+              ),
               _react2.default.createElement(
-                'code',
+                'p',
                 null,
-                btnBem(null, ['sized', 'xSmall'])
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  btnBem(null, ['large', 'secondary', 'sized'])
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: btnBem(null, ['large', 'secondary', 'sized']) },
+                'Large (default)'
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  btnBem(null, ['primary', 'sized', 'outline', 'medium'])
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: btnBem(null, ['primary', 'sized', 'outline', 'medium']) },
+                'Medium Button'
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  btnBem(null, ['outline', 'small', 'sized'])
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: btnBem(null, ['outline', 'small', 'sized']) },
+                'Small Button'
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'p',
+                null,
+                'button:disabled ',
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  btnBem(null, ['sized', 'xSmall'])
+                )
+              ),
+              _react2.default.createElement(
+                'button',
+                { className: btnBem(null, ['primary', 'sized', 'xSmall']), disabled: true },
+                'xSmall Button'
               )
-            ),
-            _react2.default.createElement(
-              'button',
-              { className: btnBem(null, ['primary', 'sized', 'xSmall']), disabled: true },
-              'xSmall Button'
             )
           )
         ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('br', null),
         _react2.default.createElement(
-          'h4',
-          null,
-          'Links'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'In general, all links are the primary color, except ones inside menus which are the standard body text black color. Specific links can be overridden with other colors as below.'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
+          'div',
+          { className: containerBlock('section') },
           _react2.default.createElement(
-            'a',
-            { className: 'text--default' },
-            'text--default e.g. for menus'
-          )
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
+            'h4',
+            null,
+            'Links'
+          ),
           _react2.default.createElement(
-            'a',
-            { className: 'text--primary' },
-            'text--primary for paragraphy text'
-          )
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
+            'p',
+            null,
+            'In general, all links are the primary color, except ones inside menus which are the standard body text black color. Specific links can be overridden with other colors as below.'
+          ),
           _react2.default.createElement(
-            'a',
-            { className: 'text--secondary' },
-            'text--secondary'
-          )
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
+            'p',
+            null,
+            _react2.default.createElement(
+              'a',
+              { className: 'text--default' },
+              'text--default e.g. for menus'
+            )
+          ),
           _react2.default.createElement(
-            'a',
-            { className: 'text--muted' },
-            'text--muted - disabled links.'
-          )
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
+            'p',
+            null,
+            _react2.default.createElement(
+              'a',
+              { className: 'text--primary' },
+              'text--primary for paragraphy text'
+            )
+          ),
           _react2.default.createElement(
-            'a',
-            { className: 'text--danger' },
-            'text--danger - error and verification messages.'
+            'p',
+            null,
+            _react2.default.createElement(
+              'a',
+              { className: 'text--secondary' },
+              'text--secondary'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            _react2.default.createElement(
+              'a',
+              { className: 'text--muted' },
+              'text--muted - disabled links.'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            _react2.default.createElement(
+              'a',
+              { className: 'text--danger' },
+              'text--danger - error and verification messages.'
+            )
           )
         )
       ));
@@ -2286,103 +2349,115 @@ var App = function (_React$Component) {
         _react2.default.Fragment,
         null,
         _react2.default.createElement(
-          'h4',
-          null,
-          'With single button'
-        ),
-        _react2.default.createElement(
           'div',
-          { className: qBem() },
+          { className: containerBlock('section') },
           _react2.default.createElement(
-            'div',
-            { className: qBem('minus', { disabled: true }) },
-            '\u2013'
+            'h4',
+            null,
+            'With single button'
           ),
           _react2.default.createElement(
             'div',
-            { className: qBem('count') },
-            '1'
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: qBem('plus') },
-            '+'
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: qBem('add') },
-            'Add'
-          )
-        ),
-        _react2.default.createElement(
-          'h4',
-          null,
-          'With Icon '
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: qBem() },
-          _react2.default.createElement(
-            'div',
-            { className: qBem('label') },
-            'TODO: icon'
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: qBem('minus', { disabled: true }) },
-            '\u2013'
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: qBem('count') },
-            '1'
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: qBem('plus') },
-            '+'
-          )
-        ),
-        _react2.default.createElement(
-          'h4',
-          null,
-          'With Two Buttons'
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: qBem() },
-          _react2.default.createElement(
-            'div',
-            { className: qBem('label') },
-            'QTY:'
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: qBem('minus', { disabled: true }) },
-            '\u2013'
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: qBem('count') },
-            '1'
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: qBem('plus') },
-            '+'
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: qBem('buttons') },
+            { className: qBem() },
             _react2.default.createElement(
               'div',
-              { className: qBem('cancel') },
-              'Cancel'
+              { className: qBem('minus', { disabled: true }) },
+              '\u2013'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: qBem('count') },
+              '1'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: qBem('plus') },
+              '+'
             ),
             _react2.default.createElement(
               'div',
               { className: qBem('add') },
               'Add'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: containerBlock('section') },
+          _react2.default.createElement(
+            'h4',
+            null,
+            'With Icon '
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: qBem() },
+            _react2.default.createElement(
+              'div',
+              { className: qBem('label') },
+              _react2.default.createElement('i', { className: 'icon icon-trash' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: qBem('minus', { disabled: true }) },
+              '\u2013'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: qBem('count') },
+              '1'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: qBem('plus') },
+              '+'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: containerBlock('section') },
+          _react2.default.createElement(
+            'h4',
+            null,
+            'With Two Buttons'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: qBem() },
+            _react2.default.createElement(
+              'div',
+              { className: qBem('label') },
+              'QTY:'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: qBem('minus', { disabled: true }) },
+              '\u2013'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: qBem('count') },
+              '1'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: qBem('plus') },
+              '+'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: qBem('buttons') },
+              _react2.default.createElement(
+                'div',
+                { className: qBem('cancel') },
+                'Cancel'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: qBem('add') },
+                'Add'
+              )
             )
           )
         )
@@ -2541,39 +2616,43 @@ var App = function (_React$Component) {
           )
         ),
         _react2.default.createElement(
-          'h4',
-          null,
-          'Product Status Notifications'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Two variations for iten status .itemStatus are intended over darker backgrounds'
-        ),
-        _react2.default.createElement(
           'div',
-          { className: 'cardGrid' },
+          { className: containerBlock('section') },
           _react2.default.createElement(
-            'div',
-            { className: 'card bg-muted' },
-            _react2.default.createElement('br', null),
-            _react2.default.createElement(
-              'div',
-              { className: 'itemStatus itemStatus--unavailable' },
-              'unavailable'
-            ),
-            _react2.default.createElement('br', null)
+            'h4',
+            null,
+            'Product Status Notifications'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Two variations for iten status .itemStatus are intended over darker backgrounds'
           ),
           _react2.default.createElement(
             'div',
-            { className: 'card bg-muted' },
-            _react2.default.createElement('br', null),
+            { className: 'cardGrid' },
             _react2.default.createElement(
               'div',
-              { className: 'itemStatus itemStatus--inList' },
-              'In List'
+              { className: 'card bg-muted' },
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'div',
+                { className: 'itemStatus itemStatus--unavailable' },
+                'unavailable'
+              ),
+              _react2.default.createElement('br', null)
             ),
-            _react2.default.createElement('br', null)
+            _react2.default.createElement(
+              'div',
+              { className: 'card bg-muted' },
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'div',
+                { className: 'itemStatus itemStatus--inList' },
+                'In List'
+              ),
+              _react2.default.createElement('br', null)
+            )
           )
         )
       ));
@@ -2587,137 +2666,150 @@ var App = function (_React$Component) {
         _react2.default.Fragment,
         null,
         _react2.default.createElement(
-          'h4',
-          null,
-          'Badges'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Badges are generally used as numerical icons'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Five ',
-          _react2.default.createElement(
-            'span',
-            { className: 'badge' },
-            '5'
-          )
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Thirty four ',
-          _react2.default.createElement(
-            'span',
-            { className: 'badge' },
-            '34'
-          )
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Six hundred ninety seven ',
-          _react2.default.createElement(
-            'span',
-            { className: 'badge' },
-            '697'
-          )
-        ),
-        _react2.default.createElement(
-          'h5',
-          null,
-          'Muted Badges'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Thirty four ',
-          _react2.default.createElement(
-            'span',
-            { className: 'badge badge--muted-light' },
-            '34'
-          )
-        ),
-        _react2.default.createElement(
-          'h4',
-          null,
-          'Flags'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'There are 4 types of Flags, each my have a tooltip'
-        ),
-        _react2.default.createElement(
           'div',
-          { className: fBem(null, 'preferred') },
-          'Preferred',
+          { className: containerBlock('section') },
           _react2.default.createElement(
-            'div',
-            { className: ttBem(null) },
+            'h4',
+            null,
+            'Badges'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Badges are generally used as numerical icons'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Five ',
             _react2.default.createElement(
-              'div',
-              { className: ttBem('body') },
-              'This item is offered by a supplier that offers fast shipping and fair prices.'
+              'span',
+              { className: 'badge' },
+              '5'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Thirty four ',
+            _react2.default.createElement(
+              'span',
+              { className: 'badge' },
+              '34'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Six hundred ninety seven ',
+            _react2.default.createElement(
+              'span',
+              { className: 'badge' },
+              '697'
             )
           )
         ),
-        '\xA0',
         _react2.default.createElement(
           'div',
-          { className: fBem(null, 'purchasedBefore') },
-          'Purchased Before',
+          { className: containerBlock('section') },
+          _react2.default.createElement(
+            'h5',
+            null,
+            'Muted Badges'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Thirty four ',
+            _react2.default.createElement(
+              'span',
+              { className: 'badge badge--muted-light' },
+              '34'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: containerBlock('section') },
+          _react2.default.createElement(
+            'h4',
+            null,
+            'Flags'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'There are 4 types of Flags, each my have a tooltip'
+          ),
           _react2.default.createElement(
             'div',
-            { className: ttBem(null) },
+            { style: { display: "flex", justifyContent: "space-between" } },
             _react2.default.createElement(
               'div',
-              { className: ttBem('body') },
+              { className: fBem(null, 'preferred') },
+              'Preferred',
               _react2.default.createElement(
-                'strong',
-                null,
-                'Purchase 19 days ago'
-              ),
-              _react2.default.createElement('br', null),
-              'Vendor: ',
-              _react2.default.createElement(
-                'strong',
-                null,
-                'DC Dental'
+                'div',
+                { className: ttBem(null) },
+                _react2.default.createElement(
+                  'div',
+                  { className: ttBem('body') },
+                  'This item is offered by a supplier that offers fast shipping and fair prices.'
+                )
               )
-            )
-          )
-        ),
-        '\xA0',
-        _react2.default.createElement(
-          'div',
-          { className: fBem(null, 'bestSeller') },
-          'Best Seller',
-          _react2.default.createElement(
-            'div',
-            { className: ttBem(null) },
+            ),
             _react2.default.createElement(
               'div',
-              { className: ttBem('body') },
-              'This item is offered by a supplier that offers fast shipping and fair prices.'
-            )
-          )
-        ),
-        '\xA0',
-        _react2.default.createElement(
-          'div',
-          { className: fBem(null, 'promo') },
-          'Promo',
-          _react2.default.createElement(
-            'div',
-            { className: ttBem(null, 'right') },
+              { className: fBem(null, 'purchasedBefore') },
+              'Purchased Before',
+              _react2.default.createElement(
+                'div',
+                { className: ttBem(null) },
+                _react2.default.createElement(
+                  'div',
+                  { className: ttBem('body') },
+                  _react2.default.createElement(
+                    'strong',
+                    null,
+                    'Purchase 19 days ago'
+                  ),
+                  _react2.default.createElement('br', null),
+                  'Vendor: ',
+                  _react2.default.createElement(
+                    'strong',
+                    null,
+                    'DC Dental'
+                  )
+                )
+              )
+            ),
             _react2.default.createElement(
               'div',
-              { className: ttBem('body') },
-              'This item is offered by a supplier that offers fast shipping and fair prices.'
+              { className: fBem(null, 'bestSeller') },
+              'Best Seller',
+              _react2.default.createElement(
+                'div',
+                { className: ttBem(null) },
+                _react2.default.createElement(
+                  'div',
+                  { className: ttBem('body') },
+                  'This item is offered by a supplier that offers fast shipping and fair prices.'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: fBem(null, 'promo') },
+              'Promo',
+              _react2.default.createElement(
+                'div',
+                { className: ttBem(null, 'right') },
+                _react2.default.createElement(
+                  'div',
+                  { className: ttBem('body') },
+                  'This item is offered by a supplier that offers fast shipping and fair prices.'
+                )
+              )
             )
           )
         )
@@ -2784,15 +2876,22 @@ var App = function (_React$Component) {
           null,
           _react2.default.createElement(
             'div',
-            null,
-            _react2.default.createElement('input', { type: 'text', id: 'search', name: 'search', placeholder: 'Search', className: 'search' })
+            { className: containerBlock('section') },
+            _react2.default.createElement(
+              'div',
+              { className: 'searchBar' },
+              _react2.default.createElement('input', { type: 'text', className: 'search', id: 'search', name: 'search', placeholder: 'Search' }),
+              _react2.default.createElement(
+                'div',
+                { className: 'searchBar-icons' },
+                _react2.default.createElement('i', { className: 'icon icon-close' }),
+                _react2.default.createElement('i', { className: 'icon icon-search' })
+              )
+            )
           ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement('br', null),
           _react2.default.createElement(
             'div',
-            null,
+            { className: containerBlock('section') },
             _react2.default.createElement(
               'label',
               { htmlFor: 'sampleId' },
@@ -2800,10 +2899,9 @@ var App = function (_React$Component) {
             ),
             _react2.default.createElement('input', { type: 'text', id: 'sampleId', name: 'sample', placeholder: 'hint' })
           ),
-          _react2.default.createElement('br', null),
           _react2.default.createElement(
             'div',
-            null,
+            { className: containerBlock('section') },
             _react2.default.createElement(
               'label',
               { htmlFor: 'sampleTextArea' },
@@ -2811,13 +2909,12 @@ var App = function (_React$Component) {
             ),
             _react2.default.createElement('textarea', { id: 'sampleTextArea', placeholder: 'Write text' })
           ),
-          _react2.default.createElement('br', null),
           _react2.default.createElement(
             'div',
-            null,
+            { className: containerBlock('section') },
             _react2.default.createElement(
               'div',
-              { className: menuBem(null, { select: true, expanded: this.isExpanded("exampleSelect") }) },
+              { className: menuBem(null, { select: true, expanded: !this.isExpanded("exampleSelect") }) },
               _react2.default.createElement(
                 'div',
                 { className: menuBem('label'), onClick: this.toggleExpanded.bind(this, "exampleSelect") },
@@ -2837,19 +2934,11 @@ var App = function (_React$Component) {
                   'Option 2'
                 )
               )
-            ),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null)
+            )
           ),
           _react2.default.createElement(
             'div',
-            null,
+            { className: containerBlock('section') },
             _react2.default.createElement('input', { type: 'radio', value: '1', id: 'radio_1', name: 'radio' }),
             _react2.default.createElement(
               'label',
@@ -2866,7 +2955,7 @@ var App = function (_React$Component) {
           ),
           _react2.default.createElement(
             'div',
-            null,
+            { className: containerBlock('section') },
             _react2.default.createElement('input', { type: 'checkbox', value: '1', id: 'checkbox', name: 'checkbox' }),
             _react2.default.createElement(
               'label',
@@ -3659,238 +3748,254 @@ var App = function (_React$Component) {
         _react2.default.Fragment,
         null,
         _react2.default.createElement(
-          'h4',
-          null,
-          'Headered Tables'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'These are typical tables with labeled columns. The headers may or may not be interactive. They may be within a container or exist as their own container.'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'The typography section above is an example of a non-interactive headered table within a container.'
-        ),
-        _react2.default.createElement(
-          'h6',
-          null,
-          'Table with interactive header, inside a container'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Table header may also include interactive elements for sorting, filtering and selecting'
-        ),
-        _react2.default.createElement(
-          'table',
-          null,
+          'div',
+          { className: containerBlock("section") },
           _react2.default.createElement(
-            'thead',
-            { className: 'with-controls' },
-            _react2.default.createElement(
-              'tr',
-              null,
-              _react2.default.createElement(
-                'th',
-                null,
-                'Torch Order #'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
-                'Vendor'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
-                'Invoice Date'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
-                'Amount'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
-                'Pay ',
-                _react2.default.createElement('input', { type: 'checkbox' })
-              )
-            )
+            'h4',
+            null,
+            'Headered Tables'
           ),
           _react2.default.createElement(
-            'tbody',
+            'p',
+            null,
+            'These are typical tables with labeled columns. The headers may or may not be interactive. They may be within a container or exist as their own container.'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'The typography section above is an example of a non-interactive headered table within a container.'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: containerBlock("section") },
+          _react2.default.createElement(
+            'h6',
+            null,
+            'Table with interactive header, inside a container'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Table header may also include interactive elements for sorting, filtering and selecting'
+          ),
+          _react2.default.createElement(
+            'table',
             null,
             _react2.default.createElement(
-              'tr',
-              null,
+              'thead',
+              { className: 'with-controls' },
               _react2.default.createElement(
-                'td',
+                'tr',
                 null,
-                '1120'
-              ),
-              _react2.default.createElement(
-                'td',
-                null,
-                'Atlanta Dental'
-              ),
-              _react2.default.createElement(
-                'td',
-                null,
-                '01/01/2020'
-              ),
-              _react2.default.createElement(
-                'td',
-                null,
-                '$244.55'
-              ),
-              _react2.default.createElement(
-                'td',
-                null,
-                _react2.default.createElement('input', { type: 'checkbox' })
+                _react2.default.createElement(
+                  'th',
+                  null,
+                  'Torch Order # ',
+                  _react2.default.createElement('i', { className: 'icon icon-sort' })
+                ),
+                _react2.default.createElement(
+                  'th',
+                  null,
+                  'Vendor ',
+                  _react2.default.createElement('i', { className: 'icon icon-filter' })
+                ),
+                _react2.default.createElement(
+                  'th',
+                  null,
+                  'Invoice Date ',
+                  _react2.default.createElement('i', { className: 'icon icon-sort-up' })
+                ),
+                _react2.default.createElement(
+                  'th',
+                  null,
+                  'Amount ',
+                  _react2.default.createElement('i', { className: 'icon icon-sort-down' })
+                ),
+                _react2.default.createElement(
+                  'th',
+                  null,
+                  'Pay ',
+                  _react2.default.createElement('input', { type: 'checkbox' })
+                )
               )
             ),
             _react2.default.createElement(
-              'tr',
+              'tbody',
               null,
               _react2.default.createElement(
-                'td',
+                'tr',
                 null,
-                '1120'
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  '1120'
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'Atlanta Dental'
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  '01/01/2020'
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  '$244.55'
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement('input', { type: 'checkbox' })
+                )
               ),
               _react2.default.createElement(
-                'td',
+                'tr',
                 null,
-                'Atlanta Dental'
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  '1120'
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'Atlanta Dental'
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  '01/01/2020'
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  '$244.55'
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement('input', { type: 'checkbox' })
+                )
               ),
               _react2.default.createElement(
-                'td',
+                'tr',
                 null,
-                '01/01/2020'
-              ),
-              _react2.default.createElement(
-                'td',
-                null,
-                '$244.55'
-              ),
-              _react2.default.createElement(
-                'td',
-                null,
-                _react2.default.createElement('input', { type: 'checkbox' })
-              )
-            ),
-            _react2.default.createElement(
-              'tr',
-              null,
-              _react2.default.createElement(
-                'td',
-                null,
-                '1120'
-              ),
-              _react2.default.createElement(
-                'td',
-                null,
-                'Atlanta Dental'
-              ),
-              _react2.default.createElement(
-                'td',
-                null,
-                '01/01/2020'
-              ),
-              _react2.default.createElement(
-                'td',
-                null,
-                '$244.55'
-              ),
-              _react2.default.createElement(
-                'td',
-                null,
-                _react2.default.createElement('input', { type: 'checkbox' })
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  '1120'
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'Atlanta Dental'
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  '01/01/2020'
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  '$244.55'
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement('input', { type: 'checkbox' })
+                )
               )
             )
           )
         ),
         _react2.default.createElement(
-          'h4',
-          null,
-          'Table Toggles'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Some headered tables may have sets of radios (buttons on mobile) above for additional filtering.'
-        ),
-        _react2.default.createElement(
-          'ul',
-          { className: tableToggleBem() },
+          'div',
+          { className: containerBlock("section") },
           _react2.default.createElement(
-            'li',
-            { className: tableToggleBem('item') },
-            _react2.default.createElement(
-              'div',
-              null,
-              _react2.default.createElement(
-                'span',
-                { className: tableToggleBem('label') },
-                'Unpaid',
-                _react2.default.createElement(
-                  'span',
-                  { className: tableToggleBem('count') },
-                  '(20)'
-                )
-              ),
-              _react2.default.createElement(
-                'span',
-                { className: tableToggleBem('details') },
-                '$1,283.33'
-              )
-            )
+            'h4',
+            null,
+            'Table Toggles'
           ),
           _react2.default.createElement(
-            'li',
-            { className: tableToggleBem('item') },
-            _react2.default.createElement(
-              'div',
-              null,
-              _react2.default.createElement(
-                'span',
-                { className: tableToggleBem('label') },
-                'Unpaid',
-                _react2.default.createElement(
-                  'span',
-                  { className: tableToggleBem('count') },
-                  '(20)'
-                )
-              ),
-              _react2.default.createElement(
-                'span',
-                { className: tableToggleBem('details') },
-                '$1,283.33'
-              )
-            )
+            'p',
+            null,
+            'Some headered tables may have sets of radios (buttons on mobile) above for additional filtering.'
           ),
           _react2.default.createElement(
-            'li',
-            { className: tableToggleBem('item', 'selected') },
+            'ul',
+            { className: tableToggleBem() },
             _react2.default.createElement(
-              'div',
-              null,
+              'li',
+              { className: tableToggleBem('item') },
               _react2.default.createElement(
-                'span',
-                { className: tableToggleBem('label') },
-                'Unpaid',
+                'div',
+                null,
                 _react2.default.createElement(
                   'span',
-                  { className: tableToggleBem('count') },
-                  '(20)'
+                  { className: tableToggleBem('label') },
+                  'Unpaid',
+                  _react2.default.createElement(
+                    'span',
+                    { className: tableToggleBem('count') },
+                    '(20)'
+                  )
+                ),
+                _react2.default.createElement(
+                  'span',
+                  { className: tableToggleBem('details') },
+                  '$1,283.33'
                 )
-              ),
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: tableToggleBem('item') },
               _react2.default.createElement(
-                'span',
-                { className: tableToggleBem('details') },
-                '$1,283.33'
+                'div',
+                null,
+                _react2.default.createElement(
+                  'span',
+                  { className: tableToggleBem('label') },
+                  'Unpaid',
+                  _react2.default.createElement(
+                    'span',
+                    { className: tableToggleBem('count') },
+                    '(20)'
+                  )
+                ),
+                _react2.default.createElement(
+                  'span',
+                  { className: tableToggleBem('details') },
+                  '$1,283.33'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: tableToggleBem('item', 'selected') },
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                  'span',
+                  { className: tableToggleBem('label') },
+                  'Unpaid',
+                  _react2.default.createElement(
+                    'span',
+                    { className: tableToggleBem('count') },
+                    '(20)'
+                  )
+                ),
+                _react2.default.createElement(
+                  'span',
+                  { className: tableToggleBem('details') },
+                  '$1,283.33'
+                )
               )
             )
           )
@@ -4056,6 +4161,24 @@ var App = function (_React$Component) {
           )
         )
       );
+    }
+  }, {
+    key: 'modalsSection',
+    get: function get() {
+      return this.makeSection("modals", "Modals", _react2.default.createElement(
+        _react2.default.Fragment,
+        null,
+        'TBD'
+      ));
+    }
+  }, {
+    key: 'iconsSection',
+    get: function get() {
+      return this.makeSection("icons", "Icons", _react2.default.createElement(
+        _react2.default.Fragment,
+        null,
+        'TBD'
+      ));
     }
   }]);
 
@@ -32756,13 +32879,13 @@ var Nav = function (_React$Component) {
           { className: cn('menu') },
           _react2.default.createElement(
             'div',
-            { className: menuCn(null, { expanded: expanded, withIcons: true }) },
+            { className: menuCn(null, { expanded: expanded, withIcons: true, right: true }) },
             _react2.default.createElement(
               'div',
               { className: menuCn('label'), onClick: function onClick() {
                   return _this2.setState({ expanded: !expanded });
                 } },
-              'Components'
+              'More (spacing)'
             ),
             _react2.default.createElement(
               'div',
@@ -32773,7 +32896,7 @@ var Nav = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { className: menuCn('item', 'header') },
-                  _react2.default.createElement('i', { className: 'custom-icon custom-icon--account' }),
+                  _react2.default.createElement('i', { className: 'icon icon-account' }),
                   _react2.default.createElement(
                     'strong',
                     null,
@@ -32827,12 +32950,38 @@ var Nav = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { className: menuCn('item') },
-                  _react2.default.createElement('i', { className: 'custom-icon custom-icon--messages' }),
+                  _react2.default.createElement('i', { className: 'icon icon-messages' }),
                   'Messages ',
                   _react2.default.createElement(
                     'span',
                     { className: 'badge' },
                     '2'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: menuCn('section') },
+                _react2.default.createElement(
+                  'div',
+                  { className: menuCn('item') },
+                  _react2.default.createElement('i', { className: 'icon icon-rewards' }),
+                  'Rewards'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: menuCn('section') },
+                _react2.default.createElement(
+                  'div',
+                  { className: menuCn('item') },
+                  _react2.default.createElement('i', { className: 'icon icon-equipment' }),
+                  'Equipment Services',
+                  _react2.default.createElement('br', null),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'text--muted' },
+                    'Create request'
                   )
                 )
               ),
@@ -32895,7 +33044,7 @@ var Nav = function (_React$Component) {
   }, {
     key: 'components',
     get: function get() {
-      var items = [["Navs", "nav"], ["Buttons & Links", "buttons"], ["Notifications"], ["Badges & Flags", "badges"], ["Tooltips"], ["Forms"], ["Messages"], ["Menus, Filter & Sort", "menus"], ["Cards"], ["Variant Selector", 'variants'], ["Quantity Selector", 'quantity'], ["Tables"], ["Modals"]];
+      var items = [["Containers"], ["Layout"], ["Spacing"]];
       return items.map(function (item) {
         var itemId = item[1] || item[0].toLowerCase();
         return _react2.default.createElement(

@@ -1,46 +1,11 @@
-.dropdown {
+.menu, .dropdown {
   position: relative;
-  display: inline-block;
-}
-
-.dropdown-button {
-  cursor: pointer;
-}
-
-.dropdown-content {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 150px;
-  padding: 10px;
-  border-radius: 4px;
-  background-color: #fff;
-  box-shadow: inset 0 0 0 2px #f2f2f2;
-  z-index: 1050;
-
-  &.dropdown-content--right {
-    left: unset;
-    right: 0;
-  }
-
-  &.dropdown-content--overlap {
-    top: -10px;
-    left: -10px;
-  }
-
-  &.dropdown-content--overlap.dropdown-content--right {
-    left: unset;
-    right: -10px;
-  }
-}
-
-.menu {
-  position: relative;
-
-
-  &-label {
+  display: flex;
+  flex-direction: column;
+  
+  &-label, &-button {
     cursor: pointer;
-    padding-right: 40px;
+    padding-right: 40px; // for chevron icon
     &::before {
       // don't start with up/down because then transforms need to be re-produced
       @extend .icon-chevron-right;
@@ -51,18 +16,29 @@
       transform: translateY(-50%) rotate(90deg) ;
     }
   }
-  &-body {
+  &-body, &-content {
     a, .styleAs-a {
       color: $color--body-text
     }
-    min-width: 100%;
+    width: auto; // make it a bit bigger than it needs to be
     left: 0;
+    
     position: absolute;
     z-index: 10;
     top: 100%;
     border: $border--light;
     background: $color--white;
     display: none;
+    &--right {
+      left: unset;
+      right: 0;
+    }
+  }
+  &--right {
+    .menu-body, .dropdown-content{
+      left: unset;
+      right: 0;
+    }
   }
   // Sections aren't always used - when they are, layout internal items 
   // to have less spacing between first/last item and next section
@@ -87,7 +63,6 @@
     padding-top: ($s32 - ($line-height--base - $font-size--base))/2;
     padding-bottom: ($s32 - ($line-height--base - $font-size--base))/2;
     
-    
     &:hover, &:active {
       background: $color--blue-20;
       text-decoration: none;
@@ -105,23 +80,35 @@
   &--withIcons {
     .menu-item {
       padding-left: 52px;
+      .icon {
+        width: 52px;
+        height: 62px; //calculated 1-line, single-item height
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+        position: absolute;
+        top: 0; //inline with placement
+        left: 0;
+      }
     }
   }
   
   &--hoverable {
-    .menu-body {
+    .menu-body, .dropdown-content {
       top: calc(100% - 1px);      
     }
   }
   
   &--expanded, &--hoverable:hover {
-    .menu-label {
+    .menu-label, .dropdown-button {
       &::before {
         transform: translateY(-50%) rotate(-90deg) ;
       }
     }
     
-    .menu-body {
+    .menu-body, .dropdown-content {
       display: block;
     }
     
@@ -129,7 +116,7 @@
 
   &--select {
     display: inline-block;
-    .menu-label {
+    .menu-label, .dropdown-button {
       @include btn;
       @include btn--medium;
       @include btn--outline;
@@ -146,9 +133,10 @@
         right: $s10;
       }   
     }
-    .menu-body {
+    .menu-body, .dropdown-content {
       top: calc(100% + #{$s8});
       width: auto;
+      min-width: 100%;
       @include border-radius;
     }
     &.menu--expanded {

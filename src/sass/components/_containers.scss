@@ -20,6 +20,28 @@
   background-color: $color--white;
 
 
+  &:not(.container--expandable) > * {
+    margin-top: $s8/2;
+    margin-bottom: $s8/2;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-section {
+    margin-top: $s24;
+    margin-bottom: $s24;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   // Note that these are available for general use. But they shold be avoided in favor of cards, tooltips and other components
   // that use these stylings.
   
@@ -60,8 +82,7 @@
     }
     .container-body {
       display: none;
-      padding: $s14 $s14;
-    
+      padding: $s14 $s14;      
     }
     &.container--expanded {
       .container-header {

@@ -113,6 +113,7 @@ tbody tr:not(:last-of-type) td {
   @include container-glow;
 
   &-item {
+    cursor: pointer;
     flex-grow: 1;
     margin: 0;
     padding:  $s8 $s20;

@@ -107,7 +107,7 @@ $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height 
   }
   &-flags {
     margin: 0 $s8;
-    flex-grow: 1
+    flex-grow: 1;
   }
   &-image, &-imageCtr {
     height: 140px;

@@ -1,13 +1,20 @@
 
 .flag {
-  @extend .details3; //s10
+  @extend .details3; //font s10
   @extend .styleAs-strong; //bold  
-  height: $s16;
-  padding: $s8/2 $s8; //TODO nonstandard OK?
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   line-height: 1;
+  height: $s16;
+  margin: ($line-height--base - $s16) / 2;
+  margin-left: 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:first-child {
+    margin-top: 0;
+  }
+  padding: $s8/2 $s8; //TODO nonstandard OK?
+  display: table; //block line wrapping w/out 100% width;
+  align-items: center;
   cursor: default;
   
   &--preferred {

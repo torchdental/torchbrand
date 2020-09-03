@@ -40,21 +40,13 @@ export default class Nav extends React.Component {
     });
   }
   
+  
+
   get components() {
     const items = [
-      ["Navs", "nav"],      
-      ["Buttons & Links", "buttons"],
-      ["Notifications"],
-      ["Badges & Flags", "badges"],
-      ["Tooltips"],
-      ["Forms"],
-      ["Messages"],
-      ["Menus, Filter & Sort", "menus"],
-      ["Cards"],
-      ["Variant Selector", 'variants'],
-      ["Quantity Selector", 'quantity'],
-      ["Tables"],
-      ["Modals"]      
+      ["Containers"],
+      ["Layout"],
+      ["Spacing"],
     ]
     return items.map((item) => {
       const itemId = item[1] || item[0].toLowerCase();
@@ -77,14 +69,14 @@ export default class Nav extends React.Component {
         {this.links}
       </ul>
       <div className={cn('menu')}>
-        <div className={menuCn(null, {expanded, withIcons: true})}>
+        <div className={menuCn(null, {expanded, withIcons: true, right: true})}>
           <div className={menuCn('label')} onClick={()=>this.setState({expanded: !expanded})}>
-            Components
+            More (spacing)
           </div>
           <div className={menuCn('body')}>
             <div className={menuCn('section')}>
               <div className={menuCn('item', 'header')}>
-                <i className={'custom-icon custom-icon--account'}></i>            
+                <i className={'icon icon-account'}></i>            
                 <strong>Account Settings</strong>
                 <br/>
                 <a className='text--primary'>75% complete</a>
@@ -106,9 +98,23 @@ export default class Nav extends React.Component {
             </div>
             <div className={menuCn('section')}>
               <div className={menuCn('item')}>
-                <i className={'custom-icon custom-icon--messages'}></i>            
+                <i className={'icon icon-messages'}></i>            
                 Messages <span className={'badge'}>2</span>            
               </div>              
+            </div>
+            <div className={menuCn('section')}>
+              <div className={menuCn('item')}>
+                <i className={'icon icon-rewards'}></i>
+                Rewards
+              </div>
+            </div>
+            <div className={menuCn('section')}>
+              <div className={menuCn('item')}>
+                <i className={'icon icon-equipment'}></i>
+                Equipment Services
+                <br />
+                <span className='text--muted'>Create request</span>
+              </div>
             </div>
             <div className={menuCn('section')}>
               {this.components}

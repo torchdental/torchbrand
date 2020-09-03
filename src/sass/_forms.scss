@@ -44,6 +44,58 @@ input {
     border: $border--light;
     padding: $s12 $s16;
   }
+  &.search {
+    + .icon-search {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: $color--white;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 40px;
+      background: $color--primary-active;
+      @include border-radius;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
+
+.searchBar {
+  &-icons {
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+      
+    .icon-search, icon-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;            
+    }
+    .icon-close {
+      width: $s20;
+      height: $s20;
+      margin-right: $s16;
+      &::before {
+        width: $s20;
+        height: $s20;
+        background-position: center;
+      }
+    }
+    .icon-search {
+      height: 100%;
+      color: $color--white;
+      background: $color--primary-active;
+      @include border-radius;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;      
+    }
+
+  }
 }
 
 textarea {

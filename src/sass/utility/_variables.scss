@@ -12,7 +12,7 @@ $color--yellow-400: #f7d410;
 
 
 $color--blue-20: #E9F3F6;
-$color--blue-30: #00AEF6;
+$color--blue-30: #00AEF6; 
 $color--blue-40: #008FBE; // highlight
 $color--blue-50: #0078A0; // text, bg
 $color--blue-60: #006F94; // active
@@ -43,7 +43,9 @@ $color--gray-90: #1D1D1D; //body text
 
 // Semantic Colors (Please use these)
 $color--primary:          $color--blue-50;   //The app uses --primary and --secondary for text colors, so make sure they're set to text colors
+$color--primary-active:   $color--blue-30;
 $color--secondary:        $color--green-50;  //The app uses  --primary and --secondary for text colors, so make sure they're set to text colors
+$color--secondary-active:        $color--green-30;
 $color--tertiary:         $color--berry-50;
 $color--quaternary:       $color--orange-50;
 

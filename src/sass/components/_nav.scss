@@ -34,9 +34,6 @@
         display: none;
       }
     }
-    &-body {
-      width: 176px;    
-    }
   }
 }
 
@@ -55,8 +52,6 @@
       }
     }
     &-body {
-      right: 0;
-      left: auto;
       width: 270px;
       max-height: calc(100vh - #{$navbar-height});
       overflow-y: scroll;
@@ -86,7 +81,7 @@
   &:hover,
   &:focus,
   &--active {
-    border-color: $color--blue-30;
+    border-color: $color--primary-active;
     text-decoration: none;
   }
   .nav-badge {
@@ -106,7 +101,7 @@
   &:focus,
   &--active {
     .navbar-link, .nav-link {
-      border-color: $color--blue-30;
+      border-color: $color--primary-active;
       text-decoration: none;      
     }
   }

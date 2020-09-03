@@ -47,7 +47,6 @@
 
 
 .icon-menu::before { content: '\f141'; font-weight: $font-weight--icons-solid; }
-.icon-close::before { content: '\f00d'; font-weight: $font-weight--icons-solid; }
 .icon-notifications::before { content: '\f0f3'; font-weight: $font-weight--icons-solid; }
 .icon-comments::before { content: '\f086'; font-weight: $font-weight--icons-solid; }
 .icon-settings::before { content: '\f013'; font-weight: $font-weight--icons-solid; }
@@ -73,7 +72,6 @@
 .icon-shipping::before { content: '\f0d1'; font-weight: $font-weight--icons-solid; }
 .icon-delivered::before { content: '\f46c'; font-weight: $font-weight--icons-solid; }
 
-.icon-search::before { content: '\f002'; font-weight: $font-weight--icons-solid; }
 .icon-zoom::before { content: '\f00e'; font-weight: $font-weight--icons-solid; }
 .icon-file::before { content: '\f15b'; font-weight: 400; }
 .icon-send::before { content: '\f1d8'; font-weight: $font-weight--icons-solid; }
@@ -104,16 +102,6 @@
 .icon-visible::before { content: '\f06e'; font-weight: $font-weight--icons-solid; }
 .icon-invisible::before { content: '\f070'; font-weight: $font-weight--icons-solid; }
 
-.icon-radio::before { content: '\f111'; font-weight: $font-weight--icons-normal; color: $color--primary; font-size: $s24; }
-.icon-radio-checked::before { content: '\f192'; font-weight: $font-weight--icons-normal; color: $color--primary;  font-size: $s24;}
-.icon-checkbox::before { content: '\f0c8'; font-weight: $font-weight--icons-normal;  color: $color--primary;  font-size: $s24;}
-.icon-checkbox-checked::before { content: '\f14a'; font-weight: $font-weight--icons-solid;  color: $color--primary;   font-size: $s24;}
-
-.icon-radio, .icon-radio-checked, .icon-checkbox, .icon-checkbox-checked {
-  &--large {
-    font-size: $s32;
-  }
-}
 
 .icon-blockquote-deco::before { content: '\f10d'; font-weight: $font-weight--icons-solid; }
 
@@ -126,11 +114,174 @@
 .icon-list::before { content: '\f03a'; font-weight: $font-weight--icons-solid}
 .icon-calendar::before { content: '\f073'; font-weight: $font-weight--icons-solid}
 .icon-signal::before { content: '\f012'; font-weight: $font-weight--icons-solid}
-.icon-filter::before { content: '\f0b0'; font-weight: $font-weight--icons-solid}
 .icon-cart-plus::before { content: '\f217'; font-weight: $font-weight--icons-solid}
 .icon-plus-circle::before { content: '\f055'; font-weight: $font-weight--icons-solid}
 .icon-angle-left::before { content: '\f104'; font-weight: $font-weight--icons-solid}
 .icon-check::before { content: '\f00c'; font-weight: $font-weight--icons-solid}
+
+
+//Reviewed icons:
+.icon-radio::before { content: '\f111'; font-weight: $font-weight--icons-normal; color: $color--primary; font-size: $s24; }
+.icon-radio-checked::before { content: '\f192'; font-weight: $font-weight--icons-normal; color: $color--primary;  font-size: $s24;}
+.icon-checkbox::before { content: '\f0c8'; font-weight: $font-weight--icons-normal;  color: $color--primary;  font-size: $s24;}
+.icon-checkbox-checked::before { content: '\f14a'; font-weight: $font-weight--icons-solid;  color: $color--primary;   font-size: $s24;}
+.icon-search::before { content: '\f002'; font-weight: $font-weight--icons-solid; font-size: 20px; }
+
+.icon-radio, .icon-radio-checked, .icon-checkbox, .icon-checkbox-checked {
+  &--large {
+    font-size: $s32;
+  }
+}
+
+.icon-sort::before { content: '\f0dc'; color: $color--primary; font-size: 16px; }
+.icon-sort-up::before { content: '\f0de'; color: $color--primary; font-size: 16px; }
+.icon-sort-down::before { content: '\f0dd'; color: $color--primary; font-size: 16px; }
+.icon-filter::before { content: '\f0b0'; color: $color--primary;  font-size: 12px; }
+
+
+
+
+.icon-account {
+  &::before {
+    @include iconPseudo--image;
+    width: 24px;
+    height: 24px;
+    $icon-color: $color--primary;
+    @import "icons/account.svg";    
+  }
+  &--active {
+    &::before {
+      $icon-color: $color--primary-active;
+      @import "icons/account.svg";    
+    }  
+  }
+  &--disabled, &--disabled:hover, &--disabled:active {
+    cursor: normal;
+    &::before {
+      $icon-color: $background-color--light;
+      @import "icons/account.svg";    
+    }    
+  }
+}
+
+.icon-messages {
+  &::before {
+    @include iconPseudo--image;
+    width: 20px;
+    height: 15px;
+    $icon-color: $color--primary;
+    @import "icons/messages.svg";    
+  }
+  &--active {
+    &::before {
+      $icon-color: $color--primary-active;
+      @import "icons/messages.svg";    
+    }  
+  }
+  &--disabled, &--disabled:hover, &--disabled:active {
+    cursor: normal;
+    &::before {
+      $icon-color: $background-color--light;
+      @import "icons/messages.svg";    
+    }    
+  }
+}
+
+.icon-equipment {
+  &::before {
+    @include iconPseudo--image;
+    width: 20px;
+    height: 20px;
+    $icon-color: $color--primary;
+    @import "icons/equipment.svg";    
+  }
+  &--active {
+    &::before {
+      $icon-color: $color--primary-active;
+      @import "icons/equipment.svg";    
+    }  
+  }
+  &--disabled, &--disabled:hover, &--disabled:active {
+    cursor: normal;
+    &::before {
+      $icon-color: $background-color--light;
+      @import "icons/equipment.svg";    
+    }    
+  }
+}
+
+.icon-rewards {
+  &::before {
+    @include iconPseudo--image;
+    width: 18px;
+    height: 24px;
+    $icon-color: $color--secondary;
+    @import "icons/rewards.svg";    
+  }
+  &--active {
+    &::before {
+      $icon-color: $color--secondary-active;
+      @import "icons/rewards.svg";    
+    }  
+  }
+  &--disabled, &--disabled:hover, &--disabled:active {
+    cursor: normal;
+    &::before {
+      $icon-color: $background-color--light;
+      @import "icons/rewards.svg";    
+    }    
+  }
+}
+
+.icon-trash {
+  &::before {
+    @include iconPseudo--image;
+    width: 20px;
+    height: 24px;
+    $icon-color: $color--body-text--secondary;
+    @import "icons/trash.svg";    
+  }
+  &:hover, &:active,&--active {
+    &::before {
+      $icon-color: $color--body-text;
+      @import "icons/trash.svg";    
+    }  
+  }
+  &--disabled, &--disabled:hover, &--disabled:active {
+    cursor: normal;
+    &::before {
+      $icon-color: $background-color--light;
+      @import "icons/trash.svg";    
+    }    
+  }
+}
+
+.icon-close { 
+  &::before {
+    @include iconPseudo--image;
+    width: 32px;
+    height: 32px;
+    $icon-color: $color--body-text--secondary;
+    @import "icons/close:enabled.svg";    
+  }
+  &:hover, &:active,&--active {
+    &::before {
+      $icon-color: $color--body-text;
+      @import "icons/close:active.svg";    
+    }  
+  }
+  &--disabled, &--disabled:hover, &--disabled:active {
+    cursor: normal;
+    &::before {
+      $icon-color: $background-color--light;
+      @import "icons/close:enabled.svg";    
+    }    
+  }
+  &--small {
+    width: 24px;
+    height: 24px;
+  }
+}
 
 
 .icon-cart-plus {
@@ -138,16 +289,20 @@
     @include iconPseudo--image;
     width: 30px;
     height: 29px;
-    background-image: url('/assets/images/icons/icon:cart:add:active.svg');
+    $icon-color: $color--secondary;
+    @import "icons/cart:add.svg";    
   }
   &:hover, &:active {
     &::before {
-      background-image: url('/assets/images/icons/icon:cart:add:hover.svg');
+      $icon-color: $color--secondary-active;
+      @import "icons/cart:add.svg";    
     }  
   }
   &--disabled, &--disabled:hover, &--disabled:active {
+    cursor: normal;
     &::before {
-      background-image: url('/assets/images/icons/icon:cart:add:deactive.svg');
+      $icon-color: $background-color--light;
+      @import "icons/cart:add.svg";    
     }    
   }
 }
@@ -157,11 +312,14 @@
     @include iconPseudo--image;
     width: 19px;
     height: 20px;
-    background-image: url('/assets/images/icons/icon:star:inactive.svg');
+    $icon-color: $background-color--light;
+    @import "icons/star.svg";
+
   }
   &:hover, &--favorited {
     &::before {
-      background-image: url('/assets/images/icons/icon:star:blue.svg');
+      $icon-color: $color--primary-active;
+      @import 'icons/star.svg';
     }
   }
 }
@@ -181,22 +339,23 @@
 }
 
 .icon-chevron-right {
+  $icon-color: $color--body-text;
   &::before { 
     @include iconPseudo--image;
     width: 27px;
     height: 27px;
-    background-image: url('/assets/images/icons/icon-chevron-enabled-med.svg');
-    
+    @import "icons/chevron:enabled.svg";
   }
   &:hover::before {
-    background-image: url('/assets/images/icons/icon-chevron-active-med.svg');
+    @import "icons/chevron:active.svg";
   } 
   &--white {
+    $icon-color: $color--white;
     &::before {
-      background-image: url('/assets/images/icons/icon-chevron-white-enabled-med.svg');
+      @import "icons/chevron:enabled.svg";
     }
     &:hover::before {
-      background-image: url('/assets/images/icons/icon-chevron-white-active-med.svg');
+      @import "icons/chevron:active.svg";
     }
   }
   &--small {

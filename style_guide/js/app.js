@@ -14,31 +14,80 @@ const tableToggleBem = makeBem("tableToggle");
 
 const links = [
   {
-    name: 'Colors',
-    path: 'colors'    
+    name: "Components",
+    items: [
+      {
+        name: "Navs",
+        path: "nav"
+      },
+      {
+        name: "Menus, Filter & Sort",
+        path: "menus"
+      },
+      {
+        name: "Cards",
+        path: "cards",
+      },
+      {
+        name: "Variant Selector",
+        path: 'variants'
+      },
+      {
+        name: "Quantity Selector", 
+        path: 'quantity',
+      },
+      {
+        name: "Tables",
+        path: "tables"
+      },
+      {
+        name: "Modals",    
+        path: "modals"
+      },
+      {
+        name: "Forms",
+        path: "forms"
+      },
+      {
+        name: "Messages",
+        path: "messages"
+      }
+    ]
+  },
+  {
+    name: "Elements",
+    items: [
+      {
+        name: "Buttons & Links",
+        path: "buttons"
+      },
+      {
+        name: "Notifications",
+        path: "notifications"
+      },
+      {
+        name: "Badges & Flags", 
+        path: "badges"
+      },
+      {
+        name: "Tooltips",
+        path: "tooltips"
+      },
+      {
+        name: 'Icons',
+        path: 'icons'
+      }
+    ]
   },
   {
     name: 'Typography',
     path: 'typography'    
   },  
   {
-    name: 'Spacing & Layout',
-    path: 'spacing',
-    items: [
-      {
-        name: 'Page Layout',
-        path: 'layout'
-      },
-      {
-        name: 'Containers',
-        path: 'containers'
-      }
-    ]
+    name: 'Colors',
+    path: 'colors'
   },
-  {
-    name: 'Icons', 
-    path: 'icons'
-  },  
+  
 ]
 
 
@@ -112,7 +161,7 @@ class App extends React.Component {
   get colorsSection() {
     const colorMap = {
       '$color--blue-20': ["#E9F3F6"],
-      '$color--blue-30': ["#00AEF6"],
+      '$color--blue-30': ["#00AEF6", "active"],
       '$color--blue-40': ["#008FBE", "highlight"], // highlight
       '$color--blue-50': ["#0078A0", "text, background"], // text, bg
       '$color--blue-60': ["#006F94", "active color"], // active
@@ -156,7 +205,8 @@ class App extends React.Component {
         notes
       })
     });
-    return         <section className={containerBlock(null, {expandable: true, expanded: this.isExpanded('colors')})} id="colors">
+    return <section className={containerBlock(null, {expandable: true, expanded: this.isExpanded('colors')})}>
+          <a className="anchor" id="colors"></a>
           <div className={containerBlock('header')} onClick={this.toggleExpanded.bind(this, 'colors')}>
             <h3>Colors</h3>
           </div>
@@ -468,8 +518,9 @@ class App extends React.Component {
         They are used to group sections on a page and may or may not have an expand/collapse header section.
       </p>
       <p>
-        This style guide is primarily composed of container--expandible with a container-header and container-body children.
+        For example, this style guide is primarily composed of container--expandible with a container-header and container-body children.
       </p>
+      <p>Withing a container or container-body, container-section blocks to control vertical spacing.</p>
     </React.Fragment>)
   }
 
@@ -480,106 +531,104 @@ class App extends React.Component {
       compatility, all button elements and items with <code>.styleAs-button</code> will also generally work</p>
       <h4>Filled Buttons (default)</h4>
       <p>Note that these all have hover and active states. By default they take the full width of the container.</p>
-      <br />
-      <br />
-      <p>Standard Button classnames <code>{btnBem()}</code></p>
-      <div className={btnBem()}>Standard Button</div>
-      <br />
-      <br />
-      <p>Standard Primary Button classnames <code>{btnBem(null, 'primary')}</code></p>
-      <div className={btnBem(null, 'primary')}>Primary Standard Button</div>
-      <br />
-      <br />
-      <p>Standard Secondary Button classnames <code>{btnBem(null, 'secondary')}</code></p>
-      <div className={btnBem(null, 'secondary')}>Secondary Standard Button</div>
-      <br />
-      <br />
-      <p>Disabled Button regardless of classnames. Real buttons marked as disabled</p>
-      <button className={btnBem(null, 'secondary')} disabled>Disabled Button</button>
-      <p>or classname className={btnBem(null, 'disabled')}</p>
-      <div className={btnBem(null, ['primary', 'disabled'])}>Disabled Primary Button</div>
-      <br />
-      <br />
-
+      <div className={containerBlock('section')}>
+        <p>Standard Button classnames <code>{btnBem()}</code></p>
+        <div className={btnBem()}>Standard Button</div>
+      </div>
+      <div className={containerBlock('section')}>
+        <p>Standard Primary Button classnames <code>{btnBem(null, 'primary')}</code></p>
+        <div className={btnBem(null, 'primary')}>Primary Standard Button</div>
+      </div>
+      <div className={containerBlock('section')}>
+        <p>Standard Secondary Button classnames <code>{btnBem(null, 'secondary')}</code></p>
+        <div className={btnBem(null, 'secondary')}>Secondary Standard Button</div>
+      </div>
+      <div className={containerBlock('section')}>
+        <p>Disabled Button regardless of classnames. Real buttons marked as disabled</p>
+        <button className={btnBem(null, 'secondary')} disabled>Disabled Button</button>
+        <p>or classname className={btnBem(null, 'disabled')}</p>
+        <div className={btnBem(null, ['primary', 'disabled'])}>Disabled Primary Button</div>
+      </div>
       <h4>Medium Emphasis Buttons - oulined. These should have class <code>btn</code> with the <code>--outline</code> modifier 
       in addition to any other modifiers needed.</h4>
-      <br />
-      <br />
-      <p>Standard Button classnames <code>{btnBem(null, 'outline')}</code></p>
-      <div className={btnBem(null, 'outline')}>Outline Button</div>
-      <br />
-      <br />
-      <p>Standard Primary Button classnames <code>{btnBem(null, ['outline', 'primary'])}</code></p>
-      <div className={btnBem(null, ['outline', 'primary'])}>Primary Outline Button</div>
-      <br />
-      <br />
-      <p>Standard Secondary Button classnames <code>{btnBem(null, ['outline', 'secondary'])}</code></p>
-      <div className={btnBem(null, ['outline', 'secondary'])}>Secondary Outline Button</div>
-      <br />
-      <br />
-      <p>Disabled Button regardless of classnames. Real buttons marked as disabled</p>
-      <button className={btnBem(null, ['outline', 'secondary'])} disabled>Disabled Outline Button</button>
-      <p>or classname className={btnBem(null, ['outline', 'disabled'])}</p>
-      <div className={btnBem(null, ['primary', 'disabled', 'outline'])}>Disabled Primary Outline Button</div>
+      <div className={containerBlock('section')}>
+        <p>Standard Button classnames <code>{btnBem(null, 'outline')}</code></p>
+        <div className={btnBem(null, 'outline')}>Outline Button</div>
+      </div>
+      <div className={containerBlock('section')}>
+        <p>Standard Primary Button classnames <code>{btnBem(null, ['outline', 'primary'])}</code></p>
+       <div className={btnBem(null, ['outline', 'primary'])}>Primary Outline Button</div>
+      </div>
+      <div className={containerBlock('section')}>
+        <p>Standard Secondary Button classnames <code>{btnBem(null, ['outline', 'secondary'])}</code></p>
+        <div className={btnBem(null, ['outline', 'secondary'])}>Secondary Outline Button</div>
+      </div>
+      <div className={containerBlock('section')}>
+        <p>Disabled Button regardless of classnames. Real buttons marked as disabled</p>
+        <button className={btnBem(null, ['outline', 'secondary'])} disabled>Disabled Outline Button</button>
+        <p>or classname className={btnBem(null, ['outline', 'disabled'])}</p>
+        <div className={btnBem(null, ['primary', 'disabled', 'outline'])}>Disabled Primary Outline Button</div>
+      </div>
+      <div className={containerBlock('section')}>
+        <h4>Button Sizing</h4>
+        <p>All buttons can have size modifiers applied to them. Note that any combination of color/style is permitted, not just those shown</p>
+        <div className="cardGrid">
+          <div className="card">
+            <h5>Standard buttons</h5>
+            <p><code>{btnBem(null, 'large')}</code></p>
+            <div className={btnBem(null, 'large')}>Large (default)</div>
+            <br />
+            <p><code>{btnBem(null, ['primary', 'medium'])}</code></p>
+            <div className={btnBem(null, ['primary', 'medium'])}>Medium Button</div>
+            <br />
+            <p><code>{btnBem(null, ['secondary', 'small'])}</code></p>
+            <div className={btnBem(null, ['secondary', 'small'])}>Small Button</div>
+            <br />
+            <p><code>{btnBem(null, ['secondary', 'xSmall'])}</code></p>
+            <button className={btnBem(null, ['secondary', 'xSmall'])} disabled>xSmall Button</button>
+          </div>
+          <div className="card">
+            <h5>Standard buttons</h5>
+            <p><code>{btnBem(null, ['large', 'disabled', 'outline'])}</code></p>
+            <div className={btnBem(null, ['large', 'disabled', 'outline'])}>Large (default)</div>
+            <br />
+            <p><code>{btnBem(null, ['secondary', 'outline', 'medium'])}</code></p>
+            <div className={btnBem(null, ['secondary', 'outline', 'medium'])}>Medium Button</div>
+            <br />
+            <p><code>{btnBem(null, ['outline', 'small'])}</code></p>
+            <div className={btnBem(null, ['outline', 'small'])}>Small Button</div>
+            <br />
+            <p><code>{btnBem(null, ['primary', 'outline', 'xSmall'])}</code></p>
+            <button className={btnBem(null, ['primary', 'outline', 'xSmall'])}>xSmall Button</button>
+          </div>
+          <div className="card">
+            <h5>Sized buttons <code>--sized</code> or <code>btn-tight</code></h5>
+            <p><code>{btnBem(null, ['large', 'secondary', 'sized'])}</code></p>
+            <div className={btnBem(null, ['large', 'secondary', 'sized'])}>Large (default)</div>
+            <br />
+            <p><code>{btnBem(null, ['primary', 'sized', 'outline', 'medium'])}</code></p>
+            <div className={btnBem(null, ['primary', 'sized', 'outline', 'medium'])}>Medium Button</div>
+            <br />
+            <p><code>{btnBem(null, ['outline', 'small', 'sized'])}</code></p>
+            <div className={btnBem(null, ['outline', 'small', 'sized'])}>Small Button</div>
+            <br />
+            <p>button:disabled <code>{btnBem(null, ['sized', 'xSmall'])}</code></p>
+            <button className={btnBem(null, ['primary', 'sized', 'xSmall'])} disabled>xSmall Button</button>
 
-      <h4>Button Sizing</h4>
-      <p>All buttons can have size modifiers applied to them. Note that any combination of color/style is permitted, not just those shown</p>
-      <div className="cardGrid">
-        <div className="card">
-          <h5>Standard buttons</h5>
-          <p><code>{btnBem(null, 'large')}</code></p>
-          <div className={btnBem(null, 'large')}>Large (default)</div>
-          <br />
-          <p><code>{btnBem(null, ['primary', 'medium'])}</code></p>
-          <div className={btnBem(null, ['primary', 'medium'])}>Medium Button</div>
-          <br />
-          <p><code>{btnBem(null, ['secondary', 'small'])}</code></p>
-          <div className={btnBem(null, ['secondary', 'small'])}>Small Button</div>
-          <br />
-          <p><code>{btnBem(null, ['secondary', 'xSmall'])}</code></p>
-          <button className={btnBem(null, ['secondary', 'xSmall'])} disabled>xSmall Button</button>
-        </div>
-        <div className="card">
-          <h5>Standard buttons</h5>
-          <p><code>{btnBem(null, ['large', 'disabled', 'outline'])}</code></p>
-          <div className={btnBem(null, ['large', 'disabled', 'outline'])}>Large (default)</div>
-          <br />
-          <p><code>{btnBem(null, ['secondary', 'outline', 'medium'])}</code></p>
-          <div className={btnBem(null, ['secondary', 'outline', 'medium'])}>Medium Button</div>
-          <br />
-          <p><code>{btnBem(null, ['outline', 'small'])}</code></p>
-          <div className={btnBem(null, ['outline', 'small'])}>Small Button</div>
-          <br />
-          <p><code>{btnBem(null, ['primary', 'outline', 'xSmall'])}</code></p>
-          <button className={btnBem(null, ['primary', 'outline', 'xSmall'])}>xSmall Button</button>
-        </div>
-        <div className="card">
-          <h5>Sized buttons <code>--sized</code> or <code>btn-tight</code></h5>
-          <p><code>{btnBem(null, ['large', 'secondary', 'sized'])}</code></p>
-          <div className={btnBem(null, ['large', 'secondary', 'sized'])}>Large (default)</div>
-          <br />
-          <p><code>{btnBem(null, ['primary', 'sized', 'outline', 'medium'])}</code></p>
-          <div className={btnBem(null, ['primary', 'sized', 'outline', 'medium'])}>Medium Button</div>
-          <br />
-          <p><code>{btnBem(null, ['outline', 'small', 'sized'])}</code></p>
-          <div className={btnBem(null, ['outline', 'small', 'sized'])}>Small Button</div>
-          <br />
-          <p>button:disabled <code>{btnBem(null, ['sized', 'xSmall'])}</code></p>
-          <button className={btnBem(null, ['primary', 'sized', 'xSmall'])} disabled>xSmall Button</button>
-
+          </div>
         </div>
       </div>
-      <br/><br/>
-      <h4>Links</h4>
-      <p>In general, all links are the primary color, except ones inside menus which are the standard body text black color.
-        Specific links can be overridden with other colors as below.
-      </p>
-      <p><a className='text--default'>text--default e.g. for menus</a></p>
-      <p><a className='text--primary'>text--primary for paragraphy text</a></p>
-      <p><a className='text--secondary'>text--secondary</a></p>
-      <p><a className='text--muted'>text--muted - disabled links.</a></p>
-      <p><a className='text--danger'>text--danger - error and verification messages.</a></p>
-
+      <div className={containerBlock('section')}>
+        <h4>Links</h4>
+        <p>In general, all links are the primary color, except ones inside menus which are the standard body text black color.
+          Specific links can be overridden with other colors as below.
+        </p>
+        <p><a className='text--default'>text--default e.g. for menus</a></p>
+        <p><a className='text--primary'>text--primary for paragraphy text</a></p>
+        <p><a className='text--secondary'>text--secondary</a></p>
+        <p><a className='text--muted'>text--muted - disabled links.</a></p>
+        <p><a className='text--danger'>text--danger - error and verification messages.</a></p>
+      </div>
 
     </React.Fragment>)
   }
@@ -596,33 +645,39 @@ class App extends React.Component {
 
   get quantitySection() {
     return this.makeSection("quantity", "Quantity Selector", <React.Fragment>
-      <h4>With single button</h4>
-      <div className={qBem()}>
-        <div className={qBem('minus', {disabled: true})}>&ndash;</div>
-        <div className={qBem('count')}>1</div>
-        <div className={qBem('plus')}>+</div>
-        <div className={qBem('add')}>Add</div>
-      </div>
-
-      <h4>With Icon </h4>
-      <div className={qBem()}>
-        <div className={qBem('label')}>TODO: icon</div>
-        <div className={qBem('minus', { disabled: true })}>&ndash;</div>
-        <div className={qBem('count')}>1</div>
-        <div className={qBem('plus')}>+</div>        
-      </div>
-
-      <h4>With Two Buttons</h4>
-      <div className={qBem()}>
-        <div className={qBem('label')}>QTY:</div>
-        <div className={qBem('minus', { disabled: true })}>&ndash;</div>
-        <div className={qBem('count')}>1</div>
-        <div className={qBem('plus')}>+</div>
-        <div className={qBem('buttons')}>
-          <div className={qBem('cancel')}>Cancel</div>
+      <div className={containerBlock('section')}>
+        <h4>With single button</h4>
+        <div className={qBem()}>
+          <div className={qBem('minus', { disabled: true })}>&ndash;</div>
+          <div className={qBem('count')}>1</div>
+          <div className={qBem('plus')}>+</div>
           <div className={qBem('add')}>Add</div>
         </div>
-        
+      </div>
+
+      <div className={containerBlock('section')}>
+        <h4>With Icon </h4>
+        <div className={qBem()}>
+          <div className={qBem('label')}><i className="icon icon-trash"></i></div>
+          <div className={qBem('minus', { disabled: true })}>&ndash;</div>
+          <div className={qBem('count')}>1</div>
+          <div className={qBem('plus')}>+</div>        
+        </div>
+      </div>
+
+      <div className={containerBlock('section')}>
+        <h4>With Two Buttons</h4>
+        <div className={qBem()}>
+          <div className={qBem('label')}>QTY:</div>
+          <div className={qBem('minus', { disabled: true })}>&ndash;</div>
+          <div className={qBem('count')}>1</div>
+          <div className={qBem('plus')}>+</div>
+          <div className={qBem('buttons')}>
+            <div className={qBem('cancel')}>Cancel</div>
+            <div className={qBem('add')}>Add</div>
+          </div>
+          
+        </div>
       </div>
 
     </React.Fragment>)
@@ -654,18 +709,20 @@ class App extends React.Component {
           <p><span className={nBem(null, ['left', 'error'])}>Error Notification</span></p>
         </div>
       </div>
-      <h4>Product Status Notifications</h4>
-      <p>Two variations for iten status .itemStatus are intended over darker backgrounds</p>
-      <div className="cardGrid">
-        <div className="card bg-muted">
-          <br />
-          <div className="itemStatus itemStatus--unavailable">unavailable</div>
-          <br />  
-        </div>
-        <div className="card bg-muted">
-          <br />
-          <div className="itemStatus itemStatus--inList">In List</div>
-          <br />
+      <div className={containerBlock('section')}>
+        <h4>Product Status Notifications</h4>
+        <p>Two variations for iten status .itemStatus are intended over darker backgrounds</p>
+        <div className="cardGrid">
+          <div className="card bg-muted">
+            <br />
+            <div className="itemStatus itemStatus--unavailable">unavailable</div>
+            <br />  
+          </div>
+          <div className="card bg-muted">
+            <br />
+            <div className="itemStatus itemStatus--inList">In List</div>
+            <br />
+          </div>
         </div>
       </div>
     </React.Fragment>)
@@ -675,49 +732,54 @@ class App extends React.Component {
     const fBem = makeBem('flag');
     const ttBem = makeBem('tooltip');
     return this.makeSection("badges", "Badges & Flags", <React.Fragment>
-      <h4>Badges</h4>
-      <p>Badges are generally used as numerical icons</p>
-      <p>Five <span className='badge'>5</span></p>
-      <p>Thirty four <span className='badge'>34</span></p>
-      <p>Six hundred ninety seven <span className='badge'>697</span></p>
-      <h5>Muted Badges</h5>
-      <p>Thirty four <span className='badge badge--muted-light'>34</span></p>
-      <h4>Flags</h4>
-      <p>There are 4 types of Flags, each my have a tooltip</p>
-      <div className={fBem(null, 'preferred')}>
-        Preferred
-        <div className={ttBem(null)}>
-          <div className={ttBem('body')}>
-            This item is offered by a supplier that offers fast shipping and fair prices.
-          </div>
-        </div>
+      <div className={containerBlock('section')}>
+        <h4>Badges</h4>
+        <p>Badges are generally used as numerical icons</p>
+        <p>Five <span className='badge'>5</span></p>
+        <p>Thirty four <span className='badge'>34</span></p>
+        <p>Six hundred ninety seven <span className='badge'>697</span></p>
       </div>
-      &nbsp;
-      <div className={fBem(null, 'purchasedBefore')}>
-        Purchased Before
-        <div className={ttBem(null)}>
-          <div className={ttBem('body')}>
-            <strong>Purchase 19 days ago</strong>
-            <br />
-            Vendor: <strong>DC Dental</strong>
-          </div>
-        </div>
+      <div className={containerBlock('section')}>
+        <h5>Muted Badges</h5>
+        <p>Thirty four <span className='badge badge--muted-light'>34</span></p>
       </div>
-      &nbsp;
-      <div className={fBem(null, 'bestSeller')}>
-        Best Seller
-        <div className={ttBem(null)}>
-          <div className={ttBem('body')}>
-            This item is offered by a supplier that offers fast shipping and fair prices.
+      <div className={containerBlock('section')}>
+        <h4>Flags</h4>
+        <p>There are 4 types of Flags, each my have a tooltip</p>
+        <div style={{display: "flex", justifyContent: "space-between"}}>
+          <div className={fBem(null, 'preferred')}>
+            Preferred
+            <div className={ttBem(null)}>
+              <div className={ttBem('body')}>
+                This item is offered by a supplier that offers fast shipping and fair prices.
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      &nbsp;
-      <div className={fBem(null, 'promo')}>
-        Promo
-        <div className={ttBem(null, 'right')}>
-          <div className={ttBem('body')}>
-            This item is offered by a supplier that offers fast shipping and fair prices.
+          <div className={fBem(null, 'purchasedBefore')}>
+            Purchased Before
+            <div className={ttBem(null)}>
+              <div className={ttBem('body')}>
+                <strong>Purchase 19 days ago</strong>
+                <br />
+                Vendor: <strong>DC Dental</strong>
+              </div>
+            </div>
+          </div>
+          <div className={fBem(null, 'bestSeller')}>
+            Best Seller
+            <div className={ttBem(null)}>
+              <div className={ttBem('body')}>
+                This item is offered by a supplier that offers fast shipping and fair prices.
+              </div>
+            </div>
+          </div>
+          <div className={fBem(null, 'promo')}>
+            Promo
+            <div className={ttBem(null, 'right')}>
+              <div className={ttBem('body')}>
+                This item is offered by a supplier that offers fast shipping and fair prices.
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -754,22 +816,28 @@ class App extends React.Component {
     const menuBem = makeBem('menu');
     return this.makeSection("forms", "Forms", <React.Fragment>
       <form>
-        <div>
-          <input type="text" id="search" name="search" placeholder="Search" className="search"/>
+        <div className={containerBlock('section')}>
+          <div className="searchBar">
+            <input type="text" className="search" id="search" name="search" placeholder="Search"/>
+            <div className="searchBar-icons">
+              <i className="icon icon-close"></i>
+              <i className="icon icon-search"></i>
+              
+            </div>
+          </div>
         </div>
-        <br /><br /><br />
-        <div>
+        <div className={containerBlock('section')}>
           <label htmlFor="sampleId">Sample Field</label>
           <input type="text" id="sampleId" name="sample" placeholder="hint"/>          
         </div>
-        <br />
-        <div>
+        
+        <div className={containerBlock('section')}>
           <label htmlFor="sampleTextArea">Text Area</label>
           <textarea id="sampleTextArea" placeholder="Write text"></textarea>
         </div>
-        <br/>
-        <div>
-          <div className={menuBem(null, { select: true, expanded: this.isExpanded("exampleSelect")})}>
+      
+        <div className={containerBlock('section')}>
+          <div className={menuBem(null, { select: true, expanded: !this.isExpanded("exampleSelect")})}>
             <div className={menuBem('label')} onClick={this.toggleExpanded.bind(this, "exampleSelect")}>
               Selected Value
             </div>
@@ -778,23 +846,14 @@ class App extends React.Component {
               <div className={menuBem('item')}>Option 2</div>
             </div>
           </div>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-
         </div>
-        <div>
+        <div className={containerBlock('section')}>
           <input type="radio" value="1" id="radio_1" name="radio"></input><label htmlFor="radio_1">Radio 1</label>
           <br/>
           <input type="radio" value="2" id="radio_2" name="radio"></input><label htmlFor="radio_2">Radio 2</label>
         </div>
-        <div>
-          <input type="checkbox" value="1" id="checkbox" name="checkbox"></input><label htmlFor="checkbox">Checkbox</label>          
+        <div className={containerBlock('section')}>
+          <input type="checkbox" value="1" id="checkbox" name="checkbox"></input><label htmlFor="checkbox">Checkbox</label>
         </div>
       </form>
     </React.Fragment>)
@@ -1112,113 +1171,119 @@ class App extends React.Component {
 
   get tablesSection() {
     const main = this.makeSection("tables", "Tables", <React.Fragment>
-      <h4>Headered Tables</h4>
-      <p>These are typical tables with labeled columns. The headers may or may not be interactive. 
-        They may be within a container or exist as their own container.</p>
-      <p>The typography section above is an example of a non-interactive headered table within a container.</p>
-      <h6>Table with interactive header, inside a container</h6>
-      <p>Table header may also include interactive elements for sorting, filtering and selecting</p>
-      <table>
-        <thead className="with-controls">
-          <tr>
-            <th>Torch Order #</th>
-            <th>Vendor</th>
-            <th>Invoice Date</th>
-            <th>Amount</th>
-            <th>Pay <input type="checkbox" /></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              1120
-            </td>
-            <td>
-              Atlanta Dental
-            </td>
-            <td>
-              01/01/2020
-            </td>
-            <td>
-              $244.55
-            </td>
-            <td>
-              <input type="checkbox" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              1120
-            </td>
-            <td>
-              Atlanta Dental
-            </td>
-            <td>
-              01/01/2020
-            </td>
-            <td>
-              $244.55
-            </td>
-            <td>
-              <input type="checkbox" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              1120
-            </td>
-            <td>
-              Atlanta Dental
-            </td>
-            <td>
-              01/01/2020
-            </td>
-            <td>
-              $244.55
-            </td>
-            <td>
-              <input type="checkbox" />
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <h4>Table Toggles</h4>
-      <p>Some headered tables may have sets of radios (buttons on mobile) above for additional filtering.</p>
-      <ul className={tableToggleBem()}>
-        <li className={tableToggleBem('item')}>
-          <div>
-            <span className={tableToggleBem('label')}>
-              Unpaid
-              <span className={tableToggleBem('count')}>(20)</span>
-            </span>
-            <span className={tableToggleBem('details')}>
-              $1,283.33
-            </span>
-          </div>
-        </li>
-        <li className={tableToggleBem('item')}>
-          <div>
-            <span className={tableToggleBem('label')}>
-              Unpaid
-              <span className={tableToggleBem('count')}>(20)</span>
-            </span>
-            <span className={tableToggleBem('details')}>
-              $1,283.33
-            </span>
-          </div>
-        </li>
-        <li className={tableToggleBem('item', 'selected')}>
-          <div>
-            <span className={tableToggleBem('label')}>
-              Unpaid
-              <span className={tableToggleBem('count')}>(20)</span>
-            </span>
-            <span className={tableToggleBem('details')}>
-              $1,283.33
-            </span>
-          </div>
-        </li>
-      </ul>         
+      <div className={containerBlock("section")}>
+        <h4>Headered Tables</h4>
+        <p>These are typical tables with labeled columns. The headers may or may not be interactive. 
+          They may be within a container or exist as their own container.</p>
+        <p>The typography section above is an example of a non-interactive headered table within a container.</p>
+      </div>
+      <div className={containerBlock("section")}>
+        <h6>Table with interactive header, inside a container</h6>
+        <p>Table header may also include interactive elements for sorting, filtering and selecting</p>
+        <table>
+          <thead className="with-controls">
+            <tr>
+              <th>Torch Order # <i className="icon icon-sort"></i></th>
+              <th>Vendor <i className="icon icon-filter"></i></th>
+              <th>Invoice Date <i className="icon icon-sort-up"></i></th>
+              <th>Amount <i className="icon icon-sort-down"></i></th>
+              <th>Pay <input type="checkbox" /></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                1120
+              </td>
+              <td>
+                Atlanta Dental
+              </td>
+              <td>
+                01/01/2020
+              </td>
+              <td>
+                $244.55
+              </td>
+              <td>
+                <input type="checkbox" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                1120
+              </td>
+              <td>
+                Atlanta Dental
+              </td>
+              <td>
+                01/01/2020
+              </td>
+              <td>
+                $244.55
+              </td>
+              <td>
+                <input type="checkbox" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                1120
+              </td>
+              <td>
+                Atlanta Dental
+              </td>
+              <td>
+                01/01/2020
+              </td>
+              <td>
+                $244.55
+              </td>
+              <td>
+                <input type="checkbox" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div className={containerBlock("section")}>
+        <h4>Table Toggles</h4>
+        <p>Some headered tables may have sets of radios (buttons on mobile) above for additional filtering.</p>
+        <ul className={tableToggleBem()}>
+          <li className={tableToggleBem('item')}>
+            <div>
+              <span className={tableToggleBem('label')}>
+                Unpaid
+                <span className={tableToggleBem('count')}>(20)</span>
+              </span>
+              <span className={tableToggleBem('details')}>
+                $1,283.33
+              </span>
+            </div>
+          </li>
+          <li className={tableToggleBem('item')}>
+            <div>
+              <span className={tableToggleBem('label')}>
+                Unpaid
+                <span className={tableToggleBem('count')}>(20)</span>
+              </span>
+              <span className={tableToggleBem('details')}>
+                $1,283.33
+              </span>
+            </div>
+          </li>
+          <li className={tableToggleBem('item', 'selected')}>
+            <div>
+              <span className={tableToggleBem('label')}>
+                Unpaid
+                <span className={tableToggleBem('count')}>(20)</span>
+              </span>
+              <span className={tableToggleBem('details')}>
+                $1,283.33
+              </span>
+            </div>
+          </li>
+        </ul>   
+      </div>      
     </React.Fragment>)
     return <React.Fragment>
       {main}
@@ -1291,30 +1356,40 @@ class App extends React.Component {
 
   }
 
+  get modalsSection() {
+    return this.makeSection("modals", "Modals", <React.Fragment>TBD</React.Fragment>)
+  }
+
+  get iconsSection() {
+    return this.makeSection("icons", "Icons", <React.Fragment>TBD</React.Fragment>)
+  }
+
   render() {
     return <div className="app-root bg-light d-flex">
       <Nav links={links}/>
       <main className="app-body">
-        {this.colorsSection}
-        {this.typographySection}
-        {this.spacingSection}
-        {this.pageLayoutSection}
-        {this.containersSection}
         {this.navSection}
-        {this.buttonsSection}
-        {this.notificationsSection}
-        {this.badgesSection}
-        {this.tooltipsSection}
-        {this.formsSection}
-        {this.messagesSection}
         {this.menuSection}
         {this.cardsSection}
         {this.variantsSection}
         {this.quantitySection}
         {this.tablesSection}
-{/* 
-          ["Tables"],
-      ["Modals"]      */}
+        {this.modalsSection}
+        {this.formsSection}
+        {this.messagesSection}
+
+        {this.buttonsSection}
+        {this.notificationsSection}
+        {this.badgesSection}
+        {this.tooltipsSection}
+        {this.iconsSection}
+
+        {this.typographySection}
+        {this.colorsSection}
+        
+        {this.containersSection}
+        {this.pageLayoutSection}
+        {this.spacingSection}
       </main>
     </div>
   }
