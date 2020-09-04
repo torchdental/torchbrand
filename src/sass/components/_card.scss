@@ -10,6 +10,9 @@ $card-count: 5;
   vertical-align: top;
   grid-template-columns: repeat(auto-fill, minmax($card-min-width, 1fr));
   width: 100%;
+  @include tablet-breakpoint {
+    display: block;
+  }
 }
 
 
@@ -47,6 +50,9 @@ $card-count: 5;
     grid-auto-columns: $card-min-width;
     grid-template-columns: unset;
     width: 100%;    
+    @include tablet-breakpoint {
+      display: block;
+    }
   }
 }
 
@@ -58,6 +64,10 @@ $card-height: 386px;
 $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height - $card-header-height;
 .card {
   @include container-glow;
+  @include tablet-breakpoint {
+    box-shadow: unset;
+    border-bottom: $border--light;
+  }
   background: $color--white;
   padding: $card-padding;
   &-overlay {
@@ -75,6 +85,22 @@ $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height 
       &:before {
         background-color: $color--white;
         opacity: 0.9;
+      }
+    }
+    &:not(.card-overlay--adder) {
+      @include tablet-breakpoint {
+        &:before {
+          background-color: $background-color--light;
+          opacity: 0.4;          
+        }
+        .card-overlayContent {
+          align-items: flex-end;
+          justify-content: flex-end;
+          .btn {
+            width: 200px;
+          }
+          
+        }
       }
     }
     .card-overlayContent {
@@ -97,6 +123,7 @@ $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height 
 }
 .catalogProduct, .catalogProduct-ctr {
   height: $card-height;
+  
   .icon-cart-plus, .icon-favorite {
     cursor: pointer;
   }
@@ -163,6 +190,34 @@ $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height 
     &-availability {
       @extend .details1;
       color: $color--bright;
+    }
+  }
+}
+
+@include tablet-breakpoint {
+  .catalogProduct, .catalogProduct-ctr {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    &-header {
+      width: 100%;
+    }
+    &-flags {
+      margin: 0 $s8;
+      flex-grow: 1;
+    }
+
+    &-image {
+      width: 120px;
+      height: auto;
+      img {
+        height: calc(100% - #{$s14}); //less "view details" line height
+      }
+    }
+    &-body {
+      height: auto;
+      padding-left: $s20;
+      width: calc(100% - 120px);
     }
   }
 }

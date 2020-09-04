@@ -9,6 +9,12 @@
   width: auto;
   color: $color--primary;
   background-color: $color--blue-20;
+  display: flex;
+  padding-left: $s8;
+  padding-right: $s8;
+  .icon:first-child {
+    margin-right: $s8
+  }
   &:hover, &:active {
     color: $color--primary;
     background-color: $color--blue-20;
@@ -78,6 +84,10 @@
   font-weight: bold;
   line-height: $line-height--base;
   
+  @include tablet-breakpoint {
+    width: 200px;
+  }
+
   &--unavailable {
     @include btn--medium;
     color: $color--body-text--secondary;    
@@ -92,5 +102,6 @@
     &:hover, &:active {
       color: $color--secondary;  
     }  
+
   }
 }

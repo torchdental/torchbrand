@@ -83,8 +83,10 @@ export default class Nav extends React.Component {
               </div>
               <div className={menuCn('item')}>
                 <p>Practice information</p>
-                <p className='text--muted details1' >Login and password</p>
-                <p className='text--muted details1'>Contacts and addresses</p>
+                <div className={menuCn("itemDetails")}>
+                  <p className='text--muted details1' >Login and password</p>
+                  <p className='text--muted details1'>Contacts and addresses</p>
+                </div>
               </div>
               <div className={menuCn('item')}>
                 Payment methods
@@ -98,7 +100,7 @@ export default class Nav extends React.Component {
             </div>
             <div className={menuCn('section')}>
               <div className={menuCn('item')}>
-                <i className={'icon icon-messages'}></i>            
+                <i className={'icon icon-messages icon-messages--selected'}></i>            
                 Messages <span className={'badge'}>2</span>            
               </div>              
             </div>
@@ -112,8 +114,9 @@ export default class Nav extends React.Component {
               <div className={menuCn('item')}>
                 <i className={'icon icon-equipment'}></i>
                 Equipment Services
-                <br />
-                <span className='text--muted'>Create request</span>
+                <div className={menuCn("itemDetails")}>
+                  <span className='text--muted'>Create request</span>
+                </div>
               </div>
             </div>
             <div className={menuCn('section')}>

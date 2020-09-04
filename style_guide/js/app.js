@@ -100,6 +100,7 @@ class App extends React.Component {
     this.isExpanded = this.isExpanded.bind(this);
     this.toggleExpanded = this.toggleExpanded.bind(this);
     this.makeSection = this.makeSection.bind(this);
+    this.iconLine = this.iconLine.bind(this);
   }
   
   isExpanded(item) {
@@ -153,8 +154,55 @@ class App extends React.Component {
   </div>
 </nav>`}
             </pre>
+            <h4>Secondary Nav</h4>
+            <p>Secondary nav may include some additional column content</p>
+            <p>TBD does secondary nav stay fixed or should it scroll away? (Assume scrolls esp if items are accessible via top nav dropdown)</p>
+            <pre>
+{`<nav class="navbarSecondary">
+  <ul class="navbarSecondary-nav">
+    <li class="navbarSecondary-item">
+      <a href="url" class="navbar-link navbar-link--active">Item</a>
+    </li>
+    <li class="navbarSecondary-item">
+      <a href="url" class="navbarSecondary-link">Item</a>
+    </li>
+    <li class="navbarSecondary-item">
+      <a href="url" class="navbarSecondary-link">Item</a>
+    </li>
+  </ul>
+  <div class="navbarSecondary-leftCol">
+    Payment Setting: <span class="text--bright">Pay ASAP</span>
+  </div>
+</nav>`}              
+            </pre>
             <h4>Bottom Nav</h4>
-            <p>TBD</p>
+            <p>Bottom nav should be a separate element so the top account and logo can remain.</p>
+            <pre>
+{`<nav class="navbarBottom">
+  <ul class="navbarBottom-nav">
+    <li class="navbarBottom-item">
+      <div class="navbarBottom-icons"><i class="icon icon-shop"></i></div>
+      <div class="navbarBottom-label">Shop</div>
+    </li>
+    <li class="navbarBottom-item navbarBottom-item--selected">
+      <div class="navbarBottom-icons"><i class="icon icon-cart icon-cart--selected"></i><span class="badge">8</span></div>
+      <div class="navbarBottom-label">Cart</div>
+    </li>
+    <li class="navbarBottom-item">
+      <div class="navbarBottom-icons"><i class="icon icon-orders"></i></div>
+      <div class="navbarBottom-label">Orders</div>
+    </li>
+    <li class="navbarBottom-item">
+      <div class="navbarBottom-icons"><i class="icon icon-payments"></i></div>
+      <div class="navbarBottom-label">Payments</div>
+    </li>
+    <li class="navbarBottom-item">
+    <div class="navbarBottom-icons"><i class="icon icon-messages"></i><span class="badge">2</span></div>
+    <div class="navbarBottom-label">Messages</div>
+    </li>
+  </ul>
+</nav>`}              
+            </pre>
           </React.Fragment>)
   }
   
@@ -703,10 +751,10 @@ class App extends React.Component {
         </div>
         <div className="card">
           <p>TODO with icons</p>
-          <p><span className={nBem(null, ['left'])}>Info Notification</span></p>
-          <p><span className={nBem(null, ['left', 'success'])}>Success Notification</span></p>
-          <p><span className={nBem(null, ['left', 'warning'])}>Warning Notification<br />Multi-line</span></p>
-          <p><span className={nBem(null, ['left', 'error'])}>Error Notification</span></p>
+          <p><span className={nBem(null, ['left'])}><i className="icon icon-tooltip icon-tooltip--primary"></i>Info Notification</span></p>
+          <p><span className={nBem(null, ['left', 'success'])}><i className="icon icon-check"></i>Success Notification</span></p>
+          <p><span className={nBem(null, ['left', 'warning'])}><i className="icon icon-warning"></i>Warning Notification<br />Multi-line</span></p>
+          <p><span className={nBem(null, ['left', 'error'])}><i className="icon icon-alert icon-alert--active"></i>Error Notification</span></p>
         </div>
       </div>
       <div className={containerBlock('section')}>
@@ -742,6 +790,18 @@ class App extends React.Component {
       <div className={containerBlock('section')}>
         <h5>Muted Badges</h5>
         <p>Thirty four <span className='badge badge--muted-light'>34</span></p>
+      </div>
+      <div className={containerBlock('section')}>
+        <h5>Step Badges</h5>
+        <div className='badgeStep'>1</div>
+        <div className='badgeStep'>2</div>
+        <div className='badgeStep badgeStep--muted-light'>1</div>
+        <div className='badgeStep badgeStep--muted-light'>2</div>
+        <h5>Smaller Step Badges</h5>
+        <div className='badgeStep badgeStep--small'>1</div>
+        <div className='badgeStep badgeStep--small'>2</div>
+        <div className='badgeStep badgeStep--muted-light badgeStep--small'>1</div>
+        <div className='badgeStep badgeStep--muted-light badgeStep--small'>2</div>
       </div>
       <div className={containerBlock('section')}>
         <h4>Flags</h4>
@@ -1003,9 +1063,10 @@ class App extends React.Component {
             </div>
             <div className={catBem('image')}>
               <img className={productBem('image')} src={imgSrc}/>
+              <div className={catBem('viewDetails')}>View details</div>
+
             </div>
             <div className={catBem('body')}>
-              <div className={catBem('viewDetails')}>View details</div>
               <div className={productBem('title')}>{title}</div>
               <div className={productBem('manufacturer')}>Cetylite Industries, Inc. - 0307</div> 
               <div className="details2 text--muted">More options</div>
@@ -1051,9 +1112,10 @@ class App extends React.Component {
                 </div>
                 <div className={catBem('image')}>
                   <img className={productBem('image')} src={imgSrc} />
+                  <div className={catBem('viewDetails')}>View details</div>
+
                 </div>
                 <div className={catBem('body')}>
-                  <div className={catBem('viewDetails')}>View details</div>
                   <div className={productBem('title')}>{title}</div>
                   <div className={productBem('manufacturer')}>Cetylite Industries, Inc. - 0307</div>
                   <div className="details2 text--muted">More options</div>
@@ -1073,6 +1135,7 @@ class App extends React.Component {
         <div className="scrollContainer-arrow scrollContainer-arrow--right"></div>
       </div>
       <h4 className="pageHeader">Card Overlays</h4>
+      <p>Note that due to mobile differences, the "favorite" interface needs to be specifically indicated as card-overlay--adder</p>
       <div className="cardGrid">
         {[1, 2, 3, 4, 5].map((i) => {
           const favorited = i % 2 == 0;
@@ -1109,9 +1172,9 @@ class App extends React.Component {
             </div>
             <div className={catBem('image')}>
               <img className={productBem('image')} src={imgSrc} />
+              <div className={catBem('viewDetails')}>View details</div>
             </div>
             <div className={catBem('body')}>
-              <div className={catBem('viewDetails')}>View details</div>
               <div className={productBem('title')}>{title}</div>
               <div className={productBem('manufacturer')}>Cetylite Industries, Inc. - 0307</div>
               <div className="details2 text--muted">More options</div>
@@ -1123,7 +1186,7 @@ class App extends React.Component {
                 Eligible for 1-Day Shipping
               </div>
             </div>
-            <div className={cardBem("overlay", {white: favorited})}>
+            <div className={cardBem("overlay", { white: favorited, adder: i == 4 || i == 2})}>
               <div className={cardBem("overlayContent")}>
                 {i == 1 ? <div className="itemStatus itemStatus--inList">In List</div> : null }
                 {i == 2 ? <React.Fragment>
@@ -1360,14 +1423,112 @@ class App extends React.Component {
     return this.makeSection("modals", "Modals", <React.Fragment>TBD</React.Fragment>)
   }
 
+  iconLine(i) {
+    if (Array.isArray(i)) {
+      return <React.Fragment>
+        <h5>{i[0]}{i[2] && " (deprecated)"}</h5>
+        {[i[0], ...i[1].map((m) => `${i[0]}--${m}`)].map((icon) => this.iconLine(icon))}
+      </React.Fragment>
+    }
+    const idx = i.indexOf("--");
+    if (idx && idx > 0) {
+      i = `${i.substr(0, idx)} icon-${i}`
+    }
+    const className = `icon icon-${ i }`
+    return <React.Fragment><i className={className}></i> {className}<br /><br/></React.Fragment>
+  }
+
   get iconsSection() {
-    return this.makeSection("icons", "Icons", <React.Fragment>TBD</React.Fragment>)
+    return this.makeSection("icons", "Icons", <React.Fragment>
+      <p>Some icons use font awesome and other use SVG icons  so there are slightly different options for modifying each one. 
+        Generally the options provided here are the only ones that should be used.</p>
+      <h4>Font Awesome Icons</h4>
+      {
+        ['radio', 'radio--large', 
+        'radio-checked', 'radio-checked--large', 
+        'checkbox', 'checkbox--large', 
+        'checkbox-checked', 'checkbox-checked--large', 
+          'check', 'success', 'check--large', 
+          'check-circle', 'check-circle--large',
+        'search',
+        'sort',
+        'sort-up',
+        'sort-down',
+        'filter'
+        ].map((i) => this.iconLine(i))
+      }
+      <h4>Image Icons</h4>
+      {
+        [
+          ['chat', []],
+          ['tooltip', ['primary', 'active', 'disabled']],
+          ['info', ['primary', 'active', 'disabled'], true],
+          ['warning', ['active', 'disabled']],
+          ['alert', ['active', 'disabled']],
+          ['danger', ['active', 'disabled'], true],
+          ['account', ['active', 'disabled']],
+          ['profile', ['active', 'disabled'], true],
+          ['compose', ['active', 'disabled', 'primary', 'primary icon-compose--active'] ],
+          ['edit', ['active', 'disabled', 'primary', 'primary icon-edit--active'], true],
+          ['equipment', ['active', 'disabled']],
+          ['rewards', ['active', 'disabled']],
+          ['password-show', []],
+          ['visible', [], true],
+          ['password-hide', []],
+          ['invisible', [], true],
+          ['list', []],
+          ['trash', ['active', 'disabled']],
+          ['close', ['active', 'disabled', 'small', 'small icon-close--active', 'small icon-close--disabled']],
+          ['cart-plus', ['active', 'disabled']],
+          ['plus-circle', ['active', 'disabled'], true],
+          ['favorite', ['favorited']],
+          ['star', ['favorited'], true],
+          ['carousel-chevron-right', []],
+          ['carousel-chevron-left', []],
+          ['print', ['selected', 'active', 'disabled']],
+          ['shop', ['selected', 'active', 'disabled']],
+          ['cart', ['selected', 'active', 'disabled']],
+          ['messages', ['selected', 'active', 'disabled']],
+          ['orders', ['selected', 'active', 'disabled']],
+          ['payments', ['selected', 'active', 'disabled']],
+
+        ].map((i) => this.iconLine(i))
+      }
+      <div className="bg-muted">
+      {
+        [
+          ['chevron-right', ['white', 'small', 'small icon-chevron-right--white']]
+        ].map((i) => this.iconLine(i))
+      }
+      </div>
+          
+
+    </React.Fragment>)
   }
 
   render() {
     return <div className="app-root bg-light d-flex">
       <Nav links={links}/>
       <main className="app-body">
+        <nav className="navbarSecondary">
+          <ul className="navbarSecondary-nav">
+            <li className="navbarSecondary-item">
+              <a href="#" className="navbarSecondary-link navbarSecondary-link--active">Invoices</a>
+            </li>
+            <li className="navbarSecondary-item">
+              <a href="#" className="navbarSecondary-link">Charges</a>
+            </li>
+            <li className="navbarSecondary-item">
+              <a href="#" className="navbarSecondary-link">Statements</a>
+            </li>
+          </ul>
+          <div className="navbarSecondary-leftCol">
+            <p>
+              Payment Setting: <span className="text--bright">Pay ASAP</span>&nbsp;
+              <i className="icon icon-tooltip"><div className="tooltip tooltip--right">Tooltip content</div></i>
+            </p>
+          </div>
+        </nav>
         {this.navSection}
         {this.menuSection}
         {this.cardsSection}
@@ -1391,6 +1552,30 @@ class App extends React.Component {
         {this.pageLayoutSection}
         {this.spacingSection}
       </main>
+      <nav class="navbarBottom">
+        <ul class="navbarBottom-nav">
+          <li class="navbarBottom-item">
+            <div class="navbarBottom-icons"><i class="icon icon-shop"></i></div>
+            <div class="navbarBottom-label">Shop</div>
+          </li>
+          <li class="navbarBottom-item navbarBottom-item--selected">
+            <div class="navbarBottom-icons"><i class="icon icon-cart icon-cart--selected"></i><span class="badge">8</span></div>
+            <div class="navbarBottom-label">Cart</div>
+          </li>
+          <li class="navbarBottom-item">
+          <div class="navbarBottom-icons"><i class="icon icon-orders"></i></div>
+          <div class="navbarBottom-label">Orders</div>
+          </li>
+          <li class="navbarBottom-item">
+          <div class="navbarBottom-icons"><i class="icon icon-payments"></i></div>
+          <div class="navbarBottom-label">Payments</div>
+          </li>
+          <li class="navbarBottom-item">
+            <div class="navbarBottom-icons"><i class="icon icon-messages"></i><span class="badge">2</span></div>
+            <div class="navbarBottom-label">Messages</div>
+          </li>
+        </ul>
+      </nav>
     </div>
   }
 }

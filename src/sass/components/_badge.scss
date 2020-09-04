@@ -1,5 +1,5 @@
 
-.badge {
+.badge, .badgeStep {
   padding: 0 6px;
   cursor: default;
   @extend .details1; //s14
@@ -14,6 +14,24 @@
   color: $color--white;
   line-height: 1;
   
+  &--muted-light {
+    background-color: $background-color--medium;
+  }
+}
+
+.badgeStep {
+  background-color: $color--secondary;
+  min-width: $s40;
+  min-height: $s40;
+  font-size: $s24;
+  font-weight: 600;
+  margin-left: $s14;
+  margin-bottom: $s14;
+  &--small {
+    font-size: $s20;
+    min-width: $s32;
+    min-height: $s32;
+  }
   &--muted-light {
     background-color: $background-color--medium;
   }

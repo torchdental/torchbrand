@@ -1,7 +1,7 @@
 /* --- Components --- */
 @import 'layout';
 
-@import 'containers';
+@import 'container';
 
 @import 'card';
 @import 'circle';
@@ -9,13 +9,6 @@
 @import 'flag';
 @import 'tooltip';
 
-
-
-.loading {
-  @extend .icon;
-  @extend .icon--spin;
-  @extend .icon-loading;
-}
 
 
 @import 'modal';
@@ -27,11 +20,11 @@
 
 @import 'button';
 
-@import 'notifications';
+@import 'notification';
 
 
 @import 'nav';
-@import 'messages';
+@import 'message';
 
 
 @import 'variant-selector';

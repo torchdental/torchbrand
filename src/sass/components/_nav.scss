@@ -6,6 +6,9 @@
   display: flex;
   align-items: stretch;
   height: $navbar-height;
+  @include tablet-breakpoint {
+    height: $navbar-height--tablet;
+  }
   padding: 0 0 0 $s20;
   background: $color--blue-90;
 }
@@ -28,6 +31,10 @@
   align-items: stretch;
   padding: 0;
   margin: 0;
+  @include tablet-breakpoint {
+    display: none;
+  }
+  
   .menu {
     &-label {
       &::before {
@@ -45,6 +52,10 @@
       color: $color--white;
       padding-top: $s40;
       padding-bottom: $s40 + 1;
+      @include tablet-breakpoint {
+        padding-top: $s24;
+        padding-bottom: $s24 + 1;
+      }
       font-size: $s20;
       &::before {
         // don't start with up/down because then transforms need to be re-produced
@@ -54,6 +65,35 @@
     &-body {
       width: 270px;
       max-height: calc(100vh - #{$navbar-height});
+      @include tablet-breakpoint {
+        z-index: 10;
+        &:before {
+          z-index: 1;
+          display: block;
+          position: fixed;
+          content: "";
+          width:100vw;
+          top: $navbar-height--tablet;
+          left: 0; bottom: 0; right: 0;
+          background: rgba(0,0,0,.7);
+        }
+        .menu-section {
+          z-index: 2;
+          background: $color--white;
+          .menu-item {
+            display: flex;
+            justify-content: space-between;
+          }
+          .menu-itemDetails {
+            padding-left: $s40;
+            text-align: right
+          }
+        }
+        max-height: calc(100vh - #{$navbar-height--tablet});
+        width: 85vw;
+        max-width: 464px;
+        
+      }
       overflow-y: scroll;
     }
   }
@@ -74,6 +114,8 @@
   color: $color--white;
   text-decoration: none;
   padding: $s40 $s20 $s40 - $s8;
+  
+  
   border-bottom: $s8 solid transparent;
   display: block;
   font-size: $nav-item-font-size;
@@ -128,3 +170,137 @@
   position: absolute;
   font-size: 0.8rem;
 }
+
+.navbarSecondary {
+  height: $navbarSecondary-height;
+  display: flex;
+  border-bottom: $border--light;
+  &-nav {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+    margin-bottom: -1px;
+  }
+  &-leftCol {
+    width: $sideColumnWidth;
+  }
+
+  &-item {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: flex-end;
+    margin: 0;
+    list-style: none;
+    line-height: 1em;
+  }
+  &-link {
+    color: $color--body-text;
+    text-decoration: none;
+    padding: 18px $s10;
+    border-bottom: 3px solid transparent;
+    display: block;
+    font-size: 18px;
+    line-height: 1;
+    &:hover,
+    &:focus,
+    &--active {
+      border-color: $color--primary-active;
+      text-decoration: none;
+      font-weight: 600;
+    }    
+  }
+  @include tablet-breakpoint {
+    z-index: 11;
+    position: fixed;
+    bottom: $navbarBottom-height - 1; //overlap navbar border
+    left: 0; right: 0;
+    background: $background-color--extra-light;
+    border: none;
+    border-top: $border--light;
+    text-transform: uppercase;
+    height: $navbarBottomSecondary-height;
+    &-leftCol {
+      display: none;
+    }
+    &-nav {
+      justify-content: space-between;
+      width: 100%;
+    }
+    &-item {
+      width: 33.33%;
+      flex-grow: 1;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+    }
+    &-link {
+      border: none;
+      width: 100%;
+      text-align: center;
+      &--active {
+        color: $color--primary;
+        background: $color--blue-20;
+      }
+    }
+  }
+}
+
+.navbarBottom {
+  display: none;
+  @include tablet-breakpoint {
+    display: block;
+  }
+  position: fixed;
+  z-index: 10;    
+  bottom: 0; left: 0; right: 0;
+  height: $navbarBottom-height;
+  border-top: $border--light;
+  background-color: white;
+  &-nav {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: -1px;
+  }
+  
+  &-item {
+    padding: $s16 $s20;
+    cursor: pointer;
+    text-align: center;
+    margin: 0;
+    list-style: none;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &--selected {
+      color: $color--primary;
+    }
+  }
+  &-icons {
+    height: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    .icon {
+      &::before {
+        height: $s20;
+      }
+      margin-right: 5px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .badge {
+      position: absolute;
+      left: calc(50% + #{$s10});
+      transform: scale(0.9)
+    }
+  }
+}
+

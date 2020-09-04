@@ -45,91 +45,22 @@
   color: $color--danger;
 }
 
-
-.icon-menu::before { content: '\f141'; font-weight: $font-weight--icons-solid; }
-.icon-notifications::before { content: '\f0f3'; font-weight: $font-weight--icons-solid; }
-.icon-comments::before { content: '\f086'; font-weight: $font-weight--icons-solid; }
-.icon-settings::before { content: '\f013'; font-weight: $font-weight--icons-solid; }
-.icon-profile::before { content: '\f007'; font-weight: $font-weight--icons-solid; }
-.icon-loading::before { content: '\f1ce'; font-weight: $font-weight--icons-solid; }
-
-
-
-.icon-plus::before { content: '\f067'; font-weight: $font-weight--icons-solid; }
-.icon-minus::before { content: '\f068'; font-weight: $font-weight--icons-solid; }
-
-.icon-info::before { content: '\f05a'; font-weight: $font-weight--icons-solid; }
-.icon-inquiry::before { content: '\f059'; font-weight: $font-weight--icons-solid; }
-.icon-success::before { content: '\f058'; font-weight: $font-weight--icons-solid; }
-.icon-danger::before { content: '\f06a'; font-weight: $font-weight--icons-solid; }
-
-.icon-email::before { content: '\f0e0'; font-weight: $font-weight--icons-solid; }
-.icon-phone::before { content: '\f095'; font-weight: $font-weight--icons-solid; }
-.icon-site::before { content: '\f0ac'; font-weight: $font-weight--icons-solid; }
-
-.icon-cart::before { content: '\f07a'; font-weight: $font-weight--icons-solid; }
-.icon-pricing::before { content: '\F4D3'; font-weight: $font-weight--icons-solid; }
-.icon-shipping::before { content: '\f0d1'; font-weight: $font-weight--icons-solid; }
-.icon-delivered::before { content: '\f46c'; font-weight: $font-weight--icons-solid; }
-
-.icon-zoom::before { content: '\f00e'; font-weight: $font-weight--icons-solid; }
-.icon-file::before { content: '\f15b'; font-weight: 400; }
-.icon-send::before { content: '\f1d8'; font-weight: $font-weight--icons-solid; }
-.icon-print::before { content: '\f02f'; font-weight: $font-weight--icons-solid; }
-.icon-rating::before { content: '\f005'; font-weight: $font-weight--icons-solid; }
-.icon-rating-half::before { content: '\f089'; font-weight: $font-weight--icons-solid; }
-
-.icon-add::before { content: '\f055'; font-weight: $font-weight--icons-solid; }
-.icon-remove::before { content: '\f056'; font-weight: $font-weight--icons-solid; }
-.icon-edit::before { content: '\f044'; font-weight: $font-weight--icons-solid; }
-.icon-update::before { content: '\f021'; font-weight: $font-weight--icons-solid; }
-
-.icon-history::before { content: '\f1da'; font-weight: $font-weight--icons-solid; }
-.icon-best-seller::before { content: '\f091'; font-weight: $font-weight--icons-solid; }
-.icon-gift::before { content: '\f06b'; font-weight: $font-weight--icons-solid; }
-
-.icon-checking::before { content: '\f53c'; font-weight: $font-weight--icons-solid; }
-.icon-credit-card::before { content: '\f09d'; font-weight: $font-weight--icons-normal; }
-.icon-dollar-sign::before { content: '\f155'; font-weight: $font-weight--icons-solid; }
-
-.icon-savings::before { content: '\F4D3'; font-weight: $font-weight--icons-solid; }
-.icon-speed::before { content: '\f48b'; font-weight: $font-weight--icons-solid; }
-
-.icon-locked::before { content: '\f023'; font-weight: $font-weight--icons-solid; }
-.icon-unlocked::before { content: '\f09c'; font-weight: $font-weight--icons-solid; }
-.icon-speed::before { content: '\f48b'; font-weight: $font-weight--icons-solid; }
-
-.icon-visible::before { content: '\f06e'; font-weight: $font-weight--icons-solid; }
-.icon-invisible::before { content: '\f070'; font-weight: $font-weight--icons-solid; }
-
-
-.icon-blockquote-deco::before { content: '\f10d'; font-weight: $font-weight--icons-solid; }
-
-.icon-order-delivered::before { content: '\f16b'; font-weight: $font-weight--icons-brand; }
-.icon-hourglass::before { content: '\f254'; font-weight: $font-weight--icons-solid; }
-.icon-box::before { content: '\f466'; font-weight: $font-weight--icons-solid; }
-.icon-warning::before { content: '\f071'; font-weight: $font-weight--icons-solid; }
-.icon-star::before { content: '\f005'; font-weight: $font-weight--icons-solid; }
-.icon-store-alt::before { content: '\f54f'; font-weight: $font-weight--icons-solid}
-.icon-list::before { content: '\f03a'; font-weight: $font-weight--icons-solid}
-.icon-calendar::before { content: '\f073'; font-weight: $font-weight--icons-solid}
-.icon-signal::before { content: '\f012'; font-weight: $font-weight--icons-solid}
-.icon-cart-plus::before { content: '\f217'; font-weight: $font-weight--icons-solid}
-.icon-plus-circle::before { content: '\f055'; font-weight: $font-weight--icons-solid}
-.icon-angle-left::before { content: '\f104'; font-weight: $font-weight--icons-solid}
-.icon-check::before { content: '\f00c'; font-weight: $font-weight--icons-solid}
-
-
-//Reviewed icons:
 .icon-radio::before { content: '\f111'; font-weight: $font-weight--icons-normal; color: $color--primary; font-size: $s24; }
 .icon-radio-checked::before { content: '\f192'; font-weight: $font-weight--icons-normal; color: $color--primary;  font-size: $s24;}
 .icon-checkbox::before { content: '\f0c8'; font-weight: $font-weight--icons-normal;  color: $color--primary;  font-size: $s24;}
 .icon-checkbox-checked::before { content: '\f14a'; font-weight: $font-weight--icons-solid;  color: $color--primary;   font-size: $s24;}
 .icon-search::before { content: '\f002'; font-weight: $font-weight--icons-solid; font-size: 20px; }
 
-.icon-radio, .icon-radio-checked, .icon-checkbox, .icon-checkbox-checked {
+.icon-check::before { content: '\f058'; font-weight: $font-weight--icons-solid; color: $color--secondary}
+.icon-success::before { @extend .icon-check }
+.icon-check-circle::before { content: '\f058'; font-weight: $font-weight--icons-normal; color: $color--secondary}
+
+
+.icon-radio, .icon-radio-checked, .icon-checkbox, .icon-checkbox-checked, .icon-check, .icon-check-circle {
   &--large {
-    font-size: $s32;
+    &::before {
+      font-size: $s32;
+    }
   }
 }
 
@@ -138,10 +69,83 @@
 .icon-sort-down::before { content: '\f0dd'; color: $color--primary; font-size: 16px; }
 .icon-filter::before { content: '\f0b0'; color: $color--primary;  font-size: 12px; }
 
+.icon-info, .icon-tooltip {
+  &::before {
+    @include iconPseudo--image;
+    width: 14px;
+    height: 14px;
+    $icon-color: $color--body-text--secondary;
+    @import "icons/tooltip.svg";    
+  }
+  &--primary {
+    &::before {
+      $icon-color: $color--primary;
+      @import "icons/tooltip.svg";    
+    } 
+  }
+  &--active {
+    &::before {
+      $icon-color: $color--body-text;
+      @import "icons/tooltip.svg";    
+    }  
+  }
+  &--disabled, &--disabled:hover, &--disabled:active {
+    cursor: normal;
+    &::before {
+      $icon-color: $background-color--light;
+      @import "icons/tooltip.svg";    
+    }    
+  }
+}
+
+.icon-warning {
+  &::before {
+    @include iconPseudo--image;
+    width: 18px;
+    height: 18px;
+    $icon-color: $color--body-text;
+    @import "icons/warning.svg";    
+  }
+  &--active {
+    &::before {
+      $icon-color: $color--danger;
+      @import "icons/warning.svg";    
+    }  
+  }
+  &--disabled, &--disabled:hover, &--disabled:active {
+    cursor: normal;
+    &::before {
+      $icon-color: $background-color--light;
+      @import "icons/warning.svg";    
+    }    
+  }
+}
+
+.icon-alert, .icon-danger {
+  &::before {
+    @include iconPseudo--image;
+    width: 18px;
+    height: 18px;
+    $icon-color: $color--body-text;
+    @import "icons/alert.svg";    
+  }
+  &--active {
+    &::before {
+      $icon-color: $color--danger;
+      @import "icons/alert.svg";    
+    }  
+  }
+  &--disabled, &--disabled:hover, &--disabled:active {
+    cursor: normal;
+    &::before {
+      $icon-color: $background-color--light;
+      @import "icons/alert.svg";    
+    }    
+  }
+}
 
 
-
-.icon-account {
+.icon-account, .icon-profile {
   &::before {
     @include iconPseudo--image;
     width: 24px;
@@ -164,28 +168,41 @@
   }
 }
 
-.icon-messages {
+.icon-edit, .icon-compose {
   &::before {
     @include iconPseudo--image;
     width: 20px;
-    height: 15px;
-    $icon-color: $color--primary;
-    @import "icons/messages.svg";    
+    height: 20px;
+    $icon-color: $color--body-text--secondary;
+    @import "icons/compose.svg";    
   }
   &--active {
     &::before {
-      $icon-color: $color--primary-active;
-      @import "icons/messages.svg";    
+      $icon-color: $color--body-text;
+      @import "icons/compose.svg";    
     }  
   }
   &--disabled, &--disabled:hover, &--disabled:active {
     cursor: normal;
     &::before {
       $icon-color: $background-color--light;
-      @import "icons/messages.svg";    
+      @import "icons/compose.svg";    
     }    
   }
+  &--primary {
+    &::before {
+      $icon-color: $color--primary;
+      @import "icons/compose.svg";    
+    }  
+    &.icon-compose--active, &:active, &:hover {
+      &::before {
+        $icon-color: $color--primary-active;
+        @import "icons/compose.svg";    
+      }
+    }
+  }
 }
+
 
 .icon-equipment {
   &::before {
@@ -233,6 +250,33 @@
   }
 }
 
+.icon-visible, .icon-password-show {
+  &::before {
+    @include iconPseudo--image;
+    width: 24px;
+    height: 24px;
+    @import "icons/pswd:show.svg";    
+  }
+}
+.icon-invisible, .icon-password-hide {
+  &::before {
+    @include iconPseudo--image;
+    width: 24px;
+    height: 24px;
+    @import "icons/pswd:hide.svg";    
+  }
+}
+
+.icon-list {
+  &::before {
+    @include iconPseudo--image;
+    width: 20px;
+    height: 20px;
+    @import "icons/list.svg";    
+  }
+}
+
+
 .icon-trash {
   &::before {
     @include iconPseudo--image;
@@ -278,13 +322,15 @@
     }    
   }
   &--small {
-    width: 24px;
-    height: 24px;
+    &::before {
+      width: 24px;
+      height: 24px;
+    }
   }
 }
 
 
-.icon-cart-plus {
+.icon-cart-plus, .icon-plus-circle {
   &::before {
     @include iconPseudo--image;
     width: 30px;
@@ -292,7 +338,7 @@
     $icon-color: $color--secondary;
     @import "icons/cart:add.svg";    
   }
-  &:hover, &:active {
+  &:hover, &:active, &--active {
     &::before {
       $icon-color: $color--secondary-active;
       @import "icons/cart:add.svg";    
@@ -307,7 +353,7 @@
   }
 }
 
-.icon-favorite {
+.icon-favorite, .icon-star {
   &::before {
     @include iconPseudo--image;
     width: 19px;
@@ -324,9 +370,21 @@
   }
 }
 
-// .icon-chevron-up::before { content: '\f077'; font-weight: $font-weight--icons-solid; }
-// .icon-chevron-down::before { content: '\f078'; font-weight: $font-weight--icons-solid; }
-
+// This mixin shouldn't go in standard mixins so
+// it doesn't try to get compiled by the main app
+@mixin icon-carousel-chevron {
+  &::before { 
+    @include iconPseudo--image;
+    width: 52px;
+    height: 52px;
+    @import "icons/carousel:chevron:off.svg";
+  }
+  &:hover, &:active {
+    &::before {
+      @import "icons/carousel:chevron:on.svg";
+    }
+  }
+}
 
 .icon-carousel-chevron-right {
   @include icon-carousel-chevron;
@@ -337,6 +395,16 @@
     transform: rotate(180deg);
   }
 }
+
+.icon-chat {
+  &::before { 
+    @include iconPseudo--image;
+    width: 76px;
+    height: 76px;
+    @import "icons/chat.svg";
+  }
+}
+
 
 .icon-chevron-right {
   $icon-color: $color--body-text;
@@ -365,10 +433,180 @@
     }
   }
 }
-.icon-chevron-left {
+
+.icon-print {
   &::before {
-    @extend .icon-chevron-right;
-    transform: rotate(180deg);
+    @include iconPseudo--image;
+    width: 20px;
+    height: 24px;
+    $icon-color: $color--body-text;
+    @import "icons/print.svg";    
+  }
+  &--selected {
+    &::before {
+      $icon-color: $color--primary;
+      @import "icons/print.svg";    
+    }
+  }
+  &--active {
+    &::before {
+      $icon-color: $color--primary-active;
+      @import "icons/print.svg";    
+    }  
+  }
+  &--disabled, &--disabled:hover, &--disabled:active {
+    cursor: normal;
+    &::before {
+      $icon-color: $background-color--light;
+      @import "icons/print.svg";    
+    }    
   }
 }
 
+
+.icon-shop {
+  &::before {
+    @include iconPseudo--image;
+    width: 22px;
+    height: 20px;
+    $icon-color: $color--body-text;
+    @import "icons/shop.svg";    
+  }
+  &--selected {
+    &::before {
+      $icon-color: $color--primary;
+      @import "icons/shop.svg";    
+    }
+  }
+  &--active {
+    &::before {
+      $icon-color: $color--primary-active;
+      @import "icons/shop.svg";    
+    }  
+  }
+  &--disabled, &--disabled:hover, &--disabled:active {
+    cursor: normal;
+    &::before {
+      $icon-color: $background-color--light;
+      @import "icons/shop.svg";    
+    }    
+  }
+}
+
+
+.icon-cart {
+  &::before {
+    @include iconPseudo--image;
+    width: 22px;
+    height: 20px;
+    $icon-color: $color--body-text;
+    @import "icons/cart.svg";    
+  }
+  &--selected {
+    &::before {
+      $icon-color: $color--primary;
+      @import "icons/cart.svg";    
+    }
+  }
+  &--active {
+    &::before {
+      $icon-color: $color--primary-active;
+      @import "icons/cart.svg";    
+    }  
+  }
+  &--disabled, &--disabled:hover, &--disabled:active {
+    cursor: normal;
+    &::before {
+      $icon-color: $background-color--light;
+      @import "icons/cart.svg";    
+    }    
+  }
+}
+
+
+.icon-messages {
+  &::before {
+    @include iconPseudo--image;
+    width: 20px;
+    height: 15px;
+    $icon-color: $color--body-text;
+    @import "icons/messages.svg";    
+  }
+  &--selected {
+    &::before {
+      $icon-color: $color--primary;
+      @import "icons/messages.svg";    
+    }  
+  }
+  &--active {
+    &::before {
+      $icon-color: $color--primary-active;
+      @import "icons/messages.svg";    
+    }  
+  }
+  &--disabled, &--disabled:hover, &--disabled:active {
+    cursor: normal;
+    &::before {
+      $icon-color: $background-color--light;
+      @import "icons/messages.svg";    
+    }    
+  }
+}
+
+.icon-orders {
+  &::before {
+    @include iconPseudo--image;
+    width: 20px;
+    height: 15px;
+    $icon-color: $color--body-text;
+    @import "icons/orders.svg";    
+  }
+  &--selected {
+    &::before {
+      $icon-color: $color--primary;
+      @import "icons/orders.svg";    
+    }  
+  }
+  &--active {
+    &::before {
+      $icon-color: $color--primary-active;
+      @import "icons/orders.svg";    
+    }  
+  }
+  &--disabled, &--disabled:hover, &--disabled:active {
+    cursor: normal;
+    &::before {
+      $icon-color: $background-color--light;
+      @import "icons/orders.svg";    
+    }    
+  }
+}
+
+.icon-payments {
+  &::before {
+    @include iconPseudo--image;
+    width: 20px;
+    height: 15px;
+    $icon-color: $color--body-text;
+    @import "icons/payments.svg";    
+  }
+  &--selected {
+    &::before {
+      $icon-color: $color--primary;
+      @import "icons/payments.svg";    
+    }  
+  }
+  &--active {
+    &::before {
+      $icon-color: $color--primary-active;
+      @import "icons/payments.svg";    
+    }  
+  }
+  &--disabled, &--disabled:hover, &--disabled:active {
+    cursor: normal;
+    &::before {
+      $icon-color: $background-color--light;
+      @import "icons/payments.svg";    
+    }    
+  }
+}

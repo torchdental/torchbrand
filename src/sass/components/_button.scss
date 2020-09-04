@@ -44,14 +44,3 @@ button,
 .btn-muted:focus:not(:disabled) {
   background-color: darken($color--body-text--secondary, 5%);
 }
-
-
-// TODO: I believe this is only used for the LoadMoreButton component - should probably be renamed to be more specific.
-.spinner {
-  &::before {
-    @extend .icon;
-    @extend .icon-loading;
-    @extend .icon--spin;
-    @extend .icon--color-muted;
-  }
-}

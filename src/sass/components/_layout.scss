@@ -1,8 +1,13 @@
-$gutterWidth: 290px;
 .layout {
   &--gutterLeft, &--gutterRight {
     display: grid;
-    grid-template-columns: $gutterWidth auto;
+    @include tablet-breakpoint {
+      display: block;
+      .layout-main, .layout-gutter {
+        margin: $s24 0;
+      }
+    }
+    grid-template-columns: $sideColumnWidth auto;
     gap: $s32;
     .layout-gutter {
       grid-column: 1;
@@ -12,9 +17,24 @@ $gutterWidth: 290px;
       grid-row: 1;
       grid-column: 2
     }
+    .layout {
+      @media (max-width: $sideColumnWidth * 3 + $s32 * 2) {
+        grid-template-columns: 100%;
+        .layout-gutter, .layout-main {
+          grid-column: 1;
+        }
+        .layout-gutter {
+          grid-row: 1;
+        }
+        .layout-main {
+          grid-row: 2;
+        }
+      }
+
+    }
   }
   &--gutterRight {
-    grid-template-columns: auto $gutterWidth;
+    grid-template-columns: auto $sideColumnWidth;
     .layout-gutter {
       grid-column: 2
     }

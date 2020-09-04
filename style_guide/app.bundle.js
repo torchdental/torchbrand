@@ -601,6 +601,8 @@ var _makeBem2 = _interopRequireDefault(_makeBem);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -682,6 +684,7 @@ var App = function (_React$Component) {
     _this.isExpanded = _this.isExpanded.bind(_this);
     _this.toggleExpanded = _this.toggleExpanded.bind(_this);
     _this.makeSection = _this.makeSection.bind(_this);
+    _this.iconLine = _this.iconLine.bind(_this);
     return _this;
   }
 
@@ -725,6 +728,43 @@ var App = function (_React$Component) {
       );
     }
   }, {
+    key: 'iconLine',
+    value: function iconLine(i) {
+      var _this2 = this;
+
+      if (Array.isArray(i)) {
+        return _react2.default.createElement(
+          _react2.default.Fragment,
+          null,
+          _react2.default.createElement(
+            'h5',
+            null,
+            i[0],
+            i[2] && " (deprecated)"
+          ),
+          [i[0]].concat(_toConsumableArray(i[1].map(function (m) {
+            return i[0] + '--' + m;
+          }))).map(function (icon) {
+            return _this2.iconLine(icon);
+          })
+        );
+      }
+      var idx = i.indexOf("--");
+      if (idx && idx > 0) {
+        i = i.substr(0, idx) + ' icon-' + i;
+      }
+      var className = 'icon icon-' + i;
+      return _react2.default.createElement(
+        _react2.default.Fragment,
+        null,
+        _react2.default.createElement('i', { className: className }),
+        ' ',
+        className,
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null)
+      );
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -734,6 +774,65 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'main',
           { className: 'app-body' },
+          _react2.default.createElement(
+            'nav',
+            { className: 'navbarSecondary' },
+            _react2.default.createElement(
+              'ul',
+              { className: 'navbarSecondary-nav' },
+              _react2.default.createElement(
+                'li',
+                { className: 'navbarSecondary-item' },
+                _react2.default.createElement(
+                  'a',
+                  { href: '#', className: 'navbarSecondary-link navbarSecondary-link--active' },
+                  'Invoices'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: 'navbarSecondary-item' },
+                _react2.default.createElement(
+                  'a',
+                  { href: '#', className: 'navbarSecondary-link' },
+                  'Charges'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: 'navbarSecondary-item' },
+                _react2.default.createElement(
+                  'a',
+                  { href: '#', className: 'navbarSecondary-link' },
+                  'Statements'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'navbarSecondary-leftCol' },
+              _react2.default.createElement(
+                'p',
+                null,
+                'Payment Setting: ',
+                _react2.default.createElement(
+                  'span',
+                  { className: 'text--bright' },
+                  'Pay ASAP'
+                ),
+                '\xA0',
+                _react2.default.createElement(
+                  'i',
+                  { className: 'icon icon-tooltip' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'tooltip tooltip--right' },
+                    'Tooltip content'
+                  )
+                )
+              )
+            )
+          ),
           this.navSection,
           this.menuSection,
           this.cardsSection,
@@ -753,6 +852,94 @@ var App = function (_React$Component) {
           this.containersSection,
           this.pageLayoutSection,
           this.spacingSection
+        ),
+        _react2.default.createElement(
+          'nav',
+          { 'class': 'navbarBottom' },
+          _react2.default.createElement(
+            'ul',
+            { 'class': 'navbarBottom-nav' },
+            _react2.default.createElement(
+              'li',
+              { 'class': 'navbarBottom-item' },
+              _react2.default.createElement(
+                'div',
+                { 'class': 'navbarBottom-icons' },
+                _react2.default.createElement('i', { 'class': 'icon icon-shop' })
+              ),
+              _react2.default.createElement(
+                'div',
+                { 'class': 'navbarBottom-label' },
+                'Shop'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { 'class': 'navbarBottom-item navbarBottom-item--selected' },
+              _react2.default.createElement(
+                'div',
+                { 'class': 'navbarBottom-icons' },
+                _react2.default.createElement('i', { 'class': 'icon icon-cart icon-cart--selected' }),
+                _react2.default.createElement(
+                  'span',
+                  { 'class': 'badge' },
+                  '8'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { 'class': 'navbarBottom-label' },
+                'Cart'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { 'class': 'navbarBottom-item' },
+              _react2.default.createElement(
+                'div',
+                { 'class': 'navbarBottom-icons' },
+                _react2.default.createElement('i', { 'class': 'icon icon-orders' })
+              ),
+              _react2.default.createElement(
+                'div',
+                { 'class': 'navbarBottom-label' },
+                'Orders'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { 'class': 'navbarBottom-item' },
+              _react2.default.createElement(
+                'div',
+                { 'class': 'navbarBottom-icons' },
+                _react2.default.createElement('i', { 'class': 'icon icon-payments' })
+              ),
+              _react2.default.createElement(
+                'div',
+                { 'class': 'navbarBottom-label' },
+                'Payments'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { 'class': 'navbarBottom-item' },
+              _react2.default.createElement(
+                'div',
+                { 'class': 'navbarBottom-icons' },
+                _react2.default.createElement('i', { 'class': 'icon icon-messages' }),
+                _react2.default.createElement(
+                  'span',
+                  { 'class': 'badge' },
+                  '2'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { 'class': 'navbarBottom-label' },
+                'Messages'
+              )
+            )
+          )
         )
       );
     }
@@ -790,12 +977,37 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'h4',
           null,
+          'Secondary Nav'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Secondary nav may include some additional column content'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'TBD does secondary nav stay fixed or should it scroll away? (Assume scrolls esp if items are accessible via top nav dropdown)'
+        ),
+        _react2.default.createElement(
+          'pre',
+          null,
+          '<nav class="navbarSecondary">\n  <ul class="navbarSecondary-nav">\n    <li class="navbarSecondary-item">\n      <a href="url" class="navbar-link navbar-link--active">Item</a>\n    </li>\n    <li class="navbarSecondary-item">\n      <a href="url" class="navbarSecondary-link">Item</a>\n    </li>\n    <li class="navbarSecondary-item">\n      <a href="url" class="navbarSecondary-link">Item</a>\n    </li>\n  </ul>\n  <div class="navbarSecondary-leftCol">\n    Payment Setting: <span class="text--bright">Pay ASAP</span>\n  </div>\n</nav>'
+        ),
+        _react2.default.createElement(
+          'h4',
+          null,
           'Bottom Nav'
         ),
         _react2.default.createElement(
           'p',
           null,
-          'TBD'
+          'Bottom nav should be a separate element so the top account and logo can remain.'
+        ),
+        _react2.default.createElement(
+          'pre',
+          null,
+          '<nav class="navbarBottom">\n  <ul class="navbarBottom-nav">\n    <li class="navbarBottom-item">\n      <div class="navbarBottom-icons"><i class="icon icon-shop"></i></div>\n      <div class="navbarBottom-label">Shop</div>\n    </li>\n    <li class="navbarBottom-item navbarBottom-item--selected">\n      <div class="navbarBottom-icons"><i class="icon icon-cart icon-cart--selected"></i><span class="badge">8</span></div>\n      <div class="navbarBottom-label">Cart</div>\n    </li>\n    <li class="navbarBottom-item">\n      <div class="navbarBottom-icons"><i class="icon icon-orders"></i></div>\n      <div class="navbarBottom-label">Orders</div>\n    </li>\n    <li class="navbarBottom-item">\n      <div class="navbarBottom-icons"><i class="icon icon-payments"></i></div>\n      <div class="navbarBottom-label">Payments</div>\n    </li>\n    <li class="navbarBottom-item">\n    <div class="navbarBottom-icons"><i class="icon icon-messages"></i><span class="badge">2</span></div>\n    <div class="navbarBottom-label">Messages</div>\n    </li>\n  </ul>\n</nav>'
         )
       ));
     }
@@ -2581,6 +2793,7 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'span',
                 { className: nBem(null, ['left']) },
+                _react2.default.createElement('i', { className: 'icon icon-tooltip icon-tooltip--primary' }),
                 'Info Notification'
               )
             ),
@@ -2590,6 +2803,7 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'span',
                 { className: nBem(null, ['left', 'success']) },
+                _react2.default.createElement('i', { className: 'icon icon-check' }),
                 'Success Notification'
               )
             ),
@@ -2599,6 +2813,7 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'span',
                 { className: nBem(null, ['left', 'warning']) },
+                _react2.default.createElement('i', { className: 'icon icon-warning' }),
                 'Warning Notification',
                 _react2.default.createElement('br', null),
                 'Multi-line'
@@ -2610,6 +2825,7 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'span',
                 { className: nBem(null, ['left', 'error']) },
+                _react2.default.createElement('i', { className: 'icon icon-alert icon-alert--active' }),
                 'Error Notification'
               )
             )
@@ -2726,6 +2942,60 @@ var App = function (_React$Component) {
               { className: 'badge badge--muted-light' },
               '34'
             )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: containerBlock('section') },
+          _react2.default.createElement(
+            'h5',
+            null,
+            'Step Badges'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'badgeStep' },
+            '1'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'badgeStep' },
+            '2'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'badgeStep badgeStep--muted-light' },
+            '1'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'badgeStep badgeStep--muted-light' },
+            '2'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
+            'Smaller Step Badges'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'badgeStep badgeStep--small' },
+            '1'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'badgeStep badgeStep--small' },
+            '2'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'badgeStep badgeStep--muted-light badgeStep--small' },
+            '1'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'badgeStep badgeStep--muted-light badgeStep--small' },
+            '2'
           )
         ),
         _react2.default.createElement(
@@ -3318,16 +3588,16 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: catBem('image') },
-                _react2.default.createElement('img', { className: productBem('image'), src: imgSrc })
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: catBem('body') },
+                _react2.default.createElement('img', { className: productBem('image'), src: imgSrc }),
                 _react2.default.createElement(
                   'div',
                   { className: catBem('viewDetails') },
                   'View details'
-                ),
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: catBem('body') },
                 _react2.default.createElement(
                   'div',
                   { className: productBem('title') },
@@ -3433,16 +3703,16 @@ var App = function (_React$Component) {
                   _react2.default.createElement(
                     'div',
                     { className: catBem('image') },
-                    _react2.default.createElement('img', { className: productBem('image'), src: imgSrc })
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: catBem('body') },
+                    _react2.default.createElement('img', { className: productBem('image'), src: imgSrc }),
                     _react2.default.createElement(
                       'div',
                       { className: catBem('viewDetails') },
                       'View details'
-                    ),
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: catBem('body') },
                     _react2.default.createElement(
                       'div',
                       { className: productBem('title') },
@@ -3489,6 +3759,11 @@ var App = function (_React$Component) {
           'h4',
           { className: 'pageHeader' },
           'Card Overlays'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Note that due to mobile differences, the "favorite" interface needs to be specifically indicated as card-overlay--adder'
         ),
         _react2.default.createElement(
           'div',
@@ -3560,16 +3835,16 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: catBem('image') },
-                _react2.default.createElement('img', { className: productBem('image'), src: imgSrc })
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: catBem('body') },
+                _react2.default.createElement('img', { className: productBem('image'), src: imgSrc }),
                 _react2.default.createElement(
                   'div',
                   { className: catBem('viewDetails') },
                   'View details'
-                ),
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: catBem('body') },
                 _react2.default.createElement(
                   'div',
                   { className: productBem('title') },
@@ -3607,7 +3882,7 @@ var App = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'div',
-                { className: cardBem("overlay", { white: favorited }) },
+                { className: cardBem("overlay", { white: favorited, adder: i == 4 || i == 2 }) },
                 _react2.default.createElement(
                   'div',
                   { className: cardBem("overlayContent") },
@@ -4174,10 +4449,39 @@ var App = function (_React$Component) {
   }, {
     key: 'iconsSection',
     get: function get() {
+      var _this3 = this;
+
       return this.makeSection("icons", "Icons", _react2.default.createElement(
         _react2.default.Fragment,
         null,
-        'TBD'
+        _react2.default.createElement(
+          'p',
+          null,
+          'Some icons use font awesome and other use SVG icons  so there are slightly different options for modifying each one. Generally the options provided here are the only ones that should be used.'
+        ),
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Font Awesome Icons'
+        ),
+        ['radio', 'radio--large', 'radio-checked', 'radio-checked--large', 'checkbox', 'checkbox--large', 'checkbox-checked', 'checkbox-checked--large', 'check', 'success', 'check--large', 'check-circle', 'check-circle--large', 'search', 'sort', 'sort-up', 'sort-down', 'filter'].map(function (i) {
+          return _this3.iconLine(i);
+        }),
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Image Icons'
+        ),
+        [['chat', []], ['tooltip', ['primary', 'active', 'disabled']], ['info', ['primary', 'active', 'disabled'], true], ['warning', ['active', 'disabled']], ['alert', ['active', 'disabled']], ['danger', ['active', 'disabled'], true], ['account', ['active', 'disabled']], ['profile', ['active', 'disabled'], true], ['compose', ['active', 'disabled', 'primary', 'primary icon-compose--active']], ['edit', ['active', 'disabled', 'primary', 'primary icon-edit--active'], true], ['equipment', ['active', 'disabled']], ['rewards', ['active', 'disabled']], ['password-show', []], ['visible', [], true], ['password-hide', []], ['invisible', [], true], ['list', []], ['trash', ['active', 'disabled']], ['close', ['active', 'disabled', 'small', 'small icon-close--active', 'small icon-close--disabled']], ['cart-plus', ['active', 'disabled']], ['plus-circle', ['active', 'disabled'], true], ['favorite', ['favorited']], ['star', ['favorited'], true], ['carousel-chevron-right', []], ['carousel-chevron-left', []], ['print', ['selected', 'active', 'disabled']], ['shop', ['selected', 'active', 'disabled']], ['cart', ['selected', 'active', 'disabled']], ['messages', ['selected', 'active', 'disabled']], ['orders', ['selected', 'active', 'disabled']], ['payments', ['selected', 'active', 'disabled']]].map(function (i) {
+          return _this3.iconLine(i);
+        }),
+        _react2.default.createElement(
+          'div',
+          { className: 'bg-muted' },
+          [['chevron-right', ['white', 'small', 'small icon-chevron-right--white']]].map(function (i) {
+            return _this3.iconLine(i);
+          })
+        )
       ));
     }
   }]);
@@ -32918,14 +33222,18 @@ var Nav = function (_React$Component) {
                     'Practice information'
                   ),
                   _react2.default.createElement(
-                    'p',
-                    { className: 'text--muted details1' },
-                    'Login and password'
-                  ),
-                  _react2.default.createElement(
-                    'p',
-                    { className: 'text--muted details1' },
-                    'Contacts and addresses'
+                    'div',
+                    { className: menuCn("itemDetails") },
+                    _react2.default.createElement(
+                      'p',
+                      { className: 'text--muted details1' },
+                      'Login and password'
+                    ),
+                    _react2.default.createElement(
+                      'p',
+                      { className: 'text--muted details1' },
+                      'Contacts and addresses'
+                    )
                   )
                 ),
                 _react2.default.createElement(
@@ -32950,7 +33258,7 @@ var Nav = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { className: menuCn('item') },
-                  _react2.default.createElement('i', { className: 'icon icon-messages' }),
+                  _react2.default.createElement('i', { className: 'icon icon-messages icon-messages--selected' }),
                   'Messages ',
                   _react2.default.createElement(
                     'span',
@@ -32977,11 +33285,14 @@ var Nav = function (_React$Component) {
                   { className: menuCn('item') },
                   _react2.default.createElement('i', { className: 'icon icon-equipment' }),
                   'Equipment Services',
-                  _react2.default.createElement('br', null),
                   _react2.default.createElement(
-                    'span',
-                    { className: 'text--muted' },
-                    'Create request'
+                    'div',
+                    { className: menuCn("itemDetails") },
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'text--muted' },
+                      'Create request'
+                    )
                   )
                 )
               ),

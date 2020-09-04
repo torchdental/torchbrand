@@ -48,23 +48,6 @@
   }
 }
 
-.status-confirm {
-  text-align: center;
-
-  h6 {
-    margin-top: 0;
-  }
-
-  &::before {
-    @extend .icon;
-    @extend .icon-inquiry;
-    @extend .icon--color-primary;
-    display: block;
-    margin-bottom: .5rem;
-    font-size: 2.5em;
-  }
-}
-
 .status-danger {
   text-align: center;
 

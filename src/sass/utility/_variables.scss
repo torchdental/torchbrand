@@ -96,6 +96,11 @@ $s40: 40px;
 
 $nav-item-font-size: 22px;
 $navbar-height: $nav-item-font-size + (2 * $s40);
+$navbar-height--tablet: $nav-item-font-size + (2 * $s24);;
+$navbarSecondary-height: 72px;
+$navbarBottom-height: 70px;
+$navbarBottomSecondary-height: 54px;
+$sideColumnWidth: 290px;
 
 
 $base-font-size: $s16;
@@ -134,10 +139,5 @@ $font-size--level: (
 
 
 // Breakpoints (*Note: prefer to use Breakpoint component to make responsive decisions instead)
-$XS: 0px;
-$SM: 576px;
-$MD: 768px;
-$LG: 992px;
-$XL: 1200px;
-
-
+$breakpoint-desktop--min: 750px;
+$breakpoint-tablet--max: $breakpoint-desktop--min - 1;

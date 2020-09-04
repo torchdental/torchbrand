@@ -16,16 +16,3 @@
   background-size: 100% 100%;
 }
 
-@mixin icon-carousel-chevron {
-  &::before { 
-    @include iconPseudo--image;
-    width: 52px;
-    height: 52px;
-    background-image: url('/assets/images/icons/icon:carousel:chevron:off.svg');    
-  }
-  &:hover, &:active {
-    &::before {
-      background-image: url('/assets/images/icons/icon:carousel:chevron:on.svg');    
-    }
-  }
-}

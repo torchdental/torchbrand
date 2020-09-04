@@ -10,13 +10,14 @@ label,
   user-select: none;
 }
 
+
+
+
 input, textarea, select {
   display: block;
   width: 100%;
   padding: $s8/2 $s8;
-  border: none;
-  border-bottom: 2px solid transparent;
-  border-bottom-color: $color--form-border;
+  @include inputBorder;
   margin: 0;
   background-color: $color--white;
 
@@ -45,20 +46,9 @@ input {
     padding: $s12 $s16;
   }
   &.search {
-    + .icon-search {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: $color--white;
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      width: 40px;
-      background: $color--primary-active;
-      @include border-radius;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
+    @include tablet-breakpoint {
+      padding: $s8 $s16;
+      background: $background-color--extra-light;
     }
   }
 }
@@ -85,6 +75,7 @@ input {
         height: $s20;
         background-position: center;
       }
+      
     }
     .icon-search {
       height: 100%;

@@ -3,23 +3,15 @@
 }
 
 @import 'mixins/icon-mixins';
-@import 'mixins/containers-mixins';
+@import 'mixins/container-mixins';
 @import 'mixins/button-mixins';
+@import 'mixins/form-mixins';
 
-/* --- Icons --- */
-@mixin symbol($_icon) {
-  &:before {
-    content: $_icon;
-    display: inline-block;
-    font-family: $font-family--icons;
-    font-style: normal;
-    font-weight: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+@mixin tablet-breakpoint {
+  @media (max-width: $breakpoint-tablet--max) {
+    @content
   }
 }
-
 
 /* TODO - the below are older mixins and should probably be refactored away */
 @mixin set-breakpoint($min-width) {
@@ -34,10 +26,6 @@
   }
 }
 
-@mixin inputBorder() {
-  border: 2px solid transparent;
-  border-bottom-color: #ccc;
-}
 
 @mixin boxShadow() {
   -webkit-box-shadow: 0px 0px 5px 0px rgba($color--gray-90, 0.25);

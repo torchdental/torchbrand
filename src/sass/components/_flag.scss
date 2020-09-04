@@ -14,6 +14,9 @@
   }
   padding: $s8/2 $s8; //TODO nonstandard OK?
   display: table; //block line wrapping w/out 100% width;
+  @include tablet-breakpoint {
+    display: inline-flex;
+  }
   align-items: center;
   cursor: default;
   

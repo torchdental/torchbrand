@@ -32,12 +32,20 @@
 main, .app-body {
   margin-top: $navbar-height;
   padding: $s16 $s20;
+  @include tablet-breakpoint {
+    margin-top: $navbar-height--tablet;
+    margin-bottom: $navbarBottom-height + $navbarBottomSecondary-height;
+    padding: $s16 0;
+  }
 }
 
 /* --- Other Elements / General --- */
 pre {
   background: $background-color--extra-light;
   padding: $s16 $s20;
+  @include tablet-breakpoint {
+    white-space: pre-line;
+  }
 }
 
 // Offset anchors for fixed nav
