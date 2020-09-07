@@ -31,7 +31,7 @@
     margin-left: $s24;
   }
   &-label {
-    margin-right: $s24;
+    margin-right: $s20;
     color: $color--body-text--secondary;
     font-size: $s14;
   }
@@ -45,6 +45,7 @@
     text-align: center;
     justify-content: center;
   }
+  
   &-buttons {
     padding-top: $s16;
     flex-basis: 100%;    

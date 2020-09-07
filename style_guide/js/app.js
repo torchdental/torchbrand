@@ -11,6 +11,15 @@ const containerBlock = makeBem('container')
 const qBem = makeBem("quantitySelector");
 const layoutBem = makeBem("layout");
 const tableToggleBem = makeBem("tableToggle");
+const menuBem = makeBem("menu");
+
+const cardBem = makeBem('card');
+const catBem = makeBem('card', 'catalogProduct');
+const fBem = makeBem('flag');
+const ttBem = makeBem('tooltip');
+const productBem = makeBem("product");
+const iBem = makeBem("icon");
+
 
 const links = [
   {
@@ -479,21 +488,21 @@ class App extends React.Component {
       <p>There are only 4 layout options (not including gard grids which are a separate layout within these options):</p>
       <ol>
         <li>Full width page - most shop pages and all device layouts</li>
-        <li>Left Gutter - for showing filters</li>
-        <li>Right Gutter - Cart, Checkout, Payments, Account</li>
-        <li>Left Gutter w/Divided main section(s) (nested)</li>
+        <li>Left Column - for showing filters</li>
+        <li>Right Column - Cart, Checkout, Payments, Account</li>
+        <li>Left Column w/Divided main section(s) (nested)</li>
       </ol>
-      <p>Gutters are static widths and main content expands to fill the space.</p>
+      <p>Side Columns are static widths and main content expands to fill the space.</p>
     </React.Fragment>)
 
 
     return <React.Fragment>
       {main}
-      <h3 className="pageHeader">Left Gutter</h3>
-      <div className={layoutBem(null, 'gutterLeft')}>
-        <div className={layoutBem('gutter')}>
+      <h3 className="pageHeader">Left Column</h3>
+      <div className={layoutBem(null, 'colLeft')}>
+        <div className={layoutBem('col')}>
           <section className="container">
-            <p>Gutter Content</p>
+            <p>Column Content</p>
           </section>
         </div>
         <div className={layoutBem('main')}>
@@ -505,14 +514,14 @@ class App extends React.Component {
           </section>
         </div>
       </div>
-      <h3 className="pageHeader">Right Gutter</h3>
-      <div className={layoutBem(null, 'gutterRight')}>
-        <div className={layoutBem('gutter')}>
+      <h3 className="pageHeader">Right Column</h3>
+      <div className={layoutBem(null, 'colRight')}>
+        <div className={layoutBem('col')}>
           <section className="container">
-            <p>Gutter Content</p>
+            <p>Column Content</p>
           </section>
           <section className="container">
-            <p>Gutter Content</p>
+            <p>Column Content</p>
           </section>
         </div>
         <div className={layoutBem('main')}>
@@ -528,28 +537,28 @@ class App extends React.Component {
         </div>
       </div>
       <h3 className="pageHeader">Nested Layout</h3>
-      <div className={layoutBem(null, 'gutterLeft')}>
-        <div className={layoutBem('gutter')}>
+      <div className={layoutBem(null, 'colLeft')}>
+        <div className={layoutBem('col')}>
           <section className="container">
-            <p>Gutter Content</p>
+            <p>Column Content</p>
           </section>
           <section className="container">
-            <p>Gutter Content</p>
+            <p>Column Content</p>
           </section>
         </div>
         <div className={layoutBem('main')}>
           <section className="container">
             <p>Main Container Content</p>
           </section>
-          <div className={layoutBem(null, 'gutterRight')}>
+          <div className={layoutBem(null, 'colRight')}>
             <div className={layoutBem('main')}>
               <section className="container">
                 <p>Main Container Main Content</p>
               </section>
             </div>
-            <div className={layoutBem('gutter')}>
+            <div className={layoutBem('col')}>
               <section className="container">
-                <p>Main Container Gutter </p>
+                <p>Main Container Column </p>
               </section>
             </div>
 
@@ -934,7 +943,6 @@ class App extends React.Component {
   }
 
   get menuSection() {
-    const menuBem = makeBem('menu');
     return this.makeSection("menus", "Menus, Filter & Sort", <React.Fragment>
       <h4>Menus</h4>
       <p>Standard menu with sections.</p>
@@ -994,14 +1002,7 @@ class App extends React.Component {
     </React.Fragment>)
   }
 
-  get cardsSection() {
-    const cardBem = makeBem('card');
-    const catBem = makeBem('card', 'catalogProduct');
-    const fBem = makeBem('flag');
-    const ttBem = makeBem('tooltip');
-    const productBem = makeBem("product");
-    const iBem = makeBem("icon");
-    
+  get cardsSection() {    
     const id = "cards";
     return <section>
       <a className="anchor" id={id}></a>
@@ -1233,6 +1234,98 @@ class App extends React.Component {
   }
 
   get tablesSection() {
+
+    const table = (isContainer) => (<table className={`withControls ${isContainer ? 'container' : ''}`}>
+      <thead className="tablet">
+        <tr>
+          <th colspan="2" className="withMenu">
+            <div className={menuBem(null, { select: true, expanded: !this.isExpanded("exampleTableSort" + isContainer) })}>
+              <div className={menuBem('label')} onClick={this.toggleExpanded.bind(this, "exampleTableSort" + isContainer)}>
+                <span className={menuBem('labelPrefix')}>Sort by</span> Priority
+        </div>
+              <div className={menuBem('body')}>
+                <div className={menuBem('item')}>Date</div>
+                <div className={menuBem('item')}>Order Number</div>
+              </div>
+            </div>
+          </th>
+          <th colspan="2" className="withMenu">
+            <div className={menuBem(null, { select: true, expanded: !this.isExpanded("exampleTableFilter" + isContainer) })}>
+              <div className={menuBem('label')} onClick={this.toggleExpanded.bind(this, "exampleTableFilter" + isContainer)}>
+                <span className={menuBem('labelPrefix')}>Filter by</span> Vendor
+        </div>
+              <div className={menuBem('body')}>
+                <div className={menuBem('item')}>Status</div>
+              </div>
+            </div>
+          </th>
+          <th>Pay <input type="checkbox" /></th>
+        </tr>
+      </thead>
+      <thead className="desktop">
+        <tr>
+          <th>Torch Order # <i className="icon icon-sort"></i></th>
+          <th>Vendor <i className="icon icon-filter"></i></th>
+          <th>Invoice Date <i className="icon icon-sort-up"></i></th>
+          <th>Amount <i className="icon icon-sort-down"></i></th>
+          <th>Pay <input type="checkbox" /></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            1120
+              </td>
+          <td>
+            Atlanta Dental
+              </td>
+          <td>
+            01/01/2020
+              </td>
+          <td>
+            $244.55
+              </td>
+          <td>
+            <input type="checkbox" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1120
+              </td>
+          <td>
+            Atlanta Dental
+              </td>
+          <td>
+            01/01/2020
+              </td>
+          <td>
+            $244.55
+              </td>
+          <td>
+            <input type="checkbox" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1120
+              </td>
+          <td>
+            Atlanta Dental
+              </td>
+          <td>
+            01/01/2020
+              </td>
+          <td>
+            $244.55
+              </td>
+          <td>
+            <input type="checkbox" />
+          </td>
+        </tr>
+      </tbody>
+    </table>)
+
     const main = this.makeSection("tables", "Tables", <React.Fragment>
       <div className={containerBlock("section")}>
         <h4>Headered Tables</h4>
@@ -1243,77 +1336,14 @@ class App extends React.Component {
       <div className={containerBlock("section")}>
         <h6>Table with interactive header, inside a container</h6>
         <p>Table header may also include interactive elements for sorting, filtering and selecting</p>
-        <table>
-          <thead className="with-controls">
-            <tr>
-              <th>Torch Order # <i className="icon icon-sort"></i></th>
-              <th>Vendor <i className="icon icon-filter"></i></th>
-              <th>Invoice Date <i className="icon icon-sort-up"></i></th>
-              <th>Amount <i className="icon icon-sort-down"></i></th>
-              <th>Pay <input type="checkbox" /></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                1120
-              </td>
-              <td>
-                Atlanta Dental
-              </td>
-              <td>
-                01/01/2020
-              </td>
-              <td>
-                $244.55
-              </td>
-              <td>
-                <input type="checkbox" />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                1120
-              </td>
-              <td>
-                Atlanta Dental
-              </td>
-              <td>
-                01/01/2020
-              </td>
-              <td>
-                $244.55
-              </td>
-              <td>
-                <input type="checkbox" />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                1120
-              </td>
-              <td>
-                Atlanta Dental
-              </td>
-              <td>
-                01/01/2020
-              </td>
-              <td>
-                $244.55
-              </td>
-              <td>
-                <input type="checkbox" />
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        {table()}
       </div>
       <div className={containerBlock("section")}>
         <h4>Table Toggles</h4>
         <p>Some headered tables may have sets of radios (buttons on mobile) above for additional filtering.</p>
         <ul className={tableToggleBem()}>
           <li className={tableToggleBem('item')}>
-            <div>
+            <div className={tableToggleBem('itemContent')}>
               <span className={tableToggleBem('label')}>
                 Unpaid
                 <span className={tableToggleBem('count')}>(20)</span>
@@ -1324,7 +1354,7 @@ class App extends React.Component {
             </div>
           </li>
           <li className={tableToggleBem('item')}>
-            <div>
+            <div className={tableToggleBem('itemContent')}>
               <span className={tableToggleBem('label')}>
                 Unpaid
                 <span className={tableToggleBem('count')}>(20)</span>
@@ -1335,7 +1365,7 @@ class App extends React.Component {
             </div>
           </li>
           <li className={tableToggleBem('item', 'selected')}>
-            <div>
+            <div className={tableToggleBem('itemContent')}>
               <span className={tableToggleBem('label')}>
                 Unpaid
                 <span className={tableToggleBem('count')}>(20)</span>
@@ -1345,13 +1375,18 @@ class App extends React.Component {
               </span>
             </div>
           </li>
-        </ul>   
-      </div>      
+        </ul>
+        <div className={containerBlock('section')}>
+          <p>Headered tables may also exist outside of containers as below</p>
+        </div>   
+      </div> 
     </React.Fragment>)
     return <React.Fragment>
       {main}
-      <div className={layoutBem(null, 'gutterLeft')}>
-        <div className={layoutBem('gutter')}>
+      <h3 className="pageHeader">Table outside of container</h3>
+      {table(true)}
+      <div className={layoutBem(null, ['colLeft', 'reverseOrder'])}>
+        <div className={layoutBem('col')}>
           <div className="container">
             <h4 className="pageHeader">
               Order Summary<br/>
@@ -1506,6 +1541,48 @@ class App extends React.Component {
     </React.Fragment>)
   }
 
+  get list() {
+    const listBem = makeBem("list");
+    return <div className={listBem(null, {expanded: !this.isExpanded("list")})}>
+      <div className={listBem('label')} onClick={this.toggleExpanded.bind(this, "list")}>
+        <i className={iBem('list')}></i>
+        <span>View List</span>
+        <div className={"badge"}>20</div>
+      </div>
+      <div className={listBem('body')}>
+        {[1,2,3,4,5,6].map((i) => {
+          const imgSrc = i % 2 == 0 ? '/assets/styleguide/product-portrait.png' : '/assets/styleguide/product-landscape.jpg';
+          const title = i % 2 == 0 ? "Protein Mouthwash Concentrate Fresh Mint 1 oz 3 / Bx" : "Protein Mouthwash Concentrate Fresh Mint 1 oz 3/Bx Protein Mouthwash Concentrate Fresh Mint 1 oz 3/Bx";
+          return <div className={catBem()}>
+            <div className={catBem('image')}>
+              <img className={productBem('image')} src={imgSrc} />
+              <div className={catBem('viewDetails')}>View details</div>
+
+            </div>
+            <div className={catBem('body')}>
+              <div className={productBem('title')}>{title}</div>
+              <div className={productBem('manufacturer')}>Cetylite Industries, Inc. - 0307</div>
+              <div className={qBem()}>
+                <div className={qBem('label')}><i className="icon icon-trash"></i></div>
+                <div className={qBem('minus', { disabled: true })}>&ndash;</div>
+                <div className={qBem('count')}>1</div>
+                <div className={qBem('plus')}>+</div>
+              </div>
+              <div className={productBem('prices')}>
+                <div className={productBem('price', 'torch')}>$16 Torch</div>
+                <div className={productBem('price', 'retail')}>$22 Retail</div>
+              </div>
+              <div className={productBem('availability')}>
+                Eligible for 1-Day Shipping
+                    </div>
+            </div>
+          </div>
+        })}
+        
+      </div>
+    </div>
+  }
+
   render() {
     return <div className="app-root bg-light d-flex">
       <Nav links={links}/>
@@ -1529,6 +1606,7 @@ class App extends React.Component {
             </p>
           </div>
         </nav>
+        {this.list}
         {this.navSection}
         {this.menuSection}
         {this.cardsSection}

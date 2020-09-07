@@ -6,30 +6,12 @@
   &:last-child {
     margin-bottom: 0;
   }
-  /// All h1-3 get cetnered, h4 & below can be left aligne
-  h1, .styleAs-h1, h2, .styleAs-h3, h3, .styleAs-h3 {
-    //text-align: center;
-  }  
 }
 
 .container {
-  //TODO: not sure what a general container should do
-  
-  //maybe?
-  padding: $s14;
+  padding: $s32 $s16;
   background-color: $color--white;
 
-
-  &:not(.container--expandable) > * {
-    margin-top: $s8/2;
-    margin-bottom: $s8/2;
-    &:first-child {
-      margin-top: 0;
-    }
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
 
   &-section {
     margin-top: $s24;
@@ -68,7 +50,7 @@
     .container-header {
       @include container-shadow;
       margin: 0;
-      padding: $s14;
+      padding: $s32 $s16;
       cursor: pointer;
       &::before {
         // don't start with up/down because then transforms need to be re-produced
@@ -82,7 +64,7 @@
     }
     .container-body {
       display: none;
-      padding: $s14 $s14;      
+      padding: $s32 $s16;      
     }
     &.container--expanded {
       .container-header {
@@ -92,6 +74,14 @@
       }
       .container-body {
         display: block;
+      }
+    }
+    @include tablet-breakpoint {
+      .container-header {
+        padding: $s40 $s16;
+      }
+      .container-body {
+        padding: $s40 $s16;   
       }
     }
   }

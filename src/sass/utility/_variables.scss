@@ -67,6 +67,7 @@ $border--dark: 1px solid $color--gray-90;
 $border--light: 1px solid $color--border;
 $border--table: $border--light;
 
+$border-radius: 4px;
 
 $background-color--light: $color--gray-30;
 $background-color--extra-light: $color--gray-20;
@@ -100,7 +101,7 @@ $navbar-height--tablet: $nav-item-font-size + (2 * $s24);;
 $navbarSecondary-height: 72px;
 $navbarBottom-height: 70px;
 $navbarBottomSecondary-height: 54px;
-$sideColumnWidth: 290px;
+$sideColumnWidth: 54px * 3 + $s32 * 2;
 
 
 $base-font-size: $s16;

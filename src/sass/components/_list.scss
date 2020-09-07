@@ -1,0 +1,103 @@
+.list {
+  display: inline-block;
+  margin: $s8 0;
+  &-label {
+    @extend .styleAs-h3;
+    text-align: center;
+    .badge {
+      margin-left: $s12;
+    }
+  }
+  @include desktop-breakpoint {
+    &-label {
+      @include btn;
+      @include btn--small;
+      @include btn--outline;
+      @include btn--sized;
+      background: $color--white;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: $s8 $s12;
+      font-size: $s12;
+      i::before {
+        width: $s12;
+        height: $s12;
+      }
+      span {
+        margin: 0 $s12;
+        font-weight: 600; 
+      }
+      .badge {
+        margin-left: 0;
+      }
+    }
+  }
+  &--expanded {
+    width: 100%;
+    max-width: 340px;    
+    border-radius: $border-radius $border-radius 0 0 ;
+    border: 1px solid $color--gray-50;;
+    .list-label {
+      width: 100%;
+      border: none !important;      
+    }
+    .list-body {
+      display: block;
+      border-radius: 0 0 $border-radius $border-radius;
+    }
+  }
+  &-body {
+    border: 1px solid $color--gray-50;;
+    display: none;
+    position: absolute; 
+    width: calc(100% + 2px);
+    left: -1px;  
+    z-index: 50;     
+    @include mobile-card-layout;
+    .catalogProduct, .catalogProduct-ctr {
+      border-bottom: 1px solid $color--gray-50;;
+      box-shadow: unset;
+      height: auto;
+      padding: $s14;
+      &-image {
+        width: 88px;
+        img {
+          height: auto;
+        }
+      }
+      &-body {
+        width: calc(100% - 88px);
+        padding-left: $s10;
+      }
+    }
+  }
+  @include tablet-breakpoint {
+    width: 100%;
+    max-width: unset;
+    border: none;
+    background: transparent;
+
+    .list-body {
+      z-index: unset;
+      width: 100%;
+      border: none;
+      position: relative;
+    }
+    .list-label {
+      width: 100%;
+      border: none !important;  
+      i {
+        display: none;
+      }    
+      span {
+        text-transform: none;
+      }
+      background: transparent;
+    }
+    .list-body {
+      background: $color--white;
+      display: block;
+    }
+  }
+}

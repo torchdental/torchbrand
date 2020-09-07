@@ -1,15 +1,40 @@
 .layout {
-  &--gutterLeft, &--gutterRight {
+  &--colLeft, &--colRight {
     display: grid;
     @include tablet-breakpoint {
-      display: block;
-      .layout-main, .layout-gutter {
+      display: flex;
+      flex-direction: column;
+      .layout-main, .layout-col {
         margin: $s24 0;
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      &.layout--reverseOrder {
+        .layout-main {
+          order: 1;
+          margin: $s24 0 0 0;
+        }
+        .layout-col {
+          order: 2;
+          margin: 0 0 $s24 0;
+        }
+        &.layout--colRight {
+          .layout-col {
+            order: 1
+          }
+          .layout-main {
+            order: 2
+          }
+        }
       }
     }
     grid-template-columns: $sideColumnWidth auto;
     gap: $s32;
-    .layout-gutter {
+    .layout-col {
       grid-column: 1;
       grid-row: 1;
     }
@@ -18,12 +43,14 @@
       grid-column: 2
     }
     .layout {
-      @media (max-width: $sideColumnWidth * 3 + $s32 * 2) {
+      // Custom breakpoint to ensure nested center column doesn't get too narrow. When screen < 2 columns plus 2 cols plus 2 column width for the main column, 
+      // break into single column for the nested layout.
+      @media (max-width: $sideColumnWidth * 4 + $s32 * 2) {
         grid-template-columns: 100%;
-        .layout-gutter, .layout-main {
+        .layout-col, .layout-main {
           grid-column: 1;
         }
-        .layout-gutter {
+        .layout-col {
           grid-row: 1;
         }
         .layout-main {
@@ -33,9 +60,9 @@
 
     }
   }
-  &--gutterRight {
+  &--colRight {
     grid-template-columns: auto $sideColumnWidth;
-    .layout-gutter {
+    .layout-col {
       grid-column: 2
     }
     .layout-main {

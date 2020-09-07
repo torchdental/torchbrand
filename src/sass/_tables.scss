@@ -1,14 +1,16 @@
 table.container {
   @include container-glow;
+  margin: $s32 0
 }
 
 .summaryTable {
   border-top: $border--table;
-  padding: $s12 0;
+  padding: $s16 0 $s24;
+  margin: $s24 0;
   // Footer is broken out separatelly to allow for border spacing (and not force column wrapping on main table)
   &-footer {
-    margin-top: $s12;
-    padding-top: $s12;
+    margin-top: $s24;
+    padding-top: $s24;
     border-top: $border--table;
   }
   table tbody tr, table tfoot tr {
@@ -64,7 +66,7 @@ th {
   font-weight: normal;
 }
 td {
-  padding: $s16 $s12;
+  padding: $s24 $s12;
   background: $color--white;
 }
 
@@ -73,10 +75,42 @@ thead  {
   th, td {
     vertical-align: bottom;
   }
-  &.with-controls {
-    th, td {
-      background-color: $color--blue-20;  
-      color: $color--primary;
+}
+
+table.withControls {  
+  thead {
+    @include desktop-breakpoint {
+      &.tablet {
+        display: none;
+      }
+      &.desktop {
+        th, td {
+          background-color: $color--blue-20;  
+          color: $color--primary;
+        }    
+      }
+    }
+    @include tablet-breakpoint {
+      th, td {
+        background-color: $color--white;  
+        border: $border--light;
+      }    
+      &.desktop {
+        display: none;
+      }
+      th.withMenu {
+        padding: 0;        
+      }
+      .menu {
+        width: 100%;
+        &-label, &-body {
+          width: 100%;          
+          border-radius: unset;
+        }
+        &-body {
+          top: calc(100% + 1px);
+        }
+      }
     }
   }
 }
@@ -111,7 +145,7 @@ tbody tr:not(:last-of-type) td {
   margin: 0; padding: 0;
   width: 100%;
   @include container-glow;
-
+  height: 50px;
   &-item {
     cursor: pointer;
     flex-grow: 1;
@@ -131,11 +165,13 @@ tbody tr:not(:last-of-type) td {
         @extend .icon-radio-checked;
        }
     }
-    border-right: $border--table;
-    &:last-child {
-      border: none;
+    @include desktop-breakpoint {
+      border-right: $border--table;
+      &:last-child {
+        border: none;
+      }
     }
-
+ 
   }
   &-label {
     @extend .details1;
@@ -149,4 +185,29 @@ tbody tr:not(:last-of-type) td {
   &-details {
     @extend .details2;
   }
+}
+@include tablet-breakpoint {
+  .tableToggle {
+    height: 59px;
+    margin: $s32 0 $s24;
+    box-shadow: unset;      
+    background: transparent;
+    &-item, &-item {
+      @include border-radius;
+      background: white;
+      border: $border--light;
+      margin: 0 $s8;
+      text-align: center;
+      &::before {
+        display: none; 
+      }        
+      &--selected, &--selected {
+        border-color: $color--primary;
+        background-color: $color--blue-20;
+      }
+    }
+    &-itemContent {
+      width: 100%;
+    }
+  }    
 }

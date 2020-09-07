@@ -1,0 +1,38 @@
+$mobileCardBodyWidth: 120px;
+@mixin mobile-card-layout {
+  .catalogProduct, .catalogProduct-ctr {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    padding-top: $s24;
+    &-header {
+      width: 100%;
+      height: auto;
+    }
+    &-flags {
+      margin: 0 $s8;
+      flex-grow: 1;
+      .flag {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    &-image {
+      width: $mobileCardBodyWidth;
+      height: auto;
+    }
+    &-body {
+      height: auto;
+      padding-left: $s20;
+      width: calc(100% - #{$mobileCardBodyWidth});
+      padding-bottom: $s32; // ensure single overlay buttons have their own space and content can still be seen
+    }
+    .product-title {
+      margin-top: 6px;
+    }
+    .product-manufacturer, .details2, .product-prices, .product-availability {
+      margin: 6px;
+    }
+  }
+}

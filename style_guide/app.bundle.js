@@ -613,6 +613,14 @@ var containerBlock = (0, _makeBem2.default)('container');
 var qBem = (0, _makeBem2.default)("quantitySelector");
 var layoutBem = (0, _makeBem2.default)("layout");
 var tableToggleBem = (0, _makeBem2.default)("tableToggle");
+var menuBem = (0, _makeBem2.default)("menu");
+
+var cardBem = (0, _makeBem2.default)('card');
+var catBem = (0, _makeBem2.default)('card', 'catalogProduct');
+var fBem = (0, _makeBem2.default)('flag');
+var ttBem = (0, _makeBem2.default)('tooltip');
+var productBem = (0, _makeBem2.default)("product");
+var iBem = (0, _makeBem2.default)("icon");
 
 var links = [{
   name: "Components",
@@ -833,6 +841,7 @@ var App = function (_React$Component) {
               )
             )
           ),
+          this.list,
           this.navSection,
           this.menuSection,
           this.cardsSection,
@@ -1782,23 +1791,23 @@ var App = function (_React$Component) {
           _react2.default.createElement(
             'li',
             null,
-            'Left Gutter - for showing filters'
+            'Left Column - for showing filters'
           ),
           _react2.default.createElement(
             'li',
             null,
-            'Right Gutter - Cart, Checkout, Payments, Account'
+            'Right Column - Cart, Checkout, Payments, Account'
           ),
           _react2.default.createElement(
             'li',
             null,
-            'Left Gutter w/Divided main section(s) (nested)'
+            'Left Column w/Divided main section(s) (nested)'
           )
         ),
         _react2.default.createElement(
           'p',
           null,
-          'Gutters are static widths and main content expands to fill the space.'
+          'Side Columns are static widths and main content expands to fill the space.'
         )
       ));
 
@@ -1809,21 +1818,21 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'h3',
           { className: 'pageHeader' },
-          'Left Gutter'
+          'Left Column'
         ),
         _react2.default.createElement(
           'div',
-          { className: layoutBem(null, 'gutterLeft') },
+          { className: layoutBem(null, 'colLeft') },
           _react2.default.createElement(
             'div',
-            { className: layoutBem('gutter') },
+            { className: layoutBem('col') },
             _react2.default.createElement(
               'section',
               { className: 'container' },
               _react2.default.createElement(
                 'p',
                 null,
-                'Gutter Content'
+                'Column Content'
               )
             )
           ),
@@ -1853,21 +1862,21 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'h3',
           { className: 'pageHeader' },
-          'Right Gutter'
+          'Right Column'
         ),
         _react2.default.createElement(
           'div',
-          { className: layoutBem(null, 'gutterRight') },
+          { className: layoutBem(null, 'colRight') },
           _react2.default.createElement(
             'div',
-            { className: layoutBem('gutter') },
+            { className: layoutBem('col') },
             _react2.default.createElement(
               'section',
               { className: 'container' },
               _react2.default.createElement(
                 'p',
                 null,
-                'Gutter Content'
+                'Column Content'
               )
             ),
             _react2.default.createElement(
@@ -1876,7 +1885,7 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'Gutter Content'
+                'Column Content'
               )
             )
           ),
@@ -1919,17 +1928,17 @@ var App = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: layoutBem(null, 'gutterLeft') },
+          { className: layoutBem(null, 'colLeft') },
           _react2.default.createElement(
             'div',
-            { className: layoutBem('gutter') },
+            { className: layoutBem('col') },
             _react2.default.createElement(
               'section',
               { className: 'container' },
               _react2.default.createElement(
                 'p',
                 null,
-                'Gutter Content'
+                'Column Content'
               )
             ),
             _react2.default.createElement(
@@ -1938,7 +1947,7 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'Gutter Content'
+                'Column Content'
               )
             )
           ),
@@ -1956,7 +1965,7 @@ var App = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: layoutBem(null, 'gutterRight') },
+              { className: layoutBem(null, 'colRight') },
               _react2.default.createElement(
                 'div',
                 { className: layoutBem('main') },
@@ -1972,14 +1981,14 @@ var App = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'div',
-                { className: layoutBem('gutter') },
+                { className: layoutBem('col') },
                 _react2.default.createElement(
                   'section',
                   { className: 'container' },
                   _react2.default.createElement(
                     'p',
                     null,
-                    'Main Container Gutter '
+                    'Main Container Column '
                   )
                 )
               )
@@ -3266,7 +3275,6 @@ var App = function (_React$Component) {
   }, {
     key: 'menuSection',
     get: function get() {
-      var menuBem = (0, _makeBem2.default)('menu');
       return this.makeSection("menus", "Menus, Filter & Sort", _react2.default.createElement(
         _react2.default.Fragment,
         null,
@@ -3432,13 +3440,6 @@ var App = function (_React$Component) {
   }, {
     key: 'cardsSection',
     get: function get() {
-      var cardBem = (0, _makeBem2.default)('card');
-      var catBem = (0, _makeBem2.default)('card', 'catalogProduct');
-      var fBem = (0, _makeBem2.default)('flag');
-      var ttBem = (0, _makeBem2.default)('tooltip');
-      var productBem = (0, _makeBem2.default)("product");
-      var iBem = (0, _makeBem2.default)("icon");
-
       var id = "cards";
       return _react2.default.createElement(
         'section',
@@ -4019,6 +4020,217 @@ var App = function (_React$Component) {
   }, {
     key: 'tablesSection',
     get: function get() {
+      var _this3 = this;
+
+      var table = function table(isContainer) {
+        return _react2.default.createElement(
+          'table',
+          { className: 'withControls ' + (isContainer ? 'container' : '') },
+          _react2.default.createElement(
+            'thead',
+            { className: 'tablet' },
+            _react2.default.createElement(
+              'tr',
+              null,
+              _react2.default.createElement(
+                'th',
+                { colspan: '2', className: 'withMenu' },
+                _react2.default.createElement(
+                  'div',
+                  { className: menuBem(null, { select: true, expanded: !_this3.isExpanded("exampleTableSort" + isContainer) }) },
+                  _react2.default.createElement(
+                    'div',
+                    { className: menuBem('label'), onClick: _this3.toggleExpanded.bind(_this3, "exampleTableSort" + isContainer) },
+                    _react2.default.createElement(
+                      'span',
+                      { className: menuBem('labelPrefix') },
+                      'Sort by'
+                    ),
+                    ' Priority'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: menuBem('body') },
+                    _react2.default.createElement(
+                      'div',
+                      { className: menuBem('item') },
+                      'Date'
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: menuBem('item') },
+                      'Order Number'
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'th',
+                { colspan: '2', className: 'withMenu' },
+                _react2.default.createElement(
+                  'div',
+                  { className: menuBem(null, { select: true, expanded: !_this3.isExpanded("exampleTableFilter" + isContainer) }) },
+                  _react2.default.createElement(
+                    'div',
+                    { className: menuBem('label'), onClick: _this3.toggleExpanded.bind(_this3, "exampleTableFilter" + isContainer) },
+                    _react2.default.createElement(
+                      'span',
+                      { className: menuBem('labelPrefix') },
+                      'Filter by'
+                    ),
+                    ' Vendor'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: menuBem('body') },
+                    _react2.default.createElement(
+                      'div',
+                      { className: menuBem('item') },
+                      'Status'
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'Pay ',
+                _react2.default.createElement('input', { type: 'checkbox' })
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'thead',
+            { className: 'desktop' },
+            _react2.default.createElement(
+              'tr',
+              null,
+              _react2.default.createElement(
+                'th',
+                null,
+                'Torch Order # ',
+                _react2.default.createElement('i', { className: 'icon icon-sort' })
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'Vendor ',
+                _react2.default.createElement('i', { className: 'icon icon-filter' })
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'Invoice Date ',
+                _react2.default.createElement('i', { className: 'icon icon-sort-up' })
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'Amount ',
+                _react2.default.createElement('i', { className: 'icon icon-sort-down' })
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'Pay ',
+                _react2.default.createElement('input', { type: 'checkbox' })
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'tbody',
+            null,
+            _react2.default.createElement(
+              'tr',
+              null,
+              _react2.default.createElement(
+                'td',
+                null,
+                '1120'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                'Atlanta Dental'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                '01/01/2020'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                '$244.55'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                _react2.default.createElement('input', { type: 'checkbox' })
+              )
+            ),
+            _react2.default.createElement(
+              'tr',
+              null,
+              _react2.default.createElement(
+                'td',
+                null,
+                '1120'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                'Atlanta Dental'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                '01/01/2020'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                '$244.55'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                _react2.default.createElement('input', { type: 'checkbox' })
+              )
+            ),
+            _react2.default.createElement(
+              'tr',
+              null,
+              _react2.default.createElement(
+                'td',
+                null,
+                '1120'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                'Atlanta Dental'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                '01/01/2020'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                '$244.55'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                _react2.default.createElement('input', { type: 'checkbox' })
+              )
+            )
+          )
+        );
+      };
+
       var main = this.makeSection("tables", "Tables", _react2.default.createElement(
         _react2.default.Fragment,
         null,
@@ -4054,139 +4266,7 @@ var App = function (_React$Component) {
             null,
             'Table header may also include interactive elements for sorting, filtering and selecting'
           ),
-          _react2.default.createElement(
-            'table',
-            null,
-            _react2.default.createElement(
-              'thead',
-              { className: 'with-controls' },
-              _react2.default.createElement(
-                'tr',
-                null,
-                _react2.default.createElement(
-                  'th',
-                  null,
-                  'Torch Order # ',
-                  _react2.default.createElement('i', { className: 'icon icon-sort' })
-                ),
-                _react2.default.createElement(
-                  'th',
-                  null,
-                  'Vendor ',
-                  _react2.default.createElement('i', { className: 'icon icon-filter' })
-                ),
-                _react2.default.createElement(
-                  'th',
-                  null,
-                  'Invoice Date ',
-                  _react2.default.createElement('i', { className: 'icon icon-sort-up' })
-                ),
-                _react2.default.createElement(
-                  'th',
-                  null,
-                  'Amount ',
-                  _react2.default.createElement('i', { className: 'icon icon-sort-down' })
-                ),
-                _react2.default.createElement(
-                  'th',
-                  null,
-                  'Pay ',
-                  _react2.default.createElement('input', { type: 'checkbox' })
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'tbody',
-              null,
-              _react2.default.createElement(
-                'tr',
-                null,
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  '1120'
-                ),
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  'Atlanta Dental'
-                ),
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  '01/01/2020'
-                ),
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  '$244.55'
-                ),
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  _react2.default.createElement('input', { type: 'checkbox' })
-                )
-              ),
-              _react2.default.createElement(
-                'tr',
-                null,
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  '1120'
-                ),
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  'Atlanta Dental'
-                ),
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  '01/01/2020'
-                ),
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  '$244.55'
-                ),
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  _react2.default.createElement('input', { type: 'checkbox' })
-                )
-              ),
-              _react2.default.createElement(
-                'tr',
-                null,
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  '1120'
-                ),
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  'Atlanta Dental'
-                ),
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  '01/01/2020'
-                ),
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  '$244.55'
-                ),
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  _react2.default.createElement('input', { type: 'checkbox' })
-                )
-              )
-            )
-          )
+          table()
         ),
         _react2.default.createElement(
           'div',
@@ -4209,7 +4289,7 @@ var App = function (_React$Component) {
               { className: tableToggleBem('item') },
               _react2.default.createElement(
                 'div',
-                null,
+                { className: tableToggleBem('itemContent') },
                 _react2.default.createElement(
                   'span',
                   { className: tableToggleBem('label') },
@@ -4232,7 +4312,7 @@ var App = function (_React$Component) {
               { className: tableToggleBem('item') },
               _react2.default.createElement(
                 'div',
-                null,
+                { className: tableToggleBem('itemContent') },
                 _react2.default.createElement(
                   'span',
                   { className: tableToggleBem('label') },
@@ -4255,7 +4335,7 @@ var App = function (_React$Component) {
               { className: tableToggleBem('item', 'selected') },
               _react2.default.createElement(
                 'div',
-                null,
+                { className: tableToggleBem('itemContent') },
                 _react2.default.createElement(
                   'span',
                   { className: tableToggleBem('label') },
@@ -4273,6 +4353,15 @@ var App = function (_React$Component) {
                 )
               )
             )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: containerBlock('section') },
+            _react2.default.createElement(
+              'p',
+              null,
+              'Headered tables may also exist outside of containers as below'
+            )
           )
         )
       ));
@@ -4281,11 +4370,17 @@ var App = function (_React$Component) {
         null,
         main,
         _react2.default.createElement(
+          'h3',
+          { className: 'pageHeader' },
+          'Table outside of container'
+        ),
+        table(true),
+        _react2.default.createElement(
           'div',
-          { className: layoutBem(null, 'gutterLeft') },
+          { className: layoutBem(null, ['colLeft', 'reverseOrder']) },
           _react2.default.createElement(
             'div',
-            { className: layoutBem('gutter') },
+            { className: layoutBem('col') },
             _react2.default.createElement(
               'div',
               { className: 'container' },
@@ -4449,7 +4544,7 @@ var App = function (_React$Component) {
   }, {
     key: 'iconsSection',
     get: function get() {
-      var _this3 = this;
+      var _this4 = this;
 
       return this.makeSection("icons", "Icons", _react2.default.createElement(
         _react2.default.Fragment,
@@ -4465,7 +4560,7 @@ var App = function (_React$Component) {
           'Font Awesome Icons'
         ),
         ['radio', 'radio--large', 'radio-checked', 'radio-checked--large', 'checkbox', 'checkbox--large', 'checkbox-checked', 'checkbox-checked--large', 'check', 'success', 'check--large', 'check-circle', 'check-circle--large', 'search', 'sort', 'sort-up', 'sort-down', 'filter'].map(function (i) {
-          return _this3.iconLine(i);
+          return _this4.iconLine(i);
         }),
         _react2.default.createElement(
           'h4',
@@ -4473,16 +4568,119 @@ var App = function (_React$Component) {
           'Image Icons'
         ),
         [['chat', []], ['tooltip', ['primary', 'active', 'disabled']], ['info', ['primary', 'active', 'disabled'], true], ['warning', ['active', 'disabled']], ['alert', ['active', 'disabled']], ['danger', ['active', 'disabled'], true], ['account', ['active', 'disabled']], ['profile', ['active', 'disabled'], true], ['compose', ['active', 'disabled', 'primary', 'primary icon-compose--active']], ['edit', ['active', 'disabled', 'primary', 'primary icon-edit--active'], true], ['equipment', ['active', 'disabled']], ['rewards', ['active', 'disabled']], ['password-show', []], ['visible', [], true], ['password-hide', []], ['invisible', [], true], ['list', []], ['trash', ['active', 'disabled']], ['close', ['active', 'disabled', 'small', 'small icon-close--active', 'small icon-close--disabled']], ['cart-plus', ['active', 'disabled']], ['plus-circle', ['active', 'disabled'], true], ['favorite', ['favorited']], ['star', ['favorited'], true], ['carousel-chevron-right', []], ['carousel-chevron-left', []], ['print', ['selected', 'active', 'disabled']], ['shop', ['selected', 'active', 'disabled']], ['cart', ['selected', 'active', 'disabled']], ['messages', ['selected', 'active', 'disabled']], ['orders', ['selected', 'active', 'disabled']], ['payments', ['selected', 'active', 'disabled']]].map(function (i) {
-          return _this3.iconLine(i);
+          return _this4.iconLine(i);
         }),
         _react2.default.createElement(
           'div',
           { className: 'bg-muted' },
           [['chevron-right', ['white', 'small', 'small icon-chevron-right--white']]].map(function (i) {
-            return _this3.iconLine(i);
+            return _this4.iconLine(i);
           })
         )
       ));
+    }
+  }, {
+    key: 'list',
+    get: function get() {
+      var listBem = (0, _makeBem2.default)("list");
+      return _react2.default.createElement(
+        'div',
+        { className: listBem(null, { expanded: !this.isExpanded("list") }) },
+        _react2.default.createElement(
+          'div',
+          { className: listBem('label'), onClick: this.toggleExpanded.bind(this, "list") },
+          _react2.default.createElement('i', { className: iBem('list') }),
+          _react2.default.createElement(
+            'span',
+            null,
+            'View List'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: "badge" },
+            '20'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: listBem('body') },
+          [1, 2, 3, 4, 5, 6].map(function (i) {
+            var imgSrc = i % 2 == 0 ? '/assets/styleguide/product-portrait.png' : '/assets/styleguide/product-landscape.jpg';
+            var title = i % 2 == 0 ? "Protein Mouthwash Concentrate Fresh Mint 1 oz 3 / Bx" : "Protein Mouthwash Concentrate Fresh Mint 1 oz 3/Bx Protein Mouthwash Concentrate Fresh Mint 1 oz 3/Bx";
+            return _react2.default.createElement(
+              'div',
+              { className: catBem() },
+              _react2.default.createElement(
+                'div',
+                { className: catBem('image') },
+                _react2.default.createElement('img', { className: productBem('image'), src: imgSrc }),
+                _react2.default.createElement(
+                  'div',
+                  { className: catBem('viewDetails') },
+                  'View details'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: catBem('body') },
+                _react2.default.createElement(
+                  'div',
+                  { className: productBem('title') },
+                  title
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: productBem('manufacturer') },
+                  'Cetylite Industries, Inc. - 0307'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: qBem() },
+                  _react2.default.createElement(
+                    'div',
+                    { className: qBem('label') },
+                    _react2.default.createElement('i', { className: 'icon icon-trash' })
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: qBem('minus', { disabled: true }) },
+                    '\u2013'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: qBem('count') },
+                    '1'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: qBem('plus') },
+                    '+'
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: productBem('prices') },
+                  _react2.default.createElement(
+                    'div',
+                    { className: productBem('price', 'torch') },
+                    '$16 Torch'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: productBem('price', 'retail') },
+                    '$22 Retail'
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: productBem('availability') },
+                  'Eligible for 1-Day Shipping'
+                )
+              )
+            );
+          })
+        )
+      );
     }
   }]);
 

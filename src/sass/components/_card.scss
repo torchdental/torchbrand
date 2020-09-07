@@ -67,6 +67,7 @@ $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height 
   @include tablet-breakpoint {
     box-shadow: unset;
     border-bottom: $border--light;
+    
   }
   background: $color--white;
   padding: $card-padding;
@@ -107,6 +108,9 @@ $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height 
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       padding: $s20;
+      @include tablet-breakpoint {
+        padding-bottom: $s8;
+      }
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -116,6 +120,9 @@ $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height 
         &:last-child {
           margin-bottom: 0;
         }
+      }
+      h6 {
+        margin-bottom: $s16;
       }
     }
   }
@@ -131,16 +138,19 @@ $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height 
     height: $card-header-height;
     display: flex;
     align-items: center;
+    @include tablet-breakpoint {
+      height: auto;
+    }
   }
   &-flags {
     margin: 0 $s8;
     flex-grow: 1;
   }
   &-image, &-imageCtr {
-    height: 140px;
+    cursor: pointer;
     width: 100%;
     img {
-      height: 100%;
+      height: 140px;
       width: 100%;
       object-fit: contain;
     }
@@ -155,9 +165,13 @@ $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height 
     @extend .text--muted;
     margin-top: 3px;
   }
+  .details2 {
+    cursor: pointer;    
+  }
 
   .product{
     &-title {
+      cursor: pointer;
       margin-top: 12px; //Custom spacing for product cards
       font-weight: bold;
       max-height: $line-height--base * 3;// 3 lines
@@ -166,10 +180,12 @@ $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height 
       // TODO: https://css-tricks.com/line-clampin/
     }
     &-manufacturer {
-       margin-top: 4px;
-       @extend .details1;
-       font-weight: normal;
+      cursor: pointer;
+      margin-top: 4px;
+      @extend .details1;
+      font-weight: normal;
     }
+    
     &-prices {
       margin-top: 9px; //Custom spacing for product cards
       display: flex;
@@ -195,29 +211,5 @@ $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height 
 }
 
 @include tablet-breakpoint {
-  .catalogProduct, .catalogProduct-ctr {
-    display: flex;
-    flex-wrap: wrap;
-    height: auto;
-    &-header {
-      width: 100%;
-    }
-    &-flags {
-      margin: 0 $s8;
-      flex-grow: 1;
-    }
-
-    &-image {
-      width: 120px;
-      height: auto;
-      img {
-        height: calc(100% - #{$s14}); //less "view details" line height
-      }
-    }
-    &-body {
-      height: auto;
-      padding-left: $s20;
-      width: calc(100% - 120px);
-    }
-  }
+  @include mobile-card-layout;  
 }
