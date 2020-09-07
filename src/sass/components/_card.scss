@@ -173,7 +173,6 @@ $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height 
     &-title {
       cursor: pointer;
       margin-top: 12px; //Custom spacing for product cards
-      font-weight: bold;
       max-height: $line-height--base * 3;// 3 lines
       overflow: hidden;
       text-overflow: ellipsis;
@@ -182,30 +181,10 @@ $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height 
     &-manufacturer {
       cursor: pointer;
       margin-top: 4px;
-      @extend .details1;
-      font-weight: normal;
     }
     
     &-prices {
       margin-top: 9px; //Custom spacing for product cards
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
-    &-price {
-      margin: 0 $s16 0 0;
-      &--torch {
-        @extend .subheader;
-        @extend .styleAs-strong;
-        @extend .text--primary;          
-      }
-      &--retail {
-        @extend .text--strikethrough;        
-      }
-    }
-    &-availability {
-      @extend .details1;
-      color: $color--bright;
     }
   }
 }

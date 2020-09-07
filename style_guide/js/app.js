@@ -1455,7 +1455,105 @@ class App extends React.Component {
   }
 
   get modalsSection() {
-    return this.makeSection("modals", "Modals", <React.Fragment>TBD</React.Fragment>)
+    const modalBem = makeBem("modal");
+    return this.makeSection("modals", "Modals", <React.Fragment>
+      <p>Click <button className="btn btn--primary btn--sized btn--small" onClick={this.toggleExpanded.bind(this, "productModal")}>here</button> for a sample modal</p>
+      <div id="productModal" className={modalBem(null, {open: this.isExpanded("productModal")})}>
+        <div className={"productInfoModal product " + modalBem('body')}>
+          <div className="productInfoModal-contentTop layout--colLeft ">
+            <div className="productInfoModal-contentLeft layout-col">
+              <div class="productInfoModal-imageCtr">
+                <div class="productInfoModal-icons">
+                  <i class="icon icon-favorite icon--color-favorite"></i>
+                </div>
+                <div class="image-ctr image-ctr--info">
+                  <img src="https://torchimages-staging.imgix.net/product_images/d484df39-b01f-43a7-b586-ee9b1da48147.png?fit=max&amp;w=1000&amp;h=1000&amp;lossless=0" alt="KC300 Procedure Masks w/Visor 25/Bx" />                  
+                </div>
+                <span className="details2 text--muted">View larger image</span>
+              </div>
+            </div>
+            <div className="productInfoModal-textCtr layout-main">
+                <div class="productInfoModal-productName product-title">KC300 Procedure Masks w/Visor 25/Bx</div>
+                <div className="layout layout--colRight layout--reverseOrder">
+                  <div className="layout-main">
+                    <div className="productInfoModal-mfrInfo product-manufacturer">Halyard (KC Healthcare) - 28800</div>
+                    <div className="productInfoModal-variantSelector">
+                      <div className="productInfoModal-selectedVariant">Shade: A1</div>
+                      <div className="variantSelector">
+                        <div className="variantBtn">option</div>
+                        <div className="variantBtn variantBtn--selected">A1</div>
+                        <div className="variantBtn variantBtn--unavailable">unavailable option</div>
+                        <div className="variantBtn">option</div>
+                        <div className="variantBtn">option</div>
+                        <div className="variantBtn">option</div>
+                        <div className="variantBtn">option</div>
+
+                      </div>
+                    </div>
+                    <div className="productInfoModal-variantSelector">
+                      <div className="productInfoModal-selectedVariant">Size: Large</div>
+                      <div className="variantSelector">
+                        <div className="variantBtn">Small</div>
+                        <div className="variantBtn variantBtn--selected">Large</div>
+                        <div className="variantBtn variantBtn--unavailable">X-Large</div>
+                        
+                      </div>
+                    </div>
+                    <div className="productInfoModal-recentlyOrdered">
+                      Purchaesd 10, 19 days ago (DC Dental) <span className="flag flag--preferred">Preferred</span>
+                    </div>
+                    <div className="productInfoModal-productPrice product-prices">
+                      <div className="catalogProduct-price productInfoModal-price product-price product-price--torch">
+                        $24
+                      </div>
+                      <div className="catalogProduct-price productInfoModal-price product-price product-price--retail">
+                        Retail $25
+                      </div>
+                    </div>
+                    <div className={productBem('availability')}>Eligible for 1-Day Shipping</div>
+                  </div>
+                  <div className="layout-col productInfoModal-addToListCard">
+                    <div className="card">
+                      <div className="productInfoModal-addToListSection">
+                        <div className="productInfoModal-addCtr">
+                          <div className="catalogProduct-price productInfoModal-price product-prices">
+                            <div className="product-price product-price--torch">$24.00</div>
+                            <div className="product-price product-price--retail">Retail $25.00</div>
+                          </div>
+                          <div className={fBem(null, 'preferred')}>Preferred</div>
+                          <div className={productBem('availability')}>Eligible for 1-Day Shipping</div>
+                        </div>
+                        <div className="addProductControls">
+                          <div className="addProductControls-qtyHeader">Quantity:</div>
+                          <div className={qBem()}>
+                            <div className={qBem('minus', { disabled: true })}>&ndash;</div>
+                            <div className={qBem('count')}>1</div>
+                            <div className={qBem('plus')}>+</div>
+                            <div className={qBem('add')}>Add</div>
+                          </div>
+                        </div>
+                        <button className="btn btn--primary">Add To List</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="productInfoModal-productDetails">
+            <div class="productDetails">
+              <div class="productDetails-header">Product Detail</div>
+              <div class="productTab-content">
+                <div class="raw_html">
+                  <p>KC300 Fluidshield masks now meet the ASTM F2100-11 Level 3 standard. Designed to provide high fluid resistance. If the fluid risk involves potential splash and splatter, use the procedure mask with a wraparound visor version for added protection.  </p>
+                  <ul><li>Refill Pack</li><li>25/Bx</li><li>Orange/Earloop</li></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-closer" onClick={this.toggleExpanded.bind(this, "productModal")}></div>
+      </div>
+    </React.Fragment>)
   }
 
   iconLine(i) {
@@ -1572,9 +1670,7 @@ class App extends React.Component {
                 <div className={productBem('price', 'torch')}>$16 Torch</div>
                 <div className={productBem('price', 'retail')}>$22 Retail</div>
               </div>
-              <div className={productBem('availability')}>
-                Eligible for 1-Day Shipping
-                    </div>
+              <div className={productBem('availability')}>Eligible for 1-Day Shipping</div>
             </div>
           </div>
         })}

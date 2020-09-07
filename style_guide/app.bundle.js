@@ -4535,10 +4535,307 @@ var App = function (_React$Component) {
   }, {
     key: 'modalsSection',
     get: function get() {
+      var modalBem = (0, _makeBem2.default)("modal");
       return this.makeSection("modals", "Modals", _react2.default.createElement(
         _react2.default.Fragment,
         null,
-        'TBD'
+        _react2.default.createElement(
+          'p',
+          null,
+          'Click ',
+          _react2.default.createElement(
+            'button',
+            { className: 'btn btn--primary btn--sized btn--small', onClick: this.toggleExpanded.bind(this, "productModal") },
+            'here'
+          ),
+          ' for a sample modal'
+        ),
+        _react2.default.createElement(
+          'div',
+          { id: 'productModal', className: modalBem(null, { open: this.isExpanded("productModal") }) },
+          _react2.default.createElement(
+            'div',
+            { className: "productInfoModal product " + modalBem('body') },
+            _react2.default.createElement(
+              'div',
+              { className: 'productInfoModal-contentTop layout--colLeft ' },
+              _react2.default.createElement(
+                'div',
+                { className: 'productInfoModal-contentLeft layout-col' },
+                _react2.default.createElement(
+                  'div',
+                  { 'class': 'productInfoModal-imageCtr' },
+                  _react2.default.createElement(
+                    'div',
+                    { 'class': 'productInfoModal-icons' },
+                    _react2.default.createElement('i', { 'class': 'icon icon-favorite icon--color-favorite' })
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { 'class': 'image-ctr image-ctr--info' },
+                    _react2.default.createElement('img', { src: 'https://torchimages-staging.imgix.net/product_images/d484df39-b01f-43a7-b586-ee9b1da48147.png?fit=max&w=1000&h=1000&lossless=0', alt: 'KC300 Procedure Masks w/Visor 25/Bx' })
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'details2 text--muted' },
+                    'View larger image'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'productInfoModal-textCtr layout-main' },
+                _react2.default.createElement(
+                  'div',
+                  { 'class': 'productInfoModal-productName product-title' },
+                  'KC300 Procedure Masks w/Visor 25/Bx'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'layout layout--colRight layout--reverseOrder' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'layout-main' },
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'productInfoModal-mfrInfo product-manufacturer' },
+                      'Halyard (KC Healthcare) - 28800'
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'productInfoModal-variantSelector' },
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'productInfoModal-selectedVariant' },
+                        'Shade: A1'
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'variantSelector' },
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'variantBtn' },
+                          'option'
+                        ),
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'variantBtn variantBtn--selected' },
+                          'A1'
+                        ),
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'variantBtn variantBtn--unavailable' },
+                          'unavailable option'
+                        ),
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'variantBtn' },
+                          'option'
+                        ),
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'variantBtn' },
+                          'option'
+                        ),
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'variantBtn' },
+                          'option'
+                        ),
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'variantBtn' },
+                          'option'
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'productInfoModal-variantSelector' },
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'productInfoModal-selectedVariant' },
+                        'Size: Large'
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'variantSelector' },
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'variantBtn' },
+                          'Small'
+                        ),
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'variantBtn variantBtn--selected' },
+                          'Large'
+                        ),
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'variantBtn variantBtn--unavailable' },
+                          'X-Large'
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'productInfoModal-recentlyOrdered' },
+                      'Purchaesd 10, 19 days ago (DC Dental) ',
+                      _react2.default.createElement(
+                        'span',
+                        { className: 'flag flag--preferred' },
+                        'Preferred'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'productInfoModal-productPrice product-prices' },
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'catalogProduct-price productInfoModal-price product-price product-price--torch' },
+                        '$24'
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'catalogProduct-price productInfoModal-price product-price product-price--retail' },
+                        'Retail $25'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: productBem('availability') },
+                      'Eligible for 1-Day Shipping'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'layout-col productInfoModal-addToListCard' },
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'card' },
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'productInfoModal-addToListSection' },
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'productInfoModal-addCtr' },
+                          _react2.default.createElement(
+                            'div',
+                            { className: 'catalogProduct-price productInfoModal-price product-prices' },
+                            _react2.default.createElement(
+                              'div',
+                              { className: 'product-price product-price--torch' },
+                              '$24.00'
+                            ),
+                            _react2.default.createElement(
+                              'div',
+                              { className: 'product-price product-price--retail' },
+                              'Retail $25.00'
+                            )
+                          ),
+                          _react2.default.createElement(
+                            'div',
+                            { className: fBem(null, 'preferred') },
+                            'Preferred'
+                          ),
+                          _react2.default.createElement(
+                            'div',
+                            { className: productBem('availability') },
+                            'Eligible for 1-Day Shipping'
+                          )
+                        ),
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'addProductControls' },
+                          _react2.default.createElement(
+                            'div',
+                            { className: 'addProductControls-qtyHeader' },
+                            'Quantity:'
+                          ),
+                          _react2.default.createElement(
+                            'div',
+                            { className: qBem() },
+                            _react2.default.createElement(
+                              'div',
+                              { className: qBem('minus', { disabled: true }) },
+                              '\u2013'
+                            ),
+                            _react2.default.createElement(
+                              'div',
+                              { className: qBem('count') },
+                              '1'
+                            ),
+                            _react2.default.createElement(
+                              'div',
+                              { className: qBem('plus') },
+                              '+'
+                            ),
+                            _react2.default.createElement(
+                              'div',
+                              { className: qBem('add') },
+                              'Add'
+                            )
+                          )
+                        ),
+                        _react2.default.createElement(
+                          'button',
+                          { className: 'btn btn--primary' },
+                          'Add To List'
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { 'class': 'productInfoModal-productDetails' },
+              _react2.default.createElement(
+                'div',
+                { 'class': 'productDetails' },
+                _react2.default.createElement(
+                  'div',
+                  { 'class': 'productDetails-header' },
+                  'Product Detail'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { 'class': 'productTab-content' },
+                  _react2.default.createElement(
+                    'div',
+                    { 'class': 'raw_html' },
+                    _react2.default.createElement(
+                      'p',
+                      null,
+                      'KC300 Fluidshield masks now meet the ASTM F2100-11 Level 3 standard. Designed to provide high fluid resistance. If the fluid risk involves potential splash and splatter, use the procedure mask with a wraparound visor version for added protection.  '
+                    ),
+                    _react2.default.createElement(
+                      'ul',
+                      null,
+                      _react2.default.createElement(
+                        'li',
+                        null,
+                        'Refill Pack'
+                      ),
+                      _react2.default.createElement(
+                        'li',
+                        null,
+                        '25/Bx'
+                      ),
+                      _react2.default.createElement(
+                        'li',
+                        null,
+                        'Orange/Earloop'
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          ),
+          _react2.default.createElement('div', { 'class': 'modal-closer', onClick: this.toggleExpanded.bind(this, "productModal") })
+        )
       ));
     }
   }, {

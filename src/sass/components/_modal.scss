@@ -1,106 +1,119 @@
-
-// Modals & Dropdowns
-// This class gets placed on the body element when the modal is open
-.close {
-  @extend .icon;
-  @extend .icon-close;
-}
-
-.overlay {
-  background: rgba(0, 0, 0, .7);
-}
-
-.lock-scroll {
-  overflow: hidden;
-}
-
-// Reset inherited styles
-.modal,
-.dropdown-content {
-  font-family: $font-family--primary;
-  font-weight: $font-weight--primary-normal;
-  font-style: normal;
-  font-size: 1rem;
-  line-height: $line-height--base;
-  text-decoration: none;
-  text-transform: none;
-  text-align: left;
-  white-space: normal;
-  cursor: auto;
-}
-
-.modal-backdrop,
-.dropdown-backdrop {
-  @extend .overlay;
-  position: fixed;
-  z-index: 1040;
-  overflow-x: hidden;
-  overflow-y: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 0 15px;
-}
-
-.modal-backdrop--center {
-  display: flex;
-  align-items: center;
-}
-
-.modal-closer {
-  position: absolute;
-  z-index: 1055;
-  top: 1rem;
-  right: 1rem;
-  display: block;
-  width: 1.2rem;
-  height: 1.5rem;
-  color: $color--body-text--secondary;
-  font-size: 1.5rem;
-  line-height: 1;
-  cursor: pointer;
-
-  @extend .close;
-
-  &:hover,
-  &:focus {
-    color: $color--body-text;
-  }
-}
-
 .modal {
-  @extend .card;
-  position: relative;
-  z-index: 1050;
-  width: 100%;
-  max-width: 600px;
-  margin: 30px auto;
-
-  & > *:first-child {
-    margin-top: 0;
+  display: none;
+  &--open {
+    display: block;
   }
-
-  & > *:last-child {
-    margin-bottom: 0;
+  position: fixed;
+  top: $s40;
+  left: $s40;
+  right: $s40;
+  max-height: calc(100vh - #{$s40 + $s16});
+  overflow-y: scroll;
+  z-index: 1000;
+  &::before {
+    content: "";
+    display: block;
+    z-index: 999;
+    position: fixed; top: 0; bottom: 0; left: 0; right: 0;
+    background: rgba(0, 0, 0, .7);
   }
-
-  &.modal--sm {
-    max-width: 450px;
+  &-body {
+    z-index: 1000;
+    background: $color--white;
+    padding: $s24;
+    @include tablet-breakpoint {
+      padding: $s40 $s24;      
+    }
   }
+  &-closer {
+    position: absolute;
+    z-index: 1055;
+    top: $s24;
+    right: $s24;
+    display: block;
+    cursor: pointer;
 
-  &.modal--lg {
-    max-width: 750px;
+    @extend .icon;
+    @extend .icon-close;
+    @include desktop-breakpoint {
+      //equal to  @extend .icon-close--small;
+      &::before {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  
+    &:hover,
+    &:focus {
+      color: $color--body-text;
+    }
   }
-
-  &.modal--xl {
+  &--fit-content {
+    left: auto;
+    right: auto;
     width: fit-content;
-    max-width: 85%;
-    padding: 1rem;
-    margin: 0 auto;
+  }
+}
+
+
+// TODO: This type of thing will need to be set up for each modal type
+.productInfoModal {
+  &-productName {
+    margin-bottom: $s8;
+  }
+  &-mfrInfo {
+    padding-bottom: $s10;
+    border-bottom: $border--light;
+    margin-bottom: $s16;
   }
 
-  &.modal--fit-content {
-    max-width: fit-content;
+  &-selectedVariant {
+    font-weight: 600;
+    margin-bottom :$s8;
+  }
+  &-variantSelector {
+    .variantBtn {
+      margin-bottom: $s16;
+    }
+    margin-bottom: $s8;
+  }
+  &-recentlyOrdered {
+    font-weight: 600;
+    margin-bottom: $s8;
+    .flag {
+      display: inline-flex;
+    }
+  }
+  .product {
+    &-prices {
+      margin: 8px 0;      
+    }
+    &-price--torch {
+      font-size: $s20;
+      font-weight: normal;
+    }
+  }
+  &-addToListCard {
+    margin-top: $s24;      
+    .card {
+      padding-top: $s24;
+    }
+    .addProductControls {
+      margin-top: $s32;
+      margin-bottom: $s16;
+    }
+  }
+  &-productDetails {
+    margin-top: $s32;
+  }
+  .productDetails {
+    &-header {
+      @extend .styleAs-h6;
+      font-weight: 600;
+      margin-bottom: $s8;
+    }
+    ul {
+      margin: $s8 0;
+    }
   }
 }

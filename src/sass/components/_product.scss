@@ -1,0 +1,31 @@
+.product {
+    &-title {
+      font-weight: bold;
+    }
+    &-manufacturer {
+      @extend .details1;
+      font-weight: normal;
+    }
+    
+    &-prices {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    &-price {
+      margin: 0 $s16 0 0;
+      &--torch {
+        @extend .subheader;
+        @extend .styleAs-strong;
+        @extend .text--primary;          
+      }
+      &--retail {
+        @extend .text--strikethrough;        
+      }
+    }
+    &-availability {
+      @extend .details1;
+      color: $color--bright;
+    }    
+
+  }
