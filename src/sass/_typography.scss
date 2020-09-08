@@ -12,6 +12,9 @@ html, body {
     text-align: center;
     margin-top: $mTop;
     margin-bottom: $mBottom;
+    // TODO: decide whether headers should have a per-level margin or should be consistent margins like below.
+    margin-top: $s24;
+    margin-bottom: $s32;
     &:first-child {
       margin-top: 0;
     }
@@ -268,26 +271,6 @@ em {
 
 .text--muted, .text-muted {
   color: $color--body-text--secondary  !important;
-
-  a, .styleAs-a {
-    color: inherit;
-    text-decoration: underline;
-  }
-}
-
-
-
-.text-savings {
-  color: $color--savings;
-
-  a, .styleAs-a {
-    color: inherit;
-    text-decoration: underline;
-  }
-}
-
-.text-capitalize {
-  text-transform: capitalize;
 
   a, .styleAs-a {
     color: inherit;

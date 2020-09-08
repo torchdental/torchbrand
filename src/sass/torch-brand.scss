@@ -3,6 +3,9 @@
  *  This file is auto-generated from torch-brand.scss
  */
 
+// TODO generally replace @extend with @import and create mixins for better-controlled reuse.
+    
+
 // Import css reset
 @import 'reset';
 @import 'utility/all';
@@ -19,7 +22,7 @@
 
 
 @import 'components/all';
-@import 'breakpoints/all';
+
 
 @import 'utility-classes';
 
@@ -54,11 +57,14 @@ pre {
   visibility: hidden;
   top: -$navbar-height;
   position: relative;
+  @include tablet-breakpoint {
+    top: $navbar-height--tablet;
+  }
 }
 
 code {
   padding: $s8 / 2;
-  background: $color--light;
+  background: $background-color--light;
   @include border-radius;
   line-height: 1em;
   white-space: pre-line;
@@ -69,8 +75,8 @@ code {
 }
 
 *::selection {
-  background-color: $color--secondary;
-  color: $color--bright;
+  background-color: $color--primary-active;
+  color: $color--white;
 }
 
 *[tabindex="-1"] {

@@ -8,39 +8,3 @@ button,
 .btn-minor, .btn-outline, .btn--outline {
   @include btn--outline;
 }
-
-
-
-
-.btn-blue {
-  background-color: $color--secondary;
-  border-color: transparent;
-  color: $color--bright;
-}
-
-.btn-blue:hover:not(:disabled),
-.btn-blue:focus:not(:disabled) {
-  background-color: darken($color--secondary, 15%);
-}
-
-//.btn-minor-alt {
-//  background: $color--bright;
-//  border-color: transparent;
-//  color: $color--body-text--secondary;
-//}
-//
-//.btn-minor-alt:hover:not(:disabled),
-//.btn-minor-alt:focus:not(:disabled) {
-//  background-color: darken($color--light, 5%);
-//}
-
-.btn-muted {
-  background: $color--body-text--secondary;
-  border-color: transparent;
-  color: #000;
-}
-
-.btn-muted:hover:not(:disabled),
-.btn-muted:focus:not(:disabled) {
-  background-color: darken($color--body-text--secondary, 5%);
-}

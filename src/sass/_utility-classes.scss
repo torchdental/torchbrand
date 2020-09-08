@@ -1,4 +1,16 @@
 /* --- Utilities --- */
+
+
+.bg-light {
+  background-color:  $background-color--light;
+}
+
+//TODO: possibly torch-credit should be it's own component so it can stay consistently-named across usage? Or just change usage in app to be text--bright
+.torch-credit {
+  @extend .text--bright;
+}
+
+//NOTE: These align-items utilies have been left in case they're helpful for building out column layouts in modals.
 .align-items-equally {
   display: flex;
   flex-wrap: nowrap;
@@ -44,59 +56,3 @@
   align-items: center;
 }
 
-
-
-// Background Variations
-// .bg-bright {
-//   background-color: $color--bright;
-// }
-
-.bg-light {
-  background-color: $color--light;
-}
-
-.bg-primary {
-  background-color: $color--primary;
-}
-
-.bg-secondary {
-  background-color: $color--secondary;
-}
-
-.bg-tertiary {
-  background-color: $color--tertiary;
-}
-
-.bg-quaternary {
-  background-color: $color--quaternary;
-}
-
-.bg-muted {
-  background-color: $color--body-text--secondary;
-}
-
-.torch-credit{
-  color: $color--primary;
-}
-
-// Material design box shadows - taken from
-// https://codepen.io/sdthornton/pen/wBZdXq
-.shadow-z1 {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-.shadow-z2 {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-
-.shadow-z3 {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
-
-.shadow-z4 {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
-.shadow-z5 {
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-}

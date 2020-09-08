@@ -48,15 +48,10 @@
       color: $color--body-text;
     }
   }
-  &--fit-content {
-    left: auto;
-    right: auto;
-    width: fit-content;
-  }
 }
 
 
-// TODO: This type of thing will need to be set up for each modal type
+// NOTE: This type of thing will need to be set up for each modal type
 .productInfoModal {
   &-productName {
     margin-bottom: $s8;

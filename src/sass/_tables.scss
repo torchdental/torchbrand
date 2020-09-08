@@ -27,7 +27,7 @@ table.container {
       }
     }
     &.summaryTable-rollup {
-      font-weight: bold;
+      font-weight: $font-weight--primary-bold;
       td {
         padding-top: $s16/2;
         padding-bottom: $s16/2;

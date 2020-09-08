@@ -1,35 +1,23 @@
 /* --- Components --- */
 @import 'layout';
-
 @import 'container';
 
-@import 'circle';
+@import 'button';
 @import 'badge';
 @import 'flag';
 @import 'tooltip';
-
-@import 'card';
-@import 'list';
-
-
-@import 'modal';
-@import 'menu';
-
-
-
+@import 'notification';
 @import 'status';
 
-@import 'button';
-
-@import 'notification';
-
-
 @import 'nav';
+@import 'list';
+@import 'menu';
+@import 'card';
+@import 'variant-selector';
+@import 'quantity-selector';
 @import 'message';
 
 
-@import 'variant-selector';
-
-@import 'quantity-selector';
+@import 'modal';
 
 @import 'product';

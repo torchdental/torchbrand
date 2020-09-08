@@ -12,7 +12,7 @@
   &:first-child {
     margin-top: 0;
   }
-  padding: $s8/2 $s8; //TODO nonstandard OK?
+  padding: $s8/2 $s8;
   display: table; //block line wrapping w/out 100% width;
   @include tablet-breakpoint {
     display: inline-flex;

@@ -1,76 +1,37 @@
-// Statuses
-.status-loading {
-  text-align: center;
 
-  h6 {
-    margin-top: 0;
+.itemStatus {
+  @include btn;
+  cursor: default;
+  text-transform: none;
+  background: $color--white;
+  &:hover, &:active {
+    background: $color--white;  
+    &:not(:disabled) {
+      background: $color--white;        
+    }
+  }
+  
+  font-weight: bold;
+  line-height: $line-height--base;
+  
+  @include tablet-breakpoint {
+    width: 200px;
   }
 
-  &::before {
-    display: block;
-    margin-bottom: .5rem;
-    font-size: 2em;
-  }
-}
-
-
-.status-success {
-  text-align: center;
-
-  h6 {
-    margin-top: 0;
+  &--unavailable {
+    @include btn--medium;
+    color: $color--body-text--secondary;    
+    &:hover, &:active {
+      color: $color--body-text--secondary;    
+    }  
   }
 
-  &::before {
-    @extend .icon;
-    @extend .icon-success;
-    @extend .icon--color-success;
-    display: block;
-    margin-bottom: .5rem;
-    font-size: 2.5em;
-  }
-}
+  &--inList {
+    @include btn--small;
+    color: $color--secondary;  
+    &:hover, &:active {
+      color: $color--secondary;  
+    }  
 
-.status-error {
-  text-align: center;
-
-  h6 {
-    margin-top: 0;
-  }
-
-  &::before {
-    @extend .icon;
-    @extend .icon-danger;
-    @extend .icon--color-muted;
-    display: block;
-    margin-bottom: .5rem;
-    font-size: 2.5em;
   }
 }
-
-.status-danger {
-  text-align: center;
-
-  h6 {
-    margin-top: 0;
-  }
-
-  &::before {
-    @extend .icon;
-    @extend .icon-danger;
-    @extend .icon--color-danger;
-    display: block;
-    margin-bottom: .5rem;
-    font-size: 2.5em;
-  }
-}
-
-.status-empty {
-  text-align: center;
-  @extend .text-muted;
-
-  h6 {
-    margin-top: 0;
-  }
-}
-

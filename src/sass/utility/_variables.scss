@@ -1,16 +1,3 @@
-// Color Constants (Not for use outside this file, variable names subject to change)
-$color--gray-300:   #333;
-$color--gray-600:   #888;
-$color--gray-800:   #ccc;
-$color--gray-900:   #f2f2f2;
-$color--orange-400: #ff4f2c;
-$color--teal-400:   #1994c9;
-$color--green-400:  #0dba52;
-$color--yellow-400: #f7d410;
-
-
-
-
 $color--blue-20: #E9F3F6;
 $color--blue-30: #00AEF6; 
 $color--blue-40: #008FBE; // highlight
@@ -51,6 +38,8 @@ $color--quaternary:       $color--orange-50;
 
 $color--bright:           $color--green-30;
 $color--danger:           $color--berry-50;
+$color--info:             $color--primary;
+$color--success:          $color--secondary;
 
 
 $color--body-text:        $color--gray-90;
@@ -72,15 +61,6 @@ $border-radius: 4px;
 $background-color--light: $color--gray-30;
 $background-color--extra-light: $color--gray-20;
 $background-color--medium: $color--gray-50;
-
-//TODO review semanticness of these - might need to be deprecated
-$color--light:            $color--gray-900;
-
-$color--info:             $color--teal-400;
-$color--success:          $color--green-400;
-
-$color--savings:          $color--green-400;
-$color--favorite:         $color--yellow-400;
 
 
 /* --- Spacing --- */
@@ -111,9 +91,8 @@ $oneP5L: $s24;
 $twoL: $s32;
 
 
+// Font
 
-/* --- Variables --- */
-//TODO review this section - might need to be deprecated
 $font-family--primary:        'Open Sans', sans-serif;
 $font-weight--primary-normal: 400;
 $font-weight--primary-bold:   600;
@@ -125,18 +104,8 @@ $font-weight--icons-normal:   400;
 $font-weight--icons-solid:    900;
 
 $font-size--base:        $s16;
-$font-size--base-narrow: 16px;
-$line-height--base:      20px;
-$line-height--lose:      1.6;
-$font-size--level: (
-  -1: 1rem * 0.75,
-   0: 1rem * 1,
-   1: 1rem * 1.3333,
-   2: 1rem * 1.7777,
-   3: 1rem * 2.3705,
-   4: 1rem * 3.1605,
-   5: 1rem * 4.2140
-);
+$font-size--base-narrow: $s16;
+$line-height--base:      $s20;
 
 
 // Breakpoints (*Note: prefer to use Breakpoint component to make responsive decisions instead)

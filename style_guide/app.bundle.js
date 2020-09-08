@@ -671,11 +671,14 @@ var links = [{
     path: 'icons'
   }]
 }, {
-  name: 'Typography',
-  path: 'typography'
-}, {
-  name: 'Colors',
-  path: 'colors'
+  name: "Brand",
+  items: [{
+    name: 'Typography',
+    path: 'typography'
+  }, {
+    name: 'Colors',
+    path: 'colors'
+  }]
 }];
 
 var App = function (_React$Component) {
@@ -996,7 +999,7 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'TBD does secondary nav stay fixed or should it scroll away? (Assume scrolls esp if items are accessible via top nav dropdown)'
+          'Secondary nav scrolls away because items are also accessible from the top-nav dropdowns.'
         ),
         _react2.default.createElement(
           'pre',
@@ -1016,7 +1019,7 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'pre',
           null,
-          '<nav class="navbarBottom">\n  <ul class="navbarBottom-nav">\n    <li class="navbarBottom-item">\n      <div class="navbarBottom-icons"><i class="icon icon-shop"></i></div>\n      <div class="navbarBottom-label">Shop</div>\n    </li>\n    <li class="navbarBottom-item navbarBottom-item--selected">\n      <div class="navbarBottom-icons"><i class="icon icon-cart icon-cart--selected"></i><span class="badge">8</span></div>\n      <div class="navbarBottom-label">Cart</div>\n    </li>\n    <li class="navbarBottom-item">\n      <div class="navbarBottom-icons"><i class="icon icon-orders"></i></div>\n      <div class="navbarBottom-label">Orders</div>\n    </li>\n    <li class="navbarBottom-item">\n      <div class="navbarBottom-icons"><i class="icon icon-payments"></i></div>\n      <div class="navbarBottom-label">Payments</div>\n    </li>\n    <li class="navbarBottom-item">\n    <div class="navbarBottom-icons"><i class="icon icon-messages"></i><span class="badge">2</span></div>\n    <div class="navbarBottom-label">Messages</div>\n    </li>\n  </ul>\n</nav>'
+          '<nav class="navbarBottom">\n  <ul class="navbarBottom-nav">\n    <li class="navbarBottom-item">\n      <div class="navbarBottom-icons"><i class="icon icon-shop"></i></div>\n      <div class="navbarBottom-label">Shop</div>\n    </li>\n    <li class="navbarBottom-item navbarBottom-item--selected">\n      <div class="navbarBottom-icons">\n        <i class="icon icon-cart icon-cart--selected"></i>\n        <span class="badge">8</span>\n        </div>\n      <div class="navbarBottom-label">Cart</div>\n    </li>\n    <li class="navbarBottom-item">\n      <div class="navbarBottom-icons"><i class="icon icon-orders"></i></div>\n      <div class="navbarBottom-label">Orders</div>\n    </li>\n    <li class="navbarBottom-item">\n      <div class="navbarBottom-icons"><i class="icon icon-payments"></i></div>\n      <div class="navbarBottom-label">Payments</div>\n    </li>\n    <li class="navbarBottom-item">\n    <div class="navbarBottom-icons">\n      <i class="icon icon-messages"></i>\n      <span class="badge">2</span>\n    </div>\n    <div class="navbarBottom-label">Messages</div>\n    </li>\n  </ul>\n</nav>'
         )
       ));
     }
@@ -1140,6 +1143,9 @@ var App = function (_React$Component) {
         )
       );
     }
+
+    //TODO: Move to another page so this wide table doesn't interfere with page layout on the main style guide page.
+
   }, {
     key: 'typographySection',
     get: function get() {
@@ -1716,7 +1722,7 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'Most components and containers should have spacing built-in. If you need to construct a component use the spacing variables to ensure consistency:'
+          'Most components and containers should have spacing built-in. If you need to construct a component, use the spacing variables to ensure consistency. Generally speaking, use $s8 between related/grouped elements ($s16 if those elements are more substantial e.g. verical space between large buttons) and $s24 between groups within a container. Use $s32 for most container vertical padding except for smaller cards that need to be tighter.'
         ),
         _react2.default.createElement(
           'ul',
@@ -1778,7 +1784,7 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'There are only 4 layout options (not including gard grids which are a separate layout within these options):'
+          'There are only 4 layout options (not including card grids which are a separate layout element within these options):'
         ),
         _react2.default.createElement(
           'ol',
@@ -1924,7 +1930,7 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'h3',
           { className: 'pageHeader' },
-          'Nested Layout'
+          'Nested Layout (>= 1145px)'
         ),
         _react2.default.createElement(
           'div',
@@ -2006,7 +2012,7 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'Containers are similar to material design paper. They generally have a white background and glow shadow. They are used to group sections on a page and may or may not have an expand/collapse header section.'
+          'Containers are similar to material design paper elements. They generally have a white background and glow shadow. They are used to group sections on a page and may or may not have an expand/collapse header section.'
         ),
         _react2.default.createElement(
           'p',
@@ -2016,7 +2022,13 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'Withing a container or container-body, container-section blocks to control vertical spacing.'
+          'Within a container or container-body, use ',
+          _react2.default.createElement(
+            'code',
+            null,
+            '.container-section'
+          ),
+          ' blocks to control vertical spacing.'
         )
       ));
     }
@@ -2042,7 +2054,7 @@ var App = function (_React$Component) {
             null,
             '.styleAs-button'
           ),
-          ' will also generally work'
+          ' will also generally work.'
         ),
         _react2.default.createElement(
           'h4',
@@ -2117,7 +2129,7 @@ var App = function (_React$Component) {
           _react2.default.createElement(
             'p',
             null,
-            'Disabled Button regardless of classnames. Real buttons marked as disabled'
+            'Disabled Button regardless of classnames. Real buttons marked as disabled.'
           ),
           _react2.default.createElement(
             'button',
@@ -2246,7 +2258,7 @@ var App = function (_React$Component) {
           _react2.default.createElement(
             'p',
             null,
-            'All buttons can have size modifiers applied to them. Note that any combination of color/style is permitted, not just those shown'
+            'All buttons can have size modifiers applied to them. Note that any combination of color/style is permitted, not just those shown.'
           ),
           _react2.default.createElement(
             'div',
@@ -2794,7 +2806,7 @@ var App = function (_React$Component) {
             _react2.default.createElement(
               'p',
               null,
-              'TODO with icons'
+              'With icons'
             ),
             _react2.default.createElement(
               'p',
@@ -2858,7 +2870,7 @@ var App = function (_React$Component) {
             { className: 'cardGrid' },
             _react2.default.createElement(
               'div',
-              { className: 'card bg-muted' },
+              { className: 'card bg-light' },
               _react2.default.createElement('br', null),
               _react2.default.createElement(
                 'div',
@@ -2869,7 +2881,7 @@ var App = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'card bg-muted' },
+              { className: 'card bg-light' },
               _react2.default.createElement('br', null),
               _react2.default.createElement(
                 'div',
@@ -3172,21 +3184,29 @@ var App = function (_React$Component) {
             'div',
             { className: containerBlock('section') },
             _react2.default.createElement(
-              'label',
-              { htmlFor: 'sampleId' },
-              'Sample Field'
-            ),
-            _react2.default.createElement('input', { type: 'text', id: 'sampleId', name: 'sample', placeholder: 'hint' })
+              'div',
+              { className: 'input' },
+              _react2.default.createElement(
+                'label',
+                { htmlFor: 'sampleId' },
+                'Sample Field'
+              ),
+              _react2.default.createElement('input', { type: 'text', id: 'sampleId', name: 'sample', placeholder: 'hint' })
+            )
           ),
           _react2.default.createElement(
             'div',
             { className: containerBlock('section') },
             _react2.default.createElement(
-              'label',
-              { htmlFor: 'sampleTextArea' },
-              'Text Area'
-            ),
-            _react2.default.createElement('textarea', { id: 'sampleTextArea', placeholder: 'Write text' })
+              'div',
+              { className: 'input' },
+              _react2.default.createElement(
+                'label',
+                { htmlFor: 'sampleTextArea' },
+                'Text Area'
+              ),
+              _react2.default.createElement('textarea', { id: 'sampleTextArea', placeholder: 'Write text' })
+            )
           ),
           _react2.default.createElement(
             'div',
@@ -3218,28 +3238,39 @@ var App = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: containerBlock('section') },
-            _react2.default.createElement('input', { type: 'radio', value: '1', id: 'radio_1', name: 'radio' }),
             _react2.default.createElement(
-              'label',
-              { htmlFor: 'radio_1' },
-              'Radio 1'
+              'div',
+              { className: 'input' },
+              _react2.default.createElement('input', { type: 'radio', value: '1', id: 'radio_1', name: 'radio' }),
+              _react2.default.createElement(
+                'label',
+                { htmlFor: 'radio_1' },
+                'Radio 1'
+              )
             ),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('input', { type: 'radio', value: '2', id: 'radio_2', name: 'radio' }),
             _react2.default.createElement(
-              'label',
-              { htmlFor: 'radio_2' },
-              'Radio 2'
+              'div',
+              { className: 'input' },
+              _react2.default.createElement('input', { type: 'radio', value: '2', id: 'radio_2', name: 'radio' }),
+              _react2.default.createElement(
+                'label',
+                { htmlFor: 'radio_2' },
+                'Radio 2'
+              )
             )
           ),
           _react2.default.createElement(
             'div',
             { className: containerBlock('section') },
-            _react2.default.createElement('input', { type: 'checkbox', value: '1', id: 'checkbox', name: 'checkbox' }),
             _react2.default.createElement(
-              'label',
-              { htmlFor: 'checkbox' },
-              'Checkbox'
+              'div',
+              { className: 'input' },
+              _react2.default.createElement('input', { type: 'checkbox', value: '1', id: 'checkbox', name: 'checkbox' }),
+              _react2.default.createElement(
+                'label',
+                { htmlFor: 'checkbox' },
+                'Checkbox'
+              )
             )
           )
         )
@@ -3286,7 +3317,12 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'Standard menu with sections.'
+          'See the top right "More (spacing)" menu for a pre-built version of the account dropdown menu.'
+        ),
+        _react2.default.createElement(
+          'h5',
+          null,
+          'General menu with sections.'
         ),
         _react2.default.createElement(
           'div',
@@ -3359,7 +3395,7 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'Standard menu with sections.'
+          'Standard dropdown menu.'
         ),
         _react2.default.createElement(
           'div',
@@ -3400,7 +3436,7 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'Sort menus are the same as filters but use a standard label text before the selected value.'
+          'Sort dropdown menus are the same as filters but use a standard label text before the selected value.'
         ),
         _react2.default.createElement(
           'div',
@@ -4525,7 +4561,7 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'These tables are always 2 columns and are used for things like orders and cards'
+                'These tables are always in a left or right column and are used for things like orders and cards'
               )
             )
           )
@@ -4548,11 +4584,11 @@ var App = function (_React$Component) {
             { className: 'btn btn--primary btn--sized btn--small', onClick: this.toggleExpanded.bind(this, "productModal") },
             'here'
           ),
-          ' for a sample modal'
+          ' for a sample product modal. Note that this example uses the layout system below with statically sized side columns. It may be necessary to set up the column system for this and other modals in different ways.'
         ),
         _react2.default.createElement(
           'div',
-          { id: 'productModal', className: modalBem(null, { open: this.isExpanded("productModal") }) },
+          { id: 'productModal', className: modalBem(null, { open: !this.isExpanded("productModal") }) },
           _react2.default.createElement(
             'div',
             { className: "productInfoModal product " + modalBem('body') },
@@ -4869,7 +4905,7 @@ var App = function (_React$Component) {
         }),
         _react2.default.createElement(
           'div',
-          { className: 'bg-muted' },
+          { className: 'bg-light' },
           [['chevron-right', ['white', 'small', 'small icon-chevron-right--white']]].map(function (i) {
             return _this4.iconLine(i);
           })

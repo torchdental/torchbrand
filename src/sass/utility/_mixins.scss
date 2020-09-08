@@ -19,24 +19,3 @@
     @content;
   }
 }
-
-/* TODO - the below are older mixins and should probably be refactored away */
-@mixin set-breakpoint($min-width) {
-  @media (min-width: $min-width) {
-    @content;
-  }
-}
-
-@mixin set-range($min-width, $max-width) {
-  @media only screen and (min-width: $min-width) and (max-width: $max-width) {
-    @content;
-  }
-}
-
-
-@mixin boxShadow() {
-  -webkit-box-shadow: 0px 0px 5px 0px rgba($color--gray-90, 0.25);
-  -moz-box-shadow: 0px 0px 5px 0px rgba($color--gray-90, 0.25);
-  box-shadow: 0px 0px 5px 0px rgba($color--gray-90, 0.25);
-  
-}

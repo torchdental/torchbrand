@@ -10,6 +10,8 @@
   color: $color--primary;
   background-color: $color--blue-20;
   display: flex;
+  text-align: center;
+  justify-content: center;
   padding-left: $s8;
   padding-right: $s8;
   .icon:first-child {
@@ -24,10 +26,11 @@
     }
   }
   font-weight: bold;
-  text-align: center;
+  
 
   &--left {
     text-align: left;
+    justify-content: flex-start;
   }
   &--success {
     color: $color--secondary;
@@ -66,42 +69,5 @@
         background-color: $color--berry-20;    
       }
     }
-  }
-}
-
-.itemStatus {
-  @include btn;
-  cursor: default;
-  text-transform: none;
-  background: $color--white;
-  &:hover, &:active {
-    background: $color--white;  
-    &:not(:disabled) {
-      background: $color--white;        
-    }
-  }
-  
-  font-weight: bold;
-  line-height: $line-height--base;
-  
-  @include tablet-breakpoint {
-    width: 200px;
-  }
-
-  &--unavailable {
-    @include btn--medium;
-    color: $color--body-text--secondary;    
-    &:hover, &:active {
-      color: $color--body-text--secondary;    
-    }  
-  }
-
-  &--inList {
-    @include btn--small;
-    color: $color--secondary;  
-    &:hover, &:active {
-      color: $color--secondary;  
-    }  
-
   }
 }

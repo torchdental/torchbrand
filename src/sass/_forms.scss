@@ -187,25 +187,9 @@ select {
     no-repeat;
 }
 
-.form-message,
-.input-message {
-  font-size: map-get($font-size--level, -1);
-}
-
-.input-message {
-  min-height: 18px;
-  padding-left: 4px;
-  margin-top: .25rem;
-}
-
-
-// Input Variations
-.input-sm {
-  padding: 3px 6px;
-  font-size: map-get($font-size--level, -1);
-}
-
-.input-lg {
-  padding: 5px 8px;
-  font-size: map-get($font-size--level, 1);
+.input {
+  margin: $s8 0;
+  label {
+    margin-bottom: $s8/2;
+  }
 }

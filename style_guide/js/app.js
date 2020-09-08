@@ -89,14 +89,18 @@ const links = [
     ]
   },
   {
-    name: 'Typography',
-    path: 'typography'    
-  },  
-  {
-    name: 'Colors',
-    path: 'colors'
-  },
-  
+    name: "Brand",
+    items: [
+      {
+        name: 'Typography',
+        path: 'typography'
+      },
+      {
+        name: 'Colors',
+        path: 'colors'
+      }
+    ]
+  }  
 ]
 
 
@@ -165,7 +169,7 @@ class App extends React.Component {
             </pre>
             <h4>Secondary Nav</h4>
             <p>Secondary nav may include some additional column content</p>
-            <p>TBD does secondary nav stay fixed or should it scroll away? (Assume scrolls esp if items are accessible via top nav dropdown)</p>
+            <p>Secondary nav scrolls away because items are also accessible from the top-nav dropdowns.</p>
             <pre>
 {`<nav class="navbarSecondary">
   <ul class="navbarSecondary-nav">
@@ -194,7 +198,10 @@ class App extends React.Component {
       <div class="navbarBottom-label">Shop</div>
     </li>
     <li class="navbarBottom-item navbarBottom-item--selected">
-      <div class="navbarBottom-icons"><i class="icon icon-cart icon-cart--selected"></i><span class="badge">8</span></div>
+      <div class="navbarBottom-icons">
+        <i class="icon icon-cart icon-cart--selected"></i>
+        <span class="badge">8</span>
+        </div>
       <div class="navbarBottom-label">Cart</div>
     </li>
     <li class="navbarBottom-item">
@@ -206,7 +213,10 @@ class App extends React.Component {
       <div class="navbarBottom-label">Payments</div>
     </li>
     <li class="navbarBottom-item">
-    <div class="navbarBottom-icons"><i class="icon icon-messages"></i><span class="badge">2</span></div>
+    <div class="navbarBottom-icons">
+      <i class="icon icon-messages"></i>
+      <span class="badge">2</span>
+    </div>
     <div class="navbarBottom-label">Messages</div>
     </li>
   </ul>
@@ -300,6 +310,7 @@ class App extends React.Component {
         </section>
   }
 
+  //TODO: Move to another page so this wide table doesn't interfere with page layout on the main style guide page.
   get typographySection() {
     return this.makeSection('typography', "Typography", <React.Fragment>
             <table>
@@ -469,7 +480,10 @@ class App extends React.Component {
   }
   
   get spacingSection() {
-    return this.makeSection("spacing", "Spacing", <React.Fragment><p>Most components and containers should have spacing built-in. If you need to construct a component use the spacing variables to ensure consistency:</p>
+    return this.makeSection("spacing", "Spacing", <React.Fragment>
+      <p>Most components and containers should have spacing built-in. If you need to construct a component, use the spacing variables to ensure consistency. 
+        Generally speaking, use $s8 between related/grouped elements ($s16 if those elements are more substantial e.g. verical space between large buttons) and $s24 between groups within a container. Use $s32
+        for most container vertical padding except for smaller cards that need to be tighter.</p>
             <ul>
               <li>$s8:  8px;</li>
               <li>$s10: 10px;</li>
@@ -485,7 +499,7 @@ class App extends React.Component {
   
   get pageLayoutSection() {
     const main = this.makeSection("layout", "Page Layout", <React.Fragment>
-      <p>There are only 4 layout options (not including gard grids which are a separate layout within these options):</p>
+      <p>There are only 4 layout options (not including card grids which are a separate layout element within these options):</p>
       <ol>
         <li>Full width page - most shop pages and all device layouts</li>
         <li>Left Column - for showing filters</li>
@@ -536,7 +550,7 @@ class App extends React.Component {
           </section>
         </div>
       </div>
-      <h3 className="pageHeader">Nested Layout</h3>
+      <h3 className="pageHeader">Nested Layout (>= 1145px)</h3>
       <div className={layoutBem(null, 'colLeft')}>
         <div className={layoutBem('col')}>
           <section className="container">
@@ -571,13 +585,13 @@ class App extends React.Component {
   get containersSection() {
     return this.makeSection("containers", "Containers", <React.Fragment>
       <p>
-        Containers are similar to material design paper. They generally have a white background and glow shadow. 
+        Containers are similar to material design paper elements. They generally have a white background and glow shadow. 
         They are used to group sections on a page and may or may not have an expand/collapse header section.
       </p>
       <p>
         For example, this style guide is primarily composed of container--expandible with a container-header and container-body children.
       </p>
-      <p>Withing a container or container-body, container-section blocks to control vertical spacing.</p>
+      <p>Within a container or container-body, use <code>.container-section</code> blocks to control vertical spacing.</p>
     </React.Fragment>)
   }
 
@@ -585,7 +599,7 @@ class App extends React.Component {
     const btnBem = makeBem("btn")
     return this.makeSection("buttons", "Buttons & Links", <React.Fragment>
       <p>New button elements should all have the class <code>.btn</code>. For backwards 
-      compatility, all button elements and items with <code>.styleAs-button</code> will also generally work</p>
+      compatility, all button elements and items with <code>.styleAs-button</code> will also generally work.</p>
       <h4>Filled Buttons (default)</h4>
       <p>Note that these all have hover and active states. By default they take the full width of the container.</p>
       <div className={containerBlock('section')}>
@@ -601,7 +615,7 @@ class App extends React.Component {
         <div className={btnBem(null, 'secondary')}>Secondary Standard Button</div>
       </div>
       <div className={containerBlock('section')}>
-        <p>Disabled Button regardless of classnames. Real buttons marked as disabled</p>
+        <p>Disabled Button regardless of classnames. Real buttons marked as disabled.</p>
         <button className={btnBem(null, 'secondary')} disabled>Disabled Button</button>
         <p>or classname className={btnBem(null, 'disabled')}</p>
         <div className={btnBem(null, ['primary', 'disabled'])}>Disabled Primary Button</div>
@@ -628,7 +642,7 @@ class App extends React.Component {
       </div>
       <div className={containerBlock('section')}>
         <h4>Button Sizing</h4>
-        <p>All buttons can have size modifiers applied to them. Note that any combination of color/style is permitted, not just those shown</p>
+        <p>All buttons can have size modifiers applied to them. Note that any combination of color/style is permitted, not just those shown.</p>
         <div className="cardGrid">
           <div className="card">
             <h5>Standard buttons</h5>
@@ -759,7 +773,7 @@ class App extends React.Component {
           <p><span className={nBem(null, ['left', 'error'])}>Error Notification</span></p>
         </div>
         <div className="card">
-          <p>TODO with icons</p>
+          <p>With icons</p>
           <p><span className={nBem(null, ['left'])}><i className="icon icon-tooltip icon-tooltip--primary"></i>Info Notification</span></p>
           <p><span className={nBem(null, ['left', 'success'])}><i className="icon icon-check"></i>Success Notification</span></p>
           <p><span className={nBem(null, ['left', 'warning'])}><i className="icon icon-warning"></i>Warning Notification<br />Multi-line</span></p>
@@ -770,12 +784,12 @@ class App extends React.Component {
         <h4>Product Status Notifications</h4>
         <p>Two variations for iten status .itemStatus are intended over darker backgrounds</p>
         <div className="cardGrid">
-          <div className="card bg-muted">
+          <div className="card bg-light">
             <br />
             <div className="itemStatus itemStatus--unavailable">unavailable</div>
             <br />  
           </div>
-          <div className="card bg-muted">
+          <div className="card bg-light">
             <br />
             <div className="itemStatus itemStatus--inList">In List</div>
             <br />
@@ -890,19 +904,22 @@ class App extends React.Component {
             <input type="text" className="search" id="search" name="search" placeholder="Search"/>
             <div className="searchBar-icons">
               <i className="icon icon-close"></i>
-              <i className="icon icon-search"></i>
-              
+              <i className="icon icon-search"></i>              
             </div>
           </div>
         </div>
         <div className={containerBlock('section')}>
-          <label htmlFor="sampleId">Sample Field</label>
-          <input type="text" id="sampleId" name="sample" placeholder="hint"/>          
+          <div className="input">
+            <label htmlFor="sampleId">Sample Field</label>
+            <input type="text" id="sampleId" name="sample" placeholder="hint"/>          
+          </div>
         </div>
         
         <div className={containerBlock('section')}>
-          <label htmlFor="sampleTextArea">Text Area</label>
-          <textarea id="sampleTextArea" placeholder="Write text"></textarea>
+          <div className="input">
+            <label htmlFor="sampleTextArea">Text Area</label>
+            <textarea id="sampleTextArea" placeholder="Write text"></textarea>
+          </div>
         </div>
       
         <div className={containerBlock('section')}>
@@ -917,12 +934,17 @@ class App extends React.Component {
           </div>
         </div>
         <div className={containerBlock('section')}>
-          <input type="radio" value="1" id="radio_1" name="radio"></input><label htmlFor="radio_1">Radio 1</label>
-          <br/>
-          <input type="radio" value="2" id="radio_2" name="radio"></input><label htmlFor="radio_2">Radio 2</label>
+          <div className="input">
+            <input type="radio" value="1" id="radio_1" name="radio"></input><label htmlFor="radio_1">Radio 1</label>
+          </div>
+          <div className="input">
+            <input type="radio" value="2" id="radio_2" name="radio"></input><label htmlFor="radio_2">Radio 2</label>
+          </div>
         </div>
         <div className={containerBlock('section')}>
-          <input type="checkbox" value="1" id="checkbox" name="checkbox"></input><label htmlFor="checkbox">Checkbox</label>
+          <div className="input">
+            <input type="checkbox" value="1" id="checkbox" name="checkbox"></input><label htmlFor="checkbox">Checkbox</label>
+          </div>
         </div>
       </form>
     </React.Fragment>)
@@ -945,7 +967,8 @@ class App extends React.Component {
   get menuSection() {
     return this.makeSection("menus", "Menus, Filter & Sort", <React.Fragment>
       <h4>Menus</h4>
-      <p>Standard menu with sections.</p>
+      <p>See the top right "More (spacing)" menu for a pre-built version of the account dropdown menu.</p>
+      <h5>General menu with sections.</h5>
       <div className={menuBem(null, 'expanded')}>
         <div className={menuBem('body')}>
           <div className={menuBem('section')}>
@@ -971,7 +994,7 @@ class App extends React.Component {
       <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
       <h4>Filters</h4>
-      <p>Standard menu with sections.</p>
+      <p>Standard dropdown menu.</p>
       <div className={menuBem(null, { select: true, expanded: this.isExpanded("exampleFilter") })}>
         <div className={menuBem('label')} onClick={this.toggleExpanded.bind(this, "exampleFilter")}>
           Selected Value
@@ -986,7 +1009,7 @@ class App extends React.Component {
 
 
       <h4>Sort</h4>
-      <p>Sort menus are the same as filters but use a standard label text before the selected value.</p>
+      <p>Sort dropdown menus are the same as filters but use a standard label text before the selected value.</p>
       <div className={menuBem(null, { select: true, expanded: this.isExpanded("exampleSort") })}>
         <div className={menuBem('label')} onClick={this.toggleExpanded.bind(this, "exampleSort")}>
           <span className={menuBem('labelPrefix')}>Sort By</span> Selected Value
@@ -1445,7 +1468,7 @@ class App extends React.Component {
         <div className={layoutBem('main')}>
           <div className="container">
             <h4>Summary Tables</h4>
-            <p>These tables are always 2 columns and are used for things like orders and cards</p>   
+            <p>These tables are always in a left or right column and are used for things like orders and cards</p>   
           </div>
         </div>
       </div>
@@ -1457,8 +1480,9 @@ class App extends React.Component {
   get modalsSection() {
     const modalBem = makeBem("modal");
     return this.makeSection("modals", "Modals", <React.Fragment>
-      <p>Click <button className="btn btn--primary btn--sized btn--small" onClick={this.toggleExpanded.bind(this, "productModal")}>here</button> for a sample modal</p>
-      <div id="productModal" className={modalBem(null, {open: this.isExpanded("productModal")})}>
+      <p>Click <button className="btn btn--primary btn--sized btn--small" onClick={this.toggleExpanded.bind(this, "productModal")}>here</button> for a sample product modal.
+       Note that this example uses the layout system below with statically sized side columns. It may be necessary to set up the column system for this and other modals in different ways.</p>
+      <div id="productModal" className={modalBem(null, {open: !this.isExpanded("productModal")})}>
         <div className={"productInfoModal product " + modalBem('body')}>
           <div className="productInfoModal-contentTop layout--colLeft ">
             <div className="productInfoModal-contentLeft layout-col">
@@ -1627,7 +1651,7 @@ class App extends React.Component {
 
         ].map((i) => this.iconLine(i))
       }
-      <div className="bg-muted">
+      <div className="bg-light">
       {
         [
           ['chevron-right', ['white', 'small', 'small icon-chevron-right--white']]

@@ -160,7 +160,6 @@ $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height 
   }
 
   &-viewDetails {
-    // TODO generally replace @extend with @import and create mixins
     @extend .details2;
     @extend .text--muted;
     margin-top: 3px;

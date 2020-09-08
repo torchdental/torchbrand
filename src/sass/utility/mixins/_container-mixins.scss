@@ -1,10 +1,14 @@
 @mixin container-shadow {
-  box-shadow: 0 2px 4px 0 $color--gray-30
+  -webkit-box-shadow:  0 2px 4px 0 $color--gray-30;
+  -moz-box-shadow:  0 2px 4px 0 $color--gray-30;  
+  box-shadow:  0 2px 4px 0 $color--gray-30;
 }
 
 @mixin container-border {
   border: 1px solid $color--gray-60;
   @include border-radius;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
   box-shadow: none;
 }
 
