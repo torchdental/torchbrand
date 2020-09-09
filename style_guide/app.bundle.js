@@ -1412,7 +1412,7 @@ var App = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { className: 'details2' },
-                  'p.text--danger, .styleAs-p.text--pridangermary'
+                  'p.text--danger, .styleAs-p.text--danger'
                 ),
                 _react2.default.createElement(
                   'span',
@@ -1422,7 +1422,7 @@ var App = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { className: 'details2' },
-                  'p.text--danger strong, .styleAs-p.text--pridangermary strong'
+                  'p.text--danger strong, .styleAs-p.text--danger strong'
                 ),
                 _react2.default.createElement(
                   'span',

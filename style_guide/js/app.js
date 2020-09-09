@@ -398,9 +398,9 @@ class App extends React.Component {
                   </td>
                   <td></td>
                   <td>
-                    <div className="details2">p.text--danger, .styleAs-p.text--pridangermary</div>
+                    <div className="details2">p.text--danger, .styleAs-p.text--danger</div>
                     <span className={`subheader text--danger`}>Body</span>
-                    <div className="details2">p.text--danger strong, .styleAs-p.text--pridangermary strong</div>
+                  <div className="details2">p.text--danger strong, .styleAs-p.text--danger strong</div>
                     <span className={`subheader text--danger`}><strong>Body</strong></span>
                   </td>
                   <td>
