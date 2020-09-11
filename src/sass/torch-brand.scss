@@ -27,9 +27,15 @@
 @import 'utility-classes';
 
 
+body {
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch !important;
+}
+
 .app-root {
   display: flex;
   flex-direction: column;
+  width: 100vw;
 }
 
 main, .app-body {

@@ -1,12 +1,16 @@
 @mixin btn--sized {
-    padding-left: $s16;
-    padding-right: $s16;
-    display: inline-block;
-    width: auto;
+  padding-left: $s16;
+  padding-right: $s16;
+  display: inline-block;
+  width: auto;
 }
 
 @mixin btn--xSmall {
   font-size: $s10;
+  .icon::before {
+    height: $s10;
+    font-size: $s10;
+  }
   padding-top: $s10;
   padding-bottom: $s10;  
 }
@@ -15,18 +19,31 @@
   font-size: $s14;
   padding-top: $s8;
   padding-bottom: $s8;      
+  .icon::before {
+    height: $s14;
+    font-size: $s14;
+  }
 }
 
 @mixin btn--medium {
   padding-top: $s12;
   padding-bottom: $s12;
   font-size: $s16;    
+  .icon::before {
+    height: $s16;
+    font-size: $s16;
+  }
+
 }
 
 @mixin btn--large {
   font-size: $s20;
   padding-top: $s14;
   padding-bottom: $s14;
+  .icon::before {
+    height: $s20;
+    font-size: $s20;
+  }
 }
 
 @mixin btn--primary {
@@ -74,6 +91,10 @@
   
   // default to "large" buttons
   font-size: $s20;
+  .icon::before {
+    height: $s20;
+    font-size: $s20;
+  }
   padding: $s14 0;
   
   &--sized, &.btn-tight {

@@ -1,4 +1,4 @@
-.quantitySelector, .counterInput {
+.quantitySelector, .counterInput, .counterInput-ctr {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
@@ -18,7 +18,15 @@
     }
   }
   &-count {
-    min-width: $s40;
+    width: 60px;
+  }
+  &-input {
+    width: 100%;
+    display: inline;
+    text-align: center;
+    &:not(:focus) {
+      border: none;
+    }
   }
   &-add, &-cancel {
     @include btn;

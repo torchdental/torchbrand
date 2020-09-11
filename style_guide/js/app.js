@@ -720,7 +720,9 @@ class App extends React.Component {
         <h4>With single button</h4>
         <div className={qBem()}>
           <div className={qBem('minus', { disabled: true })}>&ndash;</div>
-          <div className={qBem('count')}>1</div>
+          <div className={qBem('count')}>
+            <input className={qBem('input')} placeholder="1" />
+          </div>
           <div className={qBem('plus')}>+</div>
           <div className={qBem('add')}>Add</div>
         </div>

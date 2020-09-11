@@ -2600,7 +2600,7 @@ var App = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: qBem('count') },
-              '1'
+              _react2.default.createElement('input', { className: qBem('input'), placeholder: '1' })
             ),
             _react2.default.createElement(
               'div',

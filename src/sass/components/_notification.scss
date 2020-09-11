@@ -3,6 +3,7 @@
   @include btn--medium;
   @include btn--sized;
   @include container-glow;
+  white-space: unset;
   cursor: default;
   line-height: $line-height--base;
   text-transform: none;

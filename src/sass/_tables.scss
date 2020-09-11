@@ -77,6 +77,11 @@ thead  {
   }
 }
 
+thead,
+tfoot {
+  display: table-row-group;
+}
+
 table.withControls {  
   thead {
     @include desktop-breakpoint {
