@@ -97,7 +97,7 @@ h6,
 
 .supheader, .details1, small {
   font-size: $s14;
-  line-height: 16px;
+  line-height: $s20;
   font-weight: 400;
 }
 .supheader {
@@ -116,13 +116,13 @@ h6,
 }
 
 .details2 {
-  font-size: 12px;
-  line-height: 14px;
+  font-size: $s12;
+  line-height: 18px;
 }
 
 .details3 {
   font-size: 11px;
-  line-height: 12px;
+  line-height: $s16;
 }
 
 

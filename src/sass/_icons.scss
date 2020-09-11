@@ -405,6 +405,17 @@
   }
 }
 
+.icon-arrow {
+  &::before { 
+    @include iconPseudo--image;
+    width: 52px;
+    height: 52px;
+    $icon-color: $color--secondary;
+    @import "icons/arrow.svg";
+  }
+}
+
+
 
 .icon-chevron-right {
   $icon-color: $color--body-text;

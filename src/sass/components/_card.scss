@@ -4,8 +4,8 @@ $card-count: 5;
 
 .cardGrid, .card-grid, .catalog-grid {
   padding: 0;
-  grid-gap: $s20 $s10;
-  gap: $s20 $s10;
+  grid-gap: $s20 $s20;
+  gap: $s20 $s20;
   display: grid;
   vertical-align: top;
   grid-template-columns: repeat(auto-fill, minmax($card-min-width, 1fr));
@@ -56,11 +56,11 @@ $card-count: 5;
   }
 }
 
-$card-img-height: 140px;
-$card-top-padding: 7px;
+$card-img-height: 144px;
+$card-top-padding: 10px;
 $card-padding: $card-top-padding $s14 $s14;
 $card-header-height: 50px - $card-top-padding;
-$card-height: 386px;
+$card-height: 400px;
 $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height - $card-header-height;
 .card {
   @include container-glow;
@@ -150,7 +150,7 @@ $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height 
     cursor: pointer;
     width: 100%;
     img {
-      height: 140px;
+      height: $card-img-height;
       width: 100%;
       object-fit: contain;
     }
@@ -183,7 +183,7 @@ $card-body-height: $card-height - ($card-top-padding + $s14) - $card-img-height 
     }
     
     &-prices {
-      margin-top: 9px; //Custom spacing for product cards
+      margin-top: 8px; //Custom spacing for product cards
     }
   }
 }

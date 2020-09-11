@@ -1618,6 +1618,7 @@ class App extends React.Component {
       {
         [
           ['chat', []],
+          ['arrow', []],
           ['tooltip', ['primary', 'active', 'disabled']],
           ['info', ['primary', 'active', 'disabled'], true],
           ['warning', ['active', 'disabled']],
