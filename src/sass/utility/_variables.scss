@@ -111,3 +111,4 @@ $line-height--base:      $s24;
 // Breakpoints (*Note: prefer to use Breakpoint component to make responsive decisions instead)
 $breakpoint-desktop--min: 750px;
 $breakpoint-tablet--max: $breakpoint-desktop--min - 1;
+$breakpoint-mobile--max: 420px;

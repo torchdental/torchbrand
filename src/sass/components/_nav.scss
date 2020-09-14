@@ -52,11 +52,14 @@
       color: $color--white;
       padding-top: $s40;
       padding-bottom: $s40 + 1;
+      font-size: $nav-item-font-size;
+      line-height: 1;
+      
       @include tablet-breakpoint {
+        font-size: $s20;
         padding-top: $s24;
         padding-bottom: $s24 + 1;
       }
-      font-size: $nav-item-font-size;
       &::before {
         // don't start with up/down because then transforms need to be re-produced
         @extend .icon-chevron-right--white;
@@ -128,12 +131,13 @@
   }
   .nav-badge {
     padding: 0 5px;
+    margin-left: $s8;
     display: inline;
     font-size: $nav-item-font-size - 8px;
     //color: $color--blue-90;
     line-height: 1em;
     position: relative;
-    top: -1px;
+    top: -2px;
     height: $nav-item-font-size;
   }
 }
@@ -278,6 +282,42 @@
       position: absolute;
       left: calc(50% + #{$s10});
       transform: scale(0.9)
+    }
+    @include mobile-breakpoint {     
+      .icon-shop {
+        &::before {
+          width: 13px;
+          height: 16px;
+        }
+      }
+
+      .icon-cart {
+        &::before {
+          width: 17px;
+          height: 17px;
+        }
+      }
+
+      .icon-messages {
+        &::before {
+          width: 20x;
+          height: 17px;
+        }
+      }
+
+      .icon-orders {
+        &::before {
+          width: 14px;
+          height: 16px;
+        }
+      }
+
+      .icon-payments {
+        &::before {
+          width: 16px;
+          height: 12px;
+        }
+      }
     }
   }
 }

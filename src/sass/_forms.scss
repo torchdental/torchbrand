@@ -16,7 +16,7 @@ label,
 input, textarea, select {
   display: block;
   width: 100%;
-  padding: $s8/2 $s8;
+  padding: $s8/2 0;
   @include inputBorder;
   margin: 0;
   background-color: $color--white;
@@ -35,8 +35,18 @@ input, textarea, select {
   }
 
   &:disabled {
-    background-color: $color--gray-30;
+    background-color: $background-color--extra-light;
+    color:  $color--form-muted-text;
   }
+}
+
+.input-message {
+  @extend .details1;
+  margin-top: 6px;
+}
+
+textarea, select, input:disabled {
+  padding: $s8/2 $s8;  
 }
 
 input {
@@ -50,6 +60,10 @@ input {
       padding: $s8 $s16;
       background: $background-color--extra-light;
     }
+  }
+  &.has-error {
+    border-bottom-color: $color--danger;
+    color: $color--danger;
   }
 }
 

@@ -769,8 +769,8 @@ p {
   background-position: top left;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  width: 20px;
-  height: 15px; }
+  width: 22px;
+  height: 22px; }
   .icon-messages::before {
     background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='22px' height='21px' viewBox='0 0 22 21' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EGroup 22 Copy%3C/title%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg id='icon/messages/enabled' transform='translate(1.000000, 1.000000)' stroke='%231D1D1D' stroke-width='1.5'%3E%3Cg id='Group-22-Copy'%3E%3Cg id='Group-21-Copy' transform='translate(0.000000, 3.200000)'%3E%3Cpath d='M5.06666667,11.7240545 L0.38974359,11.7240545 C0.174605128,11.7240545 0,11.4079725 0,11.1901058 L0,0.131910933 C0,-0.0859557337 0.174605128,0.0317468304 0.38974359,0.0317468304 L15.9794872,0.0317468304 C16.1946256,0.0317468304 16.3692308,-0.0859557337 16.3692308,0.131910933 L16.3692308,11.1901058 C16.3692308,11.4079725 16.1946256,11.7240545 15.9794872,11.7240545 L10.5230769,11.7240545' id='Stroke-360'%3E%3C/path%3E%3Cline x1='7.79487179' y1='15.1340381' x2='10.3769231' y2='11.9747766' id='Stroke-362'%3E%3C/line%3E%3Cline x1='7.79487179' y1='15.1340381' x2='5.21282051' y2='11.9747766' id='Stroke-364'%3E%3C/line%3E%3C/g%3E%3Cpath d='M3.2,1.52646484 L3.2,0.131910933 C3.2,-0.0859557337 3.37460513,0.0317468304 3.58974359,0.0317468304 L19.1794872,0.0317468304 C19.3946256,0.0317468304 19.5692308,-0.0859557337 19.5692308,0.131910933 L19.5692308,11.1901058 C19.5692308,11.4079725 19.3946256,11.7240545 19.1794872,11.7240545 L18.1287109,11.7240545' id='Stroke-360'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
 
@@ -989,7 +989,7 @@ h6,
   margin-bottom: 8px; }
 
 .supheader, .details1, label,
-.styleAs-label, .tableToggle-label, .badge, .badgeStep, .circle, .tooltip, .product-manufacturer, .product-availability, small {
+.styleAs-label, .input-message, .tableToggle-label, .badge, .badgeStep, .circle, .tooltip, .product-manufacturer, .product-availability, small {
   font-size: 14px;
   line-height: 20px;
   font-weight: 400; }
@@ -1141,7 +1141,7 @@ label,
 input, textarea, select {
   display: block;
   width: 100%;
-  padding: 4px 8px;
+  padding: 4px 0;
   border: none;
   border-bottom: 2px solid transparent;
   border-bottom-color: #A4A4A4;
@@ -1156,7 +1156,14 @@ input, textarea, select {
   input::placeholder, textarea::placeholder, select::placeholder {
     color: #A4A4A4; }
   input:disabled, textarea:disabled, select:disabled {
-    background-color: #D8D8D8; }
+    background-color: #F7F7F7;
+    color: #A4A4A4; }
+
+.input-message {
+  margin-top: 6px; }
+
+textarea, select, input:disabled {
+  padding: 4px 8px; }
 
 input.catalog-filter, input.search {
   border-radius: 4px;
@@ -1167,6 +1174,10 @@ input.catalog-filter, input.search {
   input.search {
     padding: 8px 16px;
     background: #F7F7F7; } }
+
+input.has-error {
+  border-bottom-color: #CD5858;
+  color: #CD5858; }
 
 .searchBar-icons {
   position: absolute;
@@ -1458,9 +1469,13 @@ tbody tr:not(:last-of-type) td {
     margin-bottom: 0; }
 
 .container {
-  padding: 32px 16px;
+  padding: 32px 24px;
   background-color: #fff;
   box-shadow: 0 0 4px 0 #D8D8D8; }
+  @media (max-width: 749px) {
+    .container {
+      padding-left: 10px;
+      padding-right: 10px; } }
   .container-section {
     margin-top: 24px;
     margin-bottom: 24px; }
@@ -1487,7 +1502,7 @@ tbody tr:not(:last-of-type) td {
       -moz-box-shadow: 0 2px 4px 0 #D8D8D8;
       box-shadow: 0 2px 4px 0 #D8D8D8;
       margin: 0;
-      padding: 32px 16px;
+      padding: 32px 24px;
       cursor: pointer; }
       .container--expandable .container-header::before {
         position: absolute;
@@ -1496,16 +1511,16 @@ tbody tr:not(:last-of-type) td {
         transform: translateY(-50%) rotate(90deg); }
     .container--expandable .container-body {
       display: none;
-      padding: 32px 16px; }
+      padding: 32px 24px; }
     .container--expandable.container--expanded .container-header::before {
       transform: translateY(-50%) rotate(-90deg); }
     .container--expandable.container--expanded .container-body {
       display: block; }
     @media (max-width: 749px) {
       .container--expandable .container-header {
-        padding: 40px 16px; }
+        padding: 40px 10px; }
       .container--expandable .container-body {
-        padding: 40px 16px; } }
+        padding: 40px 10px; } }
 
 button,
 .btn,
@@ -2213,9 +2228,11 @@ button,
     color: #fff;
     padding-top: 40px;
     padding-bottom: 41px;
-    font-size: 22px; }
+    font-size: 22px;
+    line-height: 1; }
     @media (max-width: 749px) {
       .navbar-menu .menu-label {
+        font-size: 20px;
         padding-top: 24px;
         padding-bottom: 25px; } }
   .navbar-menu .menu-body {
@@ -2271,11 +2288,12 @@ button,
     text-decoration: none; }
   .navbar-link .nav-badge, .nav-link .nav-badge {
     padding: 0 5px;
+    margin-left: 8px;
     display: inline;
     font-size: 14px;
     line-height: 1em;
     position: relative;
-    top: -1px;
+    top: -2px;
     height: 22px; }
 
 .navbar-item:hover .navbar-link, .navbar-item:hover .nav-link, .navbar-item:focus .navbar-link, .navbar-item:focus .nav-link, .navbar-item--active .navbar-link, .navbar-item--active .nav-link {
@@ -2393,6 +2411,22 @@ button,
       position: absolute;
       left: calc(50% + 10px);
       transform: scale(0.9); }
+    @media (max-width: 420px) {
+      .navbarBottom-icons .icon-shop::before {
+        width: 13px;
+        height: 16px; }
+      .navbarBottom-icons .icon-cart::before {
+        width: 17px;
+        height: 17px; }
+      .navbarBottom-icons .icon-messages::before {
+        width: 20x;
+        height: 17px; }
+      .navbarBottom-icons .icon-orders::before {
+        width: 14px;
+        height: 16px; }
+      .navbarBottom-icons .icon-payments::before {
+        width: 16px;
+        height: 12px; } }
 
 .list {
   display: inline-block;

@@ -9,7 +9,11 @@
 }
 
 .container {
-  padding: $s32 $s16;
+  padding: $s32 $s24;
+  @include tablet-breakpoint {
+    padding-left: $s10;
+    padding-right: $s10;
+  }
   background-color: $color--white;
 
 
@@ -50,7 +54,7 @@
     .container-header {
       @include container-shadow;
       margin: 0;
-      padding: $s32 $s16;
+      padding: $s32 $s24;
       cursor: pointer;
       &::before {
         // don't start with up/down because then transforms need to be re-produced
@@ -64,7 +68,7 @@
     }
     .container-body {
       display: none;
-      padding: $s32 $s16;      
+      padding: $s32 $s24;      
     }
     &.container--expanded {
       .container-header {
@@ -78,10 +82,10 @@
     }
     @include tablet-breakpoint {
       .container-header {
-        padding: $s40 $s16;
+        padding: $s40 $s10;
       }
       .container-body {
-        padding: $s40 $s16;   
+        padding: $s40 $s10;   
       }
     }
   }

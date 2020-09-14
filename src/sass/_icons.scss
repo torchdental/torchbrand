@@ -538,8 +538,8 @@
 .icon-messages {
   &::before {
     @include iconPseudo--image;
-    width: 20px;
-    height: 15px;
+    width: 22px;
+    height: 22px;
     $icon-color: $color--body-text;
     @import "icons/messages.svg";    
   }
