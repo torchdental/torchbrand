@@ -1,0 +1,38 @@
+.flag {
+  display: inline-block;
+  align-items: center;
+  position: relative;
+  white-space: nowrap;
+  cursor: default;
+
+  font-size: 11px;
+  font-weight: $font-weight--primary-semibold;
+
+  height: $s16;
+  line-height: $s16;
+  padding: 0 $s8;
+  margin: 0 $s4;
+
+  @include space-modifiers;
+
+  &--preferred {
+    color: $color--secondary;
+    background: $color--green-20;
+  }
+  &--purchasedBefore {
+    color: $color--primary;
+    background: $color--blue-20;
+  }
+  &--bestSeller {
+    color: $color--purple-50;
+    background: $color--purple-20;
+  }
+  &--promo {
+    color: $color--orange-50;
+    background: $color--yellow-20;
+  }
+
+  @include tablet-breakpoint {
+    display: inline-flex;
+  }
+}

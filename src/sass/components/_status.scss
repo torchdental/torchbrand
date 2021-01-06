@@ -1,0 +1,42 @@
+.itemStatus {
+  @include btn;
+  cursor: default;
+  text-transform: none;
+  background: $color--white;
+  &:hover,
+  &:active {
+    background: $color--white;
+    &:not(:disabled) {
+      background: $color--white;
+    }
+  }
+
+  font-weight: $font-weight--primary-bold;
+  line-height: $line-height--base;
+
+  @include tablet-breakpoint {
+    width: 200px;
+  }
+
+  &--unavailable {
+    @include btn--medium;
+    color: $color--body-text--secondary;
+    &:hover,
+    &:active {
+      color: $color--body-text--secondary;
+    }
+    @include tablet-breakpoint {
+      font-size: 14px;
+      padding: $s4 0;
+    }
+  }
+
+  &--inList {
+    @include btn--small;
+    color: $color--secondary;
+    &:hover,
+    &:active {
+      color: $color--secondary;
+    }
+  }
+}

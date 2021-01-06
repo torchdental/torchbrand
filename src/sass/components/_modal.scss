@@ -1,0 +1,125 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: $s40;
+  left: calc((100vw - #{$modal-desktop}) / 2);
+  right: calc((100vw - #{$modal-desktop}) / 2);
+  width: $modal-desktop;
+  max-height: calc(100vh - #{$s40 + $s16});
+
+  overflow-y: auto;
+  z-index: 1000;
+
+  &-backdrop {
+    display: flex;
+    justify-content: center;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    -webkit-overflow-scrolling: initial;
+  }
+  &-closer {
+    position: absolute;
+    z-index: 1055;
+    top: $s24;
+    right: $s24;
+    display: block;
+    cursor: pointer;
+
+    @extend .icon;
+    @extend .icon-close;
+    @extend .icon-close--small;
+
+    &:hover,
+    &:focus {
+      color: $color--body-text;
+    }
+  }
+  &-body {
+    z-index: 1000;
+    background: $color--white;
+    padding: $s24;
+  }
+  &-closer + &-body {
+    // try to avoid colliding with the close button
+    & > *:first-child {
+      margin-right: 32px;
+    }
+    // add utility for avoiding close button
+    .modal-closer-margin {
+      margin-right: 32px;
+    }
+    .modal-closer-nomargin {
+      margin-right: 0;
+    }
+  }
+
+  &--open {
+    display: block;
+  }
+
+  &--wide {
+    max-width: $modal-wide;
+    width: unset;
+    left: unset;
+    right: unset;
+  }
+
+  &--tall {
+    &.modal--open {
+      display: flex;
+    }
+    .modal-body {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+    }
+  }
+
+  &--large {
+    .modal-closer {
+      @extend .icon-close;
+    }
+  }
+
+  &--small {
+    .modal-closer {
+      @extend .icon-close--xSmall;
+    }
+  }
+
+  &--round {
+    @include border-radius;
+  }
+
+  &--inline {
+    display: block;
+    position: relative;
+    top: 0;
+    &::before {
+      content: none;
+    }
+  }
+
+  @include tablet-breakpoint {
+    left: calc((100vw - #{$modal-tablet}) / 2);
+    right: calc((100vw - #{$modal-tablet}) / 2);
+    width: $modal-tablet;
+  }
+  @include mobile-breakpoint {
+    top: $navbar-height--mobile;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: $modal-mobile;
+  }
+}

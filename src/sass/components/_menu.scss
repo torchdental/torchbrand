@@ -1,0 +1,173 @@
+.menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &-label,
+  &-button {
+    cursor: pointer;
+    padding-right: 40px; // for chevron icon
+    &::before {
+      // don't start with up/down because then transforms need to be re-produced
+      @extend .icon-chevron-right;
+      @extend .icon-chevron-right--small;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%) rotate(90deg);
+    }
+  }
+  &-body,
+  &-content {
+    a,
+    .styleAs-a {
+      color: $color--body-text;
+    }
+    width: auto; // make it a bit bigger than it needs to be
+    left: 0;
+
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    border: $border--light;
+    background: $color--white;
+    display: none;
+    &--right {
+      left: unset;
+      right: 0;
+    }
+  }
+  &--right {
+    .menu-body {
+      left: unset;
+      right: 0;
+    }
+  }
+  // Sections aren't always used - when they are, layout internal items
+  // to have less spacing between first/last item and next section
+  &-section {
+    border-top: $border--light;
+    &:first-child {
+      border-top: none;
+    }
+    .menu-item {
+      &:first-child {
+        padding-top: $s24 - ($line-height--base - $font-size--base);
+      }
+      &:last-child {
+        padding-bottom: $s24 - ($line-height--base - $font-size--base);
+      }
+    }
+  }
+  &-item {
+    display: flex;
+    align-items: center;
+    @extend .styleAs-a;
+    padding: ($s32 - ($line-height--base - $font-size--base))/2 $s16;
+    line-height: $s24;
+    min-width: 176px;
+
+    &:hover,
+    &:active,
+    &--active {
+      background: $color--blue-20;
+      text-decoration: none;
+    }
+
+    &--header,
+    &--header:hover,
+    &--header:active {
+      background: none;
+      cursor: default;
+    }
+  }
+  &--withIcons {
+    .menu-item {
+      padding-left: 52px;
+      .icon {
+        position: absolute;
+        left: 0;
+        width: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  }
+
+  &--hoverable {
+    .menu-body {
+      top: calc(100% - 1px);
+    }
+  }
+
+  &--expanded,
+  &--hoverable:hover {
+    .menu-label {
+      &::before {
+        transform: translateY(-50%) rotate(-90deg);
+      }
+    }
+
+    .menu-body {
+      display: block;
+    }
+  }
+
+  &--select {
+    display: inline-block;
+    text-align: left;
+
+    .menu-label {
+      @include btn;
+      @include btn--medium;
+      @include btn--outline;
+      text-transform: none;
+      display: inline-block;
+      width: auto;
+      line-height: $line-height--base;
+      padding: $s4/2 $s40 $s4/2 $s8;
+      @include tablet-breakpoint {
+        padding-top: $s14;
+        padding-bottom: $s14;
+      }
+      font-weight: $font-weight--primary-semibold;
+      .menu-labelPrefix {
+        font-weight: $font-weight--primary-normal;
+      }
+      &::before {
+        right: $s10;
+      }
+      &:active:not(:disabled) {
+        background-color: $color--white;
+      }
+    }
+    .menu-body {
+      top: calc(100% + #{$s8});
+      width: auto;
+      min-width: 100%;
+      max-height: 400px;
+      overflow: auto;
+      @include border-radius;
+      @include mobile-breakpoint {
+        max-height: 300px;
+      }
+    }
+    .menu-item {
+      padding: ($s32 - $line-height--base)/2 $s8;
+      border-bottom: $border--light;
+      &:last-child {
+        border-bottom: none;
+      }
+      @include tablet-breakpoint {
+        padding-top: $s14;
+        padding-bottom: $s14;
+      }
+      @include mobile-breakpoint {
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+    }
+  }
+}

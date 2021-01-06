@@ -1,0 +1,394 @@
+.navbar {
+  position: fixed;
+  z-index: 100;
+  right: 0;
+  left: 0;
+  top: 0;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: stretch;
+  height: $navbar-height;
+  padding: 0 0 0 $s20;
+  background: $color--blue-90;
+
+  @include tablet-breakpoint {
+    height: $navbar-height--tablet;
+  }
+  @include mobile-breakpoint {
+    height: $navbar-height--mobile;
+  }
+
+  .navbar-brand {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0 $s20 0 0;
+    color: $color--white;
+    a {
+      display: inline-flex;
+    }
+    img {
+      height: $navbar-item-font-size;
+    }
+  }
+
+  .navbar-nav {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: stretch;
+    padding: 0;
+    margin: 0;
+    @include tablet-breakpoint {
+      display: none;
+    }
+
+    .menu {
+      &-label {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .navbar-item {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    list-style: none;
+    line-height: 1em;
+    user-select: none;
+
+    &:hover,
+    &:focus,
+    &--active {
+      .navbar-link {
+        border-color: $color--primary-active;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .navbar-link {
+    box-sizing: content-box;
+    color: $color--white;
+    text-decoration: none;
+    padding-left: $s20;
+    padding-right: $s20;
+    padding-top: $navbar-item-padding;
+    padding-bottom: $navbar-item-padding - $s8;
+
+    border-bottom: $s8 solid transparent;
+    display: block;
+    font-size: $navbar-item-font-size;
+    line-height: 1;
+    &:hover,
+    &:focus,
+    &--active {
+      border-color: $color--primary-active;
+      text-decoration: none;
+    }
+    .navbar-badge {
+      cursor: pointer;
+      display: inline;
+      font-size: $navbar-item-font-size - 8px;
+      line-height: 1em;
+      position: relative;
+      top: -1px;
+    }
+
+    @include tablet-breakpoint {
+      padding-top: $navbar-item-padding--tablet;
+      padding-bottom: $navbar-item-padding--tablet - $s8;
+    }
+
+    @include mobile-breakpoint {
+      padding-top: $navbar-item-padding--mobile;
+      padding-bottom: $navbar-item-padding--mobile - $s8;
+    }
+  }
+
+  .navbar-menu {
+    display: flex;
+    margin-left: auto;
+
+    .navbar-label {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      align-content: center;
+      justify-content: flex-end;
+      padding: 0;
+      margin: 0;
+      color: $color--primary;
+      margin-right: $s16;
+
+      & > * {
+        white-space: nowrap;
+      }
+
+      @include tablet-breakpoint {
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+      }
+      @include mobile-breakpoint {
+        display: none;
+      }
+    }
+
+    .menu {
+      &-label {
+        margin-right: $s24;
+        padding-top: $navbar-item-padding;
+        padding-bottom: $navbar-item-padding;
+        font-size: $navbar-item-font-size;
+        line-height: $navbar-item-font-size;
+        color: $color--white;
+
+        @include tablet-breakpoint {
+          padding-top: $navbar-item-padding--tablet;
+          padding-bottom: $navbar-item-padding--tablet;
+        }
+        @include mobile-breakpoint {
+          padding-top: $navbar-item-padding--mobile;
+          padding-bottom: $navbar-item-padding--mobile;
+        }
+        &::before {
+          // don't start with up/down because then transforms need to be re-produced
+          @extend .icon-chevron-right--white;
+        }
+      }
+      &-body {
+        width: 270px;
+        max-height: calc(100vh - #{$navbar-height});
+        overflow-y: auto;
+        .menu-section {
+          background: $color--white;
+          .menu-item {
+            flex-direction: column;
+            align-items: baseline;
+          }
+        }
+
+        @include tablet-breakpoint {
+          z-index: 10;
+          &:before {
+            z-index: 1;
+            display: block;
+            position: fixed;
+            content: '';
+            width: 100vw;
+            top: $navbar-height--tablet;
+            left: 0;
+            bottom: #{$navbarBottom-height--tablet - 1};
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+          }
+          .menu-section {
+            z-index: 2;
+          }
+          max-height: calc(100vh - #{$navbar-height--tablet});
+          width: 85vw;
+          max-width: 464px;
+        }
+        @include mobile-breakpoint {
+          position: fixed;
+          top: $navbar-height--mobile;
+          bottom: #{$navbarBottom-height--mobile + $navbarBottomSecondary-height--mobile - 1};
+          width: 100vw;
+          border: none;
+          &:before {
+            top: $navbar-height--mobile;
+            bottom: $navbarBottom-height--mobile - 1;
+          }
+          .menu-section {
+            .menu-itemDetails {
+              margin-top: 6px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbarSecondary {
+  height: $navbarSecondary-height;
+  display: flex;
+  border-bottom: $border--light;
+  &-nav {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+  }
+  &-rightCol {
+    width: $sideColumn-width;
+  }
+
+  &-item {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: flex-end;
+    margin: 0;
+    list-style: none;
+    line-height: 1em;
+  }
+  &-link {
+    color: $color--body-text;
+    text-decoration: none;
+    padding: 18px $s10;
+    border-bottom: 3px solid transparent;
+    display: block;
+    font-size: 18px;
+    line-height: 1;
+
+    &:hover,
+    &:focus,
+    &--active {
+      border-color: $color--primary-active;
+      text-decoration: none;
+      font-weight: $font-weight--primary-semibold;
+    }
+
+    .badge {
+      display: inline;
+    }
+  }
+  @include tablet-breakpoint {
+    z-index: 101;
+    position: fixed;
+    bottom: $navbarBottom-height--tablet - 1; //overlap navbar border
+    left: 0;
+    right: 0;
+    background: $color--white;
+    border: none;
+    border-top: $border--light;
+    text-transform: uppercase;
+    height: $navbarBottomSecondary-height--tablet;
+    &-rightCol {
+      display: none;
+    }
+    &-nav {
+      justify-content: space-between;
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+    &-item {
+      display: flex;
+      align-items: stretch;
+      font-weight: $font-weight--primary-semibold;
+      flex-shrink: 1;
+      flex-basis: 100%;
+    }
+    &-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: none;
+      width: 100%;
+      line-height: 18px;
+      font-size: $s16;
+      &--active {
+        color: $color--primary;
+        background: $color--blue-20;
+      }
+    }
+  }
+  @include mobile-breakpoint {
+    height: $navbarBottomSecondary-height--mobile;
+    bottom: $navbarBottom-height--mobile - 1; //overlap navbar border
+    &-link {
+      font-size: $s14;
+      padding: 9px;
+    }
+  }
+}
+
+.navbarBottom {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: $navbarBottom-height;
+  border-top: $border--light;
+  background-color: white;
+  &-nav {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  &-item {
+    padding: $s16;
+    cursor: pointer;
+    text-align: center;
+    margin: 0;
+    list-style: none;
+    font-weight: $font-weight--primary-semibold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: $color--body-text;
+    &--selected {
+      color: $color--primary;
+    }
+  }
+  &-icons {
+    height: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    .icon {
+      &::before {
+        height: $s20;
+      }
+      margin-right: 5px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .badge {
+      position: absolute;
+      left: calc(50% + #{$s10});
+
+      height: 18px;
+      min-width: 18px;
+      border-radius: 18px;
+
+      padding: 2px 5px;
+      line-height: 14px;
+
+      @include mobile-breakpoint {
+        font-size: 11px;
+      }
+    }
+  }
+
+  @include tablet-breakpoint {
+    display: block;
+    height: $navbarBottom-height--tablet;
+  }
+
+  @include mobile-breakpoint {
+    height: $navbarBottom-height--mobile;
+    &-item {
+      padding: $s8;
+    }
+    &-label {
+      font-size: $s14;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+.cardGrid,
+.card-grid,
+.catalog-grid {
+  padding: 0;
+  grid-gap: $s20 $s20;
+  display: grid;
+  vertical-align: top;
+
+  // force fixed-grid columns
+  grid-template-columns: repeat(auto-fill, $card-width--max);
+  justify-content: center;
+
+  // allow space for shadows
+  margin: 2px;
+  @include tablet-breakpoint {
+    display: block;
+  }
+
+  &--resizeable {
+    // allow resizing down to min-width
+    justify-content: unset;
+    grid-template-columns: repeat(auto-fill, minmax($card-width--min, 1fr));
+  }
+}
+
+.scrollContainer {
+  &-arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    &--left {
+      left: 0;
+      &::before {
+        @extend .icon-carousel-chevron-left;
+      }
+    }
+    &--right {
+      left: auto;
+      right: 0;
+      &::before {
+        @extend .icon-carousel-chevron-right;
+      }
+    }
+    &--up {
+      top: 0;
+      &::before {
+        @extend .icon-carousel-chevron-up;
+      }
+    }
+    &--down {
+      top: auto;
+      bottom: 0;
+      &::before {
+        @extend .icon-carousel-chevron-down;
+      }
+    }
+  }
+}
+
+.scrollContainer-scrollArea {
+  order: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollContainer-scrollArea--directionY {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.scrollContainer-scrollArea--directionX {
+  overflow: hidden;
+  overflow-x: auto;
+  width: 100%;
+
+  .cardGrid,
+  .card-grid,
+  .catalog-grid {
+    display: inline-grid;
+    grid-auto-flow: column;
+    grid-template-rows: auto;
+    grid-auto-columns: $card-width--max;
+    grid-template-columns: unset;
+    justify-content: unset;
+    width: calc(100% - 2 * 2px); // offset the margins
+    @include tablet-breakpoint {
+      display: block;
+    }
+  }
+}
+
+.card {
+  @include container-glow;
+  @include tablet-breakpoint {
+    box-shadow: unset;
+    border-bottom: $border--light;
+  }
+  background: $color--white;
+  padding: $s10 $s14;
+  &-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: '';
+      display: block;
+      background-color: $background-color--light;
+      opacity: 0.4;
+    }
+    &--white {
+      &:before {
+        background-color: $color--white;
+        opacity: 0.9;
+      }
+    }
+    &:not(.card-overlay--adder) {
+      @include tablet-breakpoint {
+        &:before {
+          background-color: $background-color--light;
+          opacity: 0.4;
+        }
+        .card-overlayContent {
+          align-items: flex-end;
+          justify-content: flex-end;
+          .btn {
+            width: 200px;
+          }
+        }
+      }
+    }
+    .card-overlayContent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: $s20;
+      @include tablet-breakpoint {
+        padding-bottom: $s8;
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      > * {
+        margin-bottom: $s10;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      h6 {
+        margin-bottom: $s16;
+      }
+    }
+  }
+}

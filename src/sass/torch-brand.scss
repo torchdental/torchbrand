@@ -1,0 +1,156 @@
+/*
+ *  Styles for Torch Branding
+ *  This file is auto-generated from torch-brand.scss
+ */
+
+// TODO generally replace @extend with @import and create mixins for better-controlled reuse.
+
+// Import css reset
+@import 'reset';
+@import 'utility/all';
+
+@import 'fonts';
+@import 'icons';
+@import 'typography';
+@import 'forms';
+@import 'tables';
+
+@import 'components/all';
+
+body {
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.app-root {
+  position: fixed;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100%;
+}
+
+main,
+.app-body {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  padding: 0 $s24;
+  & > * {
+    margin-top: $s24;
+  }
+  & > *:first-child {
+    margin-top: $s32;
+  }
+  & > *:last-child {
+    margin-bottom: $s24;
+  }
+  @include tablet-breakpoint {
+    padding: 0 $s10;
+    & > * {
+      margin-top: $s16;
+    }
+    & > *:last-child {
+      margin-bottom: $s16;
+    }
+  }
+  @include mobile-breakpoint {
+    padding: 0 $s10;
+    & > * {
+      margin-top: $s12;
+    }
+    & > *:last-child {
+      margin-bottom: $s12;
+    }
+  }
+}
+
+nav + main,
+nav + .app-body {
+  margin-top: $navbar-height;
+  @include tablet-breakpoint {
+    margin-top: $navbar-height--tablet;
+  }
+  @include mobile-breakpoint {
+    margin-top: $navbar-height--mobile;
+  }
+}
+nav.navbarBottom + main,
+nav.navbarBottom + .app-body {
+  @include tablet-breakpoint {
+    margin-bottom: $navbarBottom-height--tablet;
+  }
+  @include mobile-breakpoint {
+    margin-bottom: $navbarBottom-height--mobile;
+  }
+}
+nav.navbarSecondary + nav.navbarBottom + main,
+nav.navbarSecondary + nav.navbarBottom + .app-body {
+  @include tablet-breakpoint {
+    margin-bottom: $navbarBottom-height--tablet + $navbarBottomSecondary-height--tablet;
+  }
+  @include mobile-breakpoint {
+    margin-bottom: $navbarBottom-height--mobile + $navbarBottomSecondary-height--mobile;
+  }
+}
+
+/* --- Other Elements for Style Guide only --- */
+
+pre {
+  background: $background-color--extra-light;
+  padding: $s16 $s20;
+  @include tablet-breakpoint {
+    white-space: pre-line;
+  }
+}
+
+// Offset anchors for fixed nav
+.anchor {
+  display: block;
+  visibility: hidden;
+  top: -$s16;
+  position: relative;
+  @include tablet-breakpoint {
+    top: -$s8;
+  }
+}
+
+code {
+  padding: $s8 / 2;
+  background: $background-color--light;
+  @include border-radius;
+  line-height: 1em;
+  white-space: pre-line;
+}
+code + div {
+  margin-top: $s8;
+  background-color: $color--gray-20;
+}
+
+.box {
+  background-color: $color--gray-60;
+  color: $color--white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--active {
+    background-color: $color--primary;
+  }
+}
+
+* {
+  position: relative;
+}
+
+*::selection {
+  background-color: $color--primary-active;
+  color: $color--white;
+}
+
+*[tabindex='-1'] {
+  outline: none;
+}

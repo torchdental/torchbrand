@@ -1,0 +1,42 @@
+.badge,
+.badgeStep,
+.circle {
+  @extend .details1; //s14
+  @extend .styleAs-strong; //bold
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  min-width: $s20;
+  height: $s20;
+  border-radius: $s20;
+  line-height: 1;
+
+  background-color: $color--primary-active;
+  color: $color--white;
+  cursor: default;
+
+  @include space-modifiers;
+  &--muted {
+    background-color: $background-color--medium;
+  }
+}
+
+.badgeStep {
+  background-color: $color--secondary;
+  min-width: $s40;
+  min-height: $s40;
+  font-size: $s24;
+  font-weight: 600;
+  margin-left: $s14;
+  margin-bottom: $s14;
+  &--small {
+    font-size: $s20;
+    min-width: $s32;
+    min-height: $s32;
+  }
+  &--muted {
+    background-color: $background-color--medium;
+  }
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="22px" viewBox="0 0 20 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 20 Copy</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="icon/orders/enabled" transform="translate(1.000000, 1.000000)" stroke="$icon-color" stroke-width="1.75">
+            <g id="Group-20-Copy" transform="translate(-0.000000, 0.000000)">
+                <path d="M14.7368421,19.5321637 C14.7368421,19.7904094 14.5305263,20 14.2763158,20 L0.460526316,20 C0.206315789,20 0,19.7904094 0,19.5321637 L0,3.62573099 C0,3.36748538 0.206315789,3.15789474 0.460526316,3.15789474 L14.2763158,3.15789474 C14.5305263,3.15789474 14.7368421,3.36748538 14.7368421,3.62573099 L14.7368421,19.5321637 L14.7368421,19.5321637 Z" id="Stroke-340"></path>
+                <path d="M3.15789474,0.000126878743 L17.3927334,0.000126878743 C17.6698812,0.000126878743 17.8947368,-0.0143091027 17.8947368,0.264786539 L17.8947368,16.8421053" id="Stroke-342"></path>
+            </g>
+        </g>
+    </g>
+</svg>

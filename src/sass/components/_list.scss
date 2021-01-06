@@ -1,0 +1,119 @@
+.list {
+  display: inline-flex;
+  flex-direction: column;
+  background-color: $color--white;
+  margin: 0;
+
+  &-button {
+    @include btn;
+    @include btn--small;
+    @include btn--outline;
+    @include btn--sized;
+    background: $color--white;
+    justify-content: space-between;
+    align-items: center;
+    padding: $s8 $s12;
+    font-size: $s12;
+    i::before {
+      width: $s12;
+      height: $s12;
+    }
+    span {
+      margin: 0 $s12;
+      font-weight: $font-weight--primary-semibold;
+    }
+    .badge {
+      margin-left: 0;
+    }
+  }
+  &-header {
+    display: none;
+    padding: $s16;
+    align-items: center;
+    border-bottom: 1px solid $color--gray-50;
+  }
+  &-body {
+    display: none;
+    flex-grow: 1;
+    border: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-bottom: -1px; // overlap bottom-border of last list-item
+
+    &--empty {
+      padding: $s24 $s16;
+    }
+  }
+  &-item {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid $color--gray-50;
+    box-shadow: unset;
+    height: auto;
+    padding: $s14;
+  }
+  &-footer {
+    display: none;
+    padding: $s12 $s14;
+    border-top: 1px solid $color--gray-50;
+    text-align: center;
+
+    & > div {
+      @include tablet-breakpoint {
+        display: flex;
+        flex-direction: row;
+        & > *:not(:first-child) {
+          margin: 0 0 0 $s16;
+        }
+      }
+      @include mobile-breakpoint {
+        display: flex;
+        flex-direction: column;
+        & > *:not(:first-child) {
+          margin: $s8 0 0 0;
+        }
+      }
+    }
+  }
+
+  &--expanded {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 0;
+    border: 1px solid $color--gray-50;
+
+    .list-button {
+      display: none;
+    }
+    .list-header {
+      display: flex;
+    }
+    .list-body,
+    .list-footer {
+      display: block;
+    }
+  }
+  @include tablet-breakpoint {
+    width: 100%;
+    max-width: unset;
+    border: none;
+    background: transparent;
+
+    .list-body {
+      width: 100%;
+      border: none;
+      position: relative;
+    }
+    .list-label {
+      width: 100%;
+      border: none !important;
+      i {
+        display: none;
+      }
+      span {
+        text-transform: none;
+      }
+      background: transparent;
+    }
+  }
+}

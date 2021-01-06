@@ -1,0 +1,269 @@
+@mixin btn--sized {
+  padding-left: $s16;
+  padding-right: $s16;
+  display: inline-block;
+  width: auto;
+}
+
+@mixin btn--tight {
+  padding-left: $s8;
+  padding-right: $s8;
+  display: inline-block;
+  width: auto;
+}
+
+@mixin btn--xSmall {
+  font-size: $s10;
+  padding-top: $s10;
+  padding-bottom: $s10;
+  .icon::before {
+    height: $s10;
+    font-size: $s10;
+  }
+}
+
+@mixin btn--small {
+  font-size: $s14;
+  padding-top: $s8;
+  padding-bottom: $s8;
+  .icon::before {
+    height: $s14;
+    font-size: $s14;
+  }
+}
+
+@mixin btn--medium {
+  font-size: $s16;
+  padding-top: $s12;
+  padding-bottom: $s12;
+  .icon::before {
+    height: $s16;
+    font-size: $s16;
+  }
+}
+
+@mixin btn--large {
+  font-size: $s20;
+  padding-top: $s14;
+  padding-bottom: $s14;
+  .icon::before {
+    height: $s20;
+    font-size: $s20;
+  }
+}
+
+@mixin btn--primary {
+  color: $color--white;
+  background: $color--blue-50;
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    background: $color--blue-40;
+  }
+  &:active:not(:disabled) {
+    background: $color--blue-60;
+  }
+}
+
+@mixin btn--secondary {
+  color: $color--white;
+  background: $color--green-50;
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    background: $color--green-40;
+  }
+  &:active:not(:disabled) {
+    background: $color--green-60;
+  }
+}
+
+@mixin btn--disabled {
+  color: $color--white;
+  cursor: auto;
+  background: $color--gray-30;
+  text-decoration: none;
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    background: $color--gray-30;
+  }
+  &:active:not(:disabled) {
+    background: $color--gray-30;
+  }
+}
+
+@mixin btn {
+  display: block;
+  width: 100%;
+  margin: 0;
+
+  // default to "large" buttons
+  @include btn--large;
+
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  @include border-radius;
+
+  color: $color--body-text;
+  font-weight: $font-weight--primary-semibold;
+  line-height: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+
+  box-shadow: none;
+  outline: none;
+  user-select: none;
+
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-appearance: none;
+
+  background: $color--gray-20;
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    background: $color--gray-30;
+    text-decoration: none;
+  }
+  &:active:not(:disabled) {
+    background: $color--gray-50;
+    text-decoration: none;
+  }
+
+  @include space-modifiers;
+
+  &--squared,
+  &.btn-squared {
+    border-radius: 0;
+  }
+
+  &--sized,
+  &.btn-sized {
+    @include btn--sized;
+  }
+  &--tight,
+  &.btn-tight {
+    @include btn--tight;
+  }
+
+  &--primary,
+  &.btn-primary {
+    @include btn--primary;
+  }
+  &--secondary,
+  &.btn-secondary {
+    @include btn--secondary;
+  }
+
+  &:disabled,
+  &--disabled {
+    @include btn--disabled;
+  }
+
+  &--xSmall,
+  &.btn-xs {
+    @include btn--xSmall;
+  }
+  &--small,
+  &.btn-sm {
+    @include btn--small;
+  }
+  &--medium,
+  &.btn-md {
+    @include btn--medium;
+  }
+  &--large,
+  &.btn-lg {
+    @include btn--large;
+  }
+
+  &--flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    &.btn--sized {
+      display: inline-flex;
+    }
+    &.btn--small {
+      height: 28px;
+    }
+    &.btn--medium {
+      height: 38px;
+    }
+    &.btn--large {
+      height: 48px;
+    }
+  }
+}
+
+@mixin btn--outline--primary {
+  color: $color--blue-50;
+  border-color: $color--blue-50;
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    border-color: $color--blue-50;
+    background: $color--blue-10;
+  }
+  &:active:not(:disabled) {
+    border-color: $color--blue-50;
+    background: $color--blue-20;
+  }
+}
+
+@mixin btn--outline--secondary {
+  color: $color--green-50;
+  border-color: $color--green-50;
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    border-color: $color--green-50;
+    background: $color--green-10;
+  }
+  &:active:not(:disabled) {
+    border-color: $color--green-50;
+    background: $color--green-20;
+  }
+}
+
+@mixin btn--outline {
+  border: 1px solid $color--gray-50;
+  background: $color--white;
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    border: 1px solid $color--gray-90;
+    background: $color--white;
+    text-decoration: none;
+  }
+  &:active:not(:disabled) {
+    border: 1px solid $color--gray-90;
+    background: $color--gray-25;
+    text-decoration: none;
+  }
+
+  &:disabled,
+  &.btn--disabled {
+    border-color: $color--body-text--secondary;
+    color: $color--body-text--secondary;
+    background: $color--white;
+    &:hover:not(:disabled),
+    &:focus:not(:disabled) {
+      background: $color--white;
+    }
+    &:active:not(:disabled) {
+      background: $color--white;
+    }
+  }
+
+  &--primary,
+  &.btn--primary,
+  &.btn-minor-primary {
+    @include btn--outline--primary;
+  }
+
+  &--secondary,
+  &.btn--secondary,
+  &.btn-minor-secondary {
+    @include btn--outline--secondary;
+  }
+}

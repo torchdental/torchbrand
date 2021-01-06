@@ -1,0 +1,6 @@
+@mixin inputBorder() {
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-bottom-color: $color--form-border;
+  border-radius: 0;
+}

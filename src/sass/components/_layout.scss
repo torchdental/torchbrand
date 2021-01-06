@@ -1,0 +1,166 @@
+.layout {
+  &--colLeft,
+  &--colRight,
+  &--colRightAndLeft,
+  &--twoMain {
+    display: grid;
+    grid-template-columns: $sideColumn-width auto;
+    gap: $s24;
+    & > .layout-col {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    & > .layout-main {
+      grid-row: 1;
+      grid-column: 2;
+    }
+    .layout {
+      // Custom breakpoint to ensure nested center column doesn't get too narrow. When screen < 2 columns plus 2 cols plus 2 column width for the main column,
+      // break into single column for the nested layout.
+      @media (max-width: $sideColumn-width * 4 + $s32 * 2) {
+        grid-template-columns: 100%;
+        & > .layout-col,
+        & > .layout-main {
+          grid-column: 1;
+        }
+        & > .layout-col {
+          grid-row: 1;
+        }
+        & > .layout-main {
+          grid-row: 2;
+        }
+        &.layout--reverseOrder {
+          & > .layout-col {
+            grid-row: 2;
+          }
+          & > .layout-main {
+            grid-row: 1;
+          }
+        }
+      }
+    }
+    @include tablet-breakpoint {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      & > .layout-main,
+      & > .layout-col {
+        margin: $s24 0;
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      &.layout--reverseOrder {
+        & > .layout-main {
+          order: 1;
+          margin: $s24 0 0 0;
+        }
+        & > .layout-col {
+          order: 2;
+          margin: 0 0 $s24 0;
+        }
+        &.layout--colRight {
+          & > .layout-col {
+            order: 2;
+          }
+          & > .layout-main {
+            order: 1;
+          }
+        }
+      }
+    }
+    @include mobile-breakpoint {
+      & > .layout-main,
+      & > .layout-col {
+        margin: 0;
+      }
+    }
+  }
+  &--colRight {
+    grid-template-columns: auto $sideColumn-width;
+    .layout-col {
+      grid-column: 2;
+    }
+    .layout-main {
+      grid-column: 1;
+    }
+  }
+  &--colRightAndLeft {
+    grid-template-columns: $sideColumn-width auto $sideColumn-width;
+    .layout-col:first-of-type {
+      grid-column: 1;
+    }
+    .layout-main {
+      grid-column: 2;
+    }
+    .layout-col:last-of-type {
+      grid-column: 3;
+    }
+  }
+  &--twoMain {
+    grid-template-columns: auto auto;
+    .layout-main:first-of-type {
+      grid-column: 1;
+    }
+    .layout-main:last-of-type {
+      grid-column: 2;
+    }
+  }
+  &--fullWidth {
+    width: 100%;
+  }
+
+  &--noScroll {
+    overflow: hidden;
+    & > .layout-col,
+    & > .layout-main {
+      overflow-y: auto;
+    }
+  }
+}
+
+.layout--trackingRow {
+  display: grid;
+  grid-template-columns: $s32 auto;
+  column-gap: $s16;
+  row-gap: 0;
+}
+.layout--productRow {
+  display: grid;
+  grid-template-columns: 100px auto;
+  column-gap: $s16;
+  row-gap: 0;
+}
+
+.layout--buttonRow {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  row-gap: 0;
+  align-items: center;
+}
+
+.layout--orderRow {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: $s32;
+  row-gap: 0;
+  align-items: center;
+
+  .layout-orderCol1 {
+    grid-column: 1 / span 3;
+  }
+  .layout-orderCol2 {
+    grid-column: 4 / span 3;
+  }
+  .layout-orderCol3 {
+    grid-column: 7 / span 2;
+  }
+  .layout-orderCol4 {
+    border-left: $border--light;
+    padding-left: 2rem;
+    grid-column: 9 / span 4;
+  }
+}

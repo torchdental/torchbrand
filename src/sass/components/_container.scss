@@ -1,0 +1,131 @@
+.section-label,
+.container {
+  margin: $s24 0;
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.container {
+  padding: $s32 $s16;
+  background-color: $color--white;
+
+  // block element does not support modifiers
+  &-block {
+    display: block;
+    @include container-children;
+  }
+
+  &-header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    @include container-children;
+    @include container-modifiers;
+  }
+
+  &-section {
+    display: flex;
+    flex-direction: column;
+    @include container-children;
+    @include container-modifiers;
+  }
+
+  &-footer {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    @include container-children;
+    @include container-modifiers;
+  }
+
+  // Note that these are available for general use. But they shold be avoided in favor of cards, tooltips and other components
+  // that use these stylings.
+
+  // For all general containers/cards
+  @include container-glow;
+
+  // For accordion headers
+  &--shadow {
+    @include container-shadow;
+  }
+
+  // For tooltips
+  &--round {
+    @include container-border;
+  }
+
+  &--transparent {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  &--splitContainer {
+    padding: 0;
+    & > *:first-child {
+      padding: $s32 22px $s32 $s16;
+      border-right: 1px solid $color--gray-30;
+    }
+    & > *:last-child {
+      padding: $s20 $s16;
+    }
+  }
+
+  &--expandable {
+    padding: 0;
+    .container-header {
+      @include container-shadow;
+      margin: 0;
+      padding: $s32 $s16;
+      cursor: pointer;
+      &::before {
+        // don't start with up/down because then transforms need to be re-produced
+        @extend .icon-chevron-right;
+        position: absolute;
+        top: 50%;
+        right: $s32;
+        transform: translateY(-50%) rotate(90deg);
+      }
+    }
+    .container-body {
+      display: none;
+      padding: $s32 $s16;
+    }
+    &.container--expanded {
+      .container-header {
+        &::before {
+          transform: translateY(-50%) rotate(-90deg);
+        }
+      }
+      .container-body {
+        display: block;
+      }
+    }
+    @include tablet-breakpoint {
+      .container-header {
+        padding: $s40 $s16;
+      }
+      .container-body {
+        padding: $s40 $s16;
+      }
+    }
+    @include mobile-breakpoint {
+      .container-header {
+        padding: $s24 $s16;
+      }
+      .container-body {
+        padding: $s24 $s16;
+      }
+    }
+  }
+
+  // mobile styles for .container
+  @include mobile-breakpoint {
+    padding: 16px 8px;
+  }
+}

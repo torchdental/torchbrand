@@ -1,0 +1,35 @@
+/* --- Font Face Directives --- */
+
+// Open Sans
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: $font-weight--primary-normal;
+  src: url('../../assets/fonts/open-sans/OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: $font-weight--primary-semibold;
+  src: url('../../assets/fonts/open-sans/OpenSans-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: $font-weight--primary-bold;
+  src: url('../../assets/fonts/open-sans/OpenSans-Bold.ttf') format('truetype');
+}
+
+// Font Awesome
+@font-face {
+  font-family: 'FontAwesome';
+  font-weight: $font-weight--icons-brand;
+  src: url('../../assets/fonts/font-awesome/fa-brands-400.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'FontAwesome';
+  font-weight: $font-weight--icons-normal;
+  src: url('../../assets/fonts/font-awesome/fa-regular-400.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'FontAwesome';
+  font-weight: $font-weight--icons-solid;
+  src: url('../../assets/fonts/font-awesome/fa-solid-900.ttf') format('truetype');
+}

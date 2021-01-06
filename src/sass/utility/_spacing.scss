@@ -1,0 +1,36 @@
+@import 'variables';
+@import 'mixins';
+
+@mixin margin-modifiers($dir) {
+  margin-#{$dir}: $s16;
+  &--xSmall {
+    margin-#{$dir}: $s4;
+  }
+  &--small {
+    margin-#{$dir}: $s8;
+  }
+  &--medium {
+    margin-#{$dir}: $s16;
+  }
+  &--large {
+    margin-#{$dir}: $s24;
+  }
+  &--xLarge {
+    margin-#{$dir}: $s32;
+  }
+}
+
+.space {
+  &Top {
+    @include margin-modifiers('top');
+  }
+  &Right {
+    @include margin-modifiers('right');
+  }
+  &Bottom {
+    @include margin-modifiers('bottom');
+  }
+  &Left {
+    @include margin-modifiers('left');
+  }
+}

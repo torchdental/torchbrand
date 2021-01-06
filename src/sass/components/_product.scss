@@ -1,0 +1,320 @@
+// product class is used in list/card/modal permutations
+// styles here should be non-positional, size independent
+.product {
+  .product-header {
+    display: flex;
+    align-items: center;
+    .icon {
+      cursor: pointer;
+    }
+  }
+  .product-flags {
+    margin: 0 $s8;
+    flex-grow: 1;
+
+    &--vertical {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .flag {
+        display: inline-block;
+        margin: 0;
+        &:not(:first-child) {
+          margin-top: $s8;
+        }
+      }
+    }
+    &--horizontal {
+      margin: $s8;
+      display: flex;
+      .flag {
+        margin: 0;
+        &:not(:first-child) {
+          margin-left: $s8;
+        }
+      }
+    }
+    .flag:not(:nth-child(-n + 2)) {
+      // only show first two flags
+      display: none;
+    }
+  }
+  .product-image {
+    cursor: pointer;
+    overflow: hidden;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  .product-body {
+    // NB: body is not always used
+  }
+  .product-title {
+    font-weight: $font-weight--primary-semibold;
+    display: -webkit-box; // TODO: https://css-tricks.com/line-clampin/
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    .product-options {
+      white-space: nowrap;
+      @extend .details2;
+      @extend .text--muted;
+      font-weight: $font-weight--primary-normal;
+    }
+  }
+  .product-manufacturer {
+    @extend .details1;
+  }
+  .product-prices {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .product-price {
+      margin: 0 $s16 0 0;
+      &--torch {
+        @extend .text--bold;
+        @extend .text--primary;
+      }
+      &--retail {
+        @extend .text--strikethrough;
+      }
+    }
+  }
+  .product-availability {
+    @extend .details1;
+    color: $color--bright;
+  }
+}
+
+.product.list-item {
+  display: grid;
+  grid-template-columns: 86px auto;
+  gap: 0 10px;
+
+  grid-template-areas:
+    'header header'
+    'image body'
+    '. footer';
+
+  .product-header {
+    grid-area: header;
+    margin-bottom: $s8;
+    height: 30px;
+  }
+  .product-image {
+    grid-area: image;
+  }
+  .product-body {
+    grid-area: body;
+  }
+  .product-footer {
+    grid-area: footer;
+  }
+
+  .product-title {
+    line-height: 24px;
+  }
+  .product-flags {
+    display: flex;
+    align-items: baseline;
+    margin-left: $s8;
+  }
+  .product-variants {
+    margin-bottom: 16px;
+  }
+
+  .product-image {
+    img {
+      max-width: 86px;
+      max-height: 78px;
+    }
+  }
+  .product-manufacturer {
+    margin-top: $s4;
+    color: $color--body-text--secondary;
+  }
+
+  .quantitySelector {
+    margin: $s4 0;
+  }
+
+  @include tablet-breakpoint {
+    padding: $s12;
+    .product-header {
+      margin-bottom: $s12;
+    }
+    .product-image {
+      img {
+        max-width: 178px;
+        max-height: 132px;
+      }
+    }
+    .product-body {
+      flex: 1 1;
+    }
+    .product-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+  @include mobile-breakpoint {
+    .quantitySelector {
+      .quantitySelector-label {
+        margin-right: 10px;
+      }
+      .counterInput-count {
+        width: 48px;
+      }
+    }
+  }
+}
+
+.product.card {
+  padding: $s10 $s14 $s16 $s14;
+  max-width: 300px;
+  min-height: 364px;
+
+  min-width: 190px;
+  max-height: 456px;
+
+  .product-header {
+    margin-bottom: 6px;
+  }
+  .product-image {
+    margin-bottom: $s16;
+    img {
+      max-width: 275px;
+      max-height: 134px;
+    }
+  }
+  .product-body {
+    cursor: pointer;
+  }
+  .product-title {
+    max-height: 72x;
+    line-height: 24px;
+    margin-bottom: 4px;
+  }
+  .product-options {
+    margin-left: $s8;
+  }
+  .product-manufacturer {
+    margin-bottom: $s8;
+  }
+  .product-prices {
+    margin-bottom: 2px;
+  }
+
+  @include tablet-breakpoint {
+    width: unset;
+    height: unset;
+    max-width: unset;
+    max-height: unset;
+    min-width: unset;
+    min-height: unset;
+
+    padding-top: 10px;
+    padding-bottom: 16px;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    .product-header {
+      display: inline-flex;
+      margin-bottom: 10px;
+      flex: 1 1 100%;
+    }
+    .product-body {
+      height: auto;
+      margin-left: 14px;
+      flex: 1 1;
+    }
+    .product-image {
+      margin-bottom: 0;
+      img {
+        max-width: 178px;
+        max-height: 132px;
+      }
+    }
+    .card-overlayContent {
+      padding-bottom: 16px;
+    }
+  }
+
+  @include mobile-breakpoint {
+    min-height: 180px;
+  }
+}
+
+.product.modal-body {
+  .product-image {
+    img {
+      max-width: 290px;
+      max-height: 290px;
+    }
+  }
+  .product-title {
+    @extend .subheader;
+  }
+  .product-manufacturer {
+    padding-bottom: $s10;
+    border-bottom: $border--light;
+    margin-bottom: $s16;
+  }
+  .product-variant {
+    margin-top: $s16;
+    & > *:not(:first-child) {
+      margin-top: $s12;
+    }
+  }
+  .product-flags {
+    font-weight: $font-weight--primary-semibold;
+  }
+  .product-prices {
+    margin-top: $s10;
+    margin-bottom: $s4;
+    .product-price {
+      font-weight: $font-weight--primary-semibold;
+      &--torch {
+        font-size: $s20;
+      }
+    }
+  }
+  .product-availability {
+    font-weight: $font-weight--primary-semibold;
+  }
+
+  .product-controls {
+    padding: 10px;
+    .product-prices {
+      &--torch {
+        font-size: $s24;
+        line-height: 32px;
+      }
+    }
+    .product-quantity {
+      margin-top: 32px;
+      font-weight: $font-weight--primary-semibold;
+    }
+    .quantitySelector {
+      margin-top: 10px;
+      margin-bottom: 16px;
+    }
+  }
+  .product-actions {
+    padding: 24px 16px;
+    margin-top: 16px;
+  }
+
+  .product-controls,
+  .product-actions {
+    @include desktop-breakpoint {
+      &:first-child {
+        margin-top: 54px;
+      }
+    }
+  }
+}

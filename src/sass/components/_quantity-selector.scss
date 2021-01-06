@@ -1,0 +1,95 @@
+.quantitySelector,
+.counterInput {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  flex-wrap: wrap;
+  &-minus,
+  &-plus {
+    @include btn;
+    color: $color--secondary;
+    background-color: $color--gray-20 !important;
+    width: $s40;
+    font-size: 28px;
+
+    font-weight: $font-weight--primary-normal;
+    &--disabled {
+      color: $color--gray-30;
+      background-color: $color--gray-20;
+    }
+  }
+  &-count {
+    width: 60px;
+    padding: 0 $s8;
+  }
+  &-input {
+    display: inline;
+    text-align: center;
+    &:not(:focus) {
+      border: none;
+    }
+    &:disabled {
+      background-color: $color--white;
+    }
+  }
+  &-add,
+  &-cancel {
+    @include btn;
+    @include btn--small;
+    @include btn--sized;
+  }
+  &-add {
+    @include btn--secondary;
+    margin-left: $s24;
+  }
+  &-label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: $s20;
+    color: $color--body-text--secondary;
+    font-size: $s14;
+    height: $s40;
+  }
+  &-cancel {
+    @include btn--outline;
+  }
+  &-minus,
+  &-plus,
+  &-count,
+  &-add,
+  &-cancel {
+    height: $s40;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  &-buttons {
+    padding-top: $s16;
+    flex-basis: 100%;
+    display: inline-flex;
+    .quantitySelector-add,
+    .quantitySelector-cancel {
+      height: auto;
+      margin-left: 0;
+      margin-right: $s12;
+      width: 80px; // static multiple of 8
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &--ctr {
+    justify-content: center;
+
+    .quantitySelector-buttons {
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+  }
+}
+.counterInput--ctr {
+  flex-wrap: nowrap;
+}

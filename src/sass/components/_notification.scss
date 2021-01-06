@@ -1,0 +1,104 @@
+.notification {
+  @include btn;
+  @include btn--medium;
+  @include btn--sized;
+  @include container-glow;
+  white-space: unset;
+  cursor: default;
+  line-height: $line-height--base;
+  text-transform: none;
+  width: auto;
+  color: $color--primary;
+  background-color: $color--blue-20;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding-left: $s8;
+  padding-right: $s8;
+  .icon:first-child {
+    margin-right: $s8;
+  }
+  &:hover,
+  &:active {
+    color: $color--primary;
+    background-color: $color--blue-20;
+    &:not(:disabled) {
+      color: $color--primary;
+      background-color: $color--blue-20;
+    }
+  }
+  font-weight: $font-weight--primary-bold;
+
+  &--left {
+    text-align: left;
+    justify-content: flex-start;
+  }
+  &--success {
+    color: $color--secondary;
+    background-color: $color--green-20;
+    &:hover,
+    &:active {
+      color: $color--secondary;
+      background-color: $color--green-20;
+      &:not(:disabled) {
+        color: $color--secondary;
+        background-color: $color--green-20;
+      }
+    }
+  }
+
+  &--warning {
+    color: $color--body-text;
+    background-color: $color--yellow-20;
+    font-weight: $font-weight--primary-normal;
+    &:hover,
+    &:active {
+      color: $color--body-text;
+      background-color: $color--yellow-20;
+      &:not(:disabled) {
+        color: $color--body-text;
+        background-color: $color--yellow-20;
+      }
+    }
+  }
+  &--error {
+    color: $color--danger;
+    background-color: $color--berry-20;
+    &:hover,
+    &:active {
+      color: $color--danger;
+      background-color: $color--berry-20;
+      &:not(:disabled) {
+        color: $color--danger;
+        background-color: $color--berry-20;
+      }
+    }
+  }
+
+  &--banner {
+    padding: $s16;
+    margin: $s24 $s24 0 $s24;
+
+    .icon-close {
+      margin-top: 0;
+      margin-right: -$s8;
+      cursor: pointer;
+    }
+
+    @include tablet-breakpoint {
+      display: block;
+      margin: $s8 $s12;
+      align-items: center;
+
+      .icon-close {
+        position: absolute;
+        top: $s16;
+        right: $s16;
+      }
+      .layout-col,
+      .layout-main {
+        margin: 0 0 $s8 0;
+      }
+    }
+  }
+}

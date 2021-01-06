@@ -1,0 +1,143 @@
+.tooltip {
+  &:before {
+    position: absolute;
+    display: block;
+    content: '';
+    transform: rotate(45deg);
+    width: $s8;
+    height: $s8;
+    border-left: $border--light;
+    border-top: $border--light;
+    top: -5px;
+    left: $s24;
+    background: $color--white;
+  }
+
+  position: absolute;
+  display: none; // hidden by default
+  z-index: 1000;
+
+  min-width: $s40 * 5;
+  max-width: 350px;
+  padding: $s16;
+
+  font-size: $s14;
+  font-weight: $font-weight--primary-normal;
+  line-height: $line-height--base;
+
+  background: $color--white;
+  border: $border--light;
+  @include border-radius;
+
+  &--visible {
+    display: block;
+    box-sizing: content-box;
+  }
+
+  &--wide {
+    min-width: 300px;
+  }
+
+  &--small {
+    max-width: 400px;
+    white-space: initial;
+    text-align: left;
+  }
+
+  &--top-right {
+    transform: translate(calc(-#{$s24} - 5px), calc(-100% - #{$s8}));
+    &:before {
+      top: unset;
+      bottom: -5px;
+      transform: rotate(-135deg);
+    }
+  }
+
+  &--top-left {
+    transform: translate(calc(-100% + #{$s24} + 5px), calc(-100% - #{$s8}));
+    &:before {
+      top: unset;
+      bottom: -5px;
+      transform: rotate(-135deg);
+      left: unset;
+      right: $s24;
+    }
+  }
+
+  &--top {
+    transform: translate(-50%, calc(-100% - #{$s8}));
+    &:before {
+      top: unset;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-135deg);
+    }
+  }
+
+  &--left {
+    transform: translate(calc(-100% - #{$s8}), -50%);
+    &:before {
+      top: 50%;
+      left: unset;
+      right: -5px;
+      transform: translateY(-50%) rotate(135deg);
+    }
+  }
+
+  &--right {
+    transform: translate(#{$s8}, -50%);
+    &:before {
+      top: 50%;
+      left: -5px;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+  }
+
+  &--bottom {
+    transform: translate(-50%, #{$s8});
+    &:before {
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+    }
+  }
+
+  &--bottom-left {
+    transform: translate(calc(-100% + #{$s24} + 5px), #{$s8});
+    &:before {
+      left: unset;
+      right: $s24;
+    }
+  }
+
+  &--bottom-right {
+    transform: translate(calc(-#{$s24} - 5px), #{$s8});
+  }
+
+  &-anchor {
+    cursor: pointer;
+    display: inline-flex;
+
+    &--disabled {
+      cursor: default;
+      color: $color--disabled;
+    }
+  }
+
+  .icon-close {
+    &::before {
+      width: 14px;
+      height: 14px;
+      @import '../icons/close-xs:enabled.svg';
+    }
+    &:hover,
+    &:active {
+      &::before {
+        @import '../icons/close-xs:active.svg';
+      }
+    }
+    cursor: pointer;
+    float: right;
+    margin-top: -6px;
+    margin-right: -6px;
+  }
+}

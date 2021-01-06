@@ -8,28 +8,38 @@
 
 html {
   line-height: 1;
-	-webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: transparent;
 }
 
-article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
-	display: block;
+article,
+aside,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
 }
 
 body {
-	font-size: 1rem;
-	margin: 0;
-	padding: 0;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-	outline: none;
+  outline: none;
 }
 
 i {
-	font-style: normal;
+  font-style: normal;
 }
 
 address {
@@ -48,9 +58,9 @@ img {
 }
 
 table {
-	width: 100%;
-	border-collapse: collapse;
-	border-spacing: 0;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 th {
@@ -66,11 +76,11 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-	outline: none;
+  outline: none;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+input[type='radio'],
+input[type='checkbox'] {
   padding: 0;
 }
 
@@ -102,5 +112,20 @@ progress {
 }
 
 iframe {
-	border: 0;
+  border: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }

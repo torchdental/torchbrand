@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="76px" height="76px" viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 2 Copy 6</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <filter id="filter-2">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2-Copy-6">
+            <circle id="Oval-Copy-5" fill="#00AEF6" cx="38" cy="38" r="38"></circle>
+            <g filter="url(#filter-1)" id="icon/messages/outline-copy-7" stroke-linecap="round" stroke-linejoin="round">
+                <g transform="translate(16.226667, 22.266667)" filter="url(#filter-2)" id="Group-22-Copy">
+                    <g>
+                        <g id="Group-21-Copy" transform="translate(0.000000, 6.653952)" stroke="#FFFFFF" stroke-width="3">
+                            <path d="M10.7237434,24.37853 L0.824903338,24.37853 C0.369556696,24.37853 0,23.7212816 0,23.2682584 L0,0.274290318 C0,-0.178732914 0.369556696,0.0660130892 0.824903338,0.0660130892 L33.8210369,0.0660130892 C34.2763835,0.0660130892 34.6459402,-0.178732914 34.6459402,0.274290318 L34.6459402,23.2682584 C34.6459402,23.7212816 34.2763835,24.37853 33.8210369,24.37853 L22.2723901,24.37853" id="Stroke-360"></path>
+                            <line x1="16.4980668" y1="31.4691135" x2="21.9630514" y2="24.8998714" id="Stroke-362"></line>
+                            <line x1="16.4980668" y1="31.4691135" x2="11.0330821" y2="24.8998714" id="Stroke-364"></line>
+                        </g>
+                        <path d="M6.77289057,3.17406994 L6.77289057,0.274290318 C6.77289057,-0.178732914 7.14244726,0.0660130892 7.5977939,0.0660130892 L29.7965969,0.0660130892 L40.5939274,0.0660130892 C41.0492741,0.0660130892 41.4188308,-0.178732914 41.4188308,0.274290318 L41.4188308,23.2682584 C41.4188308,23.7212816 41.0492741,24.37853 40.5939274,24.37853 L38.3699298,24.37853" id="Stroke-360" stroke="#FFFFFF" stroke-width="3"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

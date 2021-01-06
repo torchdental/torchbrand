@@ -1,0 +1,289 @@
+/* --- Typography (Block Level) --- */
+html,
+body {
+  color: $color--body-text;
+  font-family: $font-family--primary;
+  font-size: $font-size--base;
+  line-height: $line-height--base;
+  font-weight: $font-weight--primary-normal;
+}
+
+h1,
+.styleAs-h1 {
+  //  margin-top: 2.5rem;
+  //  margin-bottom: .5rem;
+  //map-get($font-size--level, 4);
+  font-size: $s40;
+  font-weight: $font-weight--primary-semibold;
+  line-height: 64px;
+  @include pageHeader($s32, $s32);
+}
+
+h2,
+.styleAs-h2 {
+  //  margin-top: 2.5rem;
+  //  margin-bottom: .5rem;
+  font-size: $s32;
+  font-weight: $font-weight--primary-semibold;
+  line-height: 56px;
+  @include pageHeader($s24, $s32);
+}
+
+h3,
+.styleAs-h3 {
+  //  margin-top: 1.5rem;
+  //  margin-bottom: .5rem;
+  font-size: $s24;
+  font-weight: $font-weight--primary-semibold;
+  line-height: 40px;
+  @include pageHeader($s20, $s24);
+}
+
+h4,
+.styleAs-h4 {
+  //  margin-top: 1.5rem;
+  //  margin-bottom: .5rem;
+  font-size: $s20;
+  font-weight: $font-weight--primary-semibold;
+  line-height: 32px;
+  @include pageHeader($s16, $s20);
+}
+
+h5,
+.styleAs-h5 {
+  //  margin-top: 1.5rem;
+  //  margin-bottom: .5rem;
+  font-size: $s20;
+  font-weight: $font-weight--primary-normal;
+  line-height: 32px;
+  @include pageHeader($s14, $s16);
+}
+
+h6,
+.styleAs-h6,
+.subheader {
+  //  margin-top: 0;
+  //  margin-bottom: 0;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: $font-weight--primary-semibold;
+  &--light {
+    font-weight: $font-weight--primary-normal;
+  }
+  @include pageHeader($s12, $s14);
+}
+
+.subheader {
+  margin-bottom: $P5L;
+}
+
+.supheader,
+.details1,
+small {
+  font-size: $s14;
+  line-height: $s20;
+  font-weight: $font-weight--primary-normal;
+}
+.supheader {
+  margin-bottom: $P5L;
+  color: $color--body-text--secondary;
+  text-transform: uppercase;
+}
+
+.supheader + h1,
+.supheader + h2,
+.supheader + h3,
+.supheader + h4,
+.supheader + h5,
+.supheader + h6 {
+  margin-top: 0;
+}
+
+.details2 {
+  font-size: $s12;
+  line-height: 18px;
+}
+
+.details3 {
+  font-size: 11px;
+  line-height: $s16;
+}
+
+p,
+.styleAs-p {
+  margin-top: ($s24 - ($line-height--base - $font-size--base))/2; //24 paragraph height minus diff between line and font size, split between top and bottom
+  margin-bottom: ($s24 - ($line-height--base - $font-size--base))/2;
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+strong,
+.styleAs-strong {
+  font-weight: $font-weight--primary-semibold;
+}
+
+h1 + p,
+.styleAs-h1 + p,
+h2 + p,
+.styleAs-h2 + p,
+h3 + p,
+.styleAs-h3 + p,
+h4 + p,
+.styleAs-h4 + p,
+h5 + p,
+.styleAs-h5 + p,
+h6 + p,
+.styleAs-h6 + p {
+  margin-top: 0;
+}
+
+hr {
+  border: 0;
+  border-top: 2px solid $color--hr;
+  margin: $s24 0;
+}
+
+ul,
+ol {
+  padding-left: 2rem;
+  margin-top: $s16;
+  margin-bottom: 1rem;
+
+  li {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  ul,
+  ol {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/* --- Typography (Inline Level) --- */
+a,
+.styleAs-a {
+  color: $color--primary;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+em,
+.styleAs-em {
+  font-style: italic;
+}
+
+// Typographic Variations
+.no-break,
+.text--noBreak {
+  white-space: nowrap;
+}
+.text--break {
+  white-space: initial;
+}
+
+.text--default,
+.text-default {
+  color: $color--body-text !important;
+
+  @include nested-a;
+}
+
+.text--primary,
+.text-primary {
+  color: $color--primary !important;
+
+  @include nested-a;
+}
+
+.text--secondary,
+.text-secondary {
+  color: $color--secondary !important;
+
+  @include nested-a;
+}
+
+.text--success,
+.text-success {
+  color: $color--success !important;
+
+  @include nested-a;
+}
+
+.text--danger,
+.text-danger {
+  color: $color--danger !important;
+
+  @include nested-a;
+}
+
+.text--bright,
+.text-bright {
+  color: $color--bright !important;
+
+  @include nested-a;
+}
+
+.text--muted,
+.text-muted {
+  color: $color--body-text--secondary !important;
+
+  @include nested-a;
+  a,
+  .styleAs-a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+.text--disabled,
+.text-disabled {
+  color: $color--disabled !important;
+}
+
+.text--normal,
+.text-normal {
+  font-weight: $font-weight--primary-normal;
+}
+.text--bold,
+.text-bold {
+  font-weight: $font-weight--primary-bold;
+}
+.text--semiBold,
+.text-semiBold {
+  font-weight: $font-weight--primary-semibold;
+}
+
+.text--strikethrough,
+.text-strikethrough {
+  text-decoration: line-through;
+}
+
+.text--xSmall {
+  font-size: 11px;
+}
+.text--small {
+  font-size: 14px;
+}
+.text--regular {
+  font-size: 16px;
+}
+
+.text--noTransform {
+  text-transform: initial;
+}
+.text--reset {
+  text-transform: initial;
+  color: initial;
+}

@@ -1,0 +1,32 @@
+.comment {
+  &-controls {
+    display: flex;
+    width: 100%;
+  }
+  &-controlTextArea {
+    flex-grow: 1;
+    textarea {
+      padding-top: $s10;
+      padding-bottom: $s10;
+      font-size: $font-size--base;
+      line-height: $line-height--base;
+      border-top: $border--light;
+      border-left: $border--light;
+      border-right: $border--light;
+      background: $color--white;
+      border-bottom: 2px solid $color--green-30;
+    }
+    @include mobile-breakpoint {
+      font-size: 14px;
+    }
+  }
+  &-addButton {
+    @include btn;
+    @include btn--large;
+    @include btn--sized;
+    color: $color--white;
+    background: $color--green-30;
+    margin-left: $s16;
+    align-self: flex-end;
+  }
+}

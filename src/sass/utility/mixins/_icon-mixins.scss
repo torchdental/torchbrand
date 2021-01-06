@@ -1,0 +1,23 @@
+@mixin iconPseudo {
+  display: inline-block;
+  font-family: $font-family--icons;
+  font-style: normal;
+  font-weight: $font-weight--icons-solid;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin iconPseudo--image {
+  @include iconPseudo;
+  content: '';
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+@mixin icon-anchor-hover($sel) {
+  a:hover #{$sel} {
+    @extend #{$sel}:hover;
+  }
+}

@@ -1,0 +1,35 @@
+/* --- Miscellaneous others --- */
+@import 'variables';
+
+.bg-light {
+  background-color: $background-color--extra-light !important;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.height-100 {
+  height: 100%;
+}
+
+.borderRight {
+  border-right: $border--light;
+}
+.borderLeft {
+  border-left: $border--light;
+}
+.borderBottom {
+  border-bottom: $border--light;
+}
+.borderTop {
+  border-top: $border--light;
+}

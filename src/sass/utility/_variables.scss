@@ -1,0 +1,144 @@
+$color--blue-10: #f3f8f9;
+$color--blue-20: #e9f3f6;
+$color--blue-30: #00aef6;
+$color--blue-40: #008fbe; // highlight
+$color--blue-50: #0078a0; // text, bg
+$color--blue-60: #006f94; // active
+$color--blue-90: #002b4a;
+
+$color--green-10: #f1faf8;
+$color--green-20: #e7f7f3;
+$color--green-25: #2ed7af;
+$color--green-30: #29bd9a; // text
+$color--green-40: #2ba88a;
+$color--green-50: #1d8f74; // text
+$color--green-60: #1a846b;
+
+$color--berry-20: #f9ebeb;
+$color--berry-50: #cd5858;
+
+$color--yellow-20: #f8f1da;
+$color--yellow-50: #fdc81b;
+
+$color--orange-40: #cf5e37;
+$color--orange-50: #c77729;
+
+$color--purple-20: #f0eef8;
+$color--purple-50: #6d5bb9;
+
+$color--white: #ffffff;
+$color--gray-20: #f7f7f7;
+$color--gray-25: #e7e7e7;
+$color--gray-30: #d8d8d8;
+$color--gray-50: #a4a4a4;
+$color--gray-60: #6c6c6c; //text
+$color--gray-90: #1d1d1d; //body text
+
+// Semantic Colors (Please use these)
+$color--primary: $color--blue-50; //The app uses --primary and --secondary for text colors, so make sure they're set to text colors
+$color--primary-active: $color--blue-30;
+$color--secondary: $color--green-50; //The app uses  --primary and --secondary for text colors, so make sure they're set to text colors
+$color--secondary-active: $color--green-30;
+$color--tertiary: $color--berry-50;
+$color--quaternary: $color--orange-50;
+$color--disabled: $color--gray-50;
+
+$color--bright: $color--green-30;
+$color--danger: $color--berry-50;
+$color--info: $color--primary;
+$color--success: $color--secondary;
+
+$color--body-text: $color--gray-90;
+$color--body-text--secondary: $color--gray-60; //Should be for text only
+
+$color--dark: $color--gray-90; //For shadows only
+$color--hr: $color--gray-60;
+$color--border: $color--gray-60;
+
+$color--form-border: $color--gray-50;
+$color--form-muted-text: $color--gray-50;
+$color--form-highlight: $color--blue-40;
+
+$border--dark: 1px solid $color--gray-90;
+$border--light: 1px solid $color--gray-60;
+$border--table: 1px solid $color--gray-30;
+$border--table-dark: 1px solid $color--gray-50;
+
+$border-radius: 4px;
+
+$background-color--light: $color--gray-30;
+$background-color--extra-light: $color--gray-20;
+$background-color--medium: $color--gray-50;
+
+/* --- Spacing --- */
+$s4: 4px;
+$s8: 8px;
+$s10: 10px;
+$s12: 12px;
+$s14: 14px;
+$s16: 16px;
+$s20: 20px;
+$s24: 24px;
+$s32: 32px;
+$s40: 40px;
+
+$sideColumn-width: 298px;
+
+$navbar-item-font-size: 22px;
+$navbar-item-padding: 26px;
+$navbar-item-padding--tablet: 24px;
+$navbar-item-padding--mobile: 20px;
+
+$navbar-height: $navbar-item-font-size + (2 * $navbar-item-padding);
+$navbar-height--tablet: $navbar-item-font-size + (2 * $navbar-item-padding--tablet);
+$navbar-height--mobile: $navbar-item-font-size + (2 * $navbar-item-padding--mobile);
+
+$navbarSecondary-height: 72px;
+$navbarSecondary-height--tablet: 0;
+$navbarSecondary-height--mobile: 0;
+
+$navbarBottom-height: 0;
+$navbarBottom-height--tablet: 70px;
+$navbarBottom-height--mobile: 62px;
+
+$navbarBottomSecondary-height: 0;
+$navbarBottomSecondary-height--tablet: 54px;
+$navbarBottomSecondary-height--mobile: 54px;
+
+$base-font-size: $s16;
+$P5L: $s8;
+$oneL: $s16;
+$oneP5L: $s24;
+$twoL: $s32;
+
+// Font
+$font-family--primary: 'Open Sans', sans-serif;
+$font-weight--primary-normal: 400;
+$font-weight--primary-semibold: 600;
+$font-weight--primary-bold: 700;
+
+$font-family--icons: 'FontAwesome';
+$font-weight--icons-brand: 100;
+$font-weight--icons-normal: 400;
+$font-weight--icons-solid: 900;
+
+$font-size--base: $s16;
+$font-size--base-narrow: $s16;
+$line-height--base: $s24;
+
+// Breakpoints (*Note: prefer to use Breakpoint component to make responsive decisions instead)
+$breakpoint-desktop--min: 850px;
+$breakpoint-tablet--max: $breakpoint-desktop--min - 1;
+$breakpoint-mobile--max: 520px;
+$breakpoint-mobile--min: 375px;
+
+// modals
+$modal-wide: 1154px;
+$modal-desktop: 700px;
+$modal-tablet: 500px;
+$modal-mobile: 100vw;
+
+// cards
+$card-width--min: 190px;
+$card-width--max: 300px;
+$card-height: 364px;

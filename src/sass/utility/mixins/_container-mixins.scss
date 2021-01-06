@@ -1,0 +1,69 @@
+@mixin container-shadow {
+  -webkit-box-shadow: 0 2px 4px 0 $color--gray-30;
+  -moz-box-shadow: 0 2px 4px 0 $color--gray-30;
+  box-shadow: 0 2px 4px 0 $color--gray-30;
+}
+
+@mixin container-border {
+  border: 1px solid $color--gray-60;
+  @include border-radius;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+@mixin container-glow {
+  box-shadow: 0 0 4px 0 #d8d8d8;
+}
+
+@mixin container-children {
+  margin-top: $s24;
+  margin-bottom: $s24;
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @include tablet-breakpoint {
+    margin-top: $s16;
+    margin-bottom: $s16;
+  }
+  @include mobile-breakpoint {
+    margin-top: $s12;
+    margin-bottom: $s12;
+  }
+}
+
+@mixin container-modifiers {
+  &--wrapped {
+    flex-wrap: wrap;
+    & > * {
+      margin: 0 $s16 $s16 0;
+    }
+  }
+  &--spaceBetween {
+    justify-content: space-between;
+    & > *:not(:first-child) {
+      margin-left: $s16;
+    }
+  }
+  &--buttonsCenter {
+    justify-content: center;
+    & > button:not(:first-of-type) {
+      margin-left: $s16;
+    }
+  }
+  &--buttonsRight {
+    justify-content: flex-end;
+    & > button:not(:last-of-type) {
+      margin-right: $s16;
+    }
+  }
+  &--buttonsLeft {
+    justify-content: flex-start;
+    & > button:not(:first-of-type) {
+      margin-left: $s16;
+    }
+  }
+}

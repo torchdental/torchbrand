@@ -1,0 +1,29 @@
+@mixin pageHeader($mTop, $mBottom) {
+  &.pageHeader {
+    text-align: center;
+    margin-top: $mTop;
+    margin-bottom: $mBottom;
+    // TODO: decide whether headers should have a per-level margin or should be consistent margins like below.
+    margin-top: $s24;
+    margin-bottom: $s32;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin nested-a {
+  a,
+  .styleAs-a {
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      @extend .text--semiBold;
+    }
+  }
+}

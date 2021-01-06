@@ -1,0 +1,50 @@
+button,
+.btn,
+.styleAs-button {
+  @include btn;
+}
+
+// Outlined - Medium emphasis. These should all also have the standard .btn classname as well.
+.btn-minor,
+.btn-outline,
+.btn--outline {
+  @include btn--outline;
+}
+
+// Toggle buttons
+.btn-toggle {
+  display: inline-flex;
+  align-items: center;
+  text-transform: initial;
+  font-weight: $font-weight--primary-normal;
+
+  &::before {
+    @include iconPseudo;
+    content: '\f111';
+    font-weight: $font-weight--icons-normal;
+    font-size: $s32;
+    padding-right: $s8;
+  }
+
+  &:active::before,
+  &--active::before {
+    content: '\f058';
+    font-weight: $font-weight--icons-solid;
+  }
+
+  &--positive {
+    &::before {
+      color: $color--success;
+    }
+  }
+  &--neutral {
+    &::before {
+      color: $color--blue-30;
+    }
+  }
+  &--negative {
+    &::before {
+      color: $color--danger;
+    }
+  }
+}
