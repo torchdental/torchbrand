@@ -1240,21 +1240,78 @@ class App extends React.Component {
             standard body text black color. Specific links can be overridden with other colors as
             below.
           </p>
-          <p>
-            <a className="text--default">text--default e.g. for menus</a>
-          </p>
-          <p>
-            <a className="text--primary">text--primary for paragraphy text</a>
-          </p>
-          <p>
-            <a className="text--secondary">text--secondary</a>
-          </p>
-          <p>
-            <a className="text--muted">text--muted - disabled links.</a>
-          </p>
-          <p>
-            <a className="text--danger">text--danger - error and verification messages.</a>
-          </p>
+          <div className="cardGrid">
+            <div className="card">
+              <h5>Links O1 (w/o underline)</h5>
+              <p>
+                <code>.text--default</code>
+              </p>
+              <a className="text--default">dark grey link</a>
+              <br />
+              <p>
+                <code>.text--primary</code>
+              </p>
+              <a className="text--primary">primary link</a>
+              <br />
+              <p>
+                <code>.text--secondary</code>
+              </p>
+              <a className="text--secondary">secondary link</a>
+              <br />
+              <p>
+                <code>.text--muted</code>
+              </p>
+              <a className="text--muted">muted link</a>
+              <br />
+              <p>
+                <code>.text--danger</code>
+              </p>
+              <a className="text--danger">error link</a>
+            </div>
+            <div className="card">
+              <h5>Links O2 (w/ underline)</h5>
+              <p>
+                <code>.text--default &gt; a</code>
+                <br />
+                <code>.text--default &gt; .styleAs-a</code>
+              </p>
+              <div className="text--default">
+                <a>dark grey link</a>
+              </div>
+              <p>
+                <code>.text--primary &gt; a</code>
+                <br />
+                <code>.text--primary &gt; .styleAs-a</code>
+              </p>
+              <div className="text--primary">
+                <a>primary link</a>
+              </div>
+              <p>
+                <code>.text--secondary &gt; a</code>
+                <br />
+                <code>.text--secondary &gt; .styleAs-a</code>
+              </p>
+              <div className="text--secondary">
+                <a>secondary link</a>
+              </div>
+              <p>
+                <code>.text--muted &gt; a</code>
+                <br />
+                <code>.text--muted &gt; .styleAs-a</code>
+              </p>
+              <div className="text--muted">
+                <a>muted link</a>
+              </div>
+              <p>
+                <code>.text--danger &gt; a</code>
+                <br />
+                <code>.text--danger &gt; .styleAs-a</code>
+              </p>
+              <div className="text--danger">
+                <a>error link</a>
+              </div>
+            </div>
+          </div>
         </div>
       </React.Fragment>
     );

@@ -20625,48 +20625,219 @@ var App = function (_React$Component) {
             'In general, all links are the primary color, except ones inside menus which are the standard body text black color. Specific links can be overridden with other colors as below.'
           ),
           _react2.default.createElement(
-            'p',
-            null,
+            'div',
+            { className: 'cardGrid' },
             _react2.default.createElement(
-              'a',
-              { className: 'text--default' },
-              'text--default e.g. for menus'
-            )
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
+              'div',
+              { className: 'card' },
+              _react2.default.createElement(
+                'h5',
+                null,
+                'Links O1 (w/o underline)'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  '.text--default'
+                )
+              ),
+              _react2.default.createElement(
+                'a',
+                { className: 'text--default' },
+                'dark grey link'
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  '.text--primary'
+                )
+              ),
+              _react2.default.createElement(
+                'a',
+                { className: 'text--primary' },
+                'primary link'
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  '.text--secondary'
+                )
+              ),
+              _react2.default.createElement(
+                'a',
+                { className: 'text--secondary' },
+                'secondary link'
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  '.text--muted'
+                )
+              ),
+              _react2.default.createElement(
+                'a',
+                { className: 'text--muted' },
+                'muted link'
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  '.text--danger'
+                )
+              ),
+              _react2.default.createElement(
+                'a',
+                { className: 'text--danger' },
+                'error link'
+              )
+            ),
             _react2.default.createElement(
-              'a',
-              { className: 'text--primary' },
-              'text--primary for paragraphy text'
-            )
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            _react2.default.createElement(
-              'a',
-              { className: 'text--secondary' },
-              'text--secondary'
-            )
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            _react2.default.createElement(
-              'a',
-              { className: 'text--muted' },
-              'text--muted - disabled links.'
-            )
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            _react2.default.createElement(
-              'a',
-              { className: 'text--danger' },
-              'text--danger - error and verification messages.'
+              'div',
+              { className: 'card' },
+              _react2.default.createElement(
+                'h5',
+                null,
+                'Links O2 (w/ underline)'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  '.text--default > a'
+                ),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  '.text--default > .styleAs-a'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'text--default' },
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  'dark grey link'
+                )
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  '.text--primary > a'
+                ),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  '.text--primary > .styleAs-a'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'text--primary' },
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  'primary link'
+                )
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  '.text--secondary > a'
+                ),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  '.text--secondary > .styleAs-a'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'text--secondary' },
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  'secondary link'
+                )
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  '.text--muted > a'
+                ),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  '.text--muted > .styleAs-a'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'text--muted' },
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  'muted link'
+                )
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  '.text--danger > a'
+                ),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  '.text--danger > .styleAs-a'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'text--danger' },
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  'error link'
+                )
+              )
             )
           )
         )
