@@ -1821,6 +1821,18 @@ class App extends React.Component {
               />
               <span className="error">Error message</span>
             </div>
+            <div className="input">
+              <label htmlFor="selectId">Select Field</label>
+              <div className="select--wrapper">
+                <select id="selectId" name="select" placeholder="hint" defaultValue="default">
+                  <option disabled value="default">Default</option>
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                  <option>Option 4</option>
+                </select>
+              </div>
+            </div>
           </div>
 
           <div className={containerBlock('block')}>

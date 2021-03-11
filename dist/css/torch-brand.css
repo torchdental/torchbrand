@@ -1949,8 +1949,8 @@ label,
   user-select: none; }
 
 input,
-textarea,
-select {
+select,
+textarea {
   display: block;
   width: 100%;
   padding: 4px 0;
@@ -1965,16 +1965,16 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none; }
   input:focus,
-  textarea:focus,
-  select:focus {
+  select:focus,
+  textarea:focus {
     border-bottom-color: #008fbe; }
   input::placeholder,
-  textarea::placeholder,
-  select::placeholder {
+  select::placeholder,
+  textarea::placeholder {
     color: #a4a4a4; }
   input:disabled,
-  textarea:disabled,
-  select:disabled {
+  select:disabled,
+  textarea:disabled {
     background-color: #f7f7f7; }
 
 .Select.search,
@@ -2111,12 +2111,57 @@ input[type='checkbox'].checkbox-success:checked::before {
 input[type='file'] {
   display: flex; }
 
-select {
-  padding-right: 25px;
-  background-image: linear-gradient(45deg, transparent 50%, #a4a4a4 50%), linear-gradient(135deg, #a4a4a4 50%, transparent 50%);
-  background-position: calc(100% - 11px) calc(1em - 3px), calc(100% - 6px) calc(1em - 3px);
-  background-size: 5px 5px, 5px 5px;
-  background-repeat: no-repeat, no-repeat; }
+.select--wrapper {
+  position: relative;
+  float: left;
+  width: 100%; }
+  .select--wrapper select {
+    width: 100%;
+    padding: 8px 12px;
+    display: block;
+    border-radius: 4px;
+    border: 1px solid #6c6c6c;
+    margin: 0;
+    background-color: #ffffff;
+    transition: border-color 0.5s;
+    touch-action: manipulation;
+    -webkit-appearance: none;
+    -moz-appearance: none; }
+    .select--wrapper select::placeholder {
+      color: #a4a4a4; }
+    .select--wrapper select:disabled {
+      background-color: #f7f7f7; }
+  .select--wrapper::after {
+    display: inline-block;
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: 900;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: '';
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%) rotate(90deg); }
+    .select--wrapper::after {
+      background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='26px' viewBox='0 0 14 26' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EGroup Copy%3C/title%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg id='icon/chevron/enabled/med' transform='translate(-1.000000, 0.000000)' stroke='%236c6c6c' stroke-width='2'%3E%3Cg id='Group-Copy' transform='translate(2.000000, 1.000000)'%3E%3Cpolygon id='Stroke-52' points='11.6971765 12.1009412 3.20596882e-13 2.38742359e-14'%3E%3C/polygon%3E%3Cline x1='11.6971765' y1='12.1009412' x2='0.0225882353' y2='24' id='Stroke-56'%3E%3C/line%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+  .select--wrapper:hover::after {
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='15px' height='28px' viewBox='0 0 15 28' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EGroup Copy%3C/title%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg id='icon/chevron/active/med' transform='translate(0.000000, 1.000000)' stroke='%236c6c6c' stroke-width='2.5'%3E%3Cg id='Group-Copy' transform='translate(2.000000, 1.000000)'%3E%3Cpolygon id='Stroke-52' points='11.6971765 12.1009412 3.41060513e-13 7.99360578e-14'%3E%3C/polygon%3E%3Cline x1='11.6971765' y1='12.1009412' x2='0.0225882353' y2='24' id='Stroke-56'%3E%3C/line%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+  .select--wrapper--small::after {
+    position: relative;
+    width: 20px;
+    height: 20px; }
+
+.Select {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #6c6c6c; }
 
 .input {
   margin: 8px 0; }

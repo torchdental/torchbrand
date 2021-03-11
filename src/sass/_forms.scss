@@ -11,8 +11,8 @@ label,
 }
 
 input,
-textarea,
-select {
+select,
+textarea {
   display: block;
   width: 100%;
   padding: $s8/2 0;
@@ -214,13 +214,59 @@ input[type='file'] {
   display: flex;
 }
 
-select {
-  padding-right: 25px;
-  background-image: linear-gradient(45deg, transparent 50%, $color--form-border 50%),
-    linear-gradient(135deg, $color--form-border 50%, transparent 50%);
-  background-position: calc(100% - 11px) calc(1em - 3px), calc(100% - 6px) calc(1em - 3px);
-  background-size: 5px 5px, 5px 5px;
-  background-repeat: no-repeat, no-repeat;
+.select--wrapper {
+  position: relative;
+  float: left;
+  width: 100%;
+  $icon-color: $color--gray-60;
+  select {
+    width: 100%;
+    padding: $s8 $s12;
+    display: block;
+    @include border-radius;
+    border: $border--light;
+    margin: 0;
+    background-color: $color--white;
+
+    transition: border-color 0.5s;
+    touch-action: manipulation;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &::placeholder {
+      color: $color--form-muted-text;
+    }
+
+    &:disabled {
+      background-color: $color--gray-20;
+    }
+  }
+  &::after {
+     @include iconPseudo--image;
+     width: $s16;
+     height: $s16;
+     @import 'icons/chevron:enabled.svg';
+     position: absolute;
+     top: 50%;
+     right: $s12;
+     transform: translateY(-50%) rotate(90deg);
+   }
+  &:hover::after {
+    @import 'icons/chevron:active.svg';
+  }
+  &--small {
+    &::after {
+      position: relative;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.Select {
+  padding: $s8 $s12;
+  @include border-radius;
+  border: $border--light;
 }
 
 .input {
