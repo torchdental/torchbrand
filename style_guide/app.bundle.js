@@ -22097,6 +22097,44 @@ var App = function (_React$Component) {
                   )
                 )
               )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'input' },
+              _react2.default.createElement(
+                'label',
+                { htmlFor: 'selectId' },
+                'Select Field (old)'
+              ),
+              _react2.default.createElement(
+                'select',
+                { id: 'selectId', name: 'select', placeholder: 'hint', defaultValue: 'default' },
+                _react2.default.createElement(
+                  'option',
+                  { disabled: true, value: 'default' },
+                  'Default'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  null,
+                  'Option 1'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  null,
+                  'Option 2'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  null,
+                  'Option 3'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  null,
+                  'Option 4'
+                )
+              )
             )
           ),
           _react2.default.createElement(
