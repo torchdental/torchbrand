@@ -37,6 +37,7 @@
     "prettier": "^2.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-select": "^1.0.0-rc.5",
     "webpack": "^3.4.1"
   },
   "homepage": "./style_guide/style_guide.html"

@@ -2166,10 +2166,75 @@ select {
     width: 20px;
     height: 20px; }
 
-.Select {
-  padding: 8px 12px;
-  border-radius: 4px;
-  border: 1px solid #6c6c6c; }
+.typeaheadDropdown {
+  overflow: visible; }
+  .typeaheadDropdown.Select {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #6c6c6c; }
+    .typeaheadDropdown.Select.is-open {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0; }
+    .typeaheadDropdown.Select > .Select-menu-outer {
+      position: absolute;
+      margin-top: 0;
+      border: 1px solid #6c6c6c;
+      box-shadow: none;
+      width: calc(100% + 2px);
+      left: -1px; }
+      .typeaheadDropdown.Select > .Select-menu-outer > .Select-menu > .Select-option:not(:last-child) {
+        border-bottom: 1px solid #6c6c6c; }
+    .typeaheadDropdown.Select > .Select-control {
+      border: none;
+      box-shadow: unset;
+      overflow: visible;
+      height: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline; }
+      .typeaheadDropdown.Select > .Select-control > .Select-arrow-zone {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .typeaheadDropdown.Select > .Select-control > .Select-arrow-zone:before {
+          position: absolute;
+          height: 16px;
+          width: 16px;
+          display: inline-block;
+          font-family: "FontAwesome";
+          font-style: normal;
+          font-weight: 900;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          content: '';
+          background-position: top left;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          transform: translateY(-50%) rotate(90deg); }
+          .typeaheadDropdown.Select > .Select-control > .Select-arrow-zone:before {
+            background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='26px' viewBox='0 0 14 26' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EGroup Copy%3C/title%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg id='icon/chevron/enabled/med' transform='translate(-1.000000, 0.000000)' stroke='%236c6c6c' stroke-width='2'%3E%3Cg id='Group-Copy' transform='translate(2.000000, 1.000000)'%3E%3Cpolygon id='Stroke-52' points='11.6971765 12.1009412 3.20596882e-13 2.38742359e-14'%3E%3C/polygon%3E%3Cline x1='11.6971765' y1='12.1009412' x2='0.0225882353' y2='24' id='Stroke-56'%3E%3C/line%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .typeaheadDropdown.Select > .Select-control > .Select-arrow-zone > .Select-arrow {
+          border: none; }
+      .typeaheadDropdown.Select > .Select-control > .Select-multi-value-wrapper {
+        flex-grow: 1; }
+        .typeaheadDropdown.Select > .Select-control > .Select-multi-value-wrapper > .Select-placeholder,
+        .typeaheadDropdown.Select > .Select-control > .Select-multi-value-wrapper > .Select-input,
+        .typeaheadDropdown.Select > .Select-control > .Select-multi-value-wrapper > .Select-value {
+          padding: 0; }
+    .typeaheadDropdown.Select.is-focused:not(.is-open) > .Select-control {
+      box-shadow: unset;
+      border-color: transparent; }
+  .typeaheadDropdown.error {
+    color: #cd5858;
+    border-bottom-color: #cd5858 !important; }
+  .typeaheadDropdown .errorMessage {
+    color: #cd5858;
+    font-size: 14px; }
+  .typeaheadDropdown.Select--single.has-value.is-clearable > .Select-control .Select-value {
+    padding: 0px;
+    right: 42px; }
 
 .input {
   margin: 8px 0; }

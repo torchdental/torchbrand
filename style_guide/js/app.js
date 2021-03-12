@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Select from 'react-select';
 
 import { makeBem } from './util';
 import { Align, List, Spacing, TopNav, BottomNav } from './sections';
@@ -1834,14 +1835,39 @@ class App extends React.Component {
               </div>
             </div>
             <div className="input">
-              <label htmlFor="selectId">Select Field (old)</label>
-              <select id="selectId" name="select" placeholder="hint" defaultValue="default">
+              <label htmlFor="selectIdOld">Select Field (old)</label>
+              <select id="selectIdOld" name="selectOld" placeholder="hint" defaultValue="default">
                 <option disabled value="default">Default</option>
                 <option>Option 1</option>
                 <option>Option 2</option>
                 <option>Option 3</option>
                 <option>Option 4</option>
               </select>
+            </div>
+            <div className="input">
+              <label htmlFor="reactSelect">React Select Standard</label>
+              <Select
+                classNamePrefix="Select"
+                options={[
+                  { value: 'opt1', label: 'Option 1' },
+                  { value: 'opt2', label: 'Option 2' },
+                  { value: 'opt3', label: 'Option 3' },
+                  { value: 'opt4', label: 'Option 4' },
+                ]}
+              />
+            </div>
+            <div className="input">
+              <label htmlFor="reactSelect">React Select Typeahead</label>
+              <Select
+                className="typeaheadDropdown"
+                classNamePrefix="Select"
+                options={[
+                  { value: 'opt1', label: 'Option 1' },
+                  { value: 'opt2', label: 'Option 2' },
+                  { value: 'opt3', label: 'Option 3' },
+                  { value: 'opt4', label: 'Option 4' },
+                ]}
+              />
             </div>
           </div>
 
