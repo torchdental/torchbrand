@@ -280,6 +280,14 @@ select {
     padding: $s8 $s12;
     @include border-radius;
     border: $border--light;
+    background-color: $color--white;
+    &.is-disabled {
+      background-color: $background-color--extra-light;
+      border: $border--table-dark;
+      & > .Select-control {
+        background-color: $background-color--extra-light;
+      }
+    }
     &.is-open {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
@@ -311,6 +319,7 @@ select {
         justify-content: center;
         align-items: center;
         &:before {
+          margin-top: $s8;
           position: absolute;
           height: $s16;
           width: $s16;

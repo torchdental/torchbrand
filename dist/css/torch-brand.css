@@ -2171,7 +2171,13 @@ select {
   .typeaheadDropdown.Select {
     padding: 8px 12px;
     border-radius: 4px;
-    border: 1px solid #6c6c6c; }
+    border: 1px solid #6c6c6c;
+    background-color: #ffffff; }
+    .typeaheadDropdown.Select.is-disabled {
+      background-color: #f7f7f7;
+      border: 1px solid #a4a4a4; }
+      .typeaheadDropdown.Select.is-disabled > .Select-control {
+        background-color: #f7f7f7; }
     .typeaheadDropdown.Select.is-open {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0; }
@@ -2198,6 +2204,7 @@ select {
         justify-content: center;
         align-items: center; }
         .typeaheadDropdown.Select > .Select-control > .Select-arrow-zone:before {
+          margin-top: 8px;
           position: absolute;
           height: 16px;
           width: 16px;
@@ -2233,7 +2240,7 @@ select {
     color: #cd5858;
     font-size: 14px; }
   .typeaheadDropdown.Select--single.has-value.is-clearable > .Select-control .Select-value {
-    padding: 0px;
+    padding: 0;
     right: 42px; }
 
 .input {
