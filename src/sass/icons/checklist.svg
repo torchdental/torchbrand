@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="76px" height="76px" viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 2 Copy 4</title>
+    <g id="Checklists---Profile/Onboarding" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Onboarding-Checklist---Welcome---Tablet" transform="translate(-1049.000000, -670.000000)">
+            <g id="Group-7" transform="translate(1049.000000, 670.000000)">
+                <circle id="Oval-Copy-9" fill="#29BD9A" cx="38" cy="38" r="38"></circle>
+                <g id="Group-8-Copy" transform="translate(23.000000, 26.000000)" stroke="#FFFFFF" stroke-linecap="round" stroke-width="3">
+                    <line x1="0.493421053" y1="0.473684211" x2="29.1118421" y2="0.473684211" id="Line-2-Copy-12"></line>
+                    <line x1="0.493421053" y1="11.8421053" x2="29.1118421" y2="11.8421053" id="Line-2-Copy-13"></line>
+                    <line x1="0.493421053" y1="23.2105263" x2="29.1118421" y2="23.2105263" id="Line-2-Copy-14"></line>
+                </g>
+                <g id="Group-7-Copy-2" transform="translate(8.881579, 13.815789)">
+                    <circle id="Oval-Copy-7" fill="#1D8F74" cx="11.8421053" cy="11.8421053" r="11.8421053"></circle>
+                    <path d="M18.5707049,7.34842072 L17.4098543,6.11390663 C17.1694528,5.85823321 16.7780726,5.85654865 16.5357137,6.11021146 L9.25453922,13.7296598 L6.17459707,10.45416 C5.93419551,10.1984865 5.54281539,10.196802 5.30045641,10.4504104 L4.13017936,11.6750345 C3.88782038,11.928643 3.88622355,12.3415243 4.12667662,12.5972521 L8.8028913,17.5703039 C9.04329286,17.8259773 9.43467298,17.8276619 9.67703196,17.5739991 L18.5672537,8.27063829 C18.8095611,8.01697547 18.8111064,7.60409414 18.5707049,7.34842072 L18.5707049,7.34842072 Z" id="Icon-Path-Copy-2" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

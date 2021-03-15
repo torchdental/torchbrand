@@ -1826,7 +1826,9 @@ class App extends React.Component {
               <label htmlFor="selectId">Select Field</label>
               <div className="select--wrapper">
                 <select id="selectId" name="select" placeholder="hint" defaultValue="default">
-                  <option disabled value="default">Default</option>
+                  <option disabled value="default">
+                    Default
+                  </option>
                   <option>Option 1</option>
                   <option>Option 2</option>
                   <option>Option 3</option>
@@ -1837,7 +1839,9 @@ class App extends React.Component {
             <div className="input">
               <label htmlFor="selectIdOld">Select Field (old)</label>
               <select id="selectIdOld" name="selectOld" placeholder="hint" defaultValue="default">
-                <option disabled value="default">Default</option>
+                <option disabled value="default">
+                  Default
+                </option>
                 <option>Option 1</option>
                 <option>Option 2</option>
                 <option>Option 3</option>
@@ -3185,6 +3189,10 @@ class App extends React.Component {
           ['messages', ['active', 'disabled']],
           ['orders', ['active', 'disabled']],
           ['payments', ['active', 'disabled']],
+          ['checklist', []],
+          ['thumbsUp', []],
+          ['arrowRight', []],
+          ['priceIncrease', []],
         ].map((i) => this.iconLine(i))}
         <div className="bg-light">
           {[

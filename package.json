@@ -17,6 +17,7 @@
     "run-server": "npx http-server -a localhost -c-1 -o -p 8081 ./",
     "webpack": "webpack",
     "lint": "prettier --check src style_guide",
+    "prettier": "prettier --write src style_guide",
     "start": "npm-run-all --parallel watch-css webpack watch-html  run-server"
   },
   "dependencies": {
