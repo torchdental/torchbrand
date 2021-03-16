@@ -281,7 +281,7 @@ class App extends React.Component {
       '$color--green-60': ['#1A846B'],
       '$color--berry-20': ['#F9EBEB'],
       '$color--berry-50': ['#CD5858'],
-      '$color--yellow-20': ['#F8F1DA'],
+      '$color--yellow-20': ['#FFF0C0'],
       '$color--yellow-50': ['#FDC81B'],
       '$color--orange-40': ['#CF5E37'],
       '$color--orange-50': ['#C77729'],

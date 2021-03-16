@@ -4805,14 +4805,14 @@ button,
         background-color: #e7f7f3; }
   .notification--warning {
     color: #1d1d1d;
-    background-color: #f8f1da;
+    background-color: #fff0c0;
     font-weight: 400; }
     .notification--warning:hover, .notification--warning:active {
       color: #1d1d1d;
-      background-color: #f8f1da; }
+      background-color: #fff0c0; }
       .notification--warning:hover:not(:disabled), .notification--warning:active:not(:disabled) {
         color: #1d1d1d;
-        background-color: #f8f1da; }
+        background-color: #fff0c0; }
   .notification--error {
     color: #cd5858;
     background-color: #f9ebeb; }
