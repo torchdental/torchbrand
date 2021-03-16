@@ -4824,7 +4824,7 @@ button,
         background-color: #f9ebeb; }
   .notification--banner {
     padding: 16px;
-    margin: 24px 24px 0 24px; }
+    margin: 12px 24px 0 24px; }
     .notification--banner .icon-close, .notification--banner .modal-closer {
       margin-top: 0;
       margin-right: -8px;
