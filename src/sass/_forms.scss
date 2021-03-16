@@ -260,6 +260,7 @@ select {
     top: 50%;
     right: $s12;
     transform: translateY(-50%) rotate(90deg);
+    pointer-events: none;
   }
   &:hover::after {
     @import 'icons/chevron:active.svg';
